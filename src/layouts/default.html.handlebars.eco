@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- Site Properities -->
+  <title>Lynn Fisher -- {{document.title}}</title>
+  <meta name="description" content="{{document.description}}" />
+
+  <%- @getBlock('styles').add(['/assets/css/reset.css','/assets/css/global.css']).toHTML() %>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/icons/favicon.ico" />
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57x57-precomposed.png" />
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72x72-precomposed.png" />
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114x114-precomposed.png" />
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144x144-precomposed.png" />
+
+  <!-- Typekit -->
+  <script type="text/javascript" src="//use.typekit.net/mot7pgg.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="/" title="Lynn Fisher">Lynn Fisher</a>
+      <a href="http://thoughts.lynnandtonic.com" title="Thoughts">Thoughts</a>
+      <a href="/info/" title="Info">Info</a>
+      <a href="/work/" title="Work">Work</a>
+    </nav>
+  </header>
+
+  {{{ content }}}
+
+  <!-- DocPad Scripts + Our Own -->
+  <%- @getBlock('scripts').add(['/vendor/log.js', '/vendor/modernizr.js']).toHTML() %>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30574510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

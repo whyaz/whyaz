@@ -1,0 +1,255 @@
+/*------------------------
+Fonts
+------------------------*/
+
+body, cite { font-family: Georgia, Times, serif; }
+nav, h1, h2, h3, #quotes, #hero { font-family: "museo-sans", Helvetica, Arial, sans-serif; }
+
+/*------------------------
+Colors/Variables/Mixins
+------------------------*/
+
+$grey-link: #878787;
+$green-link: #bbd7d5;
+
+@mixin structure {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+/*------------------------
+Global styles
+------------------------*/
+
+html { -webkit-text-size-adjust: none; }
+
+body {
+  background: #fff;
+  color: #555;
+}
+
+h2 {
+  color: #819d9b;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+h3 {
+  color: #777;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+p, ul, ol, dl {
+  font-size: 16px;
+  line-height: 22px;
+  padding-bottom: 15px;
+}
+
+a {
+  border-bottom: 1px dotted #3a569e;
+  color: #3a569e;
+  text-decoration: none;
+}
+
+/*------------------------
+Header and Main Nav
+------------------------*/
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+
+  nav {
+    @include structure;
+    font-size: 18px;
+
+    a {
+      border-bottom: none;
+      border-left: 1px solid #eee;
+      color: #555;
+      display: block;
+      float: right;
+      margin: 0;
+      padding: 50px 20px 20px;
+      text-decoration: none;
+
+      &:hover {
+        background: -moz-linear-gradient(left, #341856 0%, #341856 4%, #8e58a4 46%, #8e58a4 58%, #341856 100%);
+        background: -webkit-linear-gradient(top, #819d9b 0%,#819d9b 6px,#fff 6px,#fff 100%);
+        background: linear-gradient(left, #341856 0%,#341856 4%,#8e58a4 46%,#8e58a4 58%,#341856 100%);
+      }
+
+      &:first-child {
+        border:none;
+        float: left;
+      }
+
+      &:nth-child(2) {
+        border-right: 1px solid #eee;
+      }
+    }
+  }
+}
+
+/*------------------------
+Splash Hero
+------------------------*/
+
+#hero {
+  background:#d0cbb2 url(../images/hero-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+
+  div {
+    @include structure;
+    min-height: 740px;
+    position: relative;
+
+    #lynn {
+      background: transparent url(../images/hero-lynn.png) no-repeat 100% 100%;
+      bottom: 0;
+      height:687px;
+      position: absolute;
+      right: -250px;
+      width: 1037px;
+      z-index: 1;
+    }
+
+    h1, p {
+      padding: 0 15px 10px 80px;
+      position: relative;
+      z-index: 5;
+    }
+
+    h1 {
+      color: #28110f;
+      font-size: 30px;
+      font-weight: 300;
+      padding-top: 250px;
+    }
+
+    p {
+      color: #625a4c;
+      font-size: 26px;
+      padding-top: 10px;
+    }
+  }
+}
+
+/*------------------------
+Splash Quotes
+------------------------*/
+
+#quotes {
+  background: #000;
+  text-align: center;
+
+  blockquote {
+    color: #ececec;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 auto;
+    max-width: 650px;
+    padding: 100px 15px 80px;
+
+    cite {
+     color: #a2a2a2;
+     display: block;
+     font-style: italic;
+     margin-top: 50px;
+     &:before { content: '-'; }
+    }
+  }
+}
+
+/*------------------------
+Footer
+------------------------*/
+
+footer {
+  @include structure;
+  padding: 50px 0;
+
+  section {
+    float: left;
+    padding: 2%;
+  }
+  #social {
+    width: 14%;
+  }
+}
+
+#intro {
+  width: 45%;
+  img {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    display: block;
+    float: left;
+    margin: 0 30px 20px 0;
+    width: 150px;
+  }
+}
+
+#social a {
+  background: #333 url(../images/social.png) no-repeat;
+  -webkit-background-size: auto 50px;
+  -moz-background-size: auto 50px;
+  background-size: auto 50px;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  height: 50px;
+  margin: 0 8px 8px 0;
+  text-indent: -9999em;
+  width: 50px;
+}
+
+#social .twitter   { background-color: #2daae1; background-position: 0 0;}
+#social .instagram { background-color: #69cd97; background-position: -50px 0 }
+#social .pinterest { background-color: #cb2027; background-position: -100px 0 }
+#social .dribbble  { background-color: #ef558f; background-position: -150px 0 }
+#social .wordpress { background-color: #308bc2; background-position: -200px 0 }
+#social .melt      { background-color: #97c0e6; background-position: -250px 0 }
+
+#recent {
+  width: 28%;
+  ul {
+    list-style: none;
+    margin-left: 0;
+    li {
+      padding: 7px 0;
+    }
+  }
+}
+
+
+/*------------------------
+Clearfix
+------------------------*/
+
+.clearfix:after, nav:after, section:after, footer:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/*-----------------------------------
+Media Queries
+------------------------------------*/
+
+@media only screen 
+and (max-width: 1400px) {
+
+}
