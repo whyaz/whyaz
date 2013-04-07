@@ -3,14 +3,15 @@ Fonts
 ------------------------*/
 
 body, cite { font-family: Georgia, Times, serif; }
-nav, h1, h2, h3, #quotes, #hero { font-family: "museo-sans", Helvetica, Arial, sans-serif; }
+nav, h1, h2, h3, h4, #quotes, #hero, #work { font-family: "museo-sans", Helvetica, Arial, sans-serif; }
 
 /*------------------------
 Colors/Variables/Mixins
 ------------------------*/
 
 $main-grey: #555;
-$border-grey: #eee;
+$border-grey: #e6e6e6;
+$bg-grey: #f7f7f7;
 $h-grey: #777;
 $white: #fff;
 $black: #000;
@@ -48,6 +49,8 @@ body {
   font-size: 16px;
 }
 
+body.work { background: $bg-grey; }
+
 h2 {
   color: $h-blue;
   font-size: 25px;
@@ -58,6 +61,11 @@ h3 {
   color: $h-grey;
   font-size: 20px;
   padding-bottom: 10px;
+}
+
+h4, h4 a {
+  color: $main-grey;
+  font-size: 16px;
 }
 
 p, ul, ol, dl {
@@ -233,6 +241,34 @@ footer {
 }
 
 /*------------------------
+Work Page
+------------------------*/
+
+#work {
+  padding: 30px 4%;
+  
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  li {
+    background: $white;
+    margin-bottom: 4%;
+  }
+  a {
+    border: 1px solid $border-grey;
+    color: $main-grey;
+    display: block;
+  }
+  img { width: 100%; }
+  h4 { margin: 10px 15px 0; }
+  p {
+    font-size: 14px;
+    margin: 0 15px 0;
+  }
+}
+
+/*------------------------
 Clearfix
 ------------------------*/
 
@@ -248,6 +284,21 @@ Clearfix
 /*-----------------------------------
 Media Queries
 ------------------------------------*/
+
+@media only screen 
+and (min-width: 500px) {
+
+  #work {
+    padding: 40px 2%;
+    li {
+      float: left;
+      margin: 2%;
+      width: 46%;
+      &:nth-child(2n+1) { clear: left; }
+    }
+  }
+
+}
 
 @media only screen 
 and (min-width: 600px) {
@@ -392,6 +443,16 @@ and (min-width: 900px) {
   #social { width:14%; }
   #recent { width: 28%; }
 
+  #social a { margin: 0 8px 8px 0; }
+
+  #work {
+    li {
+      width: 29.333%;
+      &:nth-child(2n+1) { clear: none; }
+      &:nth-child(3n+1) { clear: left; }
+    }
+  }
+
 }
 
 @media only screen 
@@ -404,10 +465,27 @@ and (min-width: 1100px) {
 
   header nav,
   #hero div,
-  footer
+  footer,
+  #work
   {
-    margin: 0 auto;
-    max-width: 1300px;
+    @include structure;
   }
+
+  #work {
+    padding: 50px 1%;
+    li {
+      margin: 1%;
+      width: 23%;
+      &:nth-child(3n+1) { clear: none; }
+      &:nth-child(4n+1) { clear: left; }
+    }
+  }
+
+}
+
+@media only screen 
+and (min-width: 1300px) {
+
+  #work { padding: 50px 0; }
 
 }
