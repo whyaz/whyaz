@@ -8,7 +8,7 @@ description: 'Lynn Fisher is an artist and designer out of Chandler, AZ.'
     <div>
       <div id="lynn"></div>
       <h1>My name is Lynn Fisher.</h1>
-      <p>I make things for the web and for walls.</p>
+      <p>I live and work in Arizona. I love making things for the web and for walls.</p>
     </div>
   </section>
   <section id="quotes">
@@ -21,7 +21,7 @@ description: 'Lynn Fisher is an artist and designer out of Chandler, AZ.'
     <section id="intro">
       <img src="/assets/images/lynnfisher.jpg" alt="Lynn Fisher" />
       <h2>Oh, herro.</h2>
-      <p>I'm an artist and designer living in Chandler, AZ. I'm a student of the interactive world, making sites and applications for the web. I also dabble with paint once in a while. <a href="/info/" title="More infos">More infos</a>, if you're interested.</p>
+      <p>I love cheesy pop music and embarrassing movies. I could talk about web design and <em>Battlestar Galactica</em> into the wee hours of the night. I drink diet soda like it's a competition. <a href="/info/" title="There's more">There's more</a>, if you're interested.</p>
     </section>
     <section id="social">
       <h3>On the webz</h3>
@@ -33,7 +33,7 @@ description: 'Lynn Fisher is an artist and designer out of Chandler, AZ.'
       <a href="http://blog.meltmedia.com/author/lfisher/" class="melt" title="meltmedia Blog" target="_blank">meltmedia Blog</a>
     </section>
     <section id="recent">
-      <h3>Recent stuff</h3>
+      <h3>Recent writing</h3>
       <ul>
         <li><a href="http://blog.meltmedia.com/2013/04/a-clients-prep-guide-for-a-responsive-project/" title="A Client's Prep Guide for a Responsive Project" target="_blank">A Client's Prep Guide for a Responsive Project</a></li>
         <li><a href="http://thoughts.lynnandtonic.com/2013/03/12/three-books-that-changed-my-professional-and-personal-perspective/" title="Three books that changed my professional (and personal) perspective">Three books that changed my professional (and personal) perspective</a></li>

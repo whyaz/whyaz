@@ -9,12 +9,31 @@ nav, h1, h2, h3, #quotes, #hero { font-family: "museo-sans", Helvetica, Arial, s
 Colors/Variables/Mixins
 ------------------------*/
 
-$grey-link: #878787;
-$green-link: #bbd7d5;
+$main-grey: #555;
+$border-grey: #eee;
+$h-grey: #777;
+$white: #fff;
+$black: #000;
+$h-blue: #819d9b;
+$a-blue: #3a569e;
+$h-brown: #28110f;
+$p-brown: #625a4c;
 
 @mixin structure {
   margin: 0 auto;
   max-width: 1300px;
+}
+
+@mixin radius-sm {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+@mixin radius-big {
+  -webkit-border-radius: 100px;
+  -moz-border-radius:100px;
+  border-radius: 100px;
 }
 
 /*------------------------
@@ -25,70 +44,72 @@ html { -webkit-text-size-adjust: none; }
 
 body {
   background: #fff;
-  color: #555;
+  color: $main-grey;
+  font-size: 16px;
 }
 
 h2 {
-  color: #819d9b;
+  color: $h-blue;
   font-size: 25px;
   padding-bottom: 10px;
 }
 
 h3 {
-  color: #777;
+  color: $h-grey;
   font-size: 20px;
   padding-bottom: 10px;
 }
 
 p, ul, ol, dl {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 23px;
   padding-bottom: 15px;
 }
 
 a {
-  border-bottom: 1px dotted #3a569e;
+  border-bottom: 1px dotted $a-blue;
   color: #3a569e;
   text-decoration: none;
 }
+
+em { font-style: italic; }
 
 /*------------------------
 Header and Main Nav
 ------------------------*/
 
 header {
-  background: #fff;
-  border-bottom: 1px solid #eee;
-
-  nav {
-    @include structure;
+  background: $white;
+  border-bottom: 1px solid $border-grey;
+  text-align: center;
+  
+  #home {
+    background: $black;
+    border-bottom: 1px solid $border-grey;
+    color: $white;
+    display: block;
     font-size: 18px;
-
+    font-weight: 600;
+    padding: 15px;
+    span { font-weight: 300; }
+  }
+  
+  ul { padding-bottom: 0 }
+  
+  li {
+    display: block;
+    float: left;
+    width: 33.33%;
+  
     a {
       border-bottom: none;
-      border-left: 1px solid #eee;
-      color: #555;
+      border-right: 1px solid $border-grey;
+      color: $main-grey;
       display: block;
-      float: right;
-      margin: 0;
-      padding: 50px 20px 20px;
-      text-decoration: none;
-
-      &:hover {
-        background: -moz-linear-gradient(left, #341856 0%, #341856 4%, #8e58a4 46%, #8e58a4 58%, #341856 100%);
-        background: -webkit-linear-gradient(top, #819d9b 0%,#819d9b 6px,#fff 6px,#fff 100%);
-        background: linear-gradient(left, #341856 0%,#341856 4%,#8e58a4 46%,#8e58a4 58%,#341856 100%);
-      }
-
-      &:first-child {
-        border:none;
-        float: left;
-      }
-
-      &:nth-child(2) {
-        border-right: 1px solid #eee;
-      }
+      padding: 10px;
     }
+  
+    &:last-child a { border: none; }
   }
 }
 
@@ -97,46 +118,46 @@ Splash Hero
 ------------------------*/
 
 #hero {
-  background:#d0cbb2 url(../images/hero-bg.jpg) no-repeat center center fixed;
+  background:#d0cbb2 url(../images/hero-bg-small.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
-
+  
   div {
-    @include structure;
-    min-height: 740px;
+    min-height: 420px;
     position: relative;
-
-    #lynn {
-      background: transparent url(../images/hero-lynn.png) no-repeat 100% 100%;
-      bottom: 0;
-      height:687px;
-      position: absolute;
-      right: -250px;
-      width: 1037px;
-      z-index: 1;
-    }
-
-    h1, p {
-      padding: 0 15px 10px 80px;
-      position: relative;
-      z-index: 5;
-    }
-
-    h1 {
-      color: #28110f;
-      font-size: 30px;
-      font-weight: 300;
-      padding-top: 250px;
-    }
-
-    p {
-      color: #625a4c;
-      font-size: 26px;
-      padding-top: 10px;
-    }
+  }
+  
+  #lynn {
+    background: transparent url(../images/hero-lynn-small.png) no-repeat 100% 100%;
+    bottom: 0;
+    height:397px;
+    position: absolute;
+    right: 0;
+    width: 419px;
+    z-index: 1;
+  }
+  
+  h1, p {
+    background-color: rgba(40,17,15,.6);
+    color: $white;
+    position: relative;
+    z-index: 5;
+  }
+  
+  h1 {
+    display: inline-block;
+    font-size: 20px;
+    margin: 30px 15px 10px;
+    padding: 10px;
+  }
+  
+  p {
+    display: inline-block;
+    margin: 0 15px 10px;
+    padding: 8px;
+    width: 76%;
   }
 }
 
@@ -147,68 +168,51 @@ Splash Quotes
 #quotes {
   background: #000;
   text-align: center;
-
+  
   blockquote {
     color: #ececec;
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0 auto;
-    max-width: 650px;
-    padding: 100px 15px 80px;
-
+    line-height: 24px;
+    padding: 30px 20px;
+  
     cite {
      color: #a2a2a2;
      display: block;
      font-style: italic;
-     margin-top: 50px;
+     margin-top: 15px;
      &:before { content: '-'; }
     }
   }
 }
 
 /*------------------------
-Footer
+Splash Footer
 ------------------------*/
 
 footer {
-  @include structure;
-  padding: 50px 0;
-
-  section {
-    float: left;
-    padding: 2%;
-  }
-  #social {
-    width: 14%;
-  }
+  padding: 30px 0;
+  section { padding:0 20px 30px; }
 }
 
-#intro {
-  width: 45%;
-  img {
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    display: block;
-    float: left;
-    margin: 0 30px 20px 0;
-    width: 150px;
-  }
+#intro img {
+  @include radius-big;
+  display: block;
+  margin: 20px auto;
+  width: 150px;
 }
+
+#intro h2 { text-align: center; }
 
 #social a {
+  @include radius-sm;
   background: #333 url(../images/social.png) no-repeat;
   -webkit-background-size: auto 50px;
   -moz-background-size: auto 50px;
   background-size: auto 50px;
   border: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   display: block;
   float: left;
   height: 50px;
-  margin: 0 8px 8px 0;
+  margin: 0 5px 5px 0;
   text-indent: -9999em;
   width: 50px;
 }
@@ -220,17 +224,13 @@ footer {
 #social .wordpress { background-color: #308bc2; background-position: -200px 0 }
 #social .melt      { background-color: #97c0e6; background-position: -250px 0 }
 
-#recent {
-  width: 28%;
-  ul {
-    list-style: none;
-    margin-left: 0;
-    li {
-      padding: 7px 0;
-    }
+#recent ul {
+  list-style: none;
+  margin-left: 0;
+  li {
+    padding: 7px 0;
   }
 }
-
 
 /*------------------------
 Clearfix
@@ -250,6 +250,164 @@ Media Queries
 ------------------------------------*/
 
 @media only screen 
-and (max-width: 1400px) {
+and (min-width: 600px) {
+
+  #hero {
+
+    h1, p {
+      background-color: transparent;
+      display: block;
+      margin: 0 0 0 30px;
+      width: 49%;
+    }
+  
+    h1 {
+      color: $h-brown;
+      font-size: 25px;
+      padding: 100px 0 10px;
+    }
+
+    p {
+      color: $p-brown;
+      font-size: 20px;
+      line-height: 30px;
+      padding: 0px;
+    }
+  }
+
+  #quotes blockquote {
+    margin: 0 auto;
+    padding: 50px 0;
+    max-width: 600px;
+  }
+
+  footer { padding: 50px 0; }
+  footer section { padding: 10px 4%; }
+
+  #intro img {
+    float: left;
+    margin: 0 30px 30px 0;
+  }
+
+  #intro h2 { text-align: left; }
+
+  #social, #recent { float: left; }
+  #social { width: 30%; }
+  #recent { width: 54%; }
+
+}
+
+@media only screen 
+and (min-width: 768px) {
+
+  header {
+    text-align: left;
+  
+    #home {
+      background: $white;
+      border-bottom: none;
+      color: $main-grey;
+      float: left;
+      padding: 30px 20px 10px;
+    }
+  
+    ul {float: right; }
+  
+    li {
+      display: block;
+      float: left;
+      text-align: center;
+      width: auto;
+      &:first-child { border-left: 1px solid $border-grey; }
+      a { padding: 30px 20px 10px; }
+    }
+  }
+
+  #hero {
+    h1, p {
+      margin-left: 50px;
+      width: 54%;
+    }
+  
+    h1 {
+      font-size: 32px;
+      padding: 120px 0 10px;
+    }
+  
+    p {
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+
+  #quotes blockquote {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 60px 20px;
+    max-width: 650px;
+  }
+
+  #social { width: 42%; }
+  #recent { width: 42%; }
+
+}
+
+@media only screen 
+and (min-width: 900px) {
+
+  header #home, header li a { padding:  50px 20px 20px; }
+
+  #hero {
+    background-image: url(../images/hero-bg.jpg);
+  
+    div { min-height: 740px; }
+  
+    #lynn {
+      background-image: url(../images/hero-lynn.png);
+      height:687px;
+      right: -400px;
+      width: 1037px;
+    }
+  
+    h1 {
+      font-size: 40px;
+      padding: 250px 0 10px;
+    }
+  
+    p {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  #quotes blockquote {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 100px 15px 80px;
+    cite {margin-top: 50px; }
+  }
+
+  footer section { padding: 2%; }
+  #intro { float: left; width: 45%; }
+  #social { width:14%; }
+  #recent { width: 28%; }
+
+}
+
+@media only screen 
+and (min-width: 1100px) {
+
+  #hero #lynn { right: -250px; }
+  #hero h1, #hero p { width: 42%; }
+
+  header li:last-child { border-right: 1px solid $border-grey; }
+
+  header nav,
+  #hero div,
+  footer
+  {
+    margin: 0 auto;
+    max-width: 1300px;
+  }
 
 }
