@@ -39,8 +39,8 @@
     <nav>
       <a href="/" title="Lynn Fisher" id="home">Lynn Fisher <span>Artist &#38; Designer</span></a>
       <ul class="clearfix">
-        <li><a href="work/" title="Work">Work</a></li>
-        <li><a href="info/" title="Info">Info</a></li>
+        <li><a href="/work/" title="Work">Work</a></li>
+        <li><a href="/info/" title="Info">Info</a></li>
         <li><a href="http://thoughts.lynnandtonic.com" title="Thoughts">Thoughts</a></li>
       </ul>
     </nav>

@@ -32,9 +32,9 @@ $p-brown: #625a4c;
 }
 
 @mixin radius-big {
-  -webkit-border-radius: 100px;
-  -moz-border-radius:100px;
-  border-radius: 100px;
+  -webkit-border-radius: 300px;
+  -moz-border-radius:300px;
+  border-radius: 300px;
 }
 
 /*------------------------
@@ -50,6 +50,13 @@ body {
 }
 
 body.work { background: $bg-grey; }
+
+h1 {
+  color: $h-blue;
+  font-size: 20px;
+  padding-bottom: 10px;
+  span { font-weight: 300; }
+}
 
 h2 {
   color: $h-blue;
@@ -72,6 +79,14 @@ p, ul, ol, dl {
   font-size: 16px;
   line-height: 23px;
   padding-bottom: 15px;
+}
+
+dt, dd { float: left; }
+
+dt {
+  clear: left;
+  color: $h-grey;
+  margin-right: 5px;
 }
 
 a {
@@ -170,11 +185,11 @@ Splash Hero
 }
 
 /*------------------------
-Splash Quotes
+Quotes
 ------------------------*/
 
 #quotes {
-  background: #000;
+  background: $black;
   text-align: center;
   
   blockquote {
@@ -188,6 +203,10 @@ Splash Quotes
      font-style: italic;
      margin-top: 15px;
      &:before { content: '-'; }
+     a {
+       color: #a2a2a2;
+       border: none;
+      }
     }
   }
 }
@@ -269,10 +288,48 @@ Work Page
 }
 
 /*------------------------
+Project Page
+------------------------*/
+
+.description { margin: 0 4% 10px; }
+
+#project {
+  padding: 30px 0;
+  position: relative;
+}
+
+#project img {
+  margin: 0 4% 15px;
+  width: 92%;
+}
+
+/*------------------------
+Info
+------------------------*/
+
+#info {
+  background: $bg-grey;
+  padding: 40px 0;
+  div {
+    padding: 0 6%;
+  }
+  img {
+    @include radius-big;
+    display: block;
+    margin: 0 auto 30px;
+    width: 60%;
+  }
+  h1 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+/*------------------------
 Clearfix
 ------------------------*/
 
-.clearfix:after, nav:after, section:after, footer:after {
+.clearfix:after, nav:after, section:after, footer:after, dl:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -349,6 +406,32 @@ and (min-width: 600px) {
 }
 
 @media only screen 
+and (min-width: 700px) {
+
+  h1 { font-size: 24px; }
+
+  #project { padding: 50px 0; }
+
+  .description {
+    float: right;
+    margin: 0 3%;
+    width: 35%;
+    div {
+      position: fixed;
+      padding-right: 3%;
+      width: 35%;
+    }
+  }
+
+  #project img {
+    float: left;
+    margin: 0 0 20px 3%;
+    width: 56%;
+  }
+
+}
+
+@media only screen 
 and (min-width: 768px) {
 
   header {
@@ -400,6 +483,8 @@ and (min-width: 768px) {
 
   #social { width: 42%; }
   #recent { width: 42%; }
+
+  #info div { padding: 0 10%; }
 
 }
 
@@ -453,6 +538,21 @@ and (min-width: 900px) {
     }
   }
 
+  #info {
+    padding: 60px 0;
+    div { padding: 0 6%; }
+    h1 { text-align: left; }
+    img {
+      float: left;
+      margin-right: 8%;
+      width: 42%;
+    }
+    .bio {
+      float: left;
+      width: 50%;
+    }
+  }
+
 }
 
 @media only screen 
@@ -466,7 +566,9 @@ and (min-width: 1100px) {
   header nav,
   #hero div,
   footer,
-  #work
+  #work,
+  #project,
+  #info div
   {
     @include structure;
   }
@@ -481,11 +583,44 @@ and (min-width: 1100px) {
     }
   }
 
+  .description {
+    float: right;
+    margin: 0 2%;
+    width: 32%;
+    div {
+      padding-right: 2%;
+      max-width: 350px;
+      width: 32%;
+    }
+  }
+
+  #project img {
+    margin-left: 5%;
+    max-width: 700px;
+    width: 55%;
+  }
+
+  #info {
+    padding: 80px 0;
+    div { padding: 0; }
+    img {
+      margin: 0 7% 0 10%;
+      width: 35%;
+    }
+    .bio {
+      float: left;
+      margin-right: 10%;
+      width: 38%;
+    }
+  }
+
 }
 
 @media only screen 
 and (min-width: 1300px) {
 
   #work { padding: 50px 0; }
+
+  #project img { margin-left: 8%; }
 
 }
