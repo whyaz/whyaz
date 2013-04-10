@@ -171,6 +171,16 @@ Splash Hero
     z-index: 1;
   }
   
+  #patrick {
+    background: transparent url(../images/hero-patrick-small.png) no-repeat 100% 100%;
+    bottom: 0;
+    height: 396px;
+    position: absolute;
+    right: 0;
+    width: 295px;
+    z-index: 1;
+  }
+  
   h1, p {
     background-color: rgba(40,17,15,.6);
     color: $white;
@@ -521,6 +531,13 @@ and (min-width: 900px) {
       right: -400px;
       width: 1037px;
     }
+    
+    #patrick {
+      background-image: url(../images/hero-patrick.png);
+      height:687px;
+      right: -50px;
+      width: 512px;
+    }
   
     h1 {
       font-size: 40px;
@@ -576,6 +593,7 @@ and (min-width: 900px) {
 and (min-width: 1100px) {
 
   #hero #lynn { right: -250px; }
+  #hero #patrick { right: 100px; }
   #hero h1, #hero p { width: 42%; }
 
   header li:last-child { border-right: 1px solid $border-grey; }

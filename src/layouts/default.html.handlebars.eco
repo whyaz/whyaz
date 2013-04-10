@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 <head>
 
   <meta charset="utf-8" />
@@ -16,8 +13,8 @@
   <%- @getBlock('styles').add(['/assets/css/reset.css','/assets/css/global.css']).toHTML() %>
 
   <!--[if lte IE 8]>
-  <link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" />
-  <script src="/assets/js/html5shiv.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" />
+    <script src="/assets/js/html5shiv.js"></script>
   <![endif]-->
 
   <!-- Favicon -->
