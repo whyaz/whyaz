@@ -47,6 +47,7 @@ body {
   background: #fff;
   color: $main-grey;
   font-size: 16px;
+  min-width: 300px;
 }
 
 body.work { background: $bg-grey; }
@@ -114,7 +115,7 @@ header {
   text-align: center;
   
   #home {
-    background: $black;
+    background: #f53947;
     border-bottom: 1px solid $border-grey;
     color: $white;
     display: block;
@@ -149,8 +150,9 @@ Splash Hero
 
 #hero {
   background:#d0cbb2 url(../images/hero-bg-small.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
+  -webkit-background-size: cover ;
   -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
   
@@ -329,6 +331,7 @@ Info
   h1 {
     text-align: center;
     padding-bottom: 20px;
+    span { display: block; }
   }
 }
 
@@ -348,6 +351,13 @@ Clearfix
 /*-----------------------------------
 Media Queries
 ------------------------------------*/
+
+@media only screen 
+and (min-width: 350px) {
+
+  #info h1 span { display: inline; }
+
+}
 
 @media only screen 
 and (min-width: 500px) {

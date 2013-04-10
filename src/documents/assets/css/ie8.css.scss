@@ -1,0 +1,221 @@
+/*------------------------
+Global styles
+------------------------*/
+
+h1 { font-size: 18px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+h4, h4 a { font-size: 14px; }
+
+p, ul, ol, dl {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.footnote { font-size: 12px; }
+
+/*------------------------
+Colors/Variables/Mixins
+------------------------*/
+
+$main-grey: #555;
+$border-grey: #e6e6e6;
+$bg-grey: #f7f7f7;
+$h-grey: #777;
+$white: #fff;
+$black: #000;
+$h-blue: #819d9b;
+$a-blue: #3a569e;
+$h-brown: #28110f;
+$p-brown: #625a4c;
+
+@mixin structure {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/*------------------------
+Structure
+------------------------*/
+
+header nav,
+#hero div,
+footer,
+#work,
+#project,
+#info div
+{
+  @include structure;
+}
+
+/*------------------------
+Header and Nav
+------------------------*/
+
+header {
+  text-align: left;
+
+  #home {
+    background: $white;
+    border-bottom: none;
+    color: $main-grey;
+    float: left;
+    padding: 30px 20px 10px;
+  }
+
+  ul {float: right; }
+
+  li {
+    display: block;
+    float: left;
+    text-align: center;
+    width: auto;
+    &:first-child { border-left: 1px solid $border-grey; }
+    a { padding: 30px 20px 10px; }
+  }
+}
+
+/*------------------------
+Splash Hero
+------------------------*/
+
+#hero {
+  background: url(../images/hero-bg.jpg) repeat 50% 0;
+
+  div { min-height: 550px; }
+
+  #lynn {
+    background: url(../images/hero-lynn.png) no-repeat 0 100%;
+    height:550px;
+    right: -340px;
+    width: 1037px;
+  }
+
+  h1, p {
+    display: block;
+  }
+
+  h1 {
+    color: $h-brown;
+    font-size: 30px;
+    margin: 0;
+    padding: 200px 0 10px 20px;
+  }
+
+  p {
+    color: $p-brown;
+    font-size: 23px;
+    line-height: 33px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    width: 43%;
+  }
+}
+
+/*------------------------
+Quotes
+------------------------*/
+
+#quotes blockquote {
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  width: 650px;
+  cite {margin-top: 50px; }
+}
+
+/*------------------------
+Footer
+------------------------*/
+
+#social a { background-image:  url(../images/social-ie.png); }
+
+footer { padding: 50px 0; }
+
+#intro {
+  width: 48%;
+  img {
+    border: 1px solid $border-grey;
+    float: left;
+    margin: 0 20px 30px 0;
+    padding: 5px;
+    width: 120px;
+  }
+  h2 { text-align: left; }
+}
+
+#intro, #social, #recent { float: left; }
+
+footer section { padding: 2%; }
+#social { width:14%; }
+#recent { width: 26%; }
+
+/*------------------------
+Work
+------------------------*/
+
+#work {
+  padding: 50px 1%;
+  li {
+    float: left;
+    margin: 1%;
+    width: 23%;
+    a {min-height: 285px; }
+  }
+}
+
+/*------------------------
+Projects
+------------------------*/
+
+#project { padding: 50px 0; }
+
+#project img {
+  float: left;
+  margin: 0 0 20px 5%;
+  max-width: 700px;
+  width: 58%;
+}
+
+.description {
+  float: right;
+  margin: 0 2%;
+  width: 32%;
+  div {
+    padding-right: 2%;
+    position: fixed;
+    max-width: 300px;
+    width: 32%;
+  }
+}
+
+/*------------------------
+Info
+------------------------*/
+
+#info {
+  padding: 80px 0;
+  div { padding: 0; }
+  h1 {
+    text-align: left;
+    span { display: inline; }
+  }
+  img {
+    background-color: #fff;
+    border: 1px solid $border-grey;
+    float: left;
+    margin: 0 7% 0 5%;
+    padding: 5px;
+    width: 35%;
+  }
+  .bio {
+    float: left;
+    margin-right: 5%;
+    width: 46%;
+  }
+}
+
+
+
+

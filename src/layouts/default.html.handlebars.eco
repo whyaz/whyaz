@@ -6,7 +6,7 @@
 <head>
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0;" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Site Properities -->
@@ -14,6 +14,11 @@
   <meta name="description" content="{{document.description}}" />
 
   <%- @getBlock('styles').add(['/assets/css/reset.css','/assets/css/global.css']).toHTML() %>
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" />
+  <script src="/assets/js/html5shiv.js"></script>
+  <![endif]-->
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="/icons/favicon.ico" />
@@ -48,7 +53,7 @@
   {{{ content }}}
 
   <!-- DocPad Scripts + Our Own -->
-  <%- @getBlock('scripts').add(['/vendor/log.js', '/vendor/modernizr.js']).toHTML() %>
+  <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
