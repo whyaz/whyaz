@@ -448,25 +448,7 @@ and (min-width: 600px) {
 and (min-width: 700px) {
 
   h1 { font-size: 24px; }
-
-  #project { padding: 50px 0; }
-
-  .description {
-    float: right;
-    margin: 0 3%;
-    width: 35%;
-    div {
-      position: fixed;
-      padding-right: 3%;
-      width: 35%;
-    }
-  }
-
-  #project img {
-    float: left;
-    margin: 0 0 20px 3%;
-    width: 56%;
-  }
+  #project img { max-width: 700px; }
 
 }
 
@@ -526,6 +508,25 @@ and (min-width: 768px) {
   #recent { width: 42%; }
 
   #info div { padding: 0 10%; }
+
+  #project { padding: 50px 0; }
+
+  .description {
+    float: right;
+    margin: 0 3%;
+    width: 35%;
+    div {
+      position: fixed;
+      padding-right: 3%;
+      width: 35%;
+    }
+  }
+
+  #project img {
+    float: left;
+    margin: 0 0 20px 3%;
+    width: 56%;
+  }
 
 }
 
