@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 
   <meta charset="utf-8" />
@@ -10,7 +10,7 @@
   <title>Lynn Fisher -- {{document.title}}</title>
   <meta name="description" content="{{document.description}}" />
 
-  <%- @getBlock('styles').add(['/assets/css/reset.css','/assets/css/global.css']).toHTML() %>
+  <%- @getBlock('styles').add(['/assets/css/global.css']).toHTML() %>
 
   <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" />
