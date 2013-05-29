@@ -29,16 +29,11 @@ $a-pink: #ffe2e4;
   max-width: 1300px;
 }
 
-@mixin radius-sm {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-@mixin radius-big {
-  -webkit-border-radius: 300px;
-  -moz-border-radius: 300px;
-  border-radius: 300px;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;
 }
 
 /*------------------------
@@ -246,7 +241,7 @@ footer {
 }
 
 #intro img {
-  @include radius-big;
+  @include border-radius(50%);
   display: block;
   margin: 20px auto;
   width: 150px;
@@ -255,7 +250,7 @@ footer {
 #intro h2 { text-align: center; }
 
 #social a {
-  @include radius-sm;
+  @include border-radius(3px);
   background: #333 url(../images/social.png) no-repeat;
   -webkit-background-size: auto 50px;
   -moz-background-size: auto 50px;
@@ -339,7 +334,7 @@ Info
     padding: 0 6%;
   }
   img {
-    @include radius-big;
+    @include border-radius(50%);
     display: block;
     margin: 0 auto 30px;
     width: 60%;
