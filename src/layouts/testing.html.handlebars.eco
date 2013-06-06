@@ -14,8 +14,9 @@
   <%- @getBlock('styles').add(['/assets/css/{{document.pageStyle}}']).toHTML() %>
 
   <!-- Typekit -->
+  <!-- removing for now
   <script type="text/javascript" src="//use.typekit.net/mot7pgg.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
 </head>
 
