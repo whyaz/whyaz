@@ -5,11 +5,11 @@ description: 'About Lynn Fisher, artist and designer out of Chandler, AZ.'
 bodyClass: 'info'
 ---
 
-  <section id="info">
-    <div class="clearfix">
-      <img src="/assets/images/lynnfisher2.jpg" alt="Lynn drinkin' some butterbeer, yo." />
-      <section class="bio">
-        <h1>RynnRynn Fisher <span>Artist &#38; Designer</span></h1>
+  <section class="lynnInfo">
+    <div class="container">
+      <img class="lynnInfo-pic" src="/assets/images/lynnfisher2.jpg" alt="Lynn drinkin' some butterbeer, yo." />
+      <section class="lynnInfo-bio">
+        <h1 class="lynnInfo-headline">RynnRynn Fisher <span class="lynnInfo-desc">Artist &#38; Designer</span></h1>
         <p>I came to this great nation when I was only 11 months old and was shot out of a t-shirt cannon across the Pacific. I settled in Scottsdale, Arizona where I attended pre-school and won my very first art contest. I was off to a good start.</p>
         <p>In high school, between pop-punk shows in the Nile basement, I taught myself HTML and made my very first website: a fansite for a local band I stalked, I mean liked.</p>
         <p>Later I studied fine arts at Arizona State University where I discovered a love for painting and mixed media sculpture.</p>
@@ -19,33 +19,57 @@ bodyClass: 'info'
       </section>
     </div>
   </section>
-  <section id="quotes">
-    <blockquote>
+  <section class="quote">
+    <blockquote class="quoteText">
       Couldn't sleep because I was thinking about CSS. Got up and ate a bunch of potato chips. It totally helped.
-      <cite><a href="http://twitter.com/lynnandtonic" title="@lynnandtonic" target="_blank">@lynnandtonic</a></cite>
+      <cite class="quoteSource"><a href="http://twitter.com/lynnandtonic" title="@lynnandtonic" target="_blank">@lynnandtonic</a></cite>
     </blockquote>
   </section>
-  <footer>
-    <section id="intro">
-      <img src="/assets/images/brave-at-heart-small.jpg" alt="" />
-      <h3>Recent work</h3>
+  <footer class="siteFooter container">
+    <section class="footerAbout footerSection">
+      <img class="footerAbout-pic" src="/assets/images/brave-at-heart-small.jpg" alt="Where Dwell the Brave at Heart" />
+      <h3 class="footerHeadline">Recent Work</h3>
       <p>A Harry Potter themed painting commission for a coworker's wedding anniversary. A super fun and geeky project for an awesome family. <a href="/work/where-dwell-the-brave-at-heart/" title="See it larger">See it larger</a>, if you're interested.</p>
     </section>
-    <section id="social">
-      <h3>On the webz</h3>
-      <a href="http://twitter.com/lynnandtonic" class="twitter" title="Twitter" target="_blank">Twitter</a>
-      <a href="http://instagram.com/lynnandtonic" class="instagram" title="Instagram" target="_blank">Instagram</a>
-      <a href="http://pinterest.com/lynnandtonic/" class="pinterest" title="Pinterest" target="_blank">Pinterest</a>
-      <a href="http://dribbble.com/lynnandtonic" class="dribbble" title="Dribbble" target="_blank">Dribbble</a>
-      <a href="http://lynnandtonicblog.com" class="wordpress" title="Blog" target="_blank">Blog</a>
-      <a href="http://blog.meltmedia.com/author/lfisher/" class="melt" title="meltmedia Blog" target="_blank">meltmedia Blog</a>
+    <section class="footerSocial footerSection">
+      <h3 class="footerHeadline">On the webz</h3>
+      <a  class="footerSocial-link twitter"
+          href="http://twitter.com/lynnandtonic"
+          title="Twitter" target="_blank">
+          Twitter</a>
+      <a  class="footerSocial-link instagram"
+          href="http://instagram.com/lynnandtonic"
+          title="Instagram" target="_blank">
+          Instagram</a>
+      <a  class="footerSocial-link pinterest"
+          href="http://pinterest.com/lynnandtonic/"
+          title="Pinterest" target="_blank">
+          Pinterest</a>
+      <a  class="footerSocial-link dribbble"
+          href="http://dribbble.com/lynnandtonic"
+          title="Dribbble"target="_blank">
+          Dribbble</a>
+      <a  class="footerSocial-link wordpress"
+          href="http://lynnandtonicblog.com"
+          title="Blog" target="_blank">
+          Blog</a>
+      <a  class="footerSocial-link melt"
+          href="http://blog.meltmedia.com/author/lfisher/"
+          title="meltmedia Blog" target="_blank">
+          meltmedia Blog</a>
     </section>
-    <section id="recent">
-      <h3>Recent writing</h3>
-      <ul>
-        <li><a href="http://thoughts.lynnandtonic.com/2013/05/14/the-most-important-trait-in-a-designer-mitiad/" title="The Most Important Trait in a Designer (MITIAD)">The Most Important Trait in a Designer (MITIAD)</a></li>
-        <li><a href="http://thoughts.lynnandtonic.com/2013/04/30/why-are-designers-so-bad-at-scoping/" title="Why are designers* so bad at scoping?">Why are designers* so bad at scoping?</a></li>
-        <li><a href="http://blog.meltmedia.com/2013/04/a-clients-prep-guide-for-a-responsive-project/" title="A Client's Prep Guide for a Responsive Project" target="_blank">A Client's Prep Guide for a Responsive Project</a></li>
+    <section class="footerWriting footerSection">
+      <h3 class="footerHeadline">Recent writing</h3>
+      <ul class="list">
+        <li class="listItem">
+          <a href="http://thoughts.lynnandtonic.com/2013/05/14/the-most-important-trait-in-a-designer-mitiad/" title="The Most Important Trait in a Designer (MITIAD)">The Most Important Trait in a Designer (MITIAD)</a>
+        </li>
+        <li class="listItem">
+          <a href="http://thoughts.lynnandtonic.com/2013/04/30/why-are-designers-so-bad-at-scoping/" title="Why are designers* so bad at scoping?">Why are designers* so bad at scoping?</a>
+        </li>
+        <li class="listItem">
+          <a href="http://blog.meltmedia.com/2013/04/a-clients-prep-guide-for-a-responsive-project/" title="A Client's Prep Guide for a Responsive Project" target="_blank">A Client's Prep Guide for a Responsive Project</a>
+        </li>
       </ul>
     </section>
   </footer>
