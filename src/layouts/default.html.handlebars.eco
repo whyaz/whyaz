@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lte IE 8]>     <html class="lte-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 
   <meta charset="utf-8" />
@@ -13,7 +14,6 @@
   <%- @getBlock('styles').add(['/assets/css/global.css']).toHTML() %>
 
   <!--[if lte IE 8]>
-    <link rel="stylesheet" type="text/css" href="/assets/css/ie8.css" />
     <script src="/assets/js/html5shiv.js"></script>
   <![endif]-->
 
@@ -25,13 +25,19 @@
 
 <body class="{{document.bodyClass}}">
 
-  <header>
-    <nav>
-      <a href="/" title="Lynn Fisher" id="home">Lynn Fisher <span>Artist &#38; Designer</span></a>
-      <ul class="clearfix">
-        <li><a href="/work/" title="Work">Work</a></li>
-        <li><a href="/info/" title="Info">Info</a></li>
-        <li><a href="http://thoughts.lynnandtonic.com" title="Thoughts">Thoughts</a></li>
+  <header class="siteHeader">
+    <nav class="siteNav container">
+      <a href="/" title="Lynn Fisher" class="siteNav-name">Lynn Fisher <span class="siteNav-name--desc">Artist &#38; Designer</span></a>
+      <ul class="list">
+        <li class="listItem">
+          <a class="siteNav-link" href="/work/" title="Work">Work</a>
+        </li>
+        <li class="listItem">
+          <a class="siteNav-link" href="/info/" title="Info">Info</a>
+        </li>
+        <li class="listItem">
+          <a class="siteNav-link" href="http://thoughts.lynnandtonic.com" title="Thoughts">Thoughts</a>
+        </li>
       </ul>
     </nav>
   </header>

@@ -2,42 +2,67 @@
 layout: 'default'
 title: 'Artist and Designer'
 description: 'Lynn Fisher is an artist and designer out of Chandler, AZ.'
+bodyClass: 'splash'
 ---
 
-  <section id="hero">
-    <div>
-      <div id="lynn"></div>
-      <h1>My name is Lynn Fisher.</h1>
-      <p>I live and work in Arizona. I love making things for the web and for walls.</p>
+  <section class="siteHero">
+    <div class="container">
+      <div class="siteHero-lynn"></div>
+      <h1 class="siteHero-headline">My name is Lynn Fisher.</h1>
+      <p class="siteHero-desc">I live and work in Arizona. I love making things for the web and for walls.</p>
     </div>
   </section>
-  <section id="quotes">
-    <blockquote>
+  <section class="quote">
+    <blockquote class="quoteText">
       When I discovered YouTube, I didn't work for five days. I did nothing. I watched Cookie Monster sing Chocolate Rain about a thousand times.
-      <cite>Michael Scott</cite>
+      <cite class="quoteSource">Michael Scott</cite>
     </blockquote>
   </section>
-  <footer>
-    <section id="intro">
-      <img src="/assets/images/lynnfisher.jpg" alt="Lynn drinkin' some butterbeer, yo." />
-      <h2>Oh, herro.</h2>
+  <footer class="siteFooter container">
+    <section class="footerAbout footerSection">
+      <img class="footerAbout-pic" src="/assets/images/lynnfisher.jpg" alt="Lynn drinkin' some butterbeer, yo." />
+      <h2 class="footerHeadline">Oh, herro.</h2>
       <p>I love cheesy pop music and embarrassing movies. I could talk about web design and <em>Battlestar Galactica</em> into the wee hours of the night. I drink diet soda like it's a competition. <a href="/info/" title="There's more">There's more</a>, if you're interested.</p>
     </section>
-    <section id="social">
-      <h3>On the webz</h3>
-      <a href="http://twitter.com/lynnandtonic" class="twitter" title="Twitter" target="_blank">Twitter</a>
-      <a href="http://instagram.com/lynnandtonic" class="instagram" title="Instagram" target="_blank">Instagram</a>
-      <a href="http://pinterest.com/lynnandtonic/" class="pinterest" title="Pinterest" target="_blank">Pinterest</a>
-      <a href="http://dribbble.com/lynnandtonic" class="dribbble" title="Dribbble" target="_blank">Dribbble</a>
-      <a href="http://lynnandtonicblog.com" class="wordpress" title="Blog" target="_blank">Blog</a>
-      <a href="http://blog.meltmedia.com/author/lfisher/" class="melt" title="meltmedia Blog" target="_blank">meltmedia Blog</a>
+    <section class="footerSocial footerSection">
+      <h3 class="footerHeadline">On the webz</h3>
+      <a  class="footerSocial-link twitter"
+          href="http://twitter.com/lynnandtonic"
+          title="Twitter" target="_blank">
+          Twitter</a>
+      <a  class="footerSocial-link instagram"
+          href="http://instagram.com/lynnandtonic"
+          title="Instagram" target="_blank">
+          Instagram</a>
+      <a  class="footerSocial-link pinterest"
+          href="http://pinterest.com/lynnandtonic/"
+          title="Pinterest" target="_blank">
+          Pinterest</a>
+      <a  class="footerSocial-link dribbble"
+          href="http://dribbble.com/lynnandtonic"
+          title="Dribbble"target="_blank">
+          Dribbble</a>
+      <a  class="footerSocial-link wordpress"
+          href="http://lynnandtonicblog.com"
+          title="Blog" target="_blank">
+          Blog</a>
+      <a  class="footerSocial-link melt"
+          href="http://blog.meltmedia.com/author/lfisher/"
+          title="meltmedia Blog" target="_blank">
+          meltmedia Blog</a>
     </section>
-    <section id="recent">
-      <h3>Recent writing</h3>
-      <ul>
-        <li><a href="http://thoughts.lynnandtonic.com/2013/05/14/the-most-important-trait-in-a-designer-mitiad/" title="The Most Important Trait in a Designer (MITIAD)">The Most Important Trait in a Designer (MITIAD)</a></li>
-        <li><a href="http://thoughts.lynnandtonic.com/2013/04/30/why-are-designers-so-bad-at-scoping/" title="Why are designers* so bad at scoping?">Why are designers* so bad at scoping?</a></li>
-        <li><a href="http://blog.meltmedia.com/2013/04/a-clients-prep-guide-for-a-responsive-project/" title="A Client's Prep Guide for a Responsive Project" target="_blank">A Client's Prep Guide for a Responsive Project</a></li>
+    <section class="footerWriting footerSection">
+      <h3 class="footerHeadline">Recent writing</h3>
+      <ul class="list">
+        <li class="listItem">
+          <a href="http://thoughts.lynnandtonic.com/2013/05/14/the-most-important-trait-in-a-designer-mitiad/" title="The Most Important Trait in a Designer (MITIAD)">The Most Important Trait in a Designer (MITIAD)</a>
+        </li>
+        <li class="listItem">
+          <a href="http://thoughts.lynnandtonic.com/2013/04/30/why-are-designers-so-bad-at-scoping/" title="Why are designers* so bad at scoping?">Why are designers* so bad at scoping?</a>
+        </li>
+        <li class="listItem">
+          <a href="http://blog.meltmedia.com/2013/04/a-clients-prep-guide-for-a-responsive-project/" title="A Client's Prep Guide for a Responsive Project" target="_blank">A Client's Prep Guide for a Responsive Project</a>
+        </li>
       </ul>
     </section>
   </footer>
