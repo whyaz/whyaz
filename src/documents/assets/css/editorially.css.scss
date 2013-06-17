@@ -126,10 +126,7 @@ p { padding-bottom: 20px; }
 Clearfix
 ------------------------*/
 
-.clearfix:after,
-.container:after,
-.siteHeader:after,
-.footerSection:after {
+.clearfix:after {
   @include clearfix;
 }
 
