@@ -43,7 +43,8 @@ h1, h2 {
 }
 
 hr {
-  margin: 40px auto 20px;
+  margin: 25px auto 10px;
+  @include min-width(700px) { margin: 40px auto 20px; }
   width: 30%;
 }
 
@@ -73,7 +74,7 @@ a {
   @include border-radius( 50% );
   display: block;
   margin: 0 auto 30px;
-  width: 30%;
+  @include min-width(700px) { width: 30%; }
 }
 
 .pageContent {
