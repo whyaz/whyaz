@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>     <html class="lte-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Site Properities -->
+  <title>Lynn Fisher -- {{document.title}}</title>
+  <meta name="description" content="{{document.description}}" />
+
+  <%- @getBlock('styles').add(['/assets/css/editorially.css']).toHTML() %>
+
+  <!--[if lte IE 8]>
+    <script src="/assets/js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Typekit -->
+  <script type="text/javascript" src="//use.typekit.net/mot7pgg.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+
+<body class="{{document.bodyClass}}">
+
+  <header class="pageHeader">
+    <img class="editoriallyTeam" src="/assets/images/editorially-team.jpg" alt="Editorially Team" />
+  </header>
+  <section class="pageContent">
+    <div class="container">
+      {{{ content }}}
+    </div>
+  </section>
+
+  <!-- DocPad Scripts + Our Own -->
+  <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30574510-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>
