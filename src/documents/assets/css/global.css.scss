@@ -1,7 +1,7 @@
 /*------------------------
-lynnandtonic.com
+WHYAZ
 
-Lynn Fisher 2013
+meltmedia 2013
 ------------------------*/
 
 /*-- scss imports --*/
@@ -13,45 +13,34 @@ Lynn Fisher 2013
 Fonts / Colors / Variables
 ------------------------*/
 
-@mixin georgia { font-family: Georgia, Times, serif; }
-@mixin museo-sans { font-family: "museo-sans", Helvetica, Arial, sans-serif; }
-
-$grey-copy: #555;
-$grey-border: #e6e6e6;
-$grey-bg: #f7f7f7;
-$grey-header: #777;
-$grey-quote: #ececec;
-$grey-cite: #a2a2a2;
 $white: #fff;
 $black: #000;
-$blue-header: #819d9b;
-$blue-link: #3a569e;
-$brown-header: #28110f;
-$brown-copy: #625a4c;
-$pink-bg: #f53947;
-$pink-copy: #ffe2e4;
 
-$common-border: 1px solid $grey-border;
-$font-bold: 600;
-$font-normal: 300;
+$blue-intro: #caedef;
+$blue-weather: #aae3eb;
 
-$twitter-blue: #2daae1;
-$instagram-green: #69cd97;
-$pinterest-red: #cb2027;
-$dribbble-pink: #ef558f;
-$wordpress-blue: #308bc2;
-$melt-blue: #97c0e6;
+$brown-desert: #b1ad83;
 
+$green-cactus: #96d882;
+$pink-flower: #df659c;
 
-@mixin link-border {
-  border-bottom: 1px dotted $blue-link;
-  color: $blue-link;
+$flag-blue: #475163;
+$flag-red: #ba545e;
+$flag-gold: #bc8e68;
+$flag-yellow: #f4eb93;
+
+$shadow-light: rgba(0,0,0,.13);
+
+@mixin pseudo {
+  content: '';
+  display: block;
+  position: absolute;
 }
 
-@mixin structure {
-  margin: 0 auto;
-  max-width: 1300px;
-}
+@mixin box-shadow--tall { @include box-shadow(8px,8px,0,$shadow-light); }
+@mixin box-shadow--short { @include box-shadow(4px,4px,0,$shadow-light); }
+@mixin text-shadow--tall { text-shadow: 8px 8px 0 $shadow-light; }
+@mixin text-shadow--short { text-shadow: 4px 4px 0 $shadow-light; }
 
 /*------------------------
 Global styles
@@ -59,533 +48,229 @@ Global styles
 
 html { -webkit-text-size-adjust: none; }
 
-body {
-  color: $grey-copy;
-  font-size: 16px;
-  min-width: 300px;
-  @include georgia;
+body { 
+  font-family: "ff-tisa-web-pro", Georgia, Times, serif;
+  text-align: center;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1300px;
+.siteSection {
+  position: relative;
+  padding: 100px 30px 200px;
 }
-
-h1, h2, h3, h4 { @include museo-sans; }
-
-h1 {
-  font-size: 20px;
-  @include min-width(700px) { font-size: 24px; }
-}
-
-h2 {
-  color: $blue-header;
-  font-size: 25px;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: $grey-header;
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-
-h4, h4 a {
-  color: $grey-copy;
-  font-size: 16px;
-}
-
-p, ul, ol, dl {
-  line-height: 23px;
-  padding-bottom: 15px;
-}
-
-a { text-decoration: none; }
-
-em { font-style: italic; }
-
-
-
-/*------------------------
-Header and Main Nav
-------------------------*/
-
-$padding-med: 30px 20px 10px;
-$padding-lrg: 50px 20px 20px;
 
 .siteHeader {
-  background: $white;
-  border-bottom: $common-border;
-  @include museo-sans;
-  @include max-width(767px) { text-align: center; }
-  .siteNav-name {
-    color: $grey-copy;
-    display: block;
-    font-size: 18px;
-    font-weight: $font-bold;
-    padding: 15px;
-    @include max-width(767px) {
-      background: $pink-bg;
-      border-bottom: $common-border;
-      color: $white;
-    }
-    @include min-width(768px) {
-      float: left;
-      padding: $padding-med;
-    }
-    @include min-width(900px) {
-      padding: $padding-lrg;
-    }
-  }
-  .siteNav-name--desc { font-weight: $font-normal; }
-  .list {
-    padding-bottom: 0;
-    @include min-width(768px) { float: right; }
-  }
-  .listItem {
-    float: left;
-    @include max-width(767px) { width: 33.33%; }
-    .siteNav-link {
-      border-right: $common-border;
-      color: $grey-copy;
-      display: block;
-      padding: 10px;
-      @include min-width(768px) { padding: $padding-med; }
-      @include min-width(900px) { padding: $padding-lrg; }
-    }
-    &:first-child {
-      .siteNav-link {
-        @include min-width(768px) { border-left: $common-border; }
-      }
-    }
-    &:last-child {
-      .siteNav-link {
-        @include max-width(1099px) { border-right: none; }
-      }
-    }
-  }
-}
-
-.info .siteNav-name { 
-    @include max-width(767px) { background: $black; }
-  }
-
-/*------------------------
-Splash Hero Space
-------------------------*/
-
-.siteHero {
-  background: #d0cbb2 no-repeat center center fixed;
-  @include background-cover;
-  overflow: hidden;
-  @include museo-sans;
-  @include max-width(899px) { background-image: url(../images/hero-bg-small.jpg); }
-  @include min-width(900px) { background-image: url(../images/hero-bg.jpg); }
-  .container {
-    min-height: 420px;
-    position: relative;
-    @include min-width(900px) { min-height: 740px; }
-  }
-}
-
-.siteHero-lynn {
-  background: transparent no-repeat 100% 100%;
-  bottom: 0;
-  position: absolute;
-  z-index: 1;
-  @include max-width(899px) {
-    background-image: url(../images/hero-lynn-small.png);
-    height: 397px;
-    right: 0;
-    width: 419px;
-  }
-  @include min-width(900px) {
-    background-image: url(../images/hero-lynn.png);
-    height: 687px;
-    right: -400px;
-    width: 1037px;
-  }
-  @include min-width(1100px) { right: -250px; }
-}
-
-.siteHero-patrick {
-  background: transparent no-repeat 100% 100%;
-  bottom: 0;
-  position: absolute;
-  z-index: 1;
-  @include max-width(899px) {
-    background-image: url(../images/hero-patrick-small.png);
-    height: 396px;
-    right: 0;
-    width: 295px;
-  }
-  @include min-width(900px) {
-    background-image: url(../images/hero-patrick.png);
-    height:687px;
-    right: -50px;
-    width: 512px;
-  }
-  @include min-width(1100px) { right: 100px; }
-}
-
-/* styles shared by the h1 and p */
-.siteHero-headline,
-.siteHero-desc {
-  position: relative;
-  z-index: 5;
-  @include max-width(599px) {
-    background-color: rgba(40,17,15,.6);
-    color: $white;
-    display: inline-block;
-  }
-  @include min-width(600px) {
-    margin: 0;
-    margin-left: 30px;
-    width: 49%;
-  }
-  @include min-width(768px) {
-    margin-left: 50px;
-    width: 54%;
-  }
-  @include min-width(1100px) { width: 42%; }
-}
-
-.siteHero-headline {
-  @include max-width(599px) {
-    font-size: 20px;
-    padding: 10px;
-    margin: 30px 15px 10px;
-  }
-  @include min-width(600px) {
-    color: $brown-header;
-    font-size: 25px;
-    padding: 100px 0 10px;
-  }
-  @include min-width(768px) {
-    font-size: 32px;
-    padding-top: 120px;
-  }
-  @include min-width(900px) {
-    font-size: 40px;
-    padding: 250px 0 10px;
-  }
-}
-
-.siteHero-desc {
-  @include max-width(599px) {
-    margin: 0 15px 10px;
-    padding: 8px;
-    width: 76%; 
-  }
-  @include min-width(600px) {
-    color: $brown-copy;
-    font-size: 20px;
-    line-height: 30px;
-    padding: 0;
-  }
-  @include min-width(768px) {
-    font-size: 25px;
-    line-height: 35px;
-  }
-  @include min-width(900px) {
-    font-size: 30px;
-    line-height: 40px;
-  }
-}
-
-/*------------------------
-Quotes Section
-------------------------*/
-
-.quote {
-  background: $black;
+  @include text-shadow--short;
+  color: #343434;
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 60px;
   text-align: center;
-  @include museo-sans;
-  .quoteText {
-    color: $grey-quote;
-    line-height: 24px;
-    padding: 30px 20px;
-    @include min-width(600px) {
-      margin: 0 auto;
-      padding: 50px 0;
-      max-width: 600px;
-    }
-    @include min-width(768px) {
-      font-size: 18px;
-      line-height: 26px;
-      padding: 60px 20px;
-      max-width: 650px;
-    }
-    @include min-width(900px) {
-      font-size: 20px;
-      line-height: 30px;
-      padding-top: 100px;
-      padding-bottom: 80px;
-    }
+  text-transform: uppercase;
+}
+
+.siteContent {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 auto;
+  max-width: 1000px;
+  .icon {
+    min-height: 200px;
+    padding-top: 30px;
   }
-  .quoteSource {
-    color: $grey-cite;
-    display: block;
-    font-style: italic;
-    margin-top: 15px;
-    @include georgia;
-    @include min-width(900px) { margin-top: 50px; }
-    &:before { content: '-'; }
-    a { color: $grey-cite; }
+  .icon-left {
+    padding-left: 150px;
+    text-align: right;
+  }
+  .icon-right {
+    padding-right: 150px;
+    text-align: left;
+  }
+  .icon-img {
+    @include pseudo;
   }
 }
 
 /*------------------------
-Footer
+Intro section
 ------------------------*/
 
-.siteFooter {
-  padding: 30px 0;
-  @include min-width(600px) { padding: 50px 0; }
-  .footerSection {
-    padding: 0 20px 30px;
-    @include min-width(600px) { padding: 10px 4%; }
-    @include min-width(900px) { padding: 2%; }
-  }
-  a { @include link-border; }
-}
-
-.footerAbout {
-  @include min-width(900px) {
-    float: left;
-    width: 45%;
-  }
-  .footerAbout-pic {
-    display: block;
-    margin: 20px auto;
-    width: 150px;
-    @include border-radius(50%);
-    @include min-width(600px) {
-      float: left;
-      margin: 0 30px 30px 0;
-    }
-  }
-  .footerHeadline {
-    @include max-width(599px) { text-align: center; }
+.intro {
+  background: $blue-intro;
+  .siteHeader {
+    @include text-shadow--tall;
+    font-size: 150px;
+    letter-spacing: 20px;
   }
 }
 
-/* styles shared by social and writing sections */
-.footerSocial,
-.footerWriting {
-  @include min-width(600px) { float: left; }
-  @include min-width(768px) { width: 42%; }
+@mixin flag-stripe {
+  @include pseudo;
+  border-left: 170px solid $flag-yellow;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
 }
 
-.footerSocial {
-  @include min-width(600px) { width: 30%; }
-  @include min-width(900px) { width: 14%; }
-  .footerSocial-link {
-    background: $grey-copy url(../images/social.png) no-repeat;
-    border: none;
-    display: block;
-    float: left;
-    height: 50px;
-    margin: 0 5px 5px 0;
-    text-indent: -9999em;
-    width: 50px;
-    @include background-size(auto, 50px);
-    @include border-radius(3px);
-    @include min-width(900px) { margin: 0 8px 8px 0; }
-  }
-  .twitter   { background-color: $twitter-blue;     background-position: 0 0;}
-  .instagram { background-color: $instagram-green;  background-position: -50px 0 }
-  .pinterest { background-color: $pinterest-red;    background-position: -100px 0 }
-  .dribbble  { background-color: $dribbble-pink;    background-position: -150px 0 }
-  .wordpress { background-color: $wordpress-blue;   background-position: -200px 0 }
-  .melt      { background-color: $melt-blue;        background-position: -250px 0 }
-}
-
-.footerWriting {
-  @include min-width(600px) { width: 54%; }
-  @include min-width(900px) { width: 28%; }
-  .list {
-    list-style: none;
-    margin-left: 0;
-    .listItem { padding: 7px 0; }
-  }
-}
-
-/*------------------------
-Work Page
-------------------------*/
-
-.work { background: $grey-bg; }
-
-.portfolio {
-  padding: 30px 4%;
-  @include museo-sans;
-  @include min-width(500px) { padding: 40px 2%; }
-  @include min-width(1100px) { padding: 50px 1%; }
-  @include min-width(1300px) { padding: 50px 0; }
-  .projectList {
-    list-style: none;
-    margin: 0;
-  }
-  .projectItem {
-    background: $white;
-    margin-bottom: 4%;
-    @include min-width(500px) {
-      float: left;
-      margin: 2%;
-      width: 46%;
-    }
-    @include width-range(500px, 899px) {
-      &:nth-child(2n+1) { clear: left; }
-    }
-    @include min-width(900px) { width: 29.333%; }
-    @include width-range(900px, 1099px) {
-      &:nth-child(3n+1) { clear: left; }
-    }
-    @include min-width(1100px) {
-      margin: 1%;
-      width: 23%;
-    }
-    @include min-width(1100px) {
-      &:nth-child(4n+1) { clear: left; }
-    }
-  }
-  .projectItem-link {
-    border: $common-border;
-    color: $grey-copy;
-    display: block;
-  }
-  .projectItem-pic { width: 100%; }
-  .projectItem-title { margin: 10px 15px 0; }
-  .projectItem-desc {
-    font-size: 14px;
-    margin: 0 15px;
-  }
-}
-
-/*------------------------
-Project Pages
-------------------------*/
-
-.project {
-  padding: 30px 0;
+.flag {
+  @include box-shadow--tall;
+  background: $flag-blue;
+  background: linear-gradient(to top, $flag-blue 0%,$flag-blue 49%,$flag-red 49%,$flag-red 99%);
+  margin: 0 auto;
+  height: 200px;
+  overflow: hidden;
   position: relative;
-  @include min-width(768px) { padding: 50px 0; }
-  a { @include link-border; }
-}
-
-.projectDetail {
-  margin: 0 4% 10px;
-  @include min-width(768px) {
-    float: right;
-    margin: 0 3%;
-    width: 35%;
-  }
-  @include min-width(1100px) {
-    margin: 0 2%;
-    width: 32%;
-  }
-  .container--fixed {
-    @include min-width(768px) {
-      position: fixed;
-      padding-right: 3%;
-      width: 35%;
-  }
-    @include min-width(1100px) {
-      margin-right: 2%;
-      max-width: 350px;
-      width: 32%;
+  width: 300px;
+  .flag-stripes--left {
+    @include flag-stripe;
+    @include rotate(18deg);
+    left: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(28deg);
+      right: -12px;
+      bottom: 19px;
+    }
+    &:after {
+      @include rotate(54deg);
+      right: -35px;
+      bottom: 47px;
     }
   }
-  .projectDetail-title {
-    color: $blue-header;
-    padding-bottom: 10px;
+  .flag-stripes--right {
+    @include rotate(162deg);
+    @include flag-stripe;
+    right: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(-28deg);
+      right: -12px;
+      bottom: -53px;
+    }
+    &:after {
+      @include rotate(-54deg);
+      right: -35px;
+      bottom: -79px;
+    }
   }
-  .projectDetail-meta--term {
-    float: left;
-    clear: left;
-    color: $grey-header;
-    margin-right: 5px;
+  &:after {
+    color: $flag-gold;
+    content: '\2605';
+    display: block;
+    font-size: 60px;
+    margin: 0 auto;
+    position: relative;
+    top: 60px;
+    width: 60px;
   }
 }
 
-.projectPic {
-  margin: 0 4% 15px;
-  width: 92%;
-  @include min-width(700px) { max-width: 700px; }
-  @include min-width(768px) {
-    float: left;
-    margin: 0 0 20px 3%;
-    width: 56%;
+/*
+.flag-test {
+  @include box-shadow--tall;
+  background: $flag-blue;
+  margin: 50px auto;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  &:before {
+    @include pseudo;
+    background:
+      linear-gradient(167deg,rgba(186,84,94,0) 80%,$flag-red 80%,$flag-red),
+      linear-gradient(154deg,rgba(244,235,147,0) 70%,$flag-yellow 70%,$flag-yellow),
+      linear-gradient(135deg,rgba(186,84,94,0) 63%,$flag-red 63%,$flag-red),
+      linear-gradient(122deg,rgba(244,235,147,0) 59%,$flag-yellow 59%,$flag-yellow),
+      linear-gradient(109deg,rgba(186,84,94,0) 55%,$flag-red 55%,$flag-red),
+      linear-gradient(98deg,rgba(244,235,147,0) 52%,$flag-yellow 52%,$flag-yellow),
+      linear-gradient(82deg,rgba(186,84,94,0) 48%,$flag-red 48%,$flag-red),
+      linear-gradient(70deg,rgba(244,235,147,0) 45%,$flag-yellow 45%,$flag-yellow),
+      linear-gradient(57deg,rgba(186,84,94,0) 41%,$flag-red 41%,$flag-red),
+      linear-gradient(45deg,rgba(244,235,147,0) 37%,$flag-yellow 37%,$flag-yellow),
+      linear-gradient(27deg,rgba(186,84,94,0) 30%,$flag-red 30%,$flag-red),
+      linear-gradient(14deg,rgba(244,235,147,0) 21%,$flag-yellow 21%,$flag-yellow);
+    background-color: $flag-red;
+    height: 100px;
+    width: 300px;
   }
-  @include min-width(1100px) {
-    margin-left: 5%;
-    width: 55%;
+  &:after {
+    color: $flag-gold;
+    content: '\2605';
+    display: block;
+    font-size: 60px;
+    margin: 0 auto;
+    position: relative;
+    top: 65px;
+    width: 60px;
   }
-  @include min-width(1300px) { margin-left: 8%; } 
+} */
+
+/*------------------------
+Desert section
+------------------------*/
+
+.desert {
+  background: $brown-desert;
+  &:before {
+    @include pseudo;
+    @include box-shadow--short;
+    background: $green-cactus;
+    background: linear-gradient(to right, $green-cactus 0%,$green-cactus 60%,darken($green-cactus,10%) 60%,darken($green-cactus,10%) 99%);
+    border-radius: 50% 50% 0 0;
+    height: 90px;
+    left: 50%;
+    margin-left: -40px;
+    top: -50px;
+    width: 80px;
+  }
+  &:after {
+    @include pseudo;
+    background: $flag-yellow;
+    border-radius: 50%;
+    box-shadow: 7px -7px 0 3px $pink-flower,
+                -7px -7px 0 3px $pink-flower,7px 
+                7px 0 3px darken($pink-flower,10%),
+                -7px 7px 0 3px darken($pink-flower,10%),
+                10px -3px 0 3px $shadow-light;
+    height: 10px;
+    left: 50%;
+    margin-left: 10px;
+    top: -45px;
+    width: 10px;
+  }
 }
 
 /*------------------------
-Info Page
+Weather section
 ------------------------*/
 
-.lynnInfo {
-  background: $pink-bg;
-  color: $white;
-  padding: 40px 0;
-  @include min-width(900px) { padding: 60px 0; }
-  @include min-width(1100px) { padding: 80px 0; }
-  a {
-    @include link-border;
-    border-color: $pink-copy;
-    color: $pink-copy;
+.weather {
+  background: $blue-weather;
+  &:before {
+    @include pseudo;
+    @include box-shadow--short;
+    background: $white;
+    border-radius: 100px;
+    height: 30px;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    top: -10px;
+    z-index: 2;
   }
-  .container {
-    padding: 0 6%;
-    @include width-range(768px, 899px) { padding: 0 10%; }
-    @include min-width(1100px) { padding: 0; }
+  &:after {
+    @include pseudo;
+    border-radius: 50%;
+    background: $white;
+    box-shadow: 50px -2px 0 12px $white,
+                56px 0 0 10px $shadow-light;
+    height: 50px;
+    left: 50%;
+    margin-left: -55px;
+    top: -40px;
+    width: 50px;
   }
-  .lynnInfo-pic {
-    display: block;
-    margin: 0 auto 30px;
-    width: 60%;
-    @include border-radius(50%);
-    @include min-width(900px) {
-      float: left;
-      margin-right: 8%;
-      width: 42%;
-    }
-    @include min-width(1100px) {
-      margin: 0 7% 0 10%;
-      width: 35%;
-    }
-  }
-  .lynnInfo-bio {
-    @include min-width(900px) {
-      float: left;
-      width: 50%;
-    }
-    @include min-width(1100px) {
-      margin-right: 10%;
-      width: 38%;
-    }
-  }
-  .lynnInfo-headline {
-    color: $pink-copy;
-    padding-bottom: 20px;
-    @include max-width(899px) { text-align: center; }
-  }
-  .lynnInfo-desc {
-    font-weight: $font-normal;
-    @include max-width(349px) { display: block }
-  }
-}
-
-.footnote {
-  font-size: 13px;
-  font-style: italic;
-  line-height: 20px;
-  padding-top: 10px;
 }
 
 /*------------------------
@@ -593,9 +278,7 @@ Clearfix
 ------------------------*/
 
 .clearfix:after,
-.container:after,
-.siteHeader:after,
-.footerSection:after {
+.container:after {
   @include clearfix;
 }
 
@@ -603,7 +286,6 @@ Clearfix
 Internet Explorer (IE)
 ------------------------*/
 
-@import "ie";
 
 
 

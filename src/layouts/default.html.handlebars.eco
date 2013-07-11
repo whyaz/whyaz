@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Site Properities -->
-  <title>Lynn Fisher -- {{document.title}}</title>
+  <title>whyaz -- {{document.title}}</title>
   <meta name="description" content="{{document.description}}" />
 
   <%- @getBlock('styles').add(['/assets/css/global.css']).toHTML() %>
@@ -18,45 +18,18 @@
   <![endif]-->
 
   <!-- Typekit -->
-  <script type="text/javascript" src="//use.typekit.net/mot7pgg.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/xup0pch.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 
 </head>
 
 <body class="{{document.bodyClass}}">
 
-  <header class="siteHeader">
-    <nav class="siteNav container">
-      <a href="/" title="Lynn Fisher" class="siteNav-name">Lynn Fisher <span class="siteNav-name--desc">Artist &#38; Designer</span></a>
-      <ul class="list">
-        <li class="listItem">
-          <a class="siteNav-link" href="/work/" title="Work">Work</a>
-        </li>
-        <li class="listItem">
-          <a class="siteNav-link" href="/info/" title="Info">Info</a>
-        </li>
-        <li class="listItem">
-          <a class="siteNav-link" href="http://thoughts.lynnandtonic.com" title="Thoughts">Thoughts</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
   {{{ content }}}
 
   <!-- DocPad Scripts + Our Own -->
   <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
-
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-30574510-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
 
 </body>
 </html>

@@ -16,7 +16,6 @@
 @mixin background-cover {
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -39,6 +38,20 @@
     -moz-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
   }
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform:    rotate($deg);
+  -ms-transform:     rotate($deg);
+  transform:         rotate($deg);
+}
+
+@mixin scale($xvalue,$yvalue) {
+  -webkit-transform: scale($xvalue,$yvalue);
+  -moz-transform:    scale($xvalue,$yvalue);
+  -ms-transform:     scale($xvalue,$yvalue);
+  transform:         scale($xvalue,$yvalue);
 }
 
 @mixin gradient($url, $repeat, $from, $to) {
