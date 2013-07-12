@@ -8,28 +8,11 @@ meltmedia 2013
 
 @import "reset";
 @import "mixins";
+@import "colors";
 
 /*------------------------
 Fonts / Colors / Variables
 ------------------------*/
-
-$white: #fff;
-$black: #000;
-
-$blue-intro: #caedef;
-$blue-weather: #aae3eb;
-
-$brown-desert: #b1ad83;
-
-$green-cactus: #96d882;
-$pink-flower: #df659c;
-
-$flag-blue: #475163;
-$flag-red: #ba545e;
-$flag-gold: #bc8e68;
-$flag-yellow: #f4eb93;
-
-$shadow-light: rgba(0,0,0,.13);
 
 @mixin pseudo {
   content: '';
@@ -37,10 +20,10 @@ $shadow-light: rgba(0,0,0,.13);
   position: absolute;
 }
 
-@mixin box-shadow--tall { @include box-shadow(8px,8px,0,$shadow-light); }
-@mixin box-shadow--short { @include box-shadow(4px,4px,0,$shadow-light); }
-@mixin text-shadow--tall { text-shadow: 8px 8px 0 $shadow-light; }
-@mixin text-shadow--short { text-shadow: 4px 4px 0 $shadow-light; }
+@mixin box-shadow--tall { @include box-shadow(8px,8px,0,$shadow); }
+@mixin box-shadow--short { @include box-shadow(4px,4px,0,$shadow); }
+@mixin text-shadow--tall { text-shadow: 8px 8px 0 $shadow; }
+@mixin text-shadow--short { text-shadow: 4px 4px 0 $shadow; }
 
 /*------------------------
 Global styles
@@ -55,12 +38,11 @@ body {
 
 .siteSection {
   position: relative;
-  padding: 100px 30px 200px;
+  padding: 100px 30px 100px;
 }
 
 .siteHeader {
   @include text-shadow--short;
-  color: #343434;
   font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
   font-size: 40px;
   font-weight: 900;
@@ -70,24 +52,23 @@ body {
 }
 
 .siteContent {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 30px;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 900px;
+  position: relative;
   .icon {
-    min-height: 200px;
-    padding-top: 30px;
-  }
-  .icon-left {
-    padding-left: 150px;
-    text-align: right;
-  }
-  .icon-right {
-    padding-right: 150px;
-    text-align: left;
-  }
-  .icon-img {
-    @include pseudo;
+    float: left;
+    padding-top: 180px;
+    position: relative;
+    margin: 0 5% 15%;
+    width: 40%;
+    &:nth-child(2n+1) { clear: left; }
+    &:before, &:after, .icon-img { 
+      @include pseudo; 
+      left: 50%;
+    }
+    .icon-img:before, .icon-img:after { @include pseudo; }
   }
 }
 
@@ -96,7 +77,8 @@ Intro section
 ------------------------*/
 
 .intro {
-  background: $blue-intro;
+  background: $intro-blue;
+  padding-bottom: 200px;
   .siteHeader {
     @include text-shadow--tall;
     font-size: 150px;
@@ -114,7 +96,10 @@ Intro section
 .flag {
   @include box-shadow--tall;
   background: $flag-blue;
-  background: linear-gradient(to top, $flag-blue 0%,$flag-blue 49%,$flag-red 49%,$flag-red 99%);
+  background: linear-gradient(to top, $flag-blue 0%,
+                                      $flag-blue 49%,
+                                      $flag-red 49%,
+                                      $flag-red 99%);
   margin: 0 auto;
   height: 200px;
   overflow: hidden;
@@ -211,33 +196,169 @@ Desert section
 ------------------------*/
 
 .desert {
-  background: $brown-desert;
+  background: $desert-brown;
   &:before {
     @include pseudo;
     @include box-shadow--short;
-    background: $green-cactus;
-    background: linear-gradient(to right, $green-cactus 0%,$green-cactus 60%,darken($green-cactus,10%) 60%,darken($green-cactus,10%) 99%);
+    background: $cactus-green;
+    background: linear-gradient(to right, $cactus-green 0%,
+                                          $cactus-green 60%,
+                                          darken($cactus-green,10%) 60%,
+                                          darken($cactus-green,10%) 99%);
     border-radius: 50% 50% 0 0;
     height: 90px;
     left: 50%;
     margin-left: -40px;
-    top: -50px;
+    top: -60px;
     width: 80px;
   }
   &:after {
     @include pseudo;
     background: $flag-yellow;
     border-radius: 50%;
-    box-shadow: 7px -7px 0 3px $pink-flower,
-                -7px -7px 0 3px $pink-flower,7px 
-                7px 0 3px darken($pink-flower,10%),
-                -7px 7px 0 3px darken($pink-flower,10%),
-                10px -3px 0 3px $shadow-light;
+    box-shadow: 7px -7px 0 3px $flower-pink,
+                -7px -7px 0 3px $flower-pink,7px 
+                7px 0 3px darken($flower-pink,10%),
+                -7px 7px 0 3px darken($flower-pink,10%),
+                10px -3px 0 3px $shadow;
     height: 10px;
     left: 50%;
     margin-left: 10px;
-    top: -45px;
+    top: -55px;
     width: 10px;
+  }
+}
+
+.meter {
+  &:before {
+    @include box-shadow--tall;
+    background: #ccc;
+    background: linear-gradient(to left,  $meter-grey 0%,
+                                          $meter-grey 49%,
+                                          lighten($meter-grey,10%) 49%,
+                                          lighten($meter-grey,10%) 99%);
+    border-radius: 50%;
+    height: 140px;
+    margin-left: -70px;
+    top: 0;
+    width: 140px;
+  }
+  &:after {
+    background: linear-gradient(to left,  lighten($meter-grey,15%) 0%,
+                                          lighten($meter-grey,15%) 45%,
+                                          lighten($meter-grey,20%) 45%,
+                                          lighten($meter-grey,20%) 99%);
+    border-radius: 50%;
+    height: 110px;
+    margin-left: -55px;
+    top: 15px;
+    width: 110px;
+  }
+  .icon-img {
+    background: $white;
+    height: 15px;
+    margin-left: -25px;
+    top: 40px;
+    width: 50px;
+    z-index: 2;
+    &:before {
+      background: $meter-grey-drk;
+      height: 8px;
+      left: 20px;
+      top: 28px;
+      width: 45px;
+    }
+    &:after {
+      background: $meter-grey-drk;
+      height: 50px;
+      left: 15px;
+      top: -8px;
+      width: 6px;
+      -webkit-transform: rotate(-35deg);
+    }
+  }
+}
+
+.trees {
+  &:before {
+    @include triangle(30px);
+    border-bottom: 60px solid $shadow;
+    margin-left: 20px;
+    top: 54px;
+  }
+  &:after {
+    @include triangle(30px);
+    border-bottom: 60px solid darken($tree-green,8%);
+    margin-left: 15px;
+    top: 50px;
+  }
+  .icon-img {
+    @include triangle(60px);
+    border-bottom: 140px solid $shadow;
+    margin-left: -52px;
+    top: 8px;
+    z-index: 2;
+    &:before {
+      @include triangle(60px);
+      border-bottom: 140px solid $tree-green;
+      margin-left: -68px;
+      top: -8px;
+    }
+    &:after {
+      border-bottom: 140px solid lighten($tree-green,3%);
+      border-left: 60px solid transparent;
+      margin-left: -68px;
+      top: -8px;
+
+    }
+  }
+}
+
+.tube {
+  &:before {
+    @include box-shadow--tall;
+    border-bottom: 70px solid $white;
+    border-top: 70px solid $flag-yellow;
+    border-left: 70px solid $flag-red;
+    border-right: 70px solid $tube-blue;
+    border-radius: 50%;
+    margin-left: -70px;
+    top: 0;
+  }
+  &:after {
+    background: $desert-brown;
+    border-radius: 50%;
+    box-shadow: inset 8px 8px 0 $shadow;
+    height: 60px;
+    margin-left: -30px;
+    top: 40px;
+    width: 60px;
+    z-index: 2;
+  }
+  .icon-img {
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,.6);
+    clip: rect(0px,60px,60px,0px);
+    height: 120px;
+    margin-left: -62px;
+    top: 8px;
+    width: 120px;
+  }
+}
+
+.snow {
+  &:before {
+    background: $white;
+    border-radius: 50%;
+    box-shadow: 8px 8px 0 0 $shadow,
+                -55px 60px 0 5px $white,
+                -47px 68px 0 5px $shadow,
+                45px 80px 0 8px $white,
+                53px 88px 0 8px $shadow;
+    height: 60px;
+    margin-left: -40px;
+    top: 0;
+    width: 60px;
   }
 }
 
@@ -246,7 +367,7 @@ Weather section
 ------------------------*/
 
 .weather {
-  background: $blue-weather;
+  background: $weather-blue;
   &:before {
     @include pseudo;
     @include box-shadow--short;
@@ -264,7 +385,7 @@ Weather section
     border-radius: 50%;
     background: $white;
     box-shadow: 50px -2px 0 12px $white,
-                56px 0 0 10px $shadow-light;
+                56px 0 0 10px $shadow;
     height: 50px;
     left: 50%;
     margin-left: -55px;
@@ -273,12 +394,54 @@ Weather section
   }
 }
 
+.sun {
+  &:before, &:after {
+    background: $weather-blue-shadow;
+    height: 100px;
+    margin-left: -42px;
+    width: 100px;
+    top: 28px;
+  }
+  &:before { -webkit-transform: rotate(155deg); }
+  &:after { -webkit-transform: rotate(20deg); }
+  .icon-img {
+    background: $sun-orange;
+    height: 100px;
+    margin-left: -50px;
+    width: 100px;
+    top: 23px;
+    -webkit-transform: rotate(155deg);
+    z-index: 2;
+    &:before {
+      background: $sun-orange;
+      height: 100px;
+      margin-left: 0;
+      width: 100px;
+      top: 0;
+      -webkit-transform: rotate(45deg);
+    }
+    &:after {
+      background: linear-gradient(to right,  $flag-yellow 0%,
+                                            $flag-yellow 49%,
+                                            lighten($flag-yellow,10%) 49%,
+                                            lighten($flag-yellow,10%) 99%);
+      border-radius: 50%;
+      height: 70px;
+      margin-left: 14px;
+      top: 15px;
+      width: 70px;
+      -webkit-transform: rotate(25deg);
+    }
+  }
+}
+
 /*------------------------
 Clearfix
 ------------------------*/
 
 .clearfix:after,
-.container:after {
+.container:after,
+.siteContent:after {
   @include clearfix;
 }
 

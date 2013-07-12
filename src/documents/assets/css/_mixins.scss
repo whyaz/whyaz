@@ -40,6 +40,11 @@
   }
 }
 
+@mixin triangle($width) {
+  border-left: $width solid transparent;
+  border-right: $width solid transparent;
+}
+
 @mixin rotate($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform:    rotate($deg);
