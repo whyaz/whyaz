@@ -7,79 +7,66 @@
   height: 0;
 }
 
-@mixin background-size($width, $height) {
-  -webkit-background-size: $width $height;
-  -moz-background-size: $width $height;
-  background-size: $width $height;
+/* common items for pseudo elements */
+@mixin pseudo {
+  content: '';
+  display: block;
+  position: absolute;
 }
 
-@mixin background-cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+/* draw the shape */
+@mixin draw($width,$height) {
+  height: $height;
+  width: $width;
 }
 
-@mixin border-radius ( $radius ) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+/* place the shape */
+@mixin place($left,$top) {
+  margin-left: $left;
+  top: $top;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
-  }
+
+/* two-color gradient with a hard stop */
+@mixin halfsies($deg,$stop,$color1,$color2) {
+  background: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2);
 }
 
+/* triangle (up/down) */
 @mixin triangle($width) {
   border-left: $width solid transparent;
   border-right: $width solid transparent;
 }
 
+/* triangle (left/right) */
+@mixin arrow($width) {
+  border-bottom: $width solid transparent;
+  border-top: $width solid transparent;
+}
+
+/* rotate transform */
 @mixin rotate($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform:    rotate($deg);
   -ms-transform:     rotate($deg);
+  -o-transform:      rotate($deg);
   transform:         rotate($deg);
 }
 
-@mixin scale($xvalue,$yvalue) {
-  -webkit-transform: scale($xvalue,$yvalue);
-  -moz-transform:    scale($xvalue,$yvalue);
-  -ms-transform:     scale($xvalue,$yvalue);
-  transform:         scale($xvalue,$yvalue);
+/* scale transform */
+@mixin scale($value) {
+  -webkit-transform: scale($value);
+  -moz-transform:    scale($value);
+  -ms-transform:     scale($value);
+  -o-transform:      scale($value);
+  transform:         scale($value);
 }
 
-@mixin gradient($url, $repeat, $from, $to) {
-  background-color: $to;
-  background-image: url($url);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
-  background-image: -webkit-linear-gradient($from, $to);
-  background-image:    -moz-linear-gradient($from, $to);
-  background-position: 0 0;
-  background-repeat: repeat-$repeat;
-}
-
-/* max-width media queries */
-@mixin max-width($point) {
-  @media screen and (max-width: $point) { @content; }
-}
-
-/* max-width media queries */
-@mixin min-width($point) {
-  @media screen and (min-width: $point) { @content; }
-}
-
-/* range media queries */
-@mixin width-range($min, $max) {
-  @media screen and (min-width: $min) and (max-width: $max) { @content; }
+/* skew transform */
+@mixin skew($xvalue,$yvalue) {
+  -webkit-transform: skew($xvalue,$yvalue);
+  -moz-transform:    skew($xvalue,$yvalue);
+  -ms-transform:     skew($xvalue,$yvalue);
+  -o-transform:      skew($xvalue,$yvalue);
+  transform:         skew($xvalue,$yvalue);
 }
