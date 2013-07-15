@@ -62,11 +62,20 @@
   transform:         scale($value);
 }
 
-/* skew transform */
-@mixin skew($xvalue,$yvalue) {
-  -webkit-transform: skew($xvalue,$yvalue);
-  -moz-transform:    skew($xvalue,$yvalue);
-  -ms-transform:     skew($xvalue,$yvalue);
-  -o-transform:      skew($xvalue,$yvalue);
-  transform:         skew($xvalue,$yvalue);
+/* skew x transform */
+@mixin skewX($value) {
+  -webkit-transform: skewX($value);
+  -moz-transform:    skewX($value);
+  -ms-transform:     skewX($value);
+  -o-transform:      skewX($value);
+  transform:         skewX($value);
+}
+
+/* skew x transform */
+@mixin skewY($value) {
+  -webkit-transform: skewY($value);
+  -moz-transform:    skewY($value);
+  -ms-transform:     skewY($value);
+  -o-transform:      skewY($value);
+  transform:         skewY($value);
 }

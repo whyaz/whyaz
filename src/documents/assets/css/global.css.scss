@@ -295,6 +295,162 @@ Desert section
 }
 
 /*------------------------
+Living section
+------------------------*/
+
+.living {
+  background: $flag-red;
+  color: $white;
+  &:before {
+    @include draw(130px,65px);
+    @include place(-70px,-40px);
+    @include halfsies(90deg,50%,$cactus-green,darken($cactus-green,10%));
+    border: 5px solid $shadow;
+    box-shadow: $shadow-short;
+  }
+  &:after {
+    @include draw(15px,15px);
+    @include place(-60px,-30px);
+    background: $shadow;
+    border-radius: 50%;
+    box-shadow: 0 40px 0 $shadow,
+                105px 0 0 $shadow,
+                105px 40px 0 $shadow,
+                53px 21px 0 10px $shadow;
+  }
+}
+
+.sanfran {
+
+}
+
+/*------------------------
+Food and Beer section
+------------------------*/
+
+.food {
+  background: $flag-blue;
+  color: $white;
+}
+
+.pizza {
+  &:before {
+    @include draw(140px,140px);
+    @include place(-70px,0);
+    @include halfsies(90deg,50%,lighten($hammer-brown,7%),$hammer-brown);
+    border-radius: 50%;
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(110px,110px);
+    @include place(-55px,15px);
+    background: $flag-yellow;
+    border-radius: 50%;
+  }
+  .icon-img {
+    @include draw(20px,20px);
+    @include place(-25px,30px);
+    background: $flag-red;
+    border-radius: 50%;
+    box-shadow: -20px 30px 0 $flag-red,
+                8px 60px 0 $flag-red,
+                10px 30px 0 $flag-red,
+                37px 10px 0 $flag-red,
+                50px 45px 0 $flag-red;
+    z-index: 2;
+  }
+}
+
+.beer-mug {
+  &:before {
+    @include draw(60px,95px);
+    @include place(-30px,20px);
+    @include halfsies(180deg,30%,lighten($flag-yellow,15%),$flag-yellow);
+    border: 5px solid $white;
+    border-bottom-width: 15px;
+    box-shadow: $shadow-tall;
+    z-index: 2;
+  }
+  &:after {
+    @include draw(20px,20px);
+    @include place(-25px,10px);
+    background: lighten($flag-yellow,15%);
+    border-radius: 50%;
+    box-shadow: 20px 0 0 3px lighten($flag-yellow,15%),
+                40px 5px 0 1px lighten($flag-yellow,15%);
+  }
+  .icon-img {
+    @include draw(35px,115px);
+    @include place(5px,20px);
+    background: $shadow;
+    z-index: 3;
+    &:before, &:after {
+      @include draw(30px,40px);
+      border-radius: 10px;
+      clip: rect(0,50px,60px,20px);
+    }
+    &:before {
+      @include place(5px,38px);
+      border: 8px solid $food-blue-shadow;
+    }
+    &:after {
+      @include place(-3px,30px);
+      border: 8px solid $glass-grey;
+    }
+  }
+}
+
+.beer-glass {
+  &:before, &:after {
+    @include draw(70px,0);
+    @include triangle(15px);
+  }
+  &:before {
+    @include place(-42px,8px);
+    border-top: 130px solid $food-blue-shadow;
+  }
+  &:after {
+    @include place(-50px,0);
+    border-top: 130px solid $white;
+  }
+  .icon-img {
+    @include draw(64px,0);
+    @include place(-44px,5px);
+    @include triangle(12px);
+    border-top: 112px solid darken($hammer-brown,20%);
+    z-index: 2;
+    &:before {
+      @include draw(82px,0);
+      @include place(-44px,-112px);
+      @include triangle(3px);
+      border-top: 30px solid lighten($hammer-brown,40%);
+    }
+    &:after {
+      @include draw(35px,0);
+      @include place(0,-117px);
+      border-top: 130px solid $shadow;
+      border-right: 15px solid transparent;
+    }
+  }
+}
+
+.taco {
+  &:before, &:after {
+    @include draw(140px,70px);
+    @include halfsies(90deg,50%,$sun-orange,darken($sun-orange,7%));
+    border-radius: 70px 70px 0 0;
+    box-shadow: $shadow-tall;
+  }
+  &:before {
+    @include place(-70px,0);
+  }
+  &:after {
+    @include place(-40px,50px);
+  }
+
+}
+
+/*------------------------
 Weather section
 ------------------------*/
 
@@ -393,16 +549,16 @@ Films section
 ------------------------*/
 
 .films {
-  background: $temp-blue;
+  background: lighten($temp-blue,5%);
   &:before {
     @include draw(100px,80px);
     @include place(-50px,-40px);
     background:
-      linear-gradient(90deg,transparent 50%,darken($meter-grey,20%) 50%,darken($meter-grey,20%)),
-      linear-gradient(225deg,transparent 50%,darken($meter-grey,20%) 50%,darken($meter-grey,20%));
+      linear-gradient(90deg,transparent 50%,darken($meter-grey,20%) 50%,darken($meter-grey,25%)),
+      linear-gradient(225deg,transparent 50%,darken($meter-grey,20%) 50%,darken($meter-grey,25%));
     background-color: $meter-grey;
     border-radius: 5px;
-    box-shadow: $shadow-tall;
+    box-shadow: $shadow-short;
   }
   &:after {
     @include place(-27px,-27px);
@@ -462,7 +618,7 @@ Films section
   &:before {
     @include draw(59px,110px);
     @include place(-30px,0);
-    background: $meter-grey;
+    @include halfsies(90deg,50%,lighten($meter-grey,10%),$meter-grey);
     box-shadow: $shadow-tall;
   }
   &:after {
@@ -472,8 +628,8 @@ Films section
     box-shadow: 0 42px 0 $flag-red,
                 34px 0 0 $flag-red,
                 34px 42px 0 $flag-red,
-                17px 0 0 lighten($meter-grey,15%),
-                17px 42px 0 lighten($meter-grey,15%);
+                17px 0 0 lighten($meter-grey,25%),
+                17px 42px 0 lighten($meter-grey,25%);
   }
   .icon-img {
     @include draw(39px,10px);
@@ -487,14 +643,14 @@ Films section
   &:before {
     @include draw(90px,15px);
     @include place(-45px,0);
-    background: lighten($meter-grey,9%);
+    background: lighten($meter-grey,11%);
     border-radius: 120px/30px 0 0 0;
     box-shadow: $shadow-films;
   }
   &:after {
     @include place(-10px,10px);
     @include triangle(15px);
-    border-top: 40px solid lighten($meter-grey,9%);
+    border-top: 40px solid lighten($meter-grey,11%);
   }
   .icon-img {
     @include place(-2px,18px);
@@ -514,6 +670,81 @@ Films section
       background-color: $meter-grey;
       border-radius: 50%;
       box-shadow: 0 40px 0 $meter-grey;
+      z-index: 3;
+    }
+  }
+}
+
+.cowboy {
+  &:before {
+    @include draw(70px,60px);
+    @include place(-35px,10px);
+    @include halfsies(90deg,50%,lighten($body-grey,5%),$body-grey);
+    border-top-left-radius: 50% 23%;
+    border-top-right-radius: 50% 23%;
+    box-shadow: $shadow-films;
+  }
+  &:after {
+    @include draw(140px,8px);
+    @include place(-70px,64px);
+    background: $body-grey;
+    box-shadow: $shadow-films;
+  }
+  .icon-img {
+    @include draw (20px,8px);
+    @include place(-10px,108px);
+    background: $films-blue-shadow;
+    &:before, &:after {
+      @include draw(25px,10px);
+      background: $body-grey;
+      box-shadow: 4px 4px $films-blue-shadow;
+    }
+    &:before {
+      @include place(-25px,-3px);
+      @include skewY(160deg);
+    }
+    &:after {
+      @include place(0,-3px);
+      @include skewY(-160deg);
+    }
+  }
+}
+
+.diaper {
+  &:before {
+    @include draw(3px,65px);
+    @include place(30px,10px);
+    background: $meter-grey;
+    @include skewX(25deg);
+    z-index: 2;
+  }
+  &:after {
+    @include draw(3px,65px);
+    @include place(-30px,10px);
+    background: lighten($meter-grey,20%);
+    @include skewX(-25deg);
+    z-index: 2;
+  }
+  .icon-img {
+    @include draw(100px,80px);
+    @include place(-50px,10px);
+    @include halfsies(90deg,50%,$white,lighten($meter-grey,22%));
+    border-bottom-right-radius: 50% 30%;
+    border-bottom-left-radius: 50% 30%;
+    box-shadow: $shadow-tall;
+    &:before {
+      @include draw(20px,25px);
+      @include place(-42px,20px);
+      background: $weather-blue;
+      border-radius: 50% 0 0 50%;
+      z-index: 4;
+    }
+    &:after {
+      @include draw(70px,20px);
+      @include place(-35px,20px);
+      border: 3px solid lighten($meter-grey,10%);
+      border-radius: 40%;
+      clip: rect(0,100px,20px,0);
       z-index: 3;
     }
   }
@@ -556,12 +787,87 @@ Films section
       z-index: 3;
     }
     &:after {
-      @include draw(20px,7px);
+      @include draw(21px,7px);
       @include place(41px,12px);
       background: lighten($tree-green,4%);
       border-radius: 0 0 20px 20px;
-      box-shadow: 63px 0 0 $tree-green;
+      box-shadow: 62px 0 0 $tree-green;
       z-index: 4;
+    }
+  }
+}
+
+.tshirt {
+  &:before {
+    @include draw(70px,100px);
+    @include place(-27px,8px);
+    background: $films-blue-shadow;
+    border-radius: 20% 20% 0 0;
+  }
+  &:after {
+    @include draw(60px,35px);
+    @include place(-60px,5px);
+    background: lighten($body-grey,5%);
+    box-shadow: $shadow-films;
+  }
+  .icon-img {
+    @include draw(60px,35px);
+    @include place(-2px,5px);
+    background: $body-grey;
+    box-shadow: $shadow-films;
+    &:before {
+      @include draw(70px,100px);
+      @include place(-64px,-5px);
+      @include halfsies(90deg,50%,lighten($body-grey,5%),$body-grey);
+      border-radius: 20% 20% 0 0;
+      z-index: 2;
+    }
+    &:after {
+      @include draw(25px,10px);
+      @include place(-40px,-5px);
+      background: $black;
+      border-radius: 0 0 25px 25px;
+      z-index: 3;
+    }
+  }
+}
+
+.wheel {
+  &:before {
+    @include draw(8px,100px);
+    @include place(0,7px);
+    background: $hammer-brown;
+    box-shadow: 8px -2px 0 $shadow;
+    @include rotate(60deg);
+  }
+  &:after {
+    @include draw(8px,100px);
+    @include place(0,7px);
+    background: $hammer-brown;
+    box-shadow: 8px -3px 0 $shadow;
+    @include rotate(120deg);
+  }
+  .icon-img {
+    @include draw(8px,100px);
+    @include place(0,0);
+    background: $hammer-brown;
+    box-shadow: $shadow-tall;
+    &:before {
+      @include draw(90px,90px);
+      @include place(-55px,0);
+      border: 10px solid $hammer-brown;
+      border-radius: 50%;
+      box-shadow: $shadow-tall;
+      z-index: 2;
+    }
+    &:after {
+      @include draw(20px,20px);
+      @include place(-18px,37px);
+      background: darken($hammer-brown,10%);
+      border: 8px solid $hammer-brown;
+      border-radius: 50%;
+      box-shadow: $shadow-short;
+      z-index: 2;
     }
   }
 }
@@ -601,6 +907,14 @@ Films section
                   48px 0 0 $flag-blue;
     }
   }
+}
+
+/*------------------------
+Perks section
+------------------------*/
+
+.perks {
+  background: $meter-grey;
 }
 
 /*------------------------
