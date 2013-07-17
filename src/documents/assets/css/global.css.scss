@@ -101,6 +101,9 @@ body {
   list-style: none;
 }
 
+.siteLink { text-decoration: none; }
+.siteLink:hover { border-bottom: 1px dotted $white; }
+
 /*------------------------
 Intro section
 ------------------------*/
@@ -656,7 +659,7 @@ Films section
     @include place(-60px,30px);
     background:
       linear-gradient(180deg, transparent 60%,$shadow 60%,$shadow),
-      linear-gradient(90deg, $house-brown 50%,$house-brown-drk 50%,$house-brown-drk);
+      linear-gradient(90deg, $sun-orange 50%,$sun-orange-drk 50%,$sun-orange-drk);
     border-radius: 120px 120px 0 0;
   }
   .icon-img {
@@ -664,8 +667,8 @@ Films section
     @include place(-75px,65px);
     background:
       linear-gradient(180deg, transparent 40%,$shadow 40%,$shadow),
-      linear-gradient(90deg, $house-brown 50%,$house-brown-drk 50%,$house-brown-drk);
-    background-color: $house-brown;
+      linear-gradient(90deg, $sun-orange 50%,$sun-orange-drk 50%,$sun-orange-drk);
+    background-color: $sun-orange;
     box-shadow: $shadow-films;
     &:before {
       @include draw(30px,45px);
@@ -982,6 +985,90 @@ Films section
 }
 
 /*------------------------
+Education section
+------------------------*/
+
+.education {
+  background: $edu-green;
+  color: $white;
+  &:before {
+    @include draw(80px,100px);
+    @include place(-40px,-60px);
+    background: $body-grey;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 1px 1px 0 1px $meter-grey,
+                6px 6px     $shadow;
+  }
+  &:after {
+    @include draw(8px,100px);
+    @include place(-32px,-60px);
+    background: darken($body-grey,10%);
+  }
+}
+
+.godevils {
+  &:before {
+    @include draw(16px,50px);
+    @include place(-8px,20px);
+    @include halfsies(90deg,50%,$flag-yellow,darken($flag-yellow,10%));
+    box-shadow:           $shadow-tall,
+                -45px 0   $flag-yellow,
+                -37px 8px $shadow,
+                45px  0   darken($flag-yellow,10%),
+                53px  8px $shadow;
+    z-index:2;
+  }
+  &:after {
+    @include draw(16px,55px);
+    @include place(-8px,85px);
+    @include halfsies(90deg,50%,$flag-yellow,darken($flag-yellow,10%));
+    box-shadow: $shadow-tall;
+    z-index: 3;
+  }
+  .icon-img {
+    @include place(-7px,8px);
+    @include triangle(15px);
+    border-bottom: 20px solid $edu-green-shadow;
+    &:before {
+      @include place(-23px,-8px);
+      @include triangle(15px);
+      border-bottom: 20px solid $flag-yellow;
+    }
+    &:after {
+      @include draw(106px,16px);
+      @include place(-61px,62px);
+      @include halfsies(90deg,50%,$flag-yellow,darken($flag-yellow,10%));
+      box-shadow: $shadow-tall;
+      z-index: 3;
+    }
+  }
+}
+
+@mixin paw($left,$top) {
+  @include draw(35px,50px);
+  @include place($left,$top);
+  background: $edu-green-shadow;
+  border-radius: 80px 65px 70px 70px / 100px 100px 70px 70px;
+  box-shadow: inset $shadow-short;
+}
+
+.beardown {
+  &:before {
+    @include draw(100px,80px);
+    @include place(-50px,65px);
+    background: $edu-green-shadow;
+    border-radius: 100px 50px 70px 70px / 50px 40px 50px 70px;
+    box-shadow: inset -4px -4px $shadow;
+    @include rotate(180deg);
+  }
+  &:after {    @include paw(-75px,25px); }
+  .icon-img {  @include paw(-35px,5px);
+    &:before { @include paw(22px,5px); }
+    &:after {  @include paw(60px,30px); }
+  }
+}
+
+/*------------------------
 History section
 ------------------------*/
 
@@ -991,15 +1078,13 @@ History section
   &:before {
     @include draw(80px,100px);
     @include place(-40px,-60px);
-    background: $tree-green;
-    border-radius: 0 3px 3px 0;
-    box-shadow: 1px 1px 0 1px $meter-grey,
-                6px 6px     $shadow;
+    @include halfsies(90deg,50%,$white,$diaper-grey);
+    box-shadow: $shadow-short;
   }
   &:after {
-    @include draw(8px,100px);
-    @include place(-32px,-60px);
-    background: $shadow;
+    @include draw(70px,70px);
+    @include place(-35px,-55px);
+    background: $body-grey;
   }
 }
 
@@ -1017,14 +1102,14 @@ History section
     &:before {
       @include draw(70px,120px);
       @include place(-68px,0);
-      background: $flag-red;
+      background: lighten($flag-red,8%);
       border-radius: 40px 40px 0 0;
       @include rotate(-45deg);
     }
     &:after {
       @include draw(70px,120px);
       @include place(-32px,0);
-      @include halfsies(45deg,36%,$flag-red,darken($flag-red,8%));
+      @include halfsies(45deg,36%,lighten($flag-red,8%),$flag-red);
       border-radius: 40px 40px 0 0;
       @include rotate(45deg);
     }
@@ -1035,16 +1120,16 @@ History section
   &:before {
     @include draw(40px,30px);
     @include place(-40px,0);
-    background: $house-brown;
+    background: $sun-orange;
     border-radius: 30px 30px 0 0;
-    box-shadow: 40px 0   $house-brown-drk,
+    box-shadow: 40px 0   $sun-orange-drk,
                 8px 8px  $history-brown-shadow,
                 48px 8px $history-brown-shadow;
   }
   &:after {
     @include draw(80px,80px);
     @include place(-40px,30px);
-    @include halfsies(90deg,50%,$house-brown,$house-brown-drk);
+    @include halfsies(90deg,50%,$sun-orange,$sun-orange-drk);
     box-shadow: 8px 8px $history-brown-shadow;
   }
   .icon-img {
@@ -1063,7 +1148,7 @@ History section
       @include place(-69px,-2px);
     }
     &:after {
-      border: 10px solid $house-brown;
+      border: 10px solid $sun-orange;
       @include place(-77px,-10px);
     }
   }
@@ -1127,6 +1212,84 @@ History section
 }
 
 /*------------------------
+Alumni section
+------------------------*/
+
+.alumni {
+  background: $flag-yellow;
+  &:before {
+    @include draw(100px,70px);
+    @include place(-55px,-50px);
+    @include halfsies(180deg,25%,$intro-blue,$flag-gold);
+    border: 5px solid $white;
+    border-radius: 3px;
+    box-shadow: $shadow-short;
+  }
+  &:after {
+    @include draw(25px,25px);
+    @include place(20px,-6px);
+    background: darken($tube-blue,10%);
+  }
+  .list-item {
+    display: inline-block;
+    padding: 30px 15px 0;
+  }
+}
+
+.yearbook {
+  &:before {
+    @include draw(198px,143px);
+    @include place(-99px,0);
+    @include halfsies(90deg,51%,$meter-grey,darken($meter-grey,10%));
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(180px,125px);
+    @include place(-90px,4px);
+    @include halfsies(90deg,50%,$white,$diaper-grey);
+    box-shadow: 0 3px 0 2px rgba(255,255,255,.60);
+  }
+  .icon-img {
+    @include draw(30px,35px);
+    @include place(-80px,14px);
+    background: $weather-blue;
+    box-shadow: 40px  0    $weather-blue,
+                0     45px $weather-blue,
+                40px  45px $weather-blue,
+                90px  0    $weather-blue-shadow,
+                130px 0    $weather-blue-shadow,
+                90px  45px $weather-blue-shadow,
+                130px 45px $weather-blue-shadow;
+    z-index: 2;
+    &:before {
+      @include draw(30px,10px);
+      @include place(-15px,25px);
+      background: $flag-red;
+      box-shadow: 40px  0    $flag-blue,
+                  0     45px $tube-blue,
+                  40px  45px $cactus-green,
+                  90px  0    $hammer-brown,
+                  130px 0    $perks-grey-shadow,
+                  90px  45px $flag-gold,
+                  130px 45px $flower-pink;
+    }
+    &:after {
+      @include draw(20px,20px);
+      @include place(-10px,7px);
+      background: $flag-gold;
+      border-radius: 50%;
+      box-shadow: 40px  0    $sun-orange,
+                  0     45px $sun-orange,
+                  40px  45px $desert-brown,
+                  90px  0    $sun-orange,
+                  130px 0    $hammer-brown,
+                  90px  45px $sun-orange,
+                  130px 45px $flag-gold;
+    }
+  }
+}
+
+/*------------------------
 Perks section
 ------------------------*/
 
@@ -1135,7 +1298,7 @@ Perks section
   &:before {
     @include draw(24px,50px);
     @include place(-12px,0);
-    background: $house-brown;
+    background: $sun-orange-drk;
     border-radius: 0 0 30px 30px;
     box-shadow: $shadow-short;
   }
@@ -1282,35 +1445,88 @@ Perks section
 }
 
 /*------------------------
-Alumni section
-------------------------*/
-
-.alumni {
-  background: lighten($flag-yellow,10%);
-  .icon {
-    padding-top: 0;
-  }
-  .list-item {
-    border-radius: 3px;
-    box-shadow: $shadow-tall;
-    color: $white;
-    display: inline-block;
-    margin: 0 7px 15px;
-    padding: 10px 15px;
-  }
-  .alumni-icon { @include halfsies(90deg,50%,$flag-red,darken($flag-red,8%)); }
-  .alumni-actor { @include halfsies(90deg,50%,$flag-blue,darken($flag-blue,8%)); }
-  .alumni-athlete { @include halfsies(90deg,50%,darken($tube-blue,8%),darken($tube-blue,15%)); }
-  .alumni-music { @include halfsies(90deg,50%,$flag-gold,darken($flag-gold,8%)); }
-}
-
-/*------------------------
 WhyAZ section
 ------------------------*/
 
 .whyaz {
   background: $body-grey;
   color: $white;
+  .flag {
+    @include place(-150px,-115px);
+    left: 50%;
+    position: absolute;
+    @include scale(.5);
+  }
+}
+
+.whyaz {
+  .siteContent {
+    text-align: left;
+    max-width: 700px;
+  }
+  .copy {
+    margin-bottom: 35px;
+  }
+}
+
+.meltmedia {
+  border-top: 1px dotted lighten($body-grey,10%);
+  color: $meter-grey;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 150px 0 0;
+  text-align: center;
+  .icon {
+    margin: 0 auto;
+    max-width: 550px;
+    padding-top: 40px;
+  }
+  .siteLink {
+    border-color: $tube-blue;
+    color: $tube-blue;
+  }
+}
+
+.melt-logo {
+  &:before {
+    @include draw(60px,60px);
+    @include place(-30px,-40px);
+    background: $tube-blue;
+    border-radius: 50%;
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(30px,60px);
+    @include place(0,-40px);
+    background: $shadow;
+    border-radius: 0 30px 30px 0;
+  }
+  .icon-img {
+    @include draw(8px,7px);
+    @include place(-16px,-15px);
+    background: $white;
+    box-shadow: 8px 14px $white;
+    @include rotate(-60deg);
+    &:before {
+      @include draw(7px,7px);
+      @include place(-3px,-6px);
+      background: $tube-blue;
+      border-radius: 50%;
+      box-shadow: 0 12px   $tube-blue,
+                  8px 14px $tube-blue,
+                  8px 26px $tube-blue;
+    }
+    &:after {
+      @include draw(13px,13px);
+      @include place(-14px,-3px);
+      background: $white;
+      border-radius: 50%;
+      box-shadow: 16px 0    $white,
+                  8px  14px $white,
+                  24px 14px $white,
+                  16px 28px $white;
+    }
+  }
 }
 
 /*------------------------
