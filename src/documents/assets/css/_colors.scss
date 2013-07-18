@@ -4,41 +4,68 @@ Global
 
 $white: #fff;
 $black: #000;
+
 $body-grey: #343434;
+$body-grey-light: lighten($body-grey,5%);
+$body-grey-drk: darken($body-grey,10%);
 
 $shadow: rgba(0,0,0,.13);
+
+$shadow-tall:  8px 8px $shadow;
+$shadow-short: 4px 4px $shadow;
 
 /*------------------------
 Intro section
 ------------------------*/
 
 $intro-blue: #caedef;
+$intro-blue-shadow: #b0ced0;
+
 $flag-blue: #475163;
+$flag-blue-drk: darken($flag-blue,8%);
+$flag-blue-shadow: #3e4756;
+
 $flag-red: #ba545e;
+$flag-red-light: lighten($flag-red,10%);
+$flag-red-drk: darken($flag-red,10%);
+$flag-red-shadow: #a24952;
+
 $flag-gold: #bc8e68;
+$flag-gold-light: lighten($flag-gold,15%);
+$flag-gold-drk: darken($flag-gold,8%);
+
 $flag-yellow: #f4eb93;
+$flag-yellow-light: lighten($flag-yellow,10%);
+$flag-yellow-drk: darken($flag-yellow,10%);
 
 /*------------------------
 Desert section
 ------------------------*/
 
 $desert-brown: #b1ad83;
+$desert-brown-light: lighten($desert-brown,10%);
+$desert-brown-drk: darken($desert-brown,8%);
+$desert-brown-shadow: #757256;
+
 $cactus-green: #96d882;
+$cactus-green-light: lighten($cactus-green,10%);
+$cactus-green-drk: darken($cactus-green,10%);
+
 $flower-pink: #df659c;
+$flower-pink-light: lighten($flower-pink,10%);
+$flower-pink-drk: darken($flower-pink,10%);
 
 $meter-grey: #bbb;
-$meter-grey-drk: lighten($body-grey,10%);
+$meter-grey-light: lighten($meter-grey,10%);
+$meter-grey-drk: darken($meter-grey,10%);
 
 $tree-green: #2f9344;
+$tree-green-light: lighten($tree-green,4%);
+$tree-green-drk: darken($tree-green,8%);
 
 $tube-blue: #9ac8ca;
-
-/*------------------------
-Food and Beer section
-------------------------*/
-
-$food-blue-shadow: #3e4756;
-$glass-grey: #dedede;
+$tube-blue-light: lighten($tube-blue,10%);
+$tube-blue-drk: darken($tube-blue,10%);
 
 /*------------------------
 Weather section
@@ -48,19 +75,33 @@ $weather-blue: #aae3eb;
 $weather-blue-shadow: #94c6cd;
 
 $sun-orange: #f3b880;
-$sun-orange-drk: #dda36a;
+$sun-orange-light: lighten($sun-orange,10%);
+$sun-orange-drk: darken($sun-orange,7%);
+$sun-orange-shadow: #d4a06f;
 
 $temp-blue: darken($tube-blue,7%);
+
+/*------------------------
+Food and Beer section
+------------------------*/
+
+$glass-grey: #dedede;
 
 /*------------------------
 Films section
 ------------------------*/
 
+$films-blue: lighten($temp-blue,5%);
 $films-blue-shadow: #80abac;
 
+$shadow-films: 8px 8px $films-blue-shadow;
+
 $hammer-brown: #8f6944;
+$hammer-brown-light: lighten($hammer-brown,10%);
+$hammer-brown-drk: darken($hammer-brown,10%);
 
 $diaper-grey: #f3f3f3;
+
 
 /*------------------------
 Education section
@@ -70,14 +111,21 @@ $edu-green: #46ab88;
 $edu-green-shadow: #3d9576;
 
 /*------------------------
-Perks section
+Inspire section
 ------------------------*/
 
-$perks-grey-shadow: #b9b9b9;
+$inspire-brown: darken($desert-brown,20%);
+$inspire-brown-shadow: #6e6a46;
 
 /*------------------------
 History section
 ------------------------*/
 
 $history-brown-shadow: #644a30;
+
+/*------------------------
+Perks section
+------------------------*/
+
+$perks-grey-shadow: #b9b9b9;
 
