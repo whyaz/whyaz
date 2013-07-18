@@ -31,6 +31,7 @@ body {
 em { font-style: italic; }
 
 .siteSection {
+  min-width: 300px;
   position: relative;
   padding: 100px 30px 100px;
   &:before, &:after {
@@ -41,26 +42,38 @@ em { font-style: italic; }
 
 .siteHeader {
   font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   text-align: center;
   text-shadow: $shadow-short;
   text-transform: uppercase;
+  @include min-width(460px) {
+    margin-bottom: 100px;
+  }
+  @include min-width(679px) {
+    font-size: 40px;
+    letter-spacing: 1px;
+  }
 }
 
 .siteContent {
-  font-size: 22px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 24px;
   margin: 0 auto;
   max-width: 900px;
   position: relative;
+  @include min-width(460px) {
+    font-size: 22px;
+    line-height: 30px;
+  }
   .icon {
-    float: left;
     position: relative;
-    margin: 0;
-    margin-bottom: 15%;
+    margin: 0 auto 15%;
+    width: 86%;
+    @include min-width(679px) {
+      float: left;
+    }
     &:before, &:after,
     .icon-img, .icon-img:before, .icon-img:after { 
       @include pseudo; 
@@ -79,9 +92,11 @@ em { font-style: italic; }
 .col-two {
   .icon {
     padding-top: 180px;
-    width: 45%;
-    &:nth-of-type(odd) { margin-right: 5%; clear: left; }
-    &:nth-child(even)  { margin-left: 5%; }
+    @include min-width(679px) {
+      width: 45%;
+      &:nth-of-type(odd) { margin-right: 5%; clear: left; }
+      &:nth-child(even)  { margin-left:  5%; }
+    }
   }
 }
 
@@ -90,12 +105,19 @@ em { font-style: italic; }
     font-size: 20px;
     line-height: 28px;
     padding-top: 150px;
-    width: 29.333333%;
-    &:nth-child(3n+1) { margin-right: 3%; }
-    &:nth-child(3n+2) { margin-left: 3%; margin-right: 3%; }
-    &:nth-child(3n+3) { margin-left: 3%; }
-    &:nth-child(3n+1) { clear: left; }
-
+    @include min-width(460px) {
+      float: left;
+      width: 47%;
+      &:nth-of-type(odd)  { margin-right: 3%; }
+      &:nth-of-type(even) { margin-left:  3%; }
+    }
+    @include min-width(679px) {
+      width: 29.333333%;
+      &:nth-child(3n+1) { margin-left: 0;  margin-right: 3%; }
+      &:nth-child(3n+2) { margin-left: 3%; margin-right: 3%; }
+      &:nth-child(3n+3) { margin-left: 3%; margin-right: 0; }
+      &:nth-child(3n+1) { clear: left; }
+    }
   }
 }
 
@@ -113,11 +135,23 @@ Intro section
 .intro {
   background: $intro-blue;
   padding-bottom: 200px;
+  @include max-width(450px) {
+    padding: 40px 0 110px;
+  }
   .siteHeader {
-    font-size: 150px;
-    letter-spacing: 20px;
-    margin-bottom: 60px;
+    font-size: 70px;
+    letter-spacing: 0;
+    margin-bottom: 20px;
     text-shadow: $shadow-tall;
+    @include min-width(460px) {
+      font-size: 100px;
+      letter-spacing: 10px;
+      margin-bottom: 60px;
+    }
+    @include min-width(679px) {
+      font-size: 150px;
+      letter-spacing: 20px;
+    }
   }
 }
 
@@ -178,6 +212,9 @@ Intro section
     position: relative;
     top: 60px;
     width: 60px;
+  }
+  @include max-width(450px) {
+    @include scale(.8);
   }
 }
 
@@ -360,7 +397,9 @@ Weather section
       @include place(-40px,10px);
       @include rotate(25deg);
       @include halfsies90($flag-yellow,$flag-yellow-light);
-      border-radius: 50%;
+      border-radius: 50%;-moz-background-clip: padding;     /* Firefox 3.6 */
+-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
     }
   }
 }
@@ -588,11 +627,11 @@ Food and Beer section
 .taco {
   &:before {
     @include draw(140px,70px);
-    @include place(-70px,0);
+    @include place(-80px,0);
     @include halfsies90($sun-orange,$sun-orange-drk);
     border-radius: 70px 70px 0 0;
     box-shadow:           $shadow-tall,
-                48px 58px $shadow;
+                38px 58px $shadow;
     z-index: 2;
   }
   &:after, .icon-img {
@@ -607,10 +646,10 @@ Food and Beer section
                 -8px  30px $hammer-brown;
   }
   &:after {
-    @include place(-65px,20px);
+    @include place(-75px,20px);
   }
   .icon-img {
-    @include place(-25px,70px);
+    @include place(-45px,70px);
     z-index: 3;
     &:before {
       @include draw(140px,70px);
@@ -1252,7 +1291,7 @@ History section
 .heart {
   &:after {
     @include draw(70px,120px);
-    @include place(-25px,8px);
+    @include place(-20px,8px);
     background: $history-brown-shadow;
     border-radius: 40px 40px 0 0;
     @include rotate(45deg);
@@ -1262,15 +1301,14 @@ History section
     z-index: 2;
     &:before {
       @include draw(70px,120px);
-      @include place(-68px,0);
+      @include place(-58px,0);
       background: $flag-red-light;
       border-radius: 40px 40px 0 0;
       @include rotate(-45deg);
     }
     &:after {
       @include draw(70px,120px);
-      @include place(-32px,0);/*
-      @include halfsies(45deg,36%,$flag-red-light,$flag-red);*/
+      @include place(-22px,0);
       @include gradient-var(45deg,45deg,36%,$flag-red-light,$flag-red);
       border-radius: 40px 40px 0 0;
       @include rotate(45deg);
@@ -1328,7 +1366,7 @@ History section
   .icon-img:before,
   .icon-img:after {
     @include draw(28px,48px);
-    background: darken($hammer-brown,8%);
+    background: $hammer-brown-drk;
     border-radius: 50% 50% 0 0;
     box-shadow: inset $shadow-tall;
   }
@@ -1357,7 +1395,7 @@ History section
   .icon-img {
     @include place(48px,23px);
     @include arrow(20px);
-    border-left: 20px solid $history-brown-shadow;
+    border-left: 20px solid $shadow;
     z-index: 2;
     &:before, &:after {
       @include place(-28px,-28px);
@@ -1394,7 +1432,13 @@ Alumni section
   }
   .list-item {
     display: inline-block;
-    padding: 30px 15px 0;
+    padding: 10px 5px 0;
+    @include min-width(460px) {
+      padding: 20px 10px 0;
+    }
+    @include min-width(679px) {
+      padding: 30px 15px 0;
+    }
   }
 }
 
