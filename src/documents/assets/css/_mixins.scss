@@ -33,6 +33,7 @@ Gradients - 2 colors, hard stop
 /* top to bottom */
 @mixin gradient-bottom($stop,$color1,$color2) {
   background-color: $color1;
+  background-image: -moz-linear-gradient(top, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
   background-image: -webkit-linear-gradient(top, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
   background-image: linear-gradient(180deg, $color1 $stop,$color2 $stop,$color2);
 }
@@ -40,6 +41,7 @@ Gradients - 2 colors, hard stop
 /* left to right, variable percent */
 @mixin gradient-right($stop,$color1,$color2) {
   background-color: $color1;
+  background-image: -moz-linear-gradient(left, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
   background-image: -webkit-linear-gradient(left, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
   background-image: linear-gradient(90deg, $color1 $stop,$color2 $stop,$color2);
 }
@@ -47,6 +49,7 @@ Gradients - 2 colors, hard stop
 /* left to right, 50 percent */
 @mixin halfsies90($color1,$color2) {
   background-color: $color1;
+  background-image: -moz-linear-gradient(left, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
   background-image: -webkit-linear-gradient(left, $color1 0%,$color1 50%,$color2 50%,$color2 100%);
   background-image: linear-gradient(90deg, $color1 50%,$color2 50%,$color2);
 }
@@ -54,6 +57,7 @@ Gradients - 2 colors, hard stop
 /* variable degree, variable percent */
 @mixin gradient-var($deg,$deg2,$stop,$color1,$color2) {
   background-color: $color1;
+  background-image: -moz-linear-gradient($deg2, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
   background-image: -webkit-linear-gradient($deg2, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
   background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2);
 }
@@ -61,6 +65,8 @@ Gradients - 2 colors, hard stop
 /* two gradients, variable percent */
 @mixin gradient-dual($deg,$direction,$stop,$color1,$color2,$deg2,$direction2,$stop2,$color3,$color4) {
   background-color: $color1;
+  background-image: -moz-linear-gradient($direction, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%),
+                    -moz-linear-gradient($direction2, $color3 0%, $color3 $stop2, $color4 $stop2, $color4 100%);
   background-image: -webkit-linear-gradient($direction, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%),
                     -webkit-linear-gradient($direction2, $color3 0%,$color3 $stop2,$color4 $stop2,$color4 100%);
   background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2),
@@ -121,4 +127,23 @@ Transforms
   -ms-transform:     skewY($value);
   -o-transform:      skewY($value);
   transform:         skewY($value);
+}
+
+/*------------------------------
+Media Queries
+-------------------------------*/
+
+/* max-width */
+@mixin max-width($point) {
+  @media screen and (max-width: $point) { @content; }
+}
+
+/* max-width */
+@mixin min-width($point) {
+  @media screen and (min-width: $point) { @content; }
+}
+
+/* range */
+@mixin width-range($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) { @content; }
 }
