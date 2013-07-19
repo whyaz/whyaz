@@ -1,175 +1,74 @@
+.ie9 {
+  .flag:before {
+    background: $flag-blue;
+  }
+}
+
 .lte-ie8 {
 
-  /*-- Global styles --*/
-  h1 { font-size: 18px; }
-  h2 { font-size: 22px; }
-  h3 { font-size: 18px; }
-  h4, h4 a { font-size: 14px; }
-
-  p, ul, ol, dl {
-    font-size: 14px;
-    line-height: 21px;
-  }
-
-  .footnote { font-size: 12px; }
-
-  .container {
-    margin: 0 auto;
+  .siteContent {
     width: 960px;
   }
 
-/*-- Header and Nav --*/
-  .siteHeader {
-    .siteNav-name {
-      float: left;
-      padding: $padding-med;
-    }
-    .list { float: right; }
-    .listItem {
-      width: auto;
-      &:first-child {
-        .siteNav-link { border-left: $common-border; }
-      }
-      .siteNav-link { padding: $padding-med; }
-    }
-  }
+  .flag { display: none; }
 
-/*-- Hero Space --*/
-  .siteHero {
-    background-image: url(../images/hero-bg.jpg);
-    background-repeat: repeat;
-    .container { min-height: 550px; }
-  }
-
-  .siteHero-lynn {
-    background-image: url(../images/hero-lynn.png);
-    height:550px;
-    right: -340px;
-    width: 1037px;
-  }
-
-  .siteHero-patrick {
-    background-image: url(../images/hero-patrick.png);
-    height:550px;
-    right: 0;
-    width: 512px;
-  }
-
-  .siteHero-headline {
-    color: $brown-header;
-    font-size: 30px;
-    margin: 0;
-    padding: 200px 0 10px 20px;
-  }
-
-  .siteHero-desc {
-    color: $brown-copy;
-    font-size: 23px;
-    line-height: 33px;
-    margin: 0;
-    padding: 0 0 0 20px;
-    width: 43%;
-  }
-
-/*-- Quote Section --*/
-  .quote {
-    .quoteText {
-      font-size: 18px;
-      line-height: 26px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      width: 650px;
-    }
-    .quoteSource { margin-top: 50px; }
-  }
-
-/*-- Footer --*/
-  .siteFooter { padding: 50px 0; }
-
-  .footerSocial-link { background-image:  url(../images/social-ie.png); }
-
-  .footerAbout,
-  .footerSocial,
-  .footerWriting { 
-    float: left;
-    padding: 2%;
-  }
-
-  .footerAbout {
-    width: 48%;
-    .footerAbout-pic {
-      border: 1px solid $grey-border;
-      float: left;
-      margin: 0 20px 30px 0;
-      padding: 5px;
-      width: 120px;
-    }
-  }
-
-  .footerSocial { width: 14%; }
-  .footerWriting { width: 26%; }
-
-/*-- Work Page --*/
-  .portfolio {
+  .siteSection {
     padding: 50px 0;
-    .projectItem {
-      float: left;
-      margin: 1%;
-      width: 23%;
-    }
-    .projectItem-link { min-height: 280px; }
+    &:before { display: none; }
+    &:after { display: none; }
   }
 
-/*-- Project Pages --*/
-  .project { padding: 50px 0; }
+  .siteHeader {
+    margin-bottom: 30px;
+  }
 
-  .projectDetail {
-    float: right;
-    margin: 0 2%;
-    width: 32%;
-    .container--fixed {
-      padding-right: 2%;
-      position: fixed;
-      max-width: 300px;
-      width: 32%;
+  .icon {
+    &:before { display: none; }
+    &:after { display: none; }
+    .icon-img {
+      display: none;
+      &:before { display: none; }
+      &:after { display: none; }
     }
   }
 
-  .projectPic {
-    float: left;
-    margin: 0 0 20px 5%;
-    max-width: 700px;
-    width: 58%;
+  .col-one .icon,
+  .col-two .icon,
+  .col-three .icon {
+    margin-bottom: 0;
+    padding: 20px 0;
   }
 
-/*-- Info Page --*/
-  .lynnInfo {
-    padding: 80px 0;
-    .container { padding: 0; }
-    .lynnInfo-pic {
-      background-color: #fff;
-      border: 1px solid $grey-border;
-      float: left;
-      margin: 0 7% 0 5%;
-      padding: 5px;
-      width: 35%;
+  .intro {
+    .siteHeader:after {
+      content: "You are seeing a text-only version of this site. There's more to experience though. Much more. Upgrade to Internet Explorer 10 or download Google Chrome to view it in all its glory. Trust us, it's worth it.";
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 30px auto;
+      text-align: center;
+      text-transform: none;
+      width: 500px;
     }
-    .lynnInfo-bio {
-      float: left;
-      margin-right: 5%;
-      width: 46%;
+  }
+
+  .films {
+    .icon {
+      display: inline-block;
+      padding: 10px 15px;
+      width: auto;
     }
+  }
+
+  .alumni {
+    .list-item {
+      padding: 10px 15px;
+    }
+  }
+
+  .meltmedia {
+    margin-top: 75px;
+    padding-bottom: 0;
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
