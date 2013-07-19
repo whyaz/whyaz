@@ -31,7 +31,7 @@ body {
 em { font-style: italic; }
 
 .siteSection {
-  min-width: 300px;
+  min-width: 240px;
   position: relative;
   padding: 100px 30px 100px;
   &:before, &:after {
@@ -125,8 +125,18 @@ em { font-style: italic; }
   list-style: none;
 }
 
-.siteLink { text-decoration: none; }
-.siteLink:hover { border-bottom: 1px dotted $white; }
+a { text-decoration: none; }
+a:hover { border-bottom: 1px dotted $white; }
+
+@mixin links($color) {
+  a {
+    border-color: $color;
+    color: $color;
+  }
+}
+
+@mixin links-light { @include links($meter-grey-light); @include links(rgba(255,255,255,.7)); }
+@mixin links-drk   { @include links(#666); @include links(rgba(52,52,52,.7)); }
 
 /*------------------------
 Intro section
@@ -162,13 +172,17 @@ Intro section
 }
 
 .flag {
+  @include draw(300px,200px);
   @include gradient-bottom(51%,$flag-red,$flag-blue);
   box-shadow: $shadow-tall;
   margin: 0 auto;
-  height: 200px;
   overflow: hidden;
   position: relative;
-  width: 300px;
+  &:before {
+    @include pseudo;
+    @include draw(300px,100px);
+    @include place(0,100px);
+  }
   .flag-stripes--left {
     @include flag-stripe;
     @include rotate(18deg);
@@ -202,7 +216,7 @@ Intro section
       right: -35px;
       bottom: -79px;
     }
-  }
+  }/* old star, having size issues in FF
   &:after {
     color: $flag-gold;
     content: '\2605';
@@ -212,6 +226,30 @@ Intro section
     position: relative;
     top: 60px;
     width: 60px;
+  } */
+  .flag-star {
+    @include pseudo;
+    @include place(-30px,90px);
+    @include triangle(30px);
+    border-bottom: 22px solid $flag-gold;
+    left: 50%;
+    @include rotate(36deg);
+    z-index: 2;
+    &:before {
+      @include pseudo;
+      @include triangle(7px);
+      border-bottom: 22px solid $flag-gold;
+      left: -18px;
+      top: -16px;
+      @include rotate(-35deg);
+    }
+    &:after {
+      @include pseudo;
+      @include triangle(30px);
+      border-bottom: 22px  solid $flag-gold;
+      left: -30px;
+      @include rotate(-72deg);
+    }
   }
   @include max-width(450px) {
     @include scale(.8);
@@ -223,11 +261,12 @@ Desert section
 ------------------------*/
 
 .desert {
+  @include links-drk;
   background: $desert-brown;
   &:before {
     @include draw(80px,90px);
     @include place(-40px,-60px);
-    @include halfsies90($cactus-green,$cactus-green-drk);
+    @include halfsies($cactus-green,$cactus-green-drk);
     border-radius: 50% 50% 0 0;
     box-shadow: $shadow-short;
   }
@@ -353,6 +392,7 @@ Weather section
 ------------------------*/
 
 .weather {
+  @include links-drk;
   background: $weather-blue;
   &:before {
     @include draw(150px,30px);
@@ -396,10 +436,8 @@ Weather section
       @include draw(80px,80px);
       @include place(-40px,10px);
       @include rotate(25deg);
-      @include halfsies90($flag-yellow,$flag-yellow-light);
-      border-radius: 50%;-moz-background-clip: padding;     /* Firefox 3.6 */
--webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
-background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+      @include halfsies($flag-yellow,$flag-yellow-light);
+      border-radius: 50%;
     }
   }
 }
@@ -408,7 +446,7 @@ background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
   &:before {
     @include draw(70px,140px);
     @include place(-35px,0);
-    @include halfsies90($meter-grey-light,$meter-grey);
+    @include halfsies($meter-grey-light,$meter-grey);
     box-shadow: $shadow-tall;
     border-radius: 5px;
   }
@@ -449,12 +487,13 @@ Living section
 ------------------------*/
 
 .living {
+  @include links-light;
   background: $flag-red;
   color: $white;
   &:before {
     @include draw(130px,65px);
     @include place(-70px,-40px);
-    @include halfsies90($cactus-green,$cactus-green-drk);
+    @include halfsies($cactus-green,$cactus-green-drk);
     border: 5px solid $shadow;
     box-shadow: $shadow-short;
   }
@@ -482,19 +521,19 @@ Living section
   .icon-img {
     @include draw(40px,60px);
     @include place(-95px,70px);
-    @include halfsies90($tube-blue-light,$tube-blue);
+    @include halfsies($tube-blue-light,$tube-blue);
     box-shadow: $shadow-tall;
     z-index: 2;
     &:before {
       @include draw(40px,90px);
       @include place(50px,-30px);
-      @include halfsies90($flag-yellow-light,$flag-yellow);
+      @include halfsies($flag-yellow-light,$flag-yellow);
       box-shadow: $shadow-tall;
     }
     &:after {
       @include draw(40px,110px);
       @include place(122px,-50px);
-      @include halfsies90($sun-orange-light,$sun-orange);
+      @include halfsies($sun-orange-light,$sun-orange);
       box-shadow: $shadow-tall;
     }
   }
@@ -505,12 +544,13 @@ Food and Beer section
 ------------------------*/
 
 .food {
+  @include links-light;
   background: $flag-blue;
   color: $white;
   &:before {
     @include draw(100px,100px);
     @include place(-50px,-60px);
-    @include halfsies90($white,$diaper-grey);
+    @include halfsies($white,$diaper-grey);
     border-radius: 50%;
     box-shadow: $shadow-tall;
   }
@@ -527,7 +567,7 @@ Food and Beer section
   &:before {
     @include draw(140px,140px);
     @include place(-70px,0);
-    @include halfsies90($hammer-brown-light,$hammer-brown);
+    @include halfsies($hammer-brown-light,$hammer-brown);
     border-radius: 50%;
     box-shadow: $shadow-tall;
   }
@@ -628,7 +668,7 @@ Food and Beer section
   &:before {
     @include draw(140px,70px);
     @include place(-80px,0);
-    @include halfsies90($sun-orange,$sun-orange-drk);
+    @include halfsies($sun-orange,$sun-orange-drk);
     border-radius: 70px 70px 0 0;
     box-shadow:           $shadow-tall,
                 38px 58px $shadow;
@@ -654,7 +694,7 @@ Food and Beer section
     &:before {
       @include draw(140px,70px);
       @include place(-14px,-20px);
-      @include halfsies90($sun-orange,$sun-orange-drk);
+      @include halfsies($sun-orange,$sun-orange-drk);
       border-radius: 70px 70px 0 0;
     }
   }
@@ -665,6 +705,7 @@ Films section
 ------------------------*/
 
 .films {
+  @include links-drk;
   background: $films-blue;
   &:before {
     @include draw(100px,80px);
@@ -731,7 +772,7 @@ Films section
   &:before {
     @include draw(59px,110px);
     @include place(-30px,0);
-    @include halfsies90($meter-grey-light,$meter-grey);
+    @include halfsies($meter-grey-light,$meter-grey);
     box-shadow: $shadow-tall;
   }
   &:after {
@@ -756,7 +797,7 @@ Films section
   &:before {
     @include draw(70px,60px);
     @include place(-35px,10px);
-    @include halfsies90($body-grey-light,$body-grey);
+    @include halfsies($body-grey-light,$body-grey);
     border-top-left-radius: 50% 23%;
     border-top-right-radius: 50% 23%;
     box-shadow: $shadow-films;
@@ -807,7 +848,7 @@ Films section
     &:before {
       @include draw(22px,90px);
       @include place(-19px,-30px);
-      @include halfsies90($hammer-brown-light,$hammer-brown);
+      @include halfsies($hammer-brown-light,$hammer-brown);
       border-radius: 2px 2px 4px 4px;
       box-shadow: $shadow-films;
       z-index: 2;
@@ -841,7 +882,7 @@ Films section
   .icon-img {
     @include draw(100px,80px);
     @include place(-50px,10px);
-    @include halfsies90($white,$diaper-grey);
+    @include halfsies($white,$diaper-grey);
     border-bottom-right-radius: 50% 30%;
     border-bottom-left-radius: 50% 30%;
     box-shadow: $shadow-tall;
@@ -874,7 +915,7 @@ Films section
   &:after {
     @include draw(100px,60px);
     @include place(-50px,30px);
-    @include halfsies90($tree-green-light,$tree-green);
+    @include halfsies($tree-green-light,$tree-green);
     border-radius: 100px 100px 0 0;
     box-shadow: $shadow-films;
     z-index:1;
@@ -931,7 +972,7 @@ Films section
     &:before {
       @include draw(70px,100px);
       @include place(-64px,-5px);
-      @include halfsies90($body-grey-light,$body-grey);
+      @include halfsies($body-grey-light,$body-grey);
       border-radius: 20% 20% 0 0;
       z-index: 2;
     }
@@ -989,7 +1030,7 @@ Films section
   &:before {
     @include draw(70px,110px);
     @include place(-35px,0);
-    @include halfsies90($flag-yellow-light,$flag-yellow);
+    @include halfsies($flag-yellow-light,$flag-yellow);
     border-radius: 3px 3px 5px 5px;
     box-shadow: $shadow-tall;
   }
@@ -1027,6 +1068,7 @@ Education section
 ------------------------*/
 
 .education {
+  @include links-light;
   background: $edu-green;
   color: $white;
   &:before {
@@ -1048,7 +1090,7 @@ Education section
   &:before {
     @include draw(16px,50px);
     @include place(-8px,20px);
-    @include halfsies90($flag-yellow,$flag-yellow-drk);
+    @include halfsies($flag-yellow,$flag-yellow-drk);
     box-shadow:           $shadow-tall,
                 -45px 0   $flag-yellow,
                 -37px 8px $shadow,
@@ -1059,7 +1101,7 @@ Education section
   &:after {
     @include draw(16px,55px);
     @include place(-8px,85px);
-    @include halfsies90($flag-yellow,$flag-yellow-drk);
+    @include halfsies($flag-yellow,$flag-yellow-drk);
     box-shadow: $shadow-tall;
     z-index: 3;
   }
@@ -1075,7 +1117,7 @@ Education section
     &:after {
       @include draw(106px,16px);
       @include place(-61px,62px);
-      @include halfsies90($flag-yellow,$flag-yellow-drk);
+      @include halfsies($flag-yellow,$flag-yellow-drk);
       box-shadow: $shadow-tall;
       z-index: 3;
     }
@@ -1111,6 +1153,7 @@ Inspiration section
 ------------------------*/
 
 .inspire {
+  @include links-light;
   background: $inspire-brown;
   color: $white;
   &:before {
@@ -1118,24 +1161,19 @@ Inspiration section
     @include place(-45px,25px);
     background: $white;
     border-radius: 50%;
-    box-shadow: $shadow-short;
-  }
-  &:after {
-    @include draw(40px,40px);
-    @include place(-20px,-70px);
-    background: $white;
-    border-radius: 50%;
-    box-shadow: -30px 15px $white,
-                 30px 15px $white,
-                -35px 44px $white,
-                 35px 44px $white,
-                  0   30px $white,
-                  0   56px $white,
-                  4px  4px $shadow,
-                 34px 20px $shadow,
-                -31px 48px $shadow,
-                 39px 48px $shadow,
-                  4px 60px $shadow;
+    box-shadow:                   $shadow-short,
+                35px -85px 0 10px $white,
+                35px -53px 0 10px $white,
+                 5px -70px 0 10px $white,
+                65px -70px 0 10px $white,
+                 0   -40px 0 10px $white,
+                70px -40px 0 10px $white,
+                35px -28px 0 10px $white,
+                69px -66px 0 10px $shadow,
+                 4px -36px 0 10px $shadow,
+                74px -36px 0 10px $shadow,
+                39px -24px 0 10px $shadow;
+    z-index: 2;
   }
 }
 
@@ -1176,7 +1214,7 @@ Inspiration section
   &:before {
     @include draw(120px,120px);
     @include place(-61px,10px);
-    @include halfsies90(transparent,darken($desert-brown,17%));
+    @include halfsies(transparent,darken($desert-brown,17%));
     border: 1px solid $desert-brown;
     border-radius: 50%;
   }
@@ -1257,13 +1295,13 @@ Inspiration section
   &:after {
     @include draw(26px,30px);
     @include place(-13px,22px);
-    @include halfsies90($flag-red,$flag-red-drk);
+    @include halfsies($flag-red,$flag-red-drk);
     border-radius: 50%;
   }
   .icon-img {
     @include draw(18px,90px);
     @include place(-9px,40px);
-    @include halfsies90($desert-brown-light,$desert-brown);
+    @include halfsies($desert-brown-light,$desert-brown);
     box-shadow: 8px 8px $inspire-brown-shadow;
   }
 }
@@ -1273,12 +1311,13 @@ History section
 ------------------------*/
 
 .history {
+  @include links-light;
   background: $hammer-brown-drk;
   color: $white;
   &:before {
     @include draw(80px,100px);
     @include place(-40px,-60px);
-    @include halfsies90($white,$diaper-grey);
+    @include halfsies($white,$diaper-grey);
     box-shadow: $shadow-short;
   }
   &:after {
@@ -1318,7 +1357,7 @@ History section
 
 .cowboy {
   &:before {
-    @include draw(40px,30px);
+    @include draw(40px,110px);
     @include place(-40px,0);
     background: $sun-orange;
     border-radius: 30px 30px 0 0;
@@ -1326,16 +1365,10 @@ History section
                  8px 8px $history-brown-shadow,
                 48px 8px $history-brown-shadow;
   }
-  &:after {
-    @include draw(80px,80px);
-    @include place(-40px,30px);
-    @include halfsies90($sun-orange,$sun-orange-shadow);
-    box-shadow: 8px 8px $history-brown-shadow;
-  }
   .icon-img {
     @include draw(80px,20px);
     @include place(-40px,90px);
-    @include halfsies90($flag-blue,$flag-blue-drk);
+    @include halfsies($flag-blue,$flag-blue-drk);
     z-index: 2;
     &:before, &:after {
       @include draw(135px,20px);
@@ -1381,7 +1414,7 @@ History section
   &:before {
     @include draw(20px,130px);
     @include place(-10px,0);
-    @include halfsies90($flag-gold,$flag-gold-drk);
+    @include halfsies($flag-gold,$flag-gold-drk);
     box-shadow: $shadow-tall;
   }
   &:after {
@@ -1416,6 +1449,7 @@ Alumni section
 ------------------------*/
 
 .alumni {
+  @include links-drk;
   background: $flag-yellow;
   &:before {
     @include draw(100px,70px);
@@ -1452,7 +1486,7 @@ Alumni section
   &:after {
     @include draw(180px,125px);
     @include place(-90px,4px);
-    @include halfsies90($white,$diaper-grey);
+    @include halfsies($white,$diaper-grey);
     box-shadow: 0 3px 0 2px rgba(255,255,255,.60);
   }
   .icon-img {
@@ -1500,6 +1534,7 @@ Perks section
 ------------------------*/
 
 .perks {
+  @include links-drk;
   background: $meter-grey-light;
   &:before {
     @include draw(24px,50px);
@@ -1511,7 +1546,7 @@ Perks section
   &:after {
     @include draw(76px,90px);
     @include place(-38px,-80px);
-    @include halfsies90($flower-pink-light,$flower-pink);
+    @include halfsies($flower-pink-light,$flower-pink);
     border-radius: 40px 40px 0 0;
     box-shadow: $shadow-short;
   }
@@ -1578,45 +1613,43 @@ Perks section
   .icon-img {
     @include draw(140px,70px);
     @include place(-70px,50px);
-    @include halfsies90($body-grey-light,$body-grey);
+    @include halfsies($body-grey-light,$body-grey);
     border-radius: 70px 70px 0 0;
     box-shadow: 8px 8px $perks-grey-shadow;
     &:before {
       @include draw(36px,36px);
       @include place(-18px,18px);
-      @include halfsies90($flag-red-light,$flag-red);
+      @include halfsies($flag-red-light,$flag-red);
       border-radius: 50%;
     }
     &:after {
       @include draw(20px,20px);
       @include place(-10px,26px);
-      @include halfsies90($white,$diaper-grey);
+      @include halfsies($white,$diaper-grey);
       border-radius: 50%;
     }
   }
 }
 
 .baseball {
-  &:before {
-    @include draw(130px,130px);
-    @include place(-65px,0);
-    @include halfsies90($white,$diaper-grey);
-    border-radius: 50%;
-    box-shadow: $shadow-tall;
-  }
-  &:after {
-    @include draw(130px,130px);
-    @include place(-160px,-4px);
-    border: 5px dotted $flag-red;
-    border-radius: 50%;
-    clip: rect(21px,145px,118px,110px);
-  }
   .icon-img {
     @include draw(130px,130px);
-    @include place(22px,-2px);
-    border: 5px dotted $flag-red;
+    @include place(-65px,0);
+    @include halfsies($white,$diaper-grey);
     border-radius: 50%;
-    clip: rect(21px,45px,117px,0px);
+    box-shadow: $shadow-tall;
+    overflow: hidden;
+    &:before, &:after {
+      @include draw(130px,130px);
+      border: 5px dotted $flag-red;
+      border-radius: 50%;
+    }
+    &:before {
+      @include place(-160px,-4px);
+    }
+    &:after {
+      @include place(22px,-2px);
+    }
   }
 }
 
@@ -1650,6 +1683,87 @@ Perks section
   }
 }
 
+.sunset {
+  &:before {
+    @include draw(50px,50px);
+    @include place(-25px,30px);
+    background: $flag-yellow-light;
+    border-radius: 50%;
+    box-shadow: 0 0 0  5px $flag-yellow,
+                0 0 0 10px $sun-orange-light,
+                0 0 0 15px $sun-orange,
+                0 0 0 20px $sun-orange-drk,
+                0 0 0 25px $flower-pink-light,
+                0 0 0 30px $flower-pink,
+                0 0 0 40px $weather-blue;
+  }
+  &:after {
+    @include draw(50px,0);
+    @include place(7px,92px);
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid $hammer-brown;
+  }
+  .icon-img {
+    @include draw(80px,0);
+    @include place(-80px,80px);
+    border-left: 10px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 60px solid $shadow;
+    &:before {
+      @include draw(80px,0);
+      @include place(-60px,-8px);
+      border-left: 10px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 60px solid $hammer-brown;
+      z-index: 2;
+    }
+    &:after {
+      @include draw(50px,0);
+      @include place(50px,20px);
+      border-right: 30px solid transparent;
+      border-bottom: 40px solid $perks-grey-shadow;
+    }
+  }
+}
+
+.golf {
+  &:before {
+    @include draw(100px,100px);
+    @include place(-50px,0);
+    background: $white;
+    background-image: -webkit-radial-gradient($diaper-grey 55%, transparent 45%);
+    background-image: radial-gradient($diaper-grey 55%, transparent 45%);
+    background-size: 15px 15px;
+    border-radius: 50%;
+    box-shadow: 8px 8px $perks-grey-shadow;
+  }
+  &:after {
+    @include draw(50px,100px);
+    @include place(0,0);
+    background: rgba(0,0,0,.05);
+    border-radius: 0 50px 50px 0;
+  }
+  .icon-img {
+    @include draw(10px,0);
+    @include place(-17px,105px);
+    @include triangle(20px);
+    border-top: 15px solid $perks-grey-shadow;
+    &:before {
+      @include draw(10px,0);
+      @include place(-33px,-21px);
+      @include triangle(20px);
+      border-top: 15px solid $flag-red;
+    }
+    &:after {
+      @include draw(12px,30px);
+      @include place(-14px,-10px);
+      background: $flag-red;
+      box-shadow: 8px 8px $perks-grey-shadow;
+    }
+  }
+}
+
+
 /*------------------------
 WhyAZ section
 ------------------------*/
@@ -1676,6 +1790,7 @@ WhyAZ section
 }
 
 .meltmedia {
+  @include links($tube-blue);
   border: 1px dotted lighten($body-grey,10%);
   border-left: none;
   border-right: none;
@@ -1689,10 +1804,6 @@ WhyAZ section
     margin: 0 auto;
     max-width: 550px;
     padding-top: 40px;
-  }
-  .siteLink {
-    border-color: $tube-blue;
-    color: $tube-blue;
   }
 }
 
@@ -1741,7 +1852,9 @@ WhyAZ section
 .references {
   color: darken($meter-grey,20%);
   font-size: 13px;
+  line-height: 18px;
   text-align: center;
+  .copy { margin-bottom: 20px; }
 }
 
 /*------------------------
@@ -1754,7 +1867,11 @@ Clearfix
   @include clearfix;
 }
 
+/*------------------------
+Internet Explorer
+------------------------*/
 
+@import "ie";
 
 
 

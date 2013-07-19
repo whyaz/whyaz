@@ -7,6 +7,10 @@
   height: 0;
 }
 
+/*------------------------------
+Setup for shapes
+-------------------------------*/
+
 /* common items for pseudo elements */
 @mixin pseudo {
   content: '';
@@ -27,53 +31,6 @@
 }
 
 /*------------------------------
-Gradients - 2 colors, hard stop
--------------------------------*/
-
-/* top to bottom */
-@mixin gradient-bottom($stop,$color1,$color2) {
-  background-color: $color1;
-  background-image: -moz-linear-gradient(top, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
-  background-image: -webkit-linear-gradient(top, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
-  background-image: linear-gradient(180deg, $color1 $stop,$color2 $stop,$color2);
-}
-
-/* left to right, variable percent */
-@mixin gradient-right($stop,$color1,$color2) {
-  background-color: $color1;
-  background-image: -moz-linear-gradient(left, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
-  background-image: -webkit-linear-gradient(left, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
-  background-image: linear-gradient(90deg, $color1 $stop,$color2 $stop,$color2);
-}
-
-/* left to right, 50 percent */
-@mixin halfsies90($color1,$color2) {
-  background-color: $color1;
-  background-image: -moz-linear-gradient(left, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
-  background-image: -webkit-linear-gradient(left, $color1 0%,$color1 50%,$color2 50%,$color2 100%);
-  background-image: linear-gradient(90deg, $color1 50%,$color2 50%,$color2);
-}
-
-/* variable degree, variable percent */
-@mixin gradient-var($deg,$deg2,$stop,$color1,$color2) {
-  background-color: $color1;
-  background-image: -moz-linear-gradient($deg2, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
-  background-image: -webkit-linear-gradient($deg2, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
-  background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2);
-}
-
-/* two gradients, variable percent */
-@mixin gradient-dual($deg,$direction,$stop,$color1,$color2,$deg2,$direction2,$stop2,$color3,$color4) {
-  background-color: $color1;
-  background-image: -moz-linear-gradient($direction, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%),
-                    -moz-linear-gradient($direction2, $color3 0%, $color3 $stop2, $color4 $stop2, $color4 100%);
-  background-image: -webkit-linear-gradient($direction, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%),
-                    -webkit-linear-gradient($direction2, $color3 0%,$color3 $stop2,$color4 $stop2,$color4 100%);
-  background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2),
-                    linear-gradient($deg2, $color3 $stop2,$color4 $stop2,$color4);
-}
-
-/*------------------------------
 Triangle shapes
 -------------------------------*/
 
@@ -87,6 +44,60 @@ Triangle shapes
 @mixin arrow($width) {
   border-bottom: $width solid transparent;
   border-top: $width solid transparent;
+}
+
+/*------------------------------
+Gradients
+-------------------------------*/
+
+/* top to bottom */
+@mixin gradient-bottom($stop,$color1,$color2) {
+  background-color: $color1;
+  background-image: -moz-linear-gradient(top, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop($stop,$color1), color-stop($stop,$color2), color-stop(100%,$color2));
+  background-image: -webkit-linear-gradient(top, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: -ms-linear-gradient(top, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: linear-gradient(180deg, $color1 $stop,$color2 $stop,$color2);
+}
+
+/* left to right, variable percent */
+@mixin gradient-right($stop,$color1,$color2) {
+  background-color: $color1;
+  background-image: -moz-linear-gradient(left, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
+  background-image: -webkit-linear-gradient(left, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: -ms-linear-gradient(left, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: linear-gradient(90deg, $color1 $stop,$color2 $stop,$color2);
+}
+
+/* left to right, 50 percent */
+@mixin halfsies($color1,$color2) {
+  background-color: $color1;
+  background-image: -moz-linear-gradient(left, $color1 0%, $color1 50%, $color2 50%, $color2 100%);
+  background-image: -webkit-linear-gradient(left, $color1 0%,$color1 50%,$color2 50%,$color2 100%);
+  background-image: -ms-linear-gradient(left, $color1 0%,$color1 50%,$color2 50%,$color2 100%);
+  background-image: linear-gradient(90deg, $color1 50%,$color2 50%,$color2);
+}
+
+/* variable degree, variable percent */
+@mixin gradient-var($deg,$deg2,$stop,$color1,$color2) {
+  background-color: $color1;
+  background-image: -moz-linear-gradient($deg2, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%);
+  background-image: -webkit-linear-gradient($deg2, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: -ms-linear-gradient($deg, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%);
+  background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2);
+}
+
+/* two gradients, variable percent */
+@mixin gradient-dual($deg,$direction,$stop,$color1,$color2,$deg2,$direction2,$stop2,$color3,$color4) {
+  background-color: $color3;
+  background-image: -moz-linear-gradient($direction, $color1 0%, $color1 $stop, $color2 $stop, $color2 100%),
+                    -moz-linear-gradient($direction2, $color3 0%, $color3 $stop2, $color4 $stop2, $color4 100%);
+  background-image: -webkit-linear-gradient($direction, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%),
+                    -webkit-linear-gradient($direction2, $color3 0%,$color3 $stop2,$color4 $stop2,$color4 100%);
+  background-image: -ms-linear-gradient($direction, $color1 0%,$color1 $stop,$color2 $stop,$color2 100%),
+                    -ms-linear-gradient($direction, $color3 0%,$color3 $stop2,$color4 $stop2,$color4 100%);
+  background-image: linear-gradient($deg, $color1 $stop,$color2 $stop,$color2),
+                    linear-gradient($deg2, $color3 $stop2,$color4 $stop2,$color4);
 }
 
 /*------------------------------
