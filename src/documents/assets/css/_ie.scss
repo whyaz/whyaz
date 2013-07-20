@@ -10,55 +10,164 @@
     width: 960px;
   }
 
-  .flag { display: none; }
-
   .siteSection {
-    padding: 50px 0;
-    &:before { display: none; }
+    &:before {
+      @include draw(60px,80px);
+      @include place(-50px,-80px);
+      background: transparent;
+      border: 2px dashed $border-grey-drk;
+      color: $border-grey-drk;
+      padding: 20px 20px 0;
+      text-align: center;
+    }
     &:after { display: none; }
-  }
-
-  .siteHeader {
-    margin-bottom: 30px;
   }
 
   .icon {
-    &:before { display: none; }
-    &:after { display: none; }
-    .icon-img {
-      display: none;
-      &:before { display: none; }
-      &:after { display: none; }
+    &:before {
+      @include draw(100px,100px);
+      @include place(-70px,0);
+      background: transparent;
+      border: 2px dashed $border-grey-drk;
+      color: $border-grey-drk;
+      padding: 40px 20px 0;
+      text-align: center;
+    }
+    &:after,
+    .icon-img { display: none; }
+  }
+
+  .col-two {
+    .icon {
+      float: left;
+      margin-left: 3%;
+      margin-right: 3%;
+      width: 44%;
     }
   }
 
-  .col-one .icon,
-  .col-two .icon,
-  .col-three .icon {
-    margin-bottom: 0;
-    padding: 20px 0;
+  .col-three {
+    .icon {
+      float: left;
+      margin-left: 2%;
+      margin-right: 2%;
+      min-height: 60px;
+      width: 29.333%;
+      &:before {
+        @include draw(100px,100px);
+        padding-top: 20px;
+      }
+    }
   }
 
   .intro {
-    .siteHeader:after {
-      content: "You are seeing a text-only version of this site. There's more to experience though. Much more. Upgrade to Internet Explorer 10 or download Google Chrome to view it in all its glory. Trust us, it's worth it.";
-      display: block;
-      font-size: 16px;
-      line-height: 24px;
-      margin: 30px auto;
+    position: relative;
+    &:before { display: none; }
+    &:after {
+      @include pseudo;
+      content: "Wondering where the images are? Well, they're being drawn with CSS3 and your browser doesn't support it. Upgrade to IE10 or download Google Chrome to see them in all their glory. It'll be worth it, trust us.";
+      color: $body-grey;
+      font-size: 18px;
+      line-height: 28px;
+      position: relative;
       text-align: center;
-      text-transform: none;
-      width: 500px;
+      margin-left: -300px;
+      top: 40px;
+      width: 600px;
     }
   }
 
-  .films {
-    .icon {
-      display: inline-block;
-      padding: 10px 15px;
-      width: auto;
+  .flag {
+     background: transparent;
+     border: 2px dashed $border-grey-drk;
+     overflow: visible;
+     .flag-stripes--left,
+     .flag-stripes--right,
+     .flag-star { display: none; }
+     &:before {
+        content: "Arizona flag";
+        color: $border-grey-drk;
+        font-size: 18px;
+        position: relative;
+        text-align: center;
+        top: 45%;
+     }
+   }
+
+.desert .icon:before,
+.living .icon:before,
+.food:before,
+.food .icon:before,
+.films:before,
+.edu .icon:before,
+.inspire:before,
+.inspire .icon:before,
+.history:before,
+.history .icon:before,
+.alumni:before
+ { border-color: $border-grey-light; color: $border-grey-light; }
+
+.desert:before  { content: "flowery cactus"; }
+  .meter:before { content: "altimeter"; }
+  .trees:before { content: "sweet trees"; }
+  .snow:before  { content: "huge snow balls"; }
+  .tube:before  { content: "inner tube"; }
+.weather:before { content: "fluffy cloud"; }
+  .sun:before  { content: "life producing sun"; }
+  .temp:before  { content: "thermometer"; }
+.living:before  { content: "dolla billz y'all"; }
+  .barchart:before  { content: "super informative bar chart"; }
+.food:before  { content: "plate"; }
+  .pizza:before  { content: "a pizza pie"; }
+  .beer-mug:before  { content: "mug o' beer"; }
+  .beer-glass:before  { content: "glass o' beer"; }
+  .taco:before  { content: "taco burrito meal"; }
+.films:before  { content: "film countdown"; }
+  .starwars:before  { content: "Luke's house"; }
+  .phonebooth:before  { content: "time travel phone booth"; }
+  .tombstone:before  { content: "Wyatt Earp, yo"; }
+  .shawshank:before  { content: "rock hammer"; }
+  .diaper:before  { content: "giant diaper"; }
+  .wally:before  { content: "Wally World hat"; }
+  .tshirt:before  { content: "Wayne's black tshirt"; }
+  .wheel:before  { content: "wagon wheel fo' real"; }
+  .nerd:before  { content: "pocket protector"; }
+.education:before  { content: "moleskine"; }
+  .godevils:before  { content: "Go Devils!"; }
+  .beardown:before  { content: "Bear Down!"; }
+.inspire:before  { content: "typical thought bubble"; }
+  .painting:before  { content: "poor excuse for a painting"; }
+  .path:before  { content: "illustrator path"; }
+  .code:before  { content: "terminal window"; }
+  .match:before  { content: "light it up!"; }
+.history:before  { content: "polaroid (ancient tech)"; }
+  .heart:before  { content: "heart"; }
+  .cowboy:before  { content: "goofy cowboy hat"; }
+  .bridge:before  { content: "london london bridge"; }
+  .sign:before  { content: "a sign. thrilling."; }
+.alumni:before  { content: "AZ driver's license"; }
+  .yearbook:before  { content: "embarrassing school yearbook"; }
+.perks:before  { content: "juicy popsicle"; }
+  .alarm:before  { content: "alarm clock"; }
+  .disney:before  { content: "Mickey ear hat"; }
+  .baseball:before  { content: "a baseball"; }
+  .mountain:before  { content: "spiky mountains"; }
+  .sunset:before  { content: "most beautiful sunset ever"; }
+  .golf:before  { content: "golf ball"; }
+
+  .whyaz {
+    &:before { border: none; }
+    .flag {
+      @include draw(200px,133px);
+      @include place (-100px,-60px);
+      text-align: center !important;
+      &:before { margin-left: -50px; }
     }
   }
+
+  .melt-logo:before { display: none; }
+
+  .melt-logo { padding-bottom: 40px;}
 
   .alumni {
     .list-item {
@@ -72,3 +181,22 @@
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

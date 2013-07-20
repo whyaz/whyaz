@@ -1080,8 +1080,8 @@ Education section
                 6px 6px       $shadow;
   }
   &:after {
-    @include draw(8px,94px);
-    @include place(-28px,-54px);
+    @include draw(4px,94px);
+    @include place(20px,-54px);
     background: $body-grey-drk;
   }
 }
