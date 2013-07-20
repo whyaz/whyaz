@@ -107,53 +107,53 @@
 .alumni:before
  { border-color: $border-grey-light; color: $border-grey-light; }
 
-.desert:before  { content: "flowery cactus"; }
-  .meter:before { content: "altimeter"; }
-  .trees:before { content: "sweet trees"; }
-  .snow:before  { content: "huge snow balls"; }
-  .tube:before  { content: "inner tube"; }
-.weather:before { content: "fluffy cloud"; }
-  .sun:before  { content: "life producing sun"; }
-  .temp:before  { content: "thermometer"; }
-.living:before  { content: "dolla billz y'all"; }
-  .barchart:before  { content: "super informative bar chart"; }
-.food:before  { content: "plate"; }
-  .pizza:before  { content: "a pizza pie"; }
-  .beer-mug:before  { content: "mug o' beer"; }
+.desert:before        { content: "flowery cactus"; }
+  .meter:before       { content: "altimeter"; }
+  .trees:before       { content: "sweet trees"; }
+  .snow:before        { content: "huge snow balls"; }
+  .tube:before        { content: "inner tube"; }
+.weather:before       { content: "fluffy cloud"; }
+  .sun:before         { content: "life producing sun"; }
+  .temp:before        { content: "thermometer"; }
+.living:before        { content: "dolla billz y'all"; }
+  .barchart:before    { content: "super informative bar chart"; }
+.food:before          { content: "plate"; }
+  .pizza:before       { content: "a pizza pie"; }
+  .beer-mug:before    { content: "mug o' beer"; }
   .beer-glass:before  { content: "glass o' beer"; }
-  .taco:before  { content: "taco burrito meal"; }
-.films:before  { content: "film countdown"; }
-  .starwars:before  { content: "Luke's house"; }
+  .taco:before        { content: "taco burrito meal"; }
+.films:before         { content: "film countdown"; }
+  .starwars:before    { content: "Luke's house"; }
   .phonebooth:before  { content: "time travel phone booth"; }
-  .tombstone:before  { content: "Wyatt Earp, yo"; }
-  .shawshank:before  { content: "rock hammer"; }
-  .diaper:before  { content: "giant diaper"; }
-  .wally:before  { content: "Wally World hat"; }
-  .tshirt:before  { content: "Wayne's black tshirt"; }
-  .wheel:before  { content: "wagon wheel fo' real"; }
-  .nerd:before  { content: "pocket protector"; }
-.education:before  { content: "moleskine"; }
-  .godevils:before  { content: "Go Devils!"; }
-  .beardown:before  { content: "Bear Down!"; }
-.inspire:before  { content: "typical thought bubble"; }
-  .painting:before  { content: "poor excuse for a painting"; }
-  .path:before  { content: "illustrator path"; }
-  .code:before  { content: "terminal window"; }
-  .match:before  { content: "light it up!"; }
-.history:before  { content: "polaroid (ancient tech)"; }
-  .heart:before  { content: "heart"; }
-  .cowboy:before  { content: "goofy cowboy hat"; }
-  .bridge:before  { content: "london london bridge"; }
-  .sign:before  { content: "a sign. thrilling."; }
-.alumni:before  { content: "AZ driver's license"; }
-  .yearbook:before  { content: "embarrassing school yearbook"; }
-.perks:before  { content: "juicy popsicle"; }
-  .alarm:before  { content: "alarm clock"; }
-  .disney:before  { content: "Mickey ear hat"; }
-  .baseball:before  { content: "a baseball"; }
-  .mountain:before  { content: "spiky mountains"; }
-  .sunset:before  { content: "most beautiful sunset ever"; }
-  .golf:before  { content: "golf ball"; }
+  .tombstone:before   { content: "Wyatt Earp, yo"; }
+  .shawshank:before   { content: "rock hammer"; }
+  .diaper:before      { content: "giant diaper"; }
+  .wally:before       { content: "Wally World hat"; }
+  .tshirt:before      { content: "Wayne's black tshirt"; }
+  .wheel:before       { content: "wagon wheel fo' real"; }
+  .nerd:before        { content: "pocket protector"; }
+.education:before     { content: "moleskine"; }
+  .godevils:before    { content: "Go Devils!"; }
+  .beardown:before    { content: "Bear Down!"; }
+.inspire:before       { content: "typical thought bubble"; }
+  .painting:before    { content: "poor excuse for a painting"; }
+  .path:before        { content: "illustrator path"; }
+  .code:before        { content: "terminal window"; }
+  .match:before       { content: "light it up!"; }
+.history:before       { content: "polaroid (ancient tech)"; }
+  .heart:before       { content: "heart"; }
+  .cowboy:before      { content: "goofy cowboy hat"; }
+  .bridge:before      { content: "london london bridge"; }
+  .sign:before        { content: "a sign. thrilling."; }
+.alumni:before        { content: "AZ driver's license"; }
+  .yearbook:before    { content: "embarrassing school yearbook"; }
+.perks:before         { content: "juicy popsicle"; }
+  .alarm:before       { content: "alarm clock"; }
+  .disney:before      { content: "Mickey ear hat"; }
+  .baseball:before    { content: "a baseball"; }
+  .mountain:before    { content: "spiky mountains"; }
+  .sunset:before      { content: "most beautiful sunset ever"; }
+  .golf:before        { content: "golf ball"; }
 
   .whyaz {
     &:before { border: none; }
@@ -181,22 +181,3 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
