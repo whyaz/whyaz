@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if lte IE 8]>     <html class="no-js lte-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- Site Properities -->
+  <title>demo -- {{document.title}}</title>
+  <meta name="description" content="{{document.description}}" />
+
+  <%- @getBlock('styles').add(['/assets/css/demo.css']).toHTML() %>
+
+  <!--[if lte IE 8]>
+    <script src="/assets/js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Typekit -->
+  <script type="text/javascript" src="//use.typekit.net/xup0pch.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+</head>
+
+<body class="{{document.bodyClass}}">
+
+  {{{ content }}}
+
+  <!-- DocPad Scripts + Our Own -->
+  <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
+
+</body>
+</html>
