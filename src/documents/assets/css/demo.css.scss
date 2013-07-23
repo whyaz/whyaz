@@ -1,0 +1,197 @@
+/*-- scss imports --*/
+
+@import "reset";
+@import "mixins";
+@import "colors";
+
+/*------------------------
+Global styles
+------------------------*/
+
+html { -webkit-text-size-adjust: none; }
+body {  background: $intro-blue; }
+
+/*------------------------
+Flags
+------------------------*/
+
+@mixin flag-stripe {
+  @include pseudo;
+  @include arrow(17px);
+  border-left: 170px solid $flag-yellow;
+}
+
+
+/* flag with 4 HTML elements */
+.flag {
+  @include draw(300px,200px);
+  @include gradient-bottom(51%,$flag-red,$flag-blue);
+  box-shadow: $shadow-tall;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    @include pseudo;
+    @include draw(300px,100px);
+    @include place(0,100px);
+  }
+  .flag-stripes--left {
+    @include flag-stripe;
+    @include rotate(18deg);
+    left: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(28deg);
+      right: -12px;
+      bottom: 19px;
+    }
+    &:after {
+      @include rotate(54deg);
+      right: -35px;
+      bottom: 47px;
+    }
+  }
+  .flag-stripes--right {
+    @include rotate(162deg);
+    @include flag-stripe;
+    right: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(-28deg);
+      right: -12px;
+      bottom: -53px;
+    }
+    &:after {
+      @include rotate(-54deg);
+      right: -35px;
+      bottom: -79px;
+    }
+  }
+  .flag-star {
+    @include pseudo;
+    @include place(-30px,90px);
+    @include triangle(30px);
+    border-bottom: 22px solid $flag-gold;
+    left: 50%;
+    @include rotate(36deg);
+    z-index: 2;
+    &:before {
+      @include pseudo;
+      @include triangle(7px);
+      border-bottom: 22px solid $flag-gold;
+      left: -18px;
+      top: -16px;
+      @include rotate(-35deg);
+    }
+    &:after {
+      @include pseudo;
+      @include triangle(30px);
+      border-bottom: 22px  solid $flag-gold;
+      left: -30px;
+      @include rotate(-72deg);
+    }
+  }
+}
+
+/*flag with 3 HTML elements */
+.flag-three {
+  @include draw(300px,200px);
+  @include gradient-bottom(51%,$flag-red,$flag-blue);
+  box-shadow: $shadow-tall;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    @include pseudo;
+    @include draw(300px,100px);
+    @include place(0,100px);
+  }
+  .flag-stripes--left {
+    @include flag-stripe;
+    @include rotate(18deg);
+    left: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(28deg);
+      right: -12px;
+      bottom: 19px;
+    }
+    &:after {
+      @include rotate(54deg);
+      right: -35px;
+      bottom: 47px;
+    }
+  }
+  .flag-stripes--right {
+    @include rotate(162deg);
+    @include flag-stripe;
+    right: -10px;
+    top: 60px;
+    &:before, &:after { @include flag-stripe; }
+    &:before {
+      @include rotate(-28deg);
+      right: -12px;
+      bottom: -53px;
+    }
+    &:after {
+      @include rotate(-54deg);
+      right: -35px;
+      bottom: -79px;
+    }
+  }
+  &:after {
+    color: $flag-gold;
+    content: '\2605';
+    display: block;
+    font-size: 60px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    top: 65px;
+    width: 60px;
+  }
+}
+
+/* flag with 1 HTML element */
+.flag-one {
+  @include draw(300px,200px);
+  background: $flag-blue;
+  box-shadow: $shadow-tall;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    @include pseudo;
+    @include draw(300px,100px);
+    background:
+      linear-gradient(167deg,rgba(186,84,94,0) 80%,$flag-red 80%,$flag-red),
+      linear-gradient(154deg,rgba(244,235,147,0) 70%,$flag-yellow 70%,$flag-yellow),
+      linear-gradient(135deg,rgba(186,84,94,0) 63%,$flag-red 63%,$flag-red),
+      linear-gradient(122deg,rgba(244,235,147,0) 59%,$flag-yellow 59%,$flag-yellow),
+      linear-gradient(109deg,rgba(186,84,94,0) 55%,$flag-red 55%,$flag-red),
+      linear-gradient(98deg,rgba(244,235,147,0) 52%,$flag-yellow 52%,$flag-yellow),
+      linear-gradient(82deg,rgba(186,84,94,0) 48%,$flag-red 48%,$flag-red),
+      linear-gradient(70deg,rgba(244,235,147,0) 45%,$flag-yellow 45%,$flag-yellow),
+      linear-gradient(57deg,rgba(186,84,94,0) 41%,$flag-red 41%,$flag-red),
+      linear-gradient(45deg,rgba(244,235,147,0) 37%,$flag-yellow 37%,$flag-yellow),
+      linear-gradient(27deg,rgba(186,84,94,0) 30%,$flag-red 30%,$flag-red),
+      linear-gradient(14deg,rgba(244,235,147,0) 21%,$flag-yellow 21%,$flag-yellow);
+    background-color: $flag-red;
+  }
+  &:after {
+    color: $flag-gold;
+    content: '\2605';
+    display: block;
+    font-size: 60px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    top: 63px;
+    width: 60px;
+  }
+}
+
+

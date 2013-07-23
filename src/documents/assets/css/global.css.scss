@@ -216,17 +216,7 @@ Intro section
       right: -35px;
       bottom: -79px;
     }
-  }/* old star, having size issues in FF
-  &:after {
-    color: $flag-gold;
-    content: '\2605';
-    display: block;
-    font-size: 60px;
-    margin: 0 auto;
-    position: relative;
-    top: 60px;
-    width: 60px;
-  } */
+  }
   .flag-star {
     @include pseudo;
     @include place(-30px,90px);
