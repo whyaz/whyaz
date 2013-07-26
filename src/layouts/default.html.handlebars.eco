@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Site Properities -->
-  <title>whyaz -- {{document.title}}</title>
+  <title>{{document.title}}</title>
   <meta name="description" content="{{document.description}}" />
 
   <%- @getBlock('styles').add(['/assets/css/global.css']).toHTML() %>
