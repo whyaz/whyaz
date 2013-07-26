@@ -69,10 +69,11 @@ em { font-style: italic; }
   }
   .icon {
     position: relative;
-    margin: 0 auto 15%;
+    margin: 0 auto 25%;
     width: 86%;
     @include min-width(679px) {
       float: left;
+      margin-bottom: 15%;
     }
     &:before, &:after,
     .icon-img, .icon-img:before, .icon-img:after { 
@@ -617,7 +618,7 @@ Food and Beer section
       @include place(-3px,30px);
       border: 8px solid $glass-grey;
     }
-  }
+  } 
 }
 
 .beer-glass {
@@ -1028,7 +1029,7 @@ Films section
     @include draw(6px,50px);
     @include place(-25px, 10px);
     background: $flag-red;
-    box-shadow:  4px  4px 0     $shadow,
+    box-shadow:  4px  4px       $shadow,
                 15px  6px 0 1px $body-grey,
                 19px 10px       $shadow,
                 30px  2px       $flag-blue,
@@ -1621,6 +1622,36 @@ Perks section
   }
 }
 
+.hotdog {
+  &:before {
+    @include draw(160px,50px);
+    @include place(-80px,20px);
+    background: $sun-orange-drk;
+    border-radius: 20px;
+  }
+  &:after {
+    @include draw(170px,50px);
+    @include place(-85px,45px);
+    background: $sun-orange;
+    border-radius: 20px;
+    box-shadow: $shadow-tall;
+  }
+  .icon-img {
+    @include draw(200px,25px);
+    @include place(-100px,30px);
+    background: $hammer-brown-light;
+    border-radius: 15px;
+    box-shadow: $shadow-tall;
+    &:before {
+      @include draw(150px,5px);
+      @include place(-75px,2px);
+      background: $flag-red;
+      box-shadow: 0 3px $flag-yellow;
+    }
+  }
+}
+
+/*
 .baseball {
   .icon-img {
     @include draw(130px,130px);
@@ -1641,7 +1672,7 @@ Perks section
       @include place(22px,-2px);
     }
   }
-}
+} */
 
 .mountain {
   &:before {

@@ -24,6 +24,7 @@
   }
 
   .icon {
+    margin-bottom: 15%;
     &:before {
       @include draw(100px,100px);
       @include place(-70px,0);
@@ -178,6 +179,7 @@
   .meltmedia {
     margin-top: 75px;
     padding-bottom: 0;
+    p { margin-bottom: 0; }
   }
 
 }
