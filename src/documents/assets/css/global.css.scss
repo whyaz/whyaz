@@ -175,6 +175,7 @@ Intro section
 .flag {
   @include draw(300px,200px);
   @include gradient-bottom(51%,$flag-red,$flag-blue);
+  -webkit-box-shadow: 8px 8px 1px rgba(0,0,0,.13);
   box-shadow: $shadow-tall;
   margin: 0 auto;
   overflow: hidden;
@@ -260,6 +261,7 @@ Desert section
     @include halfsies($cactus-green,$cactus-green-drk);
     border-radius: 50% 50% 0 0;
     box-shadow: $shadow-short;
+
   }
   &:after {
     @include draw(10px,10px);
@@ -1624,21 +1626,21 @@ Perks section
 
 .hotdog {
   &:before {
-    @include draw(160px,50px);
-    @include place(-80px,20px);
+    @include draw(150px,50px);
+    @include place(-75px,20px);
     background: $sun-orange-drk;
     border-radius: 20px;
   }
   &:after {
-    @include draw(170px,50px);
-    @include place(-85px,45px);
+    @include draw(160px,50px);
+    @include place(-80px,45px);
     background: $sun-orange;
     border-radius: 20px;
     box-shadow: $shadow-tall;
   }
   .icon-img {
-    @include draw(200px,25px);
-    @include place(-100px,30px);
+    @include draw(180px,25px);
+    @include place(-90px,30px);
     background: $hammer-brown-light;
     border-radius: 15px;
     box-shadow: $shadow-tall;
