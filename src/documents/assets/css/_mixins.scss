@@ -108,7 +108,6 @@ Transforms
   -webkit-transform: rotate($deg);
   -moz-transform:    rotate($deg);
   -ms-transform:     rotate($deg);
-  -o-transform:      rotate($deg);
   transform:         rotate($deg);
 }
 
@@ -117,7 +116,6 @@ Transforms
   -webkit-transform: scale($value);
   -moz-transform:    scale($value);
   -ms-transform:     scale($value);
-  -o-transform:      scale($value);
   transform:         scale($value);
 }
 
@@ -126,7 +124,6 @@ Transforms
   -webkit-transform: skewX($value);
   -moz-transform:    skewX($value);
   -ms-transform:     skewX($value);
-  -o-transform:      skewX($value);
   transform:         skewX($value);
 }
 
@@ -135,7 +132,6 @@ Transforms
   -webkit-transform: skewY($value);
   -moz-transform:    skewY($value);
   -ms-transform:     skewY($value);
-  -o-transform:      skewY($value);
   transform:         skewY($value);
 }
 

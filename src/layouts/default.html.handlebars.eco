@@ -9,10 +9,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Site Properities -->
-  <title>{{document.title}}</title>
+  <title>WhyAZ - {{document.title}}</title>
   <meta name="description" content="{{document.description}}" />
 
-  <%- @getBlock('styles').add(['/assets/css/global.css']).toHTML() %>
+  <%- @getBlock('styles').add(['/assets/css/{{document.css}}']).toHTML() %>
 
   <!--[if lte IE 8]>
     <script src="/assets/js/html5shiv.js"></script>
@@ -25,7 +25,17 @@
 
 </head>
 
-<body class="{{document.bodyClass}}">
+<body>
+
+<!--**************************************
+      **************************************
+
+      This website uses no graphics, only CSS.
+      Extra markup is kept to a strict minimum.
+      Why did we do it? Why the hell not?
+
+      **************************************
+      **************************************-->
 
   {{{ content }}}
 
