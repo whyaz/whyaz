@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         key: process.env.AWS_ACCESS_KEY_ID,
         secret: process.env.AWS_SECRET_ACCESS_KEY,
         access: 'public-read',
-        bucket: 'melt-upload'
+        bucket: 'whyaz'
       },
       dev: {
         // These options override the defaults
