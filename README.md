@@ -5,9 +5,9 @@ Marketing website for meltmedia
 
 ## Getting Started
 
-1. [Install DocPad](https://github.com/bevry/docpad)
+- [Install DocPad](https://github.com/bevry/docpad)
 
-1. Clone the project and run the server
+###Clone the project and run the server
 
 
     git clone git@github.com:meltmedia/whyaz.git
@@ -15,22 +15,23 @@ Marketing website for meltmedia
     cd whyaz
 
     npm install
-
+		
     docpad run
-
-    or if you dont have docpad installed globally
-
+    
+If you dont have docpad installed globally:
+    
     node_modules/docpad/bin/docpad run
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
 
-1. Start hacking away by modifying the `src` directory
+- [Open http://localhost:9778/](http://localhost:9778/)
+
+- Start hacking away by modifying the `src` directory
 
 ## Production Build
 
     docpad run --env=production
 
-    or
+or
 
     node_modules/docpad/bin/docpad run  --env=production
 
