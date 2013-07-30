@@ -26,6 +26,14 @@ Marketing website for meltmedia
 
 1. Start hacking away by modifying the `src` directory
 
+## Production Build
+
+    docpad run --env=production
+
+    or
+
+    node_modules/docpad/bin/docpad run  --env=production
+
 
 ## License
 
