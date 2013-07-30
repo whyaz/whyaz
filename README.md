@@ -18,7 +18,7 @@ Marketing website for meltmedia
 
     docpad run
 
-    #if you don't have docpad installed globally
+    or if you dont have docpad installed globally
 
     node_modules/docpad/bin/docpad run
 
