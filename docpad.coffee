@@ -58,6 +58,20 @@ docpadConfig = {
 			# Merge the document keywords with the site keywords
 			@site.keywords.concat(@document.keywords or []).join(', ')
 
+    # =================================
+    # Plugin Configuration
+
+    # Configure Plugins
+    # Should contain the plugin short names on the left, and the configuration to pass the plugin on the right
+    plugins:  # example
+      # Disable NIB within the Stylus Plugin
+      livereload:
+        environments:
+          development:
+            enabled: true
+          production:
+            enabled: false
+
 
 	# =================================
 	# DocPad Events
