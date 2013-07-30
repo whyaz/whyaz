@@ -34,6 +34,10 @@ Marketing website for meltmedia
 
     node_modules/docpad/bin/docpad run  --env=production
 
+## Production Deploy
+
+    grunt s3
+
 
 ## License
 
