@@ -1,5 +1,6 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com/) skeleton for [DocPad](https://github.com/bevry/docpad)
-Bare essentials for building a modern website with best practices
+# whyaz
+
+Marketing website for meltmedia
 
 
 ## Getting Started
@@ -8,12 +9,18 @@ Bare essentials for building a modern website with best practices
 
 1. Clone the project and run the server
 
-	``` bash
-	git clone git://github.com/docpad/html5-boilerplate.docpad.git
-	cd html5-boilerplate.docpad
-	npm install
-	docpad run
-	```
+
+    git clone git@github.com:meltmedia/whyaz.git
+
+    cd whyaz
+
+    npm install
+
+    docpad run
+
+    #if you don't have docpad installed globally
+
+    node_modules/docpad/bin/docpad run
 
 1. [Open http://localhost:9778/](http://localhost:9778/)
 

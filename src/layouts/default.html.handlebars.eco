@@ -22,7 +22,6 @@
   <script type="text/javascript" src="//use.typekit.net/xup0pch.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-
 </head>
 
 <body>
@@ -40,7 +39,7 @@
   {{{ content }}}
 
   <!-- DocPad Scripts + Our Own -->
-  <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
-
+  <%- if (@getEnvironment() == 'development'): %>
+    <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
 </body>
 </html>
