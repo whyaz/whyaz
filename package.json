@@ -1,35 +1,7 @@
 {
-  "name": "html5-boilerplate.docpad",
+  "name": "whyaz",
   "version": "0.1.0",
   "private": true,
-  "description": "HTML5 Boilerplate skeleton for DocPad. Bare essentials for building a modern website with best practices.",
-  "homepage": "https://github.com/docpad/html5-boilerplate.docpad",
-  "keywords": [
-    "docpad-skeleton",
-    "docpad",
-    "website",
-    "skeleton",
-    "html5 boilerplate",
-    "h5bp"
-  ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-  "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
-  ],
-  "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
-  ],
-  "bugs": {
-    "url": "https://github.com/docpad/html5-boilerplate.docpad/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/docpad/html5-boilerplate.docpad.git"
-  },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
-  },
   "dependencies": {
     "docpad": "6.x",
     "docpad-plugin-coffeescript": "2.x",
@@ -39,7 +11,9 @@
     "docpad-plugin-stylus": "2.x",
     "docpad-plugin-text": "2.x",
     "docpad-plugin-handlebars": "~2.2.0",
-    "docpad-plugin-sass": "~2.4.2"
+    "docpad-plugin-sass": "~2.4.2",
+    "grunt": "~0.4.1",
+    "grunt-s3": "0.2.0-alpha.2"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "2.x"
