@@ -45,7 +45,6 @@ em { font-style: italic; }
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 60px;
-  text-align: center;
   text-shadow: $shadow-short;
   text-transform: uppercase;
   @include min-width(460px) {
@@ -55,6 +54,13 @@ em { font-style: italic; }
     font-size: 40px;
     letter-spacing: 1px;
   }
+}
+
+.siteSubHeader {
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  margin: 60px 0 0;
+  text-transform: uppercase;
+  text-shadow: $shadow-short;
 }
 
 .siteContent {
@@ -136,7 +142,7 @@ a:hover { border-bottom: 1px dotted $white; }
   }
 }
 
-@mixin links-light { @include links($meter-grey-light); @include links(rgba(255,255,255,.7)); }
+@mixin links-light { @include links($meter-grey-light); @include links(rgba(255,255,255,.7)); color: $white; }
 @mixin links-drk   { @include links(#666); @include links(rgba(52,52,52,.7)); }
 
 /*------------------------
@@ -482,7 +488,6 @@ Living section
 .living {
   @include links-light;
   background: $flag-red;
-  color: $white;
   &:before {
     @include draw(130px,65px);
     @include place(-70px,-40px);
@@ -539,7 +544,6 @@ Food and Beer section
 .food {
   @include links-light;
   background: $flag-blue;
-  color: $white;
   &:before {
     @include draw(100px,100px);
     @include place(-50px,-60px);
@@ -689,6 +693,32 @@ Food and Beer section
       @include place(-14px,-20px);
       @include halfsies($sun-orange,$sun-orange-drk);
       border-radius: 70px 70px 0 0;
+    }
+  }
+}
+
+.wine {
+  &:before {
+    @include draw(18px,45px);
+    @include place(-9px,0);
+    @include halfsies($desert-brown-light,$desert-brown);
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(18px,24px);
+    @include place(-9px,0);
+    @include halfsies($flag-red,$flag-red-drk);
+  }
+  .icon-img {
+    @include draw(54px,105px);
+    @include place(-27px,40px);
+    @include halfsies($desert-brown-light,$desert-brown);
+    border-radius: 30px 30px 0 0;
+    box-shadow: $shadow-tall;
+    &:before {
+      @include draw(54px,40px);
+      @include place(-27px,35px);
+      @include halfsies($white,$meter-grey-light);
     }
   }
 }
@@ -1057,13 +1087,209 @@ Films section
 }
 
 /*------------------------
+Business section
+------------------------*/
+
+.biz {
+  @include links-light;
+  background: $body-grey-light;
+  &:before {
+    @include draw(80px,80px);
+    @include place(-40px,-70px);
+    @include gradient-var(45deg,45deg,50%,$flag-red-light,$flag-red);
+    border-radius: 50px 50px 0 50px;
+    box-shadow: 6px 0 $shadow;
+    @include rotate(45deg);
+  }
+  &:after {
+    @include draw(30px,30px);
+    @include place(-15px,-50px);
+    background: $films-blue;
+    border-radius: 50%;
+    box-shadow: inset $shadow-short;
+  }
+  .list-item {
+    display: inline-block;
+    padding: 10px 5px 0;
+    @include min-width(460px) {
+      padding: 20px 10px 0;
+    }
+    @include min-width(679px) {
+      padding: 30px 15px 0;
+    }
+  }
+}
+
+.headquarters {
+  &:before {
+    @include draw(100px,135px);
+    @include place(-50px,0);
+    background: $meter-grey-light;
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(50px,135px);
+    @include place(0,0);
+    background: $shadow;
+  }
+  .icon-img {
+    @include draw(20px,20px);
+    @include place(-40px,10px);
+    background: $tube-blue-drk;
+    box-shadow: 30px 0    $tube-blue-drk,
+                60px 0    $tube-blue-drk,
+                 0   30px $tube-blue-drk,
+                30px 30px $tube-blue-drk,
+                60px 30px $tube-blue-drk,
+                 0   60px $tube-blue-drk,
+                30px 60px $tube-blue-drk,
+                60px 60px $tube-blue-drk,
+                30px 100px 0 5px $meter-grey-drk;
+    &:before {
+      @include draw(2px,30px);
+      @include place(40px,-40px);
+      background: $white;
+      box-shadow: 2px 0 $shadow;
+    }
+    &:after {
+      @include draw(20px,15px);
+      @include place(42px,-40px);
+      background: $flag-red;
+      box-shadow: 2px 2px $shadow;
+    }
+  }
+}
+
+/*------------------------
+Natural Wonders section
+------------------------*/
+
+.natural {
+  @include links-drk;
+  background: $desert-brown;
+  &:before {
+    @include draw(10px,40px);
+    @include place(-5px,-20px);
+    background: $hammer-brown;
+    box-shadow:   4px 4px $shadow,
+                -50px 0   $hammer-brown,
+                -46px 4px $shadow,
+                 50px 0   $hammer-brown,
+                 54px 4px $shadow;
+  }
+  &:after {
+    @include draw(56px,56px);
+    @include place(-28px,-70px);
+    background: $tree-green;
+    border-radius: 50%;
+    box-shadow:   4px 4px $shadow,
+                -50px 0   $tree-green-drk,
+                -46px 4px $shadow,
+                 50px 0   $tree-green-drk,
+                 54px 4px $shadow;
+  }
+}
+
+.badge {
+  &:before {
+    @include draw(140px,140px);
+    @include place(-70px,0);
+    background: $tree-green;
+    border-radius: 50%;
+    box-shadow: -1px -1px $tree-green-light,
+                $shadow-tall;
+  }
+  &:after {
+    @include draw(120px,120px);
+    @include place(-70px,0);
+    @include halfsies(transparent,$shadow);
+    border-radius: 50%;
+    border: 10px solid $tree-green-drk;
+    box-shadow: inset 2px 2px $shadow;
+  }
+}
+
+.canyon {
+  &:before { background: $weather-blue; }
+  .icon-img {
+    @include draw(130px,90px);
+    @include place(-65px,40px);
+    background: $hammer-brown;
+    border-radius: 10px 10px 50px 50px;
+    &:before {
+      @include place(-12px,0);
+      @include triangle(8px);
+      border-top: 60px solid $weather-blue;
+      width: 8px;
+    }
+    &:after {
+      @include place(-24px,60px);
+      @include triangle(20px);
+      border-bottom: 30px solid $tube-blue-drk;
+      width: 8px;
+    }
+  }
+}
+
+.cavern {
+  &:before { background: $sun-orange-shadow; }
+  .icon-img {
+    @include draw(140px,140px);
+    @include place(-70px,0);
+    background: $sun-orange-shadow;
+    border-radius: 50%;
+    clip: rect(35px,200px,110px,0);
+    &:before {
+      @include draw(20px,80px);
+      @include place(-60px,30px);
+      background: $hammer-brown-light;
+      border-radius: 50%;
+      box-shadow: 40px 0 0 10px $hammer-brown-light,
+                  90px 0 0 15px $hammer-brown-light;
+    }
+    &:after {
+      @include draw(5px,50px);
+      @include place(-50px,10px);
+      background: $sun-orange-shadow;
+      border-radius: 50%;
+      box-shadow: 30px  8px $sun-orange-shadow,
+                  38px  0   $sun-orange-shadow,
+                  80px  0   $sun-orange-shadow,
+                  85px 10px $sun-orange-shadow,
+                  95px -4px $sun-orange-shadow,
+                  30px 73px $sun-orange-shadow,
+                  45px 81px $sun-orange-shadow,
+                  81px 77px $sun-orange-shadow;
+    }
+  }
+}
+
+.crater {
+  &:before {
+    @include gradient-bottom(30%,$weather-blue,$desert-brown-light);
+  }
+  .icon-img {
+    @include draw(60px,15px);
+    @include place(-37px,60px);
+    background: $desert-brown-drk;
+    border: 5px solid $desert-brown-light;
+    border-radius: 50%;
+    box-shadow: inset  8px 8px $shadow,
+                       8px 5px 0 2px $shadow;
+  }
+}
+
+.fossil {
+  
+}
+
+/*------------------------
 Education section
 ------------------------*/
 
 .education {
   @include links-light;
   background: $edu-green;
-  color: $white;
   &:before {
     @include draw(74px,94px);
     @include place(-37px,-54px);
@@ -1148,7 +1374,6 @@ Inspiration section
 .inspire {
   @include links-light;
   background: $inspire-brown;
-  color: $white;
   &:before {
     @include draw(20px,20px);
     @include place(-45px,25px);
@@ -1306,7 +1531,6 @@ History section
 .history {
   @include links-light;
   background: $hammer-brown-drk;
-  color: $white;
   &:before {
     @include draw(80px,100px);
     @include place(-40px,-60px);
