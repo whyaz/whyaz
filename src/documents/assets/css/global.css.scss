@@ -723,6 +723,37 @@ Food and Beer section
   }
 }
 
+.foodtruck {
+  &:before {
+    @include draw(0,60px);
+    @include place(-80px,20px);
+    @include arrow(20px);
+    border-bottom: none;
+    border-right: 30px solid $meter-grey;
+    box-shadow: $shadow-tall;
+  }
+  &:after {
+    @include draw(80px,30px);
+    @include place(-30px,30px);
+    @include halfsies($flag-yellow-light,$flag-yellow);
+  }
+  .icon-img {
+    @include draw(120px,100px);
+    @include place(-50px,0px);
+    @include halfsies($meter-grey,$meter-grey-drk);
+    box-shadow: $shadow-tall;
+    &:before, &:after {
+      @include draw(15px,15px);
+      background: $meter-grey-light;
+      border: 15px solid $body-grey;
+      border-radius: 50%;
+      box-shadow: $shadow-tall
+    }
+    &:before { @include place(-70px,80px); }
+    &:after  { @include place(5px,80px); }
+  }
+}
+
 /*------------------------
 Films section
 ------------------------*/
@@ -1280,7 +1311,7 @@ Natural Wonders section
 }
 
 .fossil {
-  
+  &:before { background: $desert-brown-light; }
 }
 
 /*------------------------
@@ -1521,6 +1552,90 @@ Inspiration section
     @include place(-9px,40px);
     @include halfsies($desert-brown-light,$desert-brown);
     box-shadow: 8px 8px $inspire-brown-shadow;
+  }
+}
+
+/*------------------------
+Science section
+------------------------*/
+
+.science {
+  @include links-light;
+  background: $flag-blue-drk;
+  &:before {
+    @include draw(20px,90px);
+    @include place(-10px,-50px);
+    @include gradient-bottom(40%,rgba(255,255,255,.1),$cactus-green-drk);
+    border: 2px solid $white;
+    border-top-width: 1px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: $shadow-short;
+  }
+  &:after {
+    @include draw(10px,10px);
+    @include place(10px,-80px);
+    background: $cactus-green;
+    border-radius: 50%;
+    box-shadow:            $shadow-short,
+                15px -10px $cactus-green,
+                19px  -6px $shadow,
+                 8px -35px $cactus-green,
+                12px -31px $shadow;
+  }
+}
+
+.pluto {
+  &:before { // planet circle
+    @include draw(100px,100px);
+    @include place(-50px,20px);
+    @include halfsies($meter-grey-light,$meter-grey);
+    border-radius: 50%;
+    box-shadow: $shadow-tall;
+  }
+  .icon-img { // ring around the planet
+    @include draw(160px,25px);
+    @include place(-80px,60px);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    &:before { // sign
+      @include draw(70px,auto);
+      @include place(10px,-50px);
+      background: $flag-yellow;
+      box-shadow: $shadow-short;
+      color: $body-grey;
+      content: "Don't forget me!" !important;
+      font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 13px;
+      padding: 5px;
+      text-transform: uppercase;
+      @include rotate(20deg);
+      z-index: 2;
+    }
+    &:after { // sign post
+      @include draw(4px,40px);
+      @include place(35px,-30px);
+      background: $hammer-brown-light;
+      box-shadow: $shadow-short;
+      @include rotate(20deg);
+    }
+  }
+}
+
+.mars {
+  &:before { // planet circle
+    @include draw(100px,100px);
+    @include place(-50px,20px);
+    @include halfsies($flag-red,$flag-red-drk);
+    border-radius: 50%;
+    box-shadow: $shadow-tall;
+  }
+  .icon-img { // ring around the planet
+    @include draw(160px,25px);
+    @include place(-80px,60px);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
   }
 }
 

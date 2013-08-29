@@ -123,6 +123,8 @@
   .beer-mug:before    { content: "mug o' beer"; }
   .beer-glass:before  { content: "glass o' beer"; }
   .taco:before        { content: "taco burrito meal"; }
+  .wine:before        { content: "tasty wine"; }
+  .foodtruck          { content: "food truck"; }
 .films:before         { content: "film countdown"; }
   .starwars:before    { content: "Luke's house"; }
   .phonebooth:before  { content: "time travel phone booth"; }
@@ -133,6 +135,13 @@
   .tshirt:before      { content: "Wayne's black tshirt"; }
   .wheel:before       { content: "wagon wheel fo' real"; }
   .nerd:before        { content: "pocket protector"; }
+.biz                  { content: "map marker"; }
+  .headquarters       { content: "HQ building"; }
+.natural              { content: "even sweeter trees"; }
+  .canyon             { content: "a grand canyon"; }
+  .cavern             { content: "stalagtites"; }
+  .crater             { content: "a giant hole"; }
+  .fossil             { content: "bonez"; }
 .education:before     { content: "moleskine"; }
   .godevils:before    { content: "Go Devils!"; }
   .beardown:before    { content: "Bear Down!"; }
@@ -141,6 +150,11 @@
   .path:before        { content: "illustrator path"; }
   .code:before        { content: "terminal window"; }
   .match:before       { content: "light it up!"; }
+.science              { content: "bubbly test tube"; }
+  .pluto              { content: "don't forget pluto"; }
+  .mars               { content: "red planet"; }
+  .telescope          { content: "telescope"; }
+  .biosphere          { content: "not biodome"; }
 .history:before       { content: "polaroid (ancient tech)"; }
   .heart:before       { content: "heart"; }
   .cowboy:before      { content: "goofy cowboy hat"; }
@@ -151,7 +165,7 @@
 .perks:before         { content: "juicy popsicle"; }
   .alarm:before       { content: "alarm clock"; }
   .disney:before      { content: "Mickey ear hat"; }
-  .hotdog:before    { content: "tasty hotdog"; }
+  .hotdog:before      { content: "tasty hotdog"; }
   .mountain:before    { content: "spiky mountains"; }
   .sunset:before      { content: "most beautiful sunset ever"; }
   .golf:before        { content: "golf ball"; }
