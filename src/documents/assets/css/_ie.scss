@@ -124,7 +124,7 @@
   .beer-glass:before  { content: "glass o' beer"; }
   .taco:before        { content: "taco burrito meal"; }
   .wine:before        { content: "tasty wine"; }
-  .foodtruck          { content: "food truck"; }
+  .foodtruck:before   { content: "food truck"; }
 .films:before         { content: "film countdown"; }
   .starwars:before    { content: "Luke's house"; }
   .phonebooth:before  { content: "time travel phone booth"; }
@@ -135,26 +135,28 @@
   .tshirt:before      { content: "Wayne's black tshirt"; }
   .wheel:before       { content: "wagon wheel fo' real"; }
   .nerd:before        { content: "pocket protector"; }
-.biz                  { content: "map marker"; }
-  .headquarters       { content: "HQ building"; }
-.natural              { content: "even sweeter trees"; }
-  .canyon             { content: "a grand canyon"; }
-  .cavern             { content: "stalagtites"; }
-  .crater             { content: "a giant hole"; }
-  .fossil             { content: "bonez"; }
+.biz:before           { content: "map marker"; }
+  .headquarters:before { content: "HQ building"; }
+.natural:before       { content: "even sweeter trees"; }
+  .canyon:before      { content: "a grand canyon"; }
+  .cavern:before      { content: "stalagtites"; }
+  .crater:before      { content: "a giant hole"; }
+  .fossil:before      { content: "bonez"; }
 .education:before     { content: "moleskine"; }
   .godevils:before    { content: "Go Devils!"; }
   .beardown:before    { content: "Bear Down!"; }
+  .thunderbird:before { content: "Thunderbird"; }
+  .nau:before         { content: "NAU"; }
 .inspire:before       { content: "typical thought bubble"; }
   .painting:before    { content: "poor excuse for a painting"; }
   .path:before        { content: "illustrator path"; }
   .code:before        { content: "terminal window"; }
   .match:before       { content: "light it up!"; }
-.science              { content: "bubbly test tube"; }
-  .pluto              { content: "don't forget pluto"; }
-  .mars               { content: "red planet"; }
-  .telescope          { content: "telescope"; }
-  .biosphere          { content: "not biodome"; }
+.science:before       { content: "bubbly test tube"; }
+  .pluto:before       { content: "don't forget pluto"; }
+  .mars:before        { content: "red planet"; }
+  .telescope:before   { content: "telescope"; }
+  .biosphere:before   { content: "not biodome"; }
 .history:before       { content: "polaroid (ancient tech)"; }
   .heart:before       { content: "heart"; }
   .cowboy:before      { content: "goofy cowboy hat"; }
