@@ -1411,11 +1411,72 @@ Education section
 }
 
 .thunderbird {
-  
+  &:before { // blue circle
+    @include draw(140px,140px);
+    @include place(-70px,0);
+    background: $tube-blue-drk;
+    border-radius: 50%;
+    box-shadow: $shadow-tall;
+  }
+  &:after { // bird head
+    @include place(-16px,30px);
+    @include arrow(10px);
+    border-right: 20px solid $white;
+  }
+  .icon-img { // body
+    @include draw(80px,20px);
+    @include place(-40px,50px);
+    background: $white;
+    &:before { // wings
+      @include draw(12px,10px);
+      @include place(-40px,20px);
+      background: $white;
+      box-shadow: 12px 0    $white,
+                  56px 0    $white,
+                  68px 0    $white,
+                   0   10px $white,
+                  68px 10px $white;
+    }
+    &:after { // tail
+      @include place(-20px,18px);
+      @include triangle(20px);
+      border-bottom: 40px solid $white;
+    }
+  }
 }
 
 .nau {
-
+  &:before { // shield body
+    @include draw(110px,125px);
+    @include place(-55px,0);
+    background: $flag-blue;
+    border: 3px solid $white;
+    border-bottom-right-radius: 50% 30%;
+    border-bottom-left-radius: 50% 30%;
+    box-shadow: $shadow-tall;
+  }
+  &:after { // vertical stripe
+    @include draw(10px,125px);
+    @include place(0,3px);
+    background: $white;
+  }
+  .icon-img { // tree branch bottom
+    @include draw(68px,68px);
+    @include place(-40px,0);
+    border: 10px solid $white;
+    clip: rect(18px,90px,90px,20px);
+    @include rotate(45deg);
+    &:before { // tree branch middle
+      @include draw(68px,68px);
+      @include place(-65px,-32px);
+      border: 10px solid $white;
+    }
+    &:after { // tree branch top
+      @include draw(68px,68px);
+      @include place(-86px,-54px);
+      border: 10px solid $white;
+    }
+  }
 }
 
 /*------------------------
