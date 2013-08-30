@@ -2302,6 +2302,62 @@ WhyAZ section
   }
 }
 
+.social {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.share { // thought bubble
+  border-radius: 100px 50px 70px 70px / 50px 40px 50px 70px;
+  color: $body-grey !important;
+  display: inline-block;
+  box-shadow: $shadow-tall;
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 20px;
+  margin: 0 10px;
+  padding: 12px;
+  position: relative;
+  text-transform: uppercase;
+  width: 100px;
+  &:before { // triangle shadow
+    @include pseudo;
+    @include triangle(10px);
+    border-top: 10px solid $shadow;
+    bottom: -18px;
+  }
+  &:after { // triangle
+    @include pseudo;
+    @include triangle(10px);
+    border-top: 10px solid;
+    bottom: -10px;
+  }
+  &:hover { border: none; }
+}
+
+.facebook {
+  background: $flag-yellow;
+  &:before { // triangle shadow
+    margin-left: 60px;
+  }
+  &:after  { // triangle
+    border-top-color: $flag-yellow;
+    margin-left: 52px;
+  }
+}
+
+.twitter {
+  background: $weather-blue;
+  &:before { // triangle shadow
+    margin-left: 38px;
+  }
+  &:after  { // triangle
+    border-top-color: $weather-blue;
+    margin-left: 30px;
+  }
+}
+
 .meltmedia {
   border: 1px dotted lighten($body-grey,10%);
   border-left: none;
