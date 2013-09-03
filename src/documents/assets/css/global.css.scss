@@ -1927,6 +1927,81 @@ History section
 }
 
 /*------------------------
+Tech section
+------------------------*/
+
+.tech {
+  @include links-light;
+  background: $flag-red;
+  &:before { // egg
+    @include draw(60px,80px);
+    @include place(-30px,-55px);
+    background: $white;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: $shadow-tall;
+ }
+}
+
+.bulb {
+  &:before { // bulb
+    @include draw(100px,100px);
+    @include place(-50px,0);
+    @include halfsies($flag-yellow-light,$flag-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 15px $flag-yellow,
+                $shadow-tall;
+  }
+  &:after { // screw threads
+    @include draw(40px,4px);
+    @include place(-20px,107px);
+    background: $shadow;
+    box-shadow: 0 10px $shadow,
+                0 20px $shadow;
+  }
+  .icon-img { // screw shadow
+    @include draw(40px,40px);
+    @include place(-12px,106px);
+    background: $shadow;
+    &:before { // bulb foot
+      @include draw(30px,10px);
+      @include place(-23px,32px);
+      background: $meter-grey-drk;
+      border-radius: 0 0 30px 30px;
+      box-shadow: $shadow-tall;
+    }
+    &:after { // screw
+      @include draw(40px,40px);
+      @include place(-28px,-8px);
+      @include halfsies($meter-grey-light,$meter-grey);
+    }
+  }
+}
+
+.venn {
+  &:before { // left circle
+    @include draw(80px,80px);
+    @include place(-70px,50px);
+    background: $cactus-green;
+    border-radius: 50%;
+    opacity: .5;
+  }
+  &:after { // right circle
+    @include draw(80px,80px);
+    @include place(-10px,50px);
+    background: $flag-yellow;
+    border-radius: 50%;
+    opacity: .5;
+  }
+  .icon-img { // top circle
+    @include draw(80px,80px);
+    @include place(-40px,0);
+    background: $sun-orange;
+    border-radius: 50%;
+    opacity: .5;
+  }
+}
+
+/*------------------------
 Alumni section
 ------------------------*/
 
