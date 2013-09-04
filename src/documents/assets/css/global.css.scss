@@ -2395,7 +2395,8 @@ WhyAZ section
   padding: 12px;
   position: relative;
   text-transform: uppercase;
-  width: 100px;
+  width: 200px;
+  @include min-width(420px) { width: 100px; }
   &:before { // triangle shadow
     @include pseudo;
     @include triangle(10px);
@@ -2413,12 +2414,16 @@ WhyAZ section
 
 .facebook {
   background: $flag-yellow;
+  margin-bottom: 25px;
+  @include min-width(420px) { margin-bottom: 0; }
   &:before { // triangle shadow
-    margin-left: 60px;
+    margin-left: 148px;
+    @include min-width(420px) { margin-left: 60px; }
   }
   &:after  { // triangle
     border-top-color: $flag-yellow;
-    margin-left: 52px;
+    margin-left: 140px;
+    @include min-width(420px) { margin-left: 52px; }
   }
 }
 

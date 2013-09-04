@@ -100,11 +100,17 @@
 .food:before,
 .food .icon:before,
 .films:before,
+.biz .icon:before,
+.natural:before,
 .edu .icon:before,
 .inspire:before,
 .inspire .icon:before,
+.science:before,
+.science .icon:before,
 .history:before,
 .history .icon:before,
+.tech:before,
+.tech .icon:before,
 .alumni:before
  { border-color: $border-grey-light; color: $border-grey-light; }
 
@@ -162,6 +168,9 @@
   .cowboy:before      { content: "goofy cowboy hat"; }
   .bridge:before      { content: "london london bridge"; }
   .sign:before        { content: "a sign. thrilling."; }
+.tech:before          { content: "an egg"; }
+  .bulb:before        { content: "bright light"; }
+  .venn:before        { content: "venn diagram"; }
 .alumni:before        { content: "AZ driver's license"; }
   .yearbook:before    { content: "embarrassing school yearbook"; }
 .perks:before         { content: "juicy popsicle"; }
