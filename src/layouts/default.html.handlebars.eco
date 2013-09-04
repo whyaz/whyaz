@@ -44,7 +44,9 @@
   {{{ content }}}
 
   <!-- DocPad Scripts + Our Own -->
-  <%- if (@getEnvironment() == 'development'): %>
+  <% if (@getEnvironment() == 'development'): %>
     <%- @getBlock('scripts').add(['/vendor/log.js']).toHTML() %>
+  <% end %>
+
 </body>
 </html>
