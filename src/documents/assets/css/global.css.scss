@@ -1814,25 +1814,25 @@ Sports section
 }
 
 .basketball {
-  &:before {
+  &:before { // ball
     @include draw(130px,130px);
     @include place(-65px,0);
     @include halfsies($sun-orange,$sun-orange-drk);
     border-radius: 50%;
   }
-  &:after {
+  &:after { // clipping area and shadow
     @include draw(130px,130px);
     @include place(-65px,0);
     border-radius: 50%;
     box-shadow: $shadow-tall,
                 0 0 0 20px $weather-blue;
   }
-  .icon-img {
+  .icon-img { // middle seam
     @include draw(160px,20px);
     @include place(-80px,60px);
     border-radius: 50%;
     border-top: 4px solid $body-grey-light;
-    &:before {
+    &:before { // outer seam
       @include draw(150px,90px);
       @include place(-80px,-45px);
       border-radius: 50%;
