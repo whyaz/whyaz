@@ -1790,6 +1790,163 @@ Science section
 }
 
 /*------------------------
+Sports section
+------------------------*/
+
+.sports {
+  @include links-drk;
+  background: $weather-blue;
+  &:before { // ribbon
+    @include draw(0,80px);
+    @include place(-20px,-50px);
+    border-left:   20px solid $flag-red-light;
+    border-right:  20px solid $flag-red;
+    border-bottom: 10px solid transparent;
+    z-index: 2;
+  }
+  &:after { // ribbon shadow
+    @include draw(0,80px);
+    @include place(-16px,-46px);
+    border-left:   20px solid $shadow;
+    border-right:  20px solid $shadow;
+    border-bottom: 10px solid transparent;
+  }
+}
+
+.basketball {
+  &:before {
+    @include draw(130px,130px);
+    @include place(-65px,0);
+    @include halfsies($sun-orange,$sun-orange-drk);
+    border-radius: 50%;
+  }
+  &:after {
+    @include draw(130px,130px);
+    @include place(-65px,0);
+    border-radius: 50%;
+    box-shadow: $shadow-tall,
+                0 0 0 20px $weather-blue;
+  }
+  .icon-img {
+    @include draw(160px,20px);
+    @include place(-80px,60px);
+    border-radius: 50%;
+    border-top: 4px solid $body-grey-light;
+    &:before {
+      @include draw(150px,90px);
+      @include place(-80px,-45px);
+      border-radius: 50%;
+      border: 3px solid $body-grey-light;
+    }
+  }
+}
+
+.football {
+  &:before { // ball
+    @include draw(120px,120px);
+    @include place(-70px,0);
+    @include gradient-var(45deg,45deg,50%,$hammer-brown-light,$hammer-brown);
+    border-radius: 85px 10px;
+    box-shadow: 10px 3px $shadow;
+    @include rotate(45deg);
+  }
+  .icon-img { // horizontal lace
+    @include draw(62px,6px);
+    @include place(-40px,58px);
+    @include halfsies($white,$meter-grey-light);
+    border-radius: 3px;
+    &:before { // vertical laces
+      @include draw(6px,20px);
+      @include place(-26px,-6px);
+      background: $white;
+      border-radius: 3px;
+      box-shadow: 15px 0 $white,
+                  30px 0 $meter-grey-light,
+                  45px 0 $meter-grey-light;
+    }
+  }
+}
+
+.diamond {
+  &:before { // brown field
+    @include draw(120px,120px);
+    @include place(-60px,0);
+    background: $hammer-brown-light;
+    border-top-left-radius: 80px;
+    box-shadow: 10px 3px $shadow;
+    @include rotate(45deg);
+  }
+  &:after { // green diamond
+    @include draw(64px,64px);
+    @include place(-32px,52px);
+    background: $tree-green-light;
+    @include rotate(45deg);
+  }
+  .icon-img { // base brown circles
+    @include draw(20px,20px);
+    @include place(-10px,35px);
+    background: $hammer-brown-light;
+    border-radius: 50%;
+    box-shadow:  40px 40px $hammer-brown-light,
+                -40px 40px $hammer-brown-light,
+                  0   40px $hammer-brown-light,
+                  0   80px $hammer-brown-light;
+    z-index: 2;
+    &:before { // bases
+      @include draw(6px,6px);
+      @include place(-3px,6px);
+      background: $white;
+      box-shadow: 57px  0   $white,
+                   0   57px $white,
+                  57px 57px $white;
+      @include rotate(45deg);
+    }
+    &:after { // pitcher's plate thing
+      @include draw(6px,3px);
+      @include place(-3px,48px);
+      background: $white;
+    }
+  }
+}
+
+.hockey {
+  &:before { // mask
+    @include draw(110px,130px);
+    @include place(-55px,0);
+    @include halfsies($diaper-grey,$white);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: -8px -8px $shadow;
+    @include rotate(180deg);
+  }
+  &:after { // air holes
+    @include draw(8px,8px);
+    @include place(-15px,25px);
+    background: $meter-grey;
+    border-radius: 50%;
+    box-shadow: 23px  0   $meter-grey-drk,
+                 0   59px $body-grey-light,
+                23px 59px $body-grey,
+                 0   72px $body-grey-light,
+                23px 72px $body-grey,
+                 0   85px $body-grey-light,
+                23px 85px $body-grey;
+  }
+  .icon-img { // nose
+    @include draw(20px,10px);
+    @include place(-10px,66px);
+    border-bottom: 3px solid $meter-grey-drk;
+    border-radius: 50%;
+    &:before { // eye holes
+      @include draw(30px,25px);
+      @include place(-40px,-25px);
+      background: $body-grey-light;
+      border-radius: 50%;
+      box-shadow: 50px 0 $body-grey;
+    }
+  }
+}
+
+/*------------------------
 History section
 ------------------------*/
 
@@ -1938,7 +2095,7 @@ Tech section
     @include place(-30px,-55px);
     background: $white;
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    box-shadow: $shadow-tall;
+    box-shadow: $shadow-short;
  }
 }
 
@@ -2006,7 +2163,7 @@ Alumni section
 ------------------------*/
 
 .alumni {
-  @include links-drk;
+  @include links($body-grey);
   background: $flag-yellow;
   &:before { // license body
     @include draw(100px,70px);
@@ -2188,6 +2345,7 @@ Perks section
   }
 }
 
+/*
 .hotdog {
   &:before { // bun
     @include draw(150px,50px);
@@ -2215,30 +2373,40 @@ Perks section
       box-shadow: 0 3px $flag-yellow;
     }
   }
-}
+} */
 
-/*
 .baseball {
-  .icon-img {
+  &:before { // white ball
     @include draw(130px,130px);
     @include place(-65px,0);
     @include halfsies($white,$diaper-grey);
     border-radius: 50%;
-    box-shadow: $shadow-tall;
+  }
+  &:after { // overflow and shadow
+    @include draw(130px,130px);
+    @include place(-65px,0);
+    border-radius: 50%;
+    box-shadow: $shadow-tall,
+                0 0 0 30px $meter-grey-light;
+  }
+  .icon-img { // clip area
+    @include draw(130px,130px);
+    @include place(-65px,0);
+    border-radius: 50%;
     overflow: hidden;
-    &:before, &:after {
+    &:before, &:after { // dashed outlines
       @include draw(130px,130px);
       border: 5px dotted $flag-red;
       border-radius: 50%;
     }
-    &:before {
+    &:before { // position
       @include place(-160px,-4px);
     }
-    &:after {
+    &:after { // position
       @include place(22px,-2px);
     }
   }
-} */
+}
 
 .mountain {
   &:before { // big mountain shadow
