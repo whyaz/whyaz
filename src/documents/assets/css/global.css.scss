@@ -2524,6 +2524,7 @@ WhyAZ section
 ------------------------*/
 
 .whyaz {
+  @include links($tube-blue);
   background: $body-grey;
   color: $white;
   .flag {
@@ -2532,10 +2533,6 @@ WhyAZ section
     position: absolute;
     @include scale(.5);
   }
-}
-
-.whyaz {
-  @include links($tube-blue);
   .siteContent {
     text-align: left;
     max-width: 700px;
@@ -2678,12 +2675,64 @@ WhyAZ section
 }
 
 /*------------------------
+Callouts section
+------------------------*/
+
+.callouts {
+  background: $meter-grey-light;
+  box-shadow: inset 0 10px 8px rgba(0,0,0,.15);
+  border-top: 1px solid $diaper-grey;
+  padding: 50px 30px 20px;
+  .siteSubHeader {
+    margin: 0 0 30px;
+  }
+  .siteContent {
+    max-width: 600px;
+  }
+}
+
+.callout {
+  background-repeat: no-repeat;
+  padding: 160px 0 20px;
+  background-position: 50% 0;
+  @include min-width(460px) {
+    background-position: 0 10%;
+    min-height: 150px;
+    padding-left: 180px;
+    padding-top: 0;
+  }
+}
+
+.callout-gold { background-image: url(/images/whyaz-badge-gold.png); }
+.callout-blue { background-image: url(/images/whyaz-badge-blue.png); }
+
+.callout-footnote {
+  font-size: 13px;
+  font-style: italic;
+  @include min-width(460px) {
+    text-align: right;
+  }
+}
+
+.callout-markup {
+  background: $meter-grey;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px rgba(0,0,0,.1);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 15px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/*------------------------
 Clearfix
 ------------------------*/
 
 .clearfix:after,
 .container:after,
-.siteContent:after {
+.siteContent:after,
+.callout:after {
   @include clearfix;
 }
 
