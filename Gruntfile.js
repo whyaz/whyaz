@@ -34,6 +34,10 @@ module.exports = function(grunt) {
             dest: 'vendor/'
           },
           {
+            src: 'out/images/*',
+            dest: 'images'
+          },
+          {
             src: 'out/assets/js/*.js',
             dest: 'assets/js'
           },
