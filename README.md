@@ -23,7 +23,9 @@ A website about why we love living and working in Arizona. The illustrations on 
 
 This template uses [the DocPad Handlebars plugin](https://github.com/docpad/docpad-plugin-handlebars). To install:
 
+  ```
   npm install --save docpad-plugin-handlebars
+  ```
 
 It also uses [the DocPad Sass plugin](https://github.com/docpad/docpad-plugin-sass). To install:
 
