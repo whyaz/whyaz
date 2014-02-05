@@ -1,2 +1,13 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+.cache
+.DS_Store
+
 node_modules/
 out/

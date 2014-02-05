@@ -11,12 +11,14 @@
     "docpad-plugin-stylus": "2.x",
     "docpad-plugin-text": "2.x",
     "docpad-plugin-handlebars": "~2.2.0",
-    "docpad-plugin-sass": "~2.4.2",
+    "docpad-plugin-sass": "~2.7.1",
     "grunt": "~0.4.1",
     "grunt-s3": "0.2.0-alpha.2"
   },
   "devDependencies": {
-    "docpad-plugin-livereload": "2.x"
+    "docpad-plugin-livereload": "2.x",
+    "docpad": "~6.63.3",
+    "docpad-plugin-handlebars": "~2.3.0"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }
