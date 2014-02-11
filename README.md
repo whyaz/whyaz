@@ -9,8 +9,8 @@ A website about why we love living and working in Arizona. The illustrations on 
 1. Clone the project and run the server
 
   ``` bash
-  git clone git@github.com:lynnandtonic/portfolio-template.git
-  cd portfolio-template
+  git clone git@github.com:meltmedia/whyaz.git
+  cd whyaz
   npm install
   docpad run
   ```
