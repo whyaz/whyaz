@@ -2,23 +2,23 @@
   "name": "whyaz",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "preinstall": "npm cache clean"
+  },
   "dependencies": {
-    "docpad": "6.x",
+    "docpad": "6.63.3",
     "docpad-plugin-coffeescript": "2.x",
     "docpad-plugin-eco": "2.x",
-    "docpad-plugin-marked": "2.x",
-    "docpad-plugin-partials": "2.x",
-    "docpad-plugin-stylus": "2.x",
-    "docpad-plugin-text": "2.x",
-    "docpad-plugin-handlebars": "~2.2.0",
+    "docpad-plugin-handlebars": "~2.3.0",
     "docpad-plugin-sass": "~2.7.1",
+    "docpad-plugin-winston": "^2.0.0",
     "grunt": "~0.4.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-exec": "^0.4.6",
     "grunt-s3": "0.2.0-alpha.2"
   },
   "devDependencies": {
-    "docpad-plugin-livereload": "2.x",
-    "docpad": "~6.63.3",
-    "docpad-plugin-handlebars": "~2.3.0"
+    "docpad-plugin-livereload": "2.x"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }
