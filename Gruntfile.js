@@ -72,10 +72,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-s3');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-node-version');
 
-  grunt.registerTask('build', ['clean', 'exec:buildSite']);
-  grunt.registerTask('run', ['clean', 'exec:run']);
-  grunt.registerTask('production', ['clean','exec:production']);
+  grunt.registerTask('prestart', ['clean', 'node_version']);
+  grunt.registerTask('build', ['prestart', 'exec:buildSite']);
+  grunt.registerTask('run', ['prestart', 'exec:run']);
+  grunt.registerTask('production', ['prestart', 'exec:production']);
   grunt.registerTask('deploy', ['build', 's3']);
   grunt.registerTask('default', ['deploy']);
 };
