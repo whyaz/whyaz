@@ -4,7 +4,11 @@ A website about why we love living and working in Arizona. The illustrations on 
 
 ## Getting Started
 
-1. [Install DocPad](https://github.com/bevry/docpad)
+1. [Install Grunt](http://gruntjs.com/)
+
+  ```bash
+  npm install -g grunt-cli
+  ```
 
 1. Clone the project and run the server
 
@@ -12,7 +16,7 @@ A website about why we love living and working in Arizona. The illustrations on 
   git clone git@github.com:meltmedia/whyaz.git
   cd whyaz
   npm install
-  docpad run
+  grunt run
   ```
 
 1. [Open http://localhost:9778/](http://localhost:9778/)
@@ -21,13 +25,9 @@ A website about why we love living and working in Arizona. The illustrations on 
 
 ### Plugins
 
-This template uses [the DocPad Handlebars plugin](https://github.com/docpad/docpad-plugin-handlebars). To install:
+This template uses [the DocPad Handlebars plugin](https://github.com/docpad/docpad-plugin-handlebars).
 
-  ```
-  npm install --save docpad-plugin-handlebars
-  ```
-
-It also uses [the DocPad Sass plugin](https://github.com/docpad/docpad-plugin-sass). To install:
+It also uses [the DocPad Sass plugin](https://github.com/docpad/docpad-plugin-sass). To set up:
 
 1. [Install Ruby](http://www.ruby-lang.org/en/downloads/)
 
@@ -35,21 +35,15 @@ It also uses [the DocPad Sass plugin](https://github.com/docpad/docpad-plugin-sa
 
 1. [Optional: Install the Compass gem](http://rubygems.org/gems/compass/)
 
-1. Install this plugin
-
-  ```
-  docpad install sass
-  ```
 
 ## Production Build
 
-    docpad run --env=production
-
-or
-
-    node_modules/docpad/bin/docpad run  --env=production
+  ```bash
+  grunt production
+  ```
 
 ## Production Deploy
 
-    grunt s3
-
+  ```bash
+  grunt deploy
+  ```

@@ -1,7 +1,9 @@
-
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
     s3: {
       options: {
         key: process.env.AWS_ACCESS_KEY_ID,
@@ -47,10 +49,35 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+
+    clean: ['./out'],
+
+    exec: {
+      run: {
+        cmd: './node_modules/.bin/docpad run'
+      },
+
+      buildSite: {
+        cmd: './node_modules/.bin/docpad generate --env=production'
+      },
+
+      production: {
+        cmd: './node_modules/.bin/docpad run --env=production'
+      }
     }
   });
 
 
   grunt.loadNpmTasks('grunt-s3');
-  grunt.registerTask('default', ['s3']);
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-node-version');
+
+  grunt.registerTask('prestart', ['clean', 'node_version']);
+  grunt.registerTask('build', ['prestart', 'exec:buildSite']);
+  grunt.registerTask('run', ['prestart', 'exec:run']);
+  grunt.registerTask('production', ['prestart', 'exec:production']);
+  grunt.registerTask('deploy', ['build', 's3']);
+  grunt.registerTask('default', ['deploy']);
 };
