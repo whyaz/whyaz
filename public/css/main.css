@@ -2580,10 +2580,10 @@ a:hover {
   margin-left: -40px;
   top: -60px;
   background-color: #fff;
-  background-image: -moz-linear-gradient(left, #fff 0%, #fff 50%, #ddd 50%, #ddd 100%);
-  background-image: -webkit-linear-gradient(left, #fff 0%, #fff 50%, #ddd 50%, #ddd 100%);
-  background-image: -ms-linear-gradient(left, #fff 0%, #fff 50%, #ddd 50%, #ddd 100%);
-  background-image: linear-gradient(90deg, #fff 50%, #ddd 50%, #ddd);
+  background-image: -moz-linear-gradient(left, #fff 0%, #fff 50%, #eee 50%, #eee 100%);
+  background-image: -webkit-linear-gradient(left, #fff 0%, #fff 50%, #eee 50%, #eee 100%);
+  background-image: -ms-linear-gradient(left, #fff 0%, #fff 50%, #eee 50%, #eee 100%);
+  background-image: linear-gradient(90deg, #fff 50%, #eee 50%, #eee);
   box-shadow: 4px 4px rgba(0,0,0,0.13);
 }
 .history:after {
