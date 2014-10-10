@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+
+  //- Variable block for page-specific info
+  block vars
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    title WhyAZ - #{title}
+    meta(name='description', content='#{description}')
+    link(rel="stylesheet", href="/public/css/reset.css")
+    link(rel="stylesheet", href="/public/css/main.css")
+
+    script(src="//use.typekit.net/ivx3zwe.js")
+    script try{Typekit.load();}catch(e){}
+
+  body
+
+    //- nav
+    //-   a(href="#") WhyAZ
+    //-   a(href="#") Link
+    //-   a(href="#") Link
+
+    block content
+
+    include includes/ga.html
