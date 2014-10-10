@@ -2,48 +2,32 @@
 
 A website about why we love living and working in Arizona. The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
 
-## Getting Started
+## Editing Content
 
-1. [Install Grunt](http://gruntjs.com/)
+Most site content is written in Jade templates which produce the site HTML.
 
-  ```bash
-  npm install -g grunt-cli
-  ```
+Note that these aren't markdown files and the syntax and whitespace you use does matter quite a bit. See the [Jade documentation](http://jade-lang.com) to see how to use Jade.
 
-1. Clone the project and run the server
+## Editing CSS
 
-  ``` bash
-  git clone git@github.com:meltmedia/whyaz.git
-  cd whyaz
-  npm install
-  grunt run
-  ```
+This site uses [Stylus for preprocessing](http://learnboost.github.io/stylus/). Please follow the established indentation and commenting patterns.
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
+### Declaration Order
 
-1. Start hacking away by modifying the `src` directory
+Please use the following loose declaration order:
 
-### Plugins
+* Mixins
+* Box-model properties
+* Display and Positioning
+* Backgrounds
+* Borders
+* Box Shadows
+* Fonts and Colors
+* Transforms
+* Other
 
-This template uses [the DocPad Handlebars plugin](https://github.com/docpad/docpad-plugin-handlebars).
+## Working Locally
 
-It also uses [the DocPad Sass plugin](https://github.com/docpad/docpad-plugin-sass). To set up:
+We recommend using [LiveReload](http://livereload.com/) for local compiling.
 
-1. [Install Ruby](http://www.ruby-lang.org/en/downloads/)
-
-1. [Install the SASS gem](http://rubygems.org/gems/sass/)
-
-1. [Optional: Install the Compass gem](http://rubygems.org/gems/compass/)
-
-
-## Production Build
-
-  ```bash
-  grunt production
-  ```
-
-## Production Deploy
-
-  ```bash
-  grunt deploy
-  ```
+Preview the site locally with [http-server](https://www.npmjs.org/package/http-server), a simple, zero-configuration command-line http server.
