@@ -16,7 +16,7 @@ var del         = require('del');
 
 gulp.task('jade', function() {
 
-  return gulp.src('src/views/**/*.jade')
+  return gulp.src(['src/views/**/*.jade'])
     .pipe(jade({
       pretty: true
     }))
@@ -60,7 +60,7 @@ gulp.task('watch', function () {
 
   gulp.watch('src/css/**/*.css',['copy']);
   gulp.watch('src/styl/**/*.styl',['stylus']);
-  gulp.watch('src/views/**/*.jade',['jade']);
+  gulp.watch('src/**/*.jade',['jade']);
 
   // Reload the server when our dist directory changes
   gulp.watch('dist/**').on('change', livereload.changed);
