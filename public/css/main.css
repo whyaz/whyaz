@@ -190,6 +190,19 @@ a:hover {
     margin-right: 0;
   }
 }
+.site-nav {
+  background: #333;
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+.site-nav .container {
+  max-width: 960px;
+  padding: 15px 20px;
+}
+.site-nav a {
+  display: inline-block;
+  color: #fff;
+}
 .icon {
   position: relative;
   margin: 0 auto 25%;
@@ -3214,6 +3227,9 @@ a:hover {
 }
 .whyaz a {
   color: #9ac8ca;
+}
+.whyaz h2 {
+  margin-bottom: 50px;
 }
 .whyaz .flag {
   margin-left: -150px;
