@@ -28,6 +28,12 @@ Please use the following loose declaration order:
 
 ## Working Locally
 
-We recommend using [LiveReload](http://livereload.com/) for local compiling.
+Requires the [LiveReload browser plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei).
 
-Preview the site locally with [http-server](https://www.npmjs.org/package/http-server), a simple, zero-configuration command-line http server.
+```
+npm install
+npm install -g gulp
+gulp
+```
+
+Navigate to [localhost:8080](http://localhost:8080).
