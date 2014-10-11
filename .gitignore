@@ -11,3 +11,7 @@ lib-cov
 
 node_modules/
 out/
+dist/
+
+# Editors
+.idea/
