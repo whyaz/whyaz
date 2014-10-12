@@ -1,12 +1,20 @@
 block vars
-  - var title = "Reasons to love Arizona"
-  - var description = "Why it's awesome to live and work in Arizona."
+  - var title = "WhyAZ Community"
+  - var description = "See what people are sharing about Arizona."
 
 extends ../../templates/layout
 
 block content
 
-  div(class="social-feed-container")
+  section.siteSection.community.links-drk
+    .siteContent
+      h2 Arizona Love
+      p See the reasons others love Arizona.
+      p Share yours with 
+        a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz
+        | .
+
+  .social-feed-container
 
   link(href="/lib/social-feed/css/jquery.socialfeed.css", rel="stylesheet", type="text/css")
   link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel="stylesheet")
