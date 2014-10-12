@@ -1,0 +1,29 @@
+//- BUTTON STYLES ----------------------------------------------- //
+
+button
+  border: none
+
+.button, a.button
+  display: inline-block
+  border-radius: 3px
+  margin-top: 30px
+  padding: 10px 20px
+  font-family: $font-family-brandon
+  font-size: 20px
+  text-align: center
+  text-transform: uppercase
+  line-height: 1.5
+  user-select()
+  cursor: pointer
+  -webkit-appearance: none
+  transition: all .2s ease-in 
+  -webkit-transition: all .2s ease-in
+  background-color: $blue-grey-drk
+  color: $white
+
+  &:hover
+    background-color: darken($blue-grey-drk, 20%)
+    border: none
+
+  &:focus
+    outline: none
