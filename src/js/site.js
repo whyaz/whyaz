@@ -17,9 +17,9 @@ $(document).ready(function(){
     length:400,
     show_media:true,
     // Moderation function - if returns false, template will have class hidden
-    //moderation: function(content){
-    //    return  (content.text) ? content.text.indexOf('fuck') == -1 : true;
-    //},
+    moderation: function(content){
+        return  (content.text) ? content.text.toLowerCase().indexOf('whyaz') > -1 : true;
+    },
     update_period: 30000,
     template: "/lib/social-feed/template.html"
   });
