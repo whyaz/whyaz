@@ -13,6 +13,7 @@ var express     = require('express');
 var app         = express();
 var path        = require('path');
 var del         = require('del');
+var bower       = require('main-bower-files');
 
 gulp.task('jade', function() {
 
@@ -35,6 +36,15 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist/public/css'))
     .pipe(livereload());
 
+  gulp.src('src/js/**/*.js')
+    .pipe(gulp.dest('dist/public/js'))
+    .pipe(livereload());
+
+});
+
+gulp.task("bower", function(){
+  return gulp.src(bower(), { base: './bower_components' })
+    .pipe(gulp.dest('dist/lib'))
 });
 
 gulp.task('stylus', function() {
@@ -58,6 +68,7 @@ gulp.task('watch', function () {
 
   livereload.listen();
 
+  gulp.watch('src/js/**/*.js',['copy']);
   gulp.watch('src/css/**/*.css',['copy']);
   gulp.watch('src/styl/**/*.styl',['stylus']);
   gulp.watch('src/**/*.jade',['jade']);
@@ -71,6 +82,6 @@ gulp.task('watch', function () {
 gulp.task('default', ['clean'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
-  gulp.start('copy', 'jade', 'stylus', 'express', 'watch');
+  gulp.start('bower', 'copy', 'jade', 'stylus', 'express', 'watch');
 
 });

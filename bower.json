@@ -1,0 +1,14 @@
+{
+  "name": "whyaz",
+  "dependencies": {
+    "social-feed": "~0.1.2"
+  },
+  "overrides": {
+    "social-feed": {
+      "main": ["js/jquery.socialfeed.js","css/jquery.socialfeed.css","template.html"]
+    },
+    "doT": {
+      "main": "doT.min.js"
+    }
+  }
+}
