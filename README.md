@@ -58,7 +58,7 @@ Navigate to [localhost:8080](http://localhost:8080).
 We make use of Trello's API to submit the form results to a newly generated card on our internal board. If you want to work on that feature of the site, there are a few more steps you'll need to follow to get going.
 
 1. [Get your Trello API key](https://trello.com/1/appKey/generate)
-2. Genrate your Trello token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
+2. Generate your Trello token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
 
         https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
 
