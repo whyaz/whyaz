@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.social-feed-container').socialfeed({
     // TWITTER
     twitter:{
-      accounts: ['#whyaz'],
+      accounts: ['#whyaz -RT'],
       limit: 20,
       consumer_key: 'DUtm3KoTGnsKQ9v09seWlYWqP', // make sure to have your app read-only
       consumer_secret: '9PiruhZGrZz3QkZT31gbps52jcuyUkBbQSDccT95r7uJyiPOY1', // make sure to have your app read-only
