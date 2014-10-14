@@ -49,16 +49,19 @@ Requires the [LiveReload browser plugin](https://chrome.google.com/webstore/deta
 ```
 npm install
 npm install -g gulp
-TRELLO_KEY=<yourkey> TRELLO_TOKEN=<yourtoken> gulp
+gulp
 ```
 
-### You can get your trello key and token by following the instructions below.
+Navigate to [localhost:8080](http://localhost:8080).
 
-1. [Get your API key](https://trello.com/1/appKey/generate)
-2. Genrate your token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
+### Working locally on the contributor form
+We make use of Trello's API to submit the form results to a newly generated card on our internal board. If you want to work on that feature of the site, there are a few more steps you'll need to follow to get going.
 
+1. [Get your Trello API key](https://trello.com/1/appKey/generate)
+2. Genrate your Trello token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
 
         https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
 
+3. Once you have that the startup command is slightly different. Run the command below
 
-Navigate to [localhost:8080](http://localhost:8080).
+        TRELLO_KEY=<YOUR_KEY> TRELLO_TOKEN=<YOUR_TOKEN> gulp
