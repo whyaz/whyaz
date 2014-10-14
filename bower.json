@@ -5,7 +5,7 @@
   },
   "overrides": {
     "social-feed": {
-      "main": ["js/jquery.socialfeed.js","css/jquery.socialfeed.css","template.html"]
+      "main": ["js/jquery.socialfeed.js","css/jquery.socialfeed.css"]
     },
     "doT": {
       "main": "doT.min.js"

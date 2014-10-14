@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.social-feed-container').socialfeed({
     // TWITTER
     twitter:{
-      accounts: ['#whyaz'],
+      accounts: ['#whyaz -RT'],
       limit: 20,
       consumer_key: 'DUtm3KoTGnsKQ9v09seWlYWqP', // make sure to have your app read-only
       consumer_secret: '9PiruhZGrZz3QkZT31gbps52jcuyUkBbQSDccT95r7uJyiPOY1', // make sure to have your app read-only
@@ -21,6 +21,6 @@ $(document).ready(function(){
         return  (content.text) ? content.text.toLowerCase().indexOf('whyaz') > -1 : true;
     },
     update_period: 30000,
-    template: "/lib/social-feed/template.html"
+    template: "/public/js/templates/feedElement.html"
   });
 });

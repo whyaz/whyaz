@@ -36,8 +36,12 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist/public/css'))
     .pipe(livereload());
 
-  gulp.src('src/js/**/*.js')
+  gulp.src('src/js/**/*.*')
     .pipe(gulp.dest('dist/public/js'))
+    .pipe(livereload());
+
+  gulp.src('src/*.*')
+    .pipe(gulp.dest('dist'))
     .pipe(livereload());
 
 });
@@ -68,7 +72,7 @@ gulp.task('watch', function () {
 
   livereload.listen();
 
-  gulp.watch('src/js/**/*.js',['copy']);
+  gulp.watch('src/js/**/*.*',['copy']);
   gulp.watch('src/css/**/*.css',['copy']);
   gulp.watch('src/styl/**/*.styl',['stylus']);
   gulp.watch('src/**/*.jade',['jade']);
