@@ -20,10 +20,19 @@
     a:hover
       text-decoration: none
 
-    a.pull-left
+    .content
+      padding-bottom: 5px
 
-      &:hover
-        border: none
+  .avatar
+
+    &:hover
+      border: none
+
+  .read-button
+    padding-top: 10px
+    display: block
+    font-size: 12px
+    text-align: right
 
   .twitter
 
@@ -34,7 +43,14 @@
         font-size: 20px
         line-height: 26px
 
-  .read-button
-    text-transform: capitalize
+    .read-button
+      span:before
+        content: 'Twitter'
+
+  .instagram
+
+    .read-button
+      span:before
+        content: 'Instagram'
 
 

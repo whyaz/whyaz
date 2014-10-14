@@ -1,6 +1,6 @@
 <div class="social-feed-element {{=it.social_network}} {{? !it.moderation_passed}}hidden{{?}}" dt-create="{{=it.dt_create}}" social-feed-id = "{{=it.id}}">
   <div class='content'>
-    <a class="pull-left" href="{{=it.author_link}}" target="_blank">
+    <a class="pull-left avatar" href="{{=it.author_link}}" target="_blank">
       <img class="media-object" src="{{=it.author_picture}}">
     </a>
     <div class="media-body">
@@ -10,7 +10,7 @@
         <span class="muted pull-right"> {{=it.time_ago}}</span>
       </p>
       <div class='text-wrapper'>
-        <p class="social-feed-text">{{=it.text}} <a href="{{=it.link}}" target="_blank" class="read-button">read more</a></p>
+        <p class="social-feed-text">{{=it.text}} <span class="read-button"><a href="{{=it.link}}" target="_blank">View on <span></span> →</a></span></p>
       </div>
     </div>
   </div>
