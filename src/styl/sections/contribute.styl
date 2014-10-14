@@ -1,17 +1,28 @@
-//- SOCIAL FEED SECTION ----------------------------------------------- //
+//- CONTRIBUTE PAGE ----------------------------------------------- //
 
-.contribute
-  padding: 40px 30px 30px
+.contributors-list
+  max-width: 500px
+  margin: 30px auto
 
-  @media $screen-medium
-    padding: 60px 30px
+  .contributor
+    box-sizing: border-box
+    width: 25%
+    padding: 8px
+    float: left
 
-  h2
-    margin-bottom: 40px
+    @media $screen-medium
+      width: 20%
 
-  h3
-    margin-bottom: 30px
+    a
+      display: block
+      position: relative
 
-  p
-    max-width: 500px
-    margin: 0 auto 30px
+      &:hover
+        border: none
+
+      img
+        width: 100%
+        margin: 0
+        border-radius: 5px
+
+

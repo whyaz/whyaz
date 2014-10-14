@@ -6,23 +6,61 @@ extends ../../templates/layout
 
 block content
 
-  section.siteSection.contribute.links-drk
+  section.siteSection.secondary-page
     .siteContent
-      h2 Help us make WhyAZ better
-      p We’re sure there’s awesome stuff we’ve missed (or haven’t even heard of yet). Here are a few ways you can contribute to WhyAZ.
-      h3 How to contribute
-      p If you’ve got a great Arizona fact or idea to make the site better, tell us!
+      h2 Contribute
+      p We’re sure there’s awesome stuff we’ve missed (or haven’t even heard of yet). Contribute and help us make WhyAZ even better.
+      h3 Submit an idea
+      p If you’ve got a great Arizona fact or concept to add, let us know!
 
       form
-        fielset
+        fieldset
           label Name
-          input(type="text", placeholder="Name")
+          input(type="text", placeholder="Bilbo Baggins")
           label Email
-          input(type="email", placeholder="Email")
+          input(type="email", placeholder="bilbo@bag.end")
           label Twitter
-          input(type="email", placeholder="Twitter")
+          input(type="email", placeholder="@barrel_rider")
           label Message
-          textarea(placeholder="Message")
-          button(type="submit") Send
+          textarea(placeholder="Never laugh at live dragons.")
+          button.button(type="submit") Send
 
-      h3 Other things down here...
+      h3 Or contribute on GitHub
+      p Submit an 
+        a(href="https://github.com/meltmedia/whyaz/issues") issue 
+        | or a pull request. Please see the 
+        a(href="#") contribution guidelines
+        | .
+
+      h3 Contributors
+      ul.contributors-list.clearfix
+        li.contributor
+          a(href="https://twitter.com/lynnandtonic")
+            img.avatar(src="https://pbs.twimg.com/profile_images/477556215401025537/zH_q0-_s.png")
+        li.contributor
+          a(href="https://twitter.com/jacobheun")
+            img.avatar(src="https://pbs.twimg.com/profile_images/1325739215/9c8fc76b64b4ef50b77692e36d171ac8.jpeg")
+        li.contributor
+          a(href="https://twitter.com/nickcrohn")
+            img.avatar(src="https://pbs.twimg.com/profile_images/378800000449077770/1448e584d41058b4b8e3ee8778b2f187.jpeg")
+        li.contributor
+          a(href="https://twitter.com/ronNomNomNom")
+            img.avatar(src="https://pbs.twimg.com/profile_images/2976010437/7561111b72751012b9b21be014a78331.jpeg")
+        li.contributor
+          a(href="https://twitter.com/andyfrey")
+            img.avatar(src="https://pbs.twimg.com/profile_images/1363598990/Team_Exit_400x400.jpg")
+        li.contributor
+          a(href="https://twitter.com/kennedyjosh")
+            img.avatar(src="https://pbs.twimg.com/profile_images/343623228/3364162770_b69df60fda_400x400.jpg")
+        li.contributor
+          a(href="https://twitter.com/richardiii")
+            img.avatar(src="https://pbs.twimg.com/profile_images/516030434468057088/w_tOsS0e_400x400.jpeg")
+        li.contributor
+          a(href="https://twitter.com/jimmyking")
+            img.avatar(src="https://pbs.twimg.com/profile_images/520218800831356928/C-nR8BZA_400x400.jpeg")
+        li.contributor
+          a(href="https://twitter.com/amesarosh")
+            img.avatar(src="https://pbs.twimg.com/profile_images/1508764443/metroid-ridley_400x400.gif")
+        li.contributor
+          a(href="https://twitter.com/mmoulton")
+            img.avatar(src="https://pbs.twimg.com/profile_images/487125349/image_400x400.jpg")

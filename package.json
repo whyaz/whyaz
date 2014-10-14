@@ -18,5 +18,8 @@
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "tape": "^3.0.0"
   }
 }
