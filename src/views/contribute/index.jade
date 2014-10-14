@@ -13,6 +13,9 @@ block content
       h3 Submit an idea
       p If you’ve got a great Arizona fact or concept to add, let us know!
 
+      .error.hidden An email or twitter handle is required.
+      .success.hidden Message has been received! Thanks for sharing!
+
       form
         fieldset
           label Name
@@ -20,9 +23,10 @@ block content
           label Email
           input(type="email", placeholder="bilbo@bag.end", name="email")
           label Twitter
-          input(type="email", placeholder="@barrel_rider", name="twitter")
+          input(type="text", placeholder="@barrel_rider", name="twitter")
           label Message
           textarea(placeholder="Never laugh at live dragons.", name="message")
+          input(type="hidden", name="email2")
           button.button(type="submit") Send
 
       h3 Or contribute on GitHub
