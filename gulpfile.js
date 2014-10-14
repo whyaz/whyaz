@@ -15,14 +15,34 @@ var path        = require('path');
 var del         = require('del');
 var bower       = require('main-bower-files');
 
-gulp.task('jade', function() {
+function copy() {
+
+  return gulp.src(['src/**/*.*', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
+    .pipe(gulp.dest('dist/'));
+
+}
+
+function jadeBuild() {
 
   return gulp.src(['src/views/**/*.jade'])
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('dist/'))
-    .pipe(livereload());
+    .pipe(gulp.dest('dist/'));
+
+}
+
+function stylusBuild() {
+
+  return gulp.src('src/styl/main.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('dist/public/css'));
+
+}
+
+gulp.task('jade', function() {
+
+  jadeBuild().pipe(livereload());
 
 });
 
@@ -32,9 +52,15 @@ gulp.task('clean', function (cb) {
 
 gulp.task('copy', function() {
 
-  gulp.src(['src/**/*.*', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
-    .pipe(gulp.dest('dist/'))
-    .pipe(livereload());
+  copy().pipe(livereload());
+
+});
+
+gulp.task('build', function() {
+
+  copy();
+  jadeBuild();
+  stylusBuild();
 
 });
 
@@ -45,10 +71,7 @@ gulp.task("bower", function(){
 
 gulp.task('stylus', function() {
 
-  gulp.src('src/styl/main.styl')
-    .pipe(stylus())
-    .pipe(gulp.dest('dist/public/css'))
-    .pipe(livereload());
+  stylusBuild().pipe(livereload());
 
 });
 
@@ -84,5 +107,11 @@ gulp.task('default', ['clean'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
   gulp.start('bower', 'copy', 'jade', 'stylus', 'express', 'watch', 'server');
+
+});
+
+gulp.task('production', ['clean'], function() {
+
+  gulp.start('bower', 'build', 'express');
 
 });
