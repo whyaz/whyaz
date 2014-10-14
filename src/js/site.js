@@ -76,6 +76,11 @@ $(document).ready(function(){
 
             if (data.status >= 400 && data.status <= 599) {
               $('.error').html(SENT_ERROR_MESSAGE);
+            } else {
+              $('form input[name="name"]').val('');
+              $('form input[name="email"]').val('');
+              $('form input[name="twitter"]').val('');
+              $('form textarea[name="message"]').val('');
             }
           }
         });
