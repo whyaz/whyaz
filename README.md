@@ -49,7 +49,16 @@ Requires the [LiveReload browser plugin](https://chrome.google.com/webstore/deta
 ```
 npm install
 npm install -g gulp
-gulp
+TRELLO_KEY=<yourkey> TRELLO_TOKEN=<yourtoken> gulp
 ```
+
+### You can get your trello key and token by following the instructions below.
+
+1. [Get your API key](https://trello.com/1/appKey/generate)
+2. Genrate your token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
+
+
+        https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
+
 
 Navigate to [localhost:8080](http://localhost:8080).

@@ -18,7 +18,6 @@ router.post('/send-message', function(req, res) {
     urlSource: null
   }, function(err, data) {
     if (err) gutil.log(err);
-    console.log(data);
     res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
     res.end();
   });
