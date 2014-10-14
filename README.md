@@ -1,4 +1,4 @@
-# whyaz
+# WhyAZ
 
 A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
 
@@ -18,11 +18,15 @@ Submit any reasons you love Arizona: cool places to eat, drink, or visit, fun fa
 
 Most site content is written in Jade templates which produce the site HTML.
 
+The Jade files are located in `/src/templates`.
+
 Note that these aren't markdown files and the syntax and whitespace you use does matter quite a bit. See the [Jade documentation](http://jade-lang.com) to see how to use Jade.
 
 ## Editing CSS
 
 This site uses [Stylus for preprocessing](http://learnboost.github.io/stylus/). Please follow the established indentation and commenting patterns.
+
+Stylus files are located in `/src/styl`.
 
 ### Declaration Order
 
