@@ -18,5 +18,9 @@
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "node-simple-router": "^0.9.2-9",
+    "node-trello": "^1.0.0"
   }
 }

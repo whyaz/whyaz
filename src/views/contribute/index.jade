@@ -16,13 +16,20 @@ block content
       form
         fielset
           label Name
-          input(type="text", placeholder="Name")
+          input(type="text", placeholder="Name", name="name")
           label Email
-          input(type="email", placeholder="Email")
+          input(type="email", placeholder="Email", name="email")
           label Twitter
-          input(type="email", placeholder="Twitter")
+          input(type="email", placeholder="Twitter", name="twitter")
           label Message
-          textarea(placeholder="Message")
+          textarea(placeholder="Message", name="message")
           button(type="submit") Send
 
       h3 Other things down here...
+
+  script(src="/lib/jquery/dist/jquery.js")
+  script(src="/lib/codebird-js/codebird.js")
+  script(src="/lib/doT/doT.min.js")
+  script(src="/lib/moment/moment.js")
+  script(src="/lib/social-feed/js/jquery.socialfeed.js")
+  script(src="/public/js/site.js")

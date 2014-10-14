@@ -23,4 +23,26 @@ $(document).ready(function(){
     update_period: 30000,
     template: "/lib/social-feed/template.html"
   });
+
+  $('form button[type="submit"]').click(
+    function(event) {
+      event.preventDefault();
+
+      var data = {
+        name: $('form input[name="name"]').val(),
+        email: $('form input[name="email"]').val(),
+        twitter: $('form input[name="twitter"]').val(),
+        message: $('form textarea[name="message"]').val()
+      };
+
+      $.ajax({
+        url: 'http://localhost:8081/send-message',
+        type: 'post',
+        data: data,
+        success: function(data, status) {
+          console.log(data);
+        }
+      });
+    });
+
 });

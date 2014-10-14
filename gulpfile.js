@@ -64,6 +64,12 @@ gulp.task('express', function() {
 
 });
 
+gulp.task('server', function() {
+
+  require('./server');
+
+});
+
 gulp.task('watch', function () {
 
   livereload.listen();
@@ -82,6 +88,6 @@ gulp.task('watch', function () {
 gulp.task('default', ['clean'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
-  gulp.start('bower', 'copy', 'jade', 'stylus', 'express', 'watch');
+  gulp.start('bower', 'copy', 'jade', 'stylus', 'express', 'watch', 'server');
 
 });
