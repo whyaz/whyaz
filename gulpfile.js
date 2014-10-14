@@ -32,16 +32,8 @@ gulp.task('clean', function (cb) {
 
 gulp.task('copy', function() {
 
-  gulp.src('src/css/**/*.css')
-    .pipe(gulp.dest('dist/public/css'))
-    .pipe(livereload());
-
-  gulp.src('src/js/**/*.*')
-    .pipe(gulp.dest('dist/public/js'))
-    .pipe(livereload());
-
-  gulp.src('src/*.*')
-    .pipe(gulp.dest('dist'))
+  gulp.src(['src/**/*.*', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
+    .pipe(gulp.dest('dist/'))
     .pipe(livereload());
 
 });
@@ -78,9 +70,8 @@ gulp.task('watch', function () {
 
   livereload.listen();
 
-  gulp.watch('src/js/**/*.*',['copy']);
-  gulp.watch('src/css/**/*.css',['copy']);
-  gulp.watch('src/styl/**/*.styl',['stylus']);
+  gulp.watch(['src/**/*.*', '!src/**/*.styl', '!src/**/*.jade'], ['copy']);
+  gulp.watch('src/**/*.styl',['stylus']);
   gulp.watch('src/**/*.jade',['jade']);
 
   // Reload the server when our dist directory changes
