@@ -1,0 +1,28 @@
+block vars
+  - var title = "Contribute to WhyAZ"
+  - var description = "How to contribute ideas and content to why.az"
+
+extends ../../templates/layout
+
+block content
+
+  section.siteSection.contribute.links-drk
+    .siteContent
+      h2 Help us make WhyAZ better
+      p We’re sure there’s awesome stuff we’ve missed (or haven’t even heard of yet). Here are a few ways you can contribute to WhyAZ.
+      h3 How to contribute
+      p If you’ve got a great Arizona fact or idea to make the site better, tell us!
+
+      form
+        fielset
+          label Name
+          input(type="text", placeholder="Name")
+          label Email
+          input(type="email", placeholder="Email")
+          label Twitter
+          input(type="email", placeholder="Twitter")
+          label Message
+          textarea(placeholder="Message")
+          button(type="submit") Send
+
+      h3 Other things down here...
