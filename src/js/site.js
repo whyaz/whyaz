@@ -21,6 +21,6 @@ $(document).ready(function(){
         return  (content.text) ? content.text.toLowerCase().indexOf('whyaz') > -1 : true;
     },
     update_period: 30000,
-    template: "/lib/social-feed/template.html"
+    template: "/public/js/templates/feedElement.html"
   });
 });
