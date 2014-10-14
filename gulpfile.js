@@ -40,6 +40,10 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist/public/js'))
     .pipe(livereload());
 
+  gulp.src('src/*.*')
+    .pipe(gulp.dest('dist'))
+    .pipe(livereload());
+
 });
 
 gulp.task("bower", function(){
