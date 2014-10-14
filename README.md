@@ -64,4 +64,4 @@ We make use of Trello's API to submit the form results to a newly generated card
 
 3. Once you have that the startup command is slightly different. Run the command below
 
-        TRELLO_KEY=<yourkey> TRELLO_TOKEN=<yourtoken> gulp
+        TRELLO_KEY=<YOUR_KEY> TRELLO_TOKEN=<YOUR_TOKEN> gulp
