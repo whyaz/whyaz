@@ -13,7 +13,11 @@ var express     = require('express');
 var app         = express();
 var path        = require('path');
 var del         = require('del');
-var bower       = require('main-bower-files');
+var bower       = require('main-bower-files')
+var proxy       = require('proxy-middleware');
+var url         = require('url');
+
+var configUrl   = 'https://s3.amazonaws.com/whyaz/config/config.json';
 
 function copy() {
 
@@ -78,6 +82,7 @@ gulp.task('stylus', function() {
 gulp.task('express', function() {
 
   app.use(express.static(path.resolve('./dist')));
+  app.use('/send-message', proxy(url.parse('http://localhost:8081/send-message')));
   app.listen(8080);
   gutil.log('Listening on port: 8080');
 
@@ -112,6 +117,11 @@ gulp.task('default', ['clean'], function() {
 
 gulp.task('production', ['clean'], function() {
 
-  gulp.start('bower', 'build', 'express');
+  // Get the config
+  require('request').get(configUrl).pipe(require('fs').createWriteStream('config.json').on('finish', function() {
+
+    gulp.start('bower', 'build', 'express', 'server');
+
+  }));
 
 });

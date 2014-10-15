@@ -64,9 +64,17 @@ We make use of Trello's API to submit the form results to a newly generated card
 
         https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
 
-3. Once you have that the startup command is slightly different. Run the command below
+3. Once you have your key and token you will need to add a config.json file to the root of the project. This is where the server looks for any configuration information it needs. Here is a sample:
 
-        TRELLO_KEY=<YOUR_KEY> TRELLO_TOKEN=<YOUR_TOKEN> gulp
+```
+{
+  "trello": {
+    "key": "<YOUR_KEY>",
+    "token": "<YOUR_TOKEN>",
+    "list": "<LIST_ID_FOR_CARDS>"
+  }
+}
+```
 
 ## Deployment
 WhyAZ uses [meltmedia's](https://github.com/meltmedia) deployment platform, Totem, to continuously deploy to various environments.
@@ -74,4 +82,3 @@ When commits are pushed to master, develop or feature branches beginning with fe
 * master              -> why.az
 * develop             -> whyaz.cu.melt.sh
 * feature_[New-Thing] -> whyaz-[New-Thing].cu.melt.sh
-  

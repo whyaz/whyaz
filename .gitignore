@@ -13,6 +13,7 @@ node_modules/
 bower_components/
 out/
 dist/
+config.json
 
 # Editors
 .idea/
