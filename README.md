@@ -12,7 +12,9 @@ If you would like to contribute via pull request, please follow the editing guid
 
 ### What kind of content?
 
-Submit any reasons you love Arizona: cool places to eat, drink, or visit, fun facts about the state or its cities, or anything else you think would be interesting. Our main purpose is to share with the world the many reasons we think Arizona is a great place to live, work, and visit.
+Submit any reasons you love Arizona: cool places to eat, drink, or visit, fun facts about the state or its cities, or anything else you think would be interesting. Our main purpose is to share with the world the many reasons we think Arizona is a great place to live, work, and visit and content will be incorporated as it aligns with this goal.
+
+WhyAZ will not feature advertisements, political support, or discriminatory content. 
 
 ## Editing Content
 
@@ -62,6 +64,21 @@ We make use of Trello's API to submit the form results to a newly generated card
 
         https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
 
-3. Once you have that the startup command is slightly different. Run the command below
+3. Once you have your key and token you will need to add a config.json file to the root of the project. This is where the server looks for any configuration information it needs. Here is a sample:
 
-        TRELLO_KEY=<YOUR_KEY> TRELLO_TOKEN=<YOUR_TOKEN> gulp
+```
+{
+  "trello": {
+    "key": "<YOUR_KEY>",
+    "token": "<YOUR_TOKEN>",
+    "list": "<LIST_ID_FOR_CARDS>"
+  }
+}
+```
+
+## Deployment
+WhyAZ uses [meltmedia's](https://github.com/meltmedia) deployment platform, Totem, to continuously deploy to various environments.
+When commits are pushed to master, develop or feature branches beginning with feature_, Totem will use githooks to build and deploy a [Docker](https://www.docker.com) container. You can view the builds at the following urls:
+* master              -> why.az
+* develop             -> whyaz.cu.melt.sh
+* feature_[New-Thing] -> whyaz-[New-Thing].cu.melt.sh
