@@ -65,3 +65,11 @@ We make use of Trello's API to submit the form results to a newly generated card
 3. Once you have that the startup command is slightly different. Run the command below
 
         TRELLO_KEY=<YOUR_KEY> TRELLO_TOKEN=<YOUR_TOKEN> gulp
+
+## Deployment
+WhyAZ uses [meltmedia's](https://github.com/meltmedia) deployment platform, Totem, to continuously deploy to various environments.
+When commits are pushed to master, develop or feature branches beginning with feature_, Totem will use githooks to build and deploy a [Docker](https://www.docker.com) container. You can view the builds at the following urls:
+* master              -> why.az
+* develop             -> whyaz.cu.melt.sh
+* feature_[New-Thing] -> whyaz-[New-Thing].cu.melt.sh
+  
