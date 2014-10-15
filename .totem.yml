@@ -1,0 +1,50 @@
+defaults: {}
+
+branches:
+  - match: 'feature_(.*)'
+    realms:
+      - realm: 'not-production'
+        proxy:
+          - host: 'whyaz-$1.cu.melt.sh'
+            paths:
+              - path: '/'
+                port: 8080
+                accessControl: 'public'
+        comptroller:
+          command: 'production'
+          environment:
+            - name: 'NODE_ENV'
+              value: 'production'
+  - match: 'develop'
+    realms:
+      - realm: 'not-production'
+        proxy:
+          - host: 'whyaz.cu.melt.sh'
+            paths:
+              - path: '/'
+                port: 8080
+                accessControl: 'public'
+        comptroller:
+          command: 'production'
+          environment:
+            - name: 'NODE_ENV'
+              value: 'production'
+  - match: 'master'
+    realms:
+      - realm: 'production'
+        proxy:
+          - host: 'whyaz.au.melt.sh'
+            paths:
+              - path: '/'
+                port: 8080
+                accessControl: 'public'
+          - host: 'why.az'
+            paths:
+              - path: '/'
+                port: 8080
+                accessControl: 'public'
+        comptroller:
+          command: 'production'
+          environment:
+            - name: 'NODE_ENV'
+              value: 'production'

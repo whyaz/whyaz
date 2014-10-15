@@ -64,7 +64,7 @@ $(document).ready(function(){
 
       if (isValid(data)) {
         $.ajax({
-          url: 'http://localhost:8081/send-message',
+          url: '/send-message',
           type: 'post',
           data: data,
           complete: function (data) {
