@@ -12,7 +12,9 @@ If you would like to contribute via pull request, please follow the editing guid
 
 ### What kind of content?
 
-Submit any reasons you love Arizona: cool places to eat, drink, or visit, fun facts about the state or its cities, or anything else you think would be interesting. Our main purpose is to share with the world the many reasons we think Arizona is a great place to live, work, and visit.
+Submit any reasons you love Arizona: cool places to eat, drink, or visit, fun facts about the state or its cities, or anything else you think would be interesting. Our main purpose is to share with the world the many reasons we think Arizona is a great place to live, work, and visit and content will be incorporated as it aligns with this goal.
+
+WhyAZ will not feature advertisements, political support, or discriminatory content. 
 
 ## Editing Content
 
