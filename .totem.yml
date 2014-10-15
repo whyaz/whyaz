@@ -38,9 +38,13 @@ branches:
               - path: '/'
                 port: 8080
                 accessControl: 'public'
+          - host: 'why.az'
+            paths:
+              - path: '/'
+                port: 8080
+                accessControl: 'public'
         comptroller:
           command: 'production'
           environment:
             - name: 'NODE_ENV'
               value: 'production'
-              
