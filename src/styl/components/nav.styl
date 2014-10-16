@@ -15,6 +15,8 @@
 
   a.nav-link
     display: inline-block
+    position: relative
+    z-index: 1
     line-height: 1
     color: $grey-e
     transition: all .2s ease-in 
@@ -51,3 +53,4 @@
 
     @media $screen-small
       opacity: 0
+      z-index: 0
