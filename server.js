@@ -1,4 +1,5 @@
 var http = require('http');
+var https = require('https');
 var gutil = require('gulp-util');
 var Trello = require("node-trello");
 var Router = require('node-simple-router');
@@ -33,6 +34,30 @@ if (config && (config.trello.key && config.trello.token)) {
     });
   });
 }
+
+router.get('/github/contributors', function(request, response){
+  //TODO: May want to get an api key and add to config.json
+  var body = '';
+  var options = {
+    hostname: 'api.github.com',
+    path: '/repos/meltmedia/whyaz/contributors',
+    method: 'GET',
+    headers: {'user-agent': 'what.az'},
+  };
+  var req = https.request(options, function(res) {
+    res.on('data', function(d) {
+      body += d;
+    });
+    res.on('end', function() {
+      var data = JSON.parse(body)
+      response.writeHead(200, {
+        'Content-Type': 'application/json'
+      });
+      response.end(body);
+    });
+  });
+  req.end();
+});
 
 var server = http.createServer(router);
 server.listen(8081, function(err) {

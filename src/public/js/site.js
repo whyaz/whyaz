@@ -100,5 +100,12 @@ $(document).ready(function(){
       }
 
     });
-
+  
+  var $contributorsList = $('.contributors-list');
+  $.get('/github/contributors', function(data){
+    for(var i=0; i<data.length; i++){
+      $contributorsList.append('<li class="contributor"><a href="'+data[i].html_url+'"><img class="avatar" src="'+data[i].avatar_url+'"></a></li>')
+    }
+  });
+  
 });
