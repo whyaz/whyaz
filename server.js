@@ -6,9 +6,14 @@ var fs = require('fs');
 
 var router = new Router();
 
-var config = JSON.parse(fs.readFileSync(__dirname + '/config.json'));
+var config = fs.readFile(__dirname + '/config.json', function(err, data){
+  if (err){
+    return undefined;
+  }
+  return JSON.parse(data);
+});
 
-if (config.trello.key && config.trello.token) {
+if (config && (config.trello.key && config.trello.token)) {
   var trello = new Trello(config.trello.key, config.trello.token);
 
   router.post('/send-message', function (req, res) {
