@@ -10,4 +10,10 @@ lib-cov
 .DS_Store
 
 node_modules/
+bower_components/
 out/
+dist/
+config.json
+
+# Editors
+.idea/

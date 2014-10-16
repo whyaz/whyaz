@@ -1,0 +1,29 @@
+block vars
+  - var title = "WhyAZ Community"
+  - var description = "See what people are sharing about Arizona."
+
+extends ../../templates/layout
+
+block content
+
+  section.siteSection.secondary-page
+    .siteContent
+      h2 Arizona Love
+      p See the reasons others love Arizona.
+        br
+        | Share yours with 
+        a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz
+        | .
+
+    .social-feed-container
+
+  link(href="/lib/social-feed/css/jquery.socialfeed.css", rel="stylesheet", type="text/css")
+  link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel="stylesheet")
+
+  script(src="/lib/jquery/dist/jquery.js")
+  script(src="/lib/codebird-js/codebird.js")
+  script(src="/lib/doT/doT.min.js")
+  script(src="/lib/moment/moment.js")
+  script(src="/lib/social-feed/js/jquery.socialfeed.js")
+
+  script(src="/public/js/site.js")

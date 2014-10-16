@@ -1,0 +1,53 @@
+//- NAV STYLES ----------------------------------------------- //
+
+.site-nav
+  background: $grey-4
+  font-family: $font-family-brandon
+  font-weight: $font-weight-bold
+  text-transform: uppercase
+  color: $white
+
+  .container
+    max-width: 920px
+    margin: 0 auto
+    padding: 12px 20px 9px
+    position: relative
+
+  a.nav-link
+    display: inline-block
+    line-height: 1
+    color: $grey-e
+    transition: all .2s ease-in 
+    -webkit-transition: all .2s ease-in
+
+    &:hover
+      border: none
+      opacity: .7
+
+    &.logo
+      margin-left: 105px
+      float: left
+      font-size: 20px
+      letter-spacing: 3px
+
+      @media $screen-small
+        margin-left: 0
+
+    &:not(.logo)
+      margin-left: 20px
+      margin-top: 2px
+      float: right
+      font-size: 14px
+
+  .flag
+    $place(-85px,-70px)
+    position: absolute
+    left: 0
+    z-index: 5
+    box-shadow: 15px 15px $shadow
+    transition: all .1s ease-out 
+    -webkit-transition: all .1s ease-out
+    $scale(.3)
+
+    @media $screen-small
+      opacity: 0
