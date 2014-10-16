@@ -10,11 +10,13 @@
   .container
     max-width: 920px
     margin: 0 auto
-    padding: 12px 20px 9px
+    padding: 12px 15px 9px
     position: relative
 
   a.nav-link
     display: inline-block
+    position: relative
+    z-index: 1
     line-height: 1
     color: $grey-e
     transition: all .2s ease-in 
@@ -34,8 +36,8 @@
         margin-left: 0
 
     &:not(.logo)
-      margin-left: 20px
-      margin-top: 2px
+      margin-left: 15px
+      margin-top: 3px
       float: right
       font-size: 14px
 
@@ -51,3 +53,4 @@
 
     @media $screen-small
       opacity: 0
+      z-index: 0
