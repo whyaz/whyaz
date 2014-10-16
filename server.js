@@ -42,7 +42,7 @@ router.get('/github/contributors', function(request, response){
     hostname: 'api.github.com',
     path: '/repos/meltmedia/whyaz/contributors',
     method: 'GET',
-    headers: {'user-agent': 'why.az'},
+    headers: {'user-agent': 'why.az'}
   };
   var req = https.request(options, function(res) {
     res.on('data', function(d) {
