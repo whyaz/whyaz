@@ -4,15 +4,21 @@ var gutil = require('gulp-util');
 var Trello = require("node-trello");
 var Router = require('node-simple-router');
 var fs = require('fs');
+var configPath = __dirname + '/config.json';
 
 var router = new Router();
+var config = null;
 
-var config = fs.readFile(__dirname + '/config.json', function(err, data){
-  if (err){
-    return undefined;
-  }
-  return JSON.parse(data);
-});
+try {
+
+  config = fs.readFileSync(configPath);
+  config = JSON.parse(config);
+
+} catch(err) {
+
+  console.log('There was an issue reading the config.json file, did you add one?\nSee the README for usage.\n', err);
+
+}
 
 if (config && (config.trello.key && config.trello.token)) {
   var trello = new Trello(config.trello.key, config.trello.token);
