@@ -49,7 +49,6 @@ router.get('/github/contributors', function(request, response){
       body += d;
     });
     res.on('end', function() {
-      var data = JSON.parse(body)
       response.writeHead(200, {
         'Content-Type': 'application/json'
       });
