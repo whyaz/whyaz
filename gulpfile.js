@@ -82,6 +82,7 @@ gulp.task('stylus', function() {
 gulp.task('express', function() {
 
   app.use(express.static(path.resolve('./dist')));
+  app.use('/github/contributors', proxy(url.parse('http://localhost:8081/github/contributors')));
   app.use('/send-message', proxy(url.parse('http://localhost:8081/send-message')));
   app.listen(8080);
   gutil.log('Listening on port: 8080');
