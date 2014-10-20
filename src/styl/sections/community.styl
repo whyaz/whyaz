@@ -1,59 +1,10 @@
 //- COMMUNITY PAGE ----------------------------------------------- //
 
-.social-feed-container
-  width: 100%
-  box-sizing: border-box
-  padding: 20px 0
-  background: $pale-blue
+#tagboard-embed
+  padding: 20px 10px
+  background: $grey-5
 
-  .social-feed-element
-    max-width: 550px
-    margin: 30px auto 0
-    box-shadow: $shadow-tall
-
-    &:hover
-      box-shadow: $shadow-tall
-
-    @media $screen-medium
-      margin: 50px auto
-
-    a:hover
-      text-decoration: none
-
-    .content
-      padding-bottom: 5px
-
-  .avatar
-
-    &:hover
-      border: none
-
-  .date
-    font-size: 12px
-
-  .read-button
-    padding-top: 10px
-    display: block
-    font-size: 12px
-    text-align: right
-
-  .twitter
-
-    .content:last-child
-
-      .social-feed-text
-        padding-left: 2px
-        font-size: 20px
-        line-height: 26px
-
-    .read-button
-      span:before
-        content: 'Twitter'
-
-  .instagram
-
-    .read-button
-      span:before
-        content: 'Instagram'
+  @media $screen-medium
+    padding: 30px
 
 
