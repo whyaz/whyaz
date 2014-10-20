@@ -15,15 +15,7 @@ block content
         a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz
         | .
 
-    .social-feed-container
+  section#tagboard-embed
 
-  link(href="/lib/social-feed/css/jquery.socialfeed.css", rel="stylesheet", type="text/css")
-  link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel="stylesheet")
-
-  script(src="/lib/jquery/dist/jquery.js")
-  script(src="/lib/codebird-js/codebird.js")
-  script(src="/lib/doT/doT.min.js")
-  script(src="/lib/moment/moment.js")
-  script(src="/lib/social-feed/js/jquery.socialfeed.js")
-
-  script(src="/public/js/site.js")
+  script var tagboardOptions = {tagboard:"whyaz/194612", darkMode: true};
+  script(src="https://tagboard.com/public/js/embed.js")
