@@ -1,14 +1,11 @@
 {
   "name": "whyaz",
   "dependencies": {
-    "social-feed": "~0.1.2"
+    "jquery": "1.11.2"
   },
   "overrides": {
-    "social-feed": {
-      "main": ["js/jquery.socialfeed.js","css/jquery.socialfeed.css"]
-    },
-    "doT": {
-      "main": "doT.min.js"
+    "jquery": {
+      "main": ["./dist/jquery.min.js", "./dist/jquery.min.map"]
     }
   }
 }
