@@ -2,7 +2,7 @@
   "name": "whyaz",
   "description": "A website about why we love living and working in Arizona. The illustrations on this site are drawn with HTML and CSS.",
   "repository": "https://github.com/meltmedia/whyaz",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "devDependencies": {
     "gulp": "~3.8.8",
     "gulp-util": "~3.0.1",
