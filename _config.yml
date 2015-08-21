@@ -2,7 +2,7 @@
 title: WHYAZ
 email: rtorruellas@gmail.com
 description: "Why it's awesome to live and work in Arizona."
-baseurl: ""
+baseurl: "/whyaz"
 url: "http://why.az/"
 
 # Build settings

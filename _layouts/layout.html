@@ -5,8 +5,11 @@
     <nav class="site-nav">
       <div class="container clearfix">
         <a href="/" class="nav-link logo">WhyAz</a>
-        <a href="/contribute" class="nav-link">Contribute</a>
-        <a href="/community" class="nav-link">Community</a>
+        {% for page in site.pages %}
+          {% if page.title and page.title != "Reasons to love Arizona" %}
+            <a href="{{ page.url | prepend: site.baseurl }}" class="nav-link">{{ page.short_name }}</a>
+          {% endif %}
+        {% endfor %}
         <div class="flag">
           <div class="flag-stripes--left"></div>
           <div class="flag-stripes--right"></div>
