@@ -1,0 +1,14 @@
+# Site settings
+title: WHYAZ
+email: rtorruellas@gmail.com
+description: "Why it's awesome to live and work in Arizona."
+baseurl: ""
+url: "http://why.az/"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+stylus:
+  compress: true
+  path: ./styl

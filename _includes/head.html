@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WhyAZ - {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+
+    <meta property="og:site_name" content="width=device-width">
+    <meta property="og:url" content="http://why.az">
+    <meta property="og:description" content="WhyAZ is community-built and explores the things that make Arizona an awesome place to live and work. Join us and share what you love with #whyaz.">
+    <meta property="og:image" content="http://why.az/images/facebook-whyaz.png">
+    <meta property="og:app_id" content="width=213627328831811">
+    <meta property="og:type" content="website">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/reset.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/styl/main.css" | prepend: site.baseurl }}">
+    <script src="//use.typekit.net/ivx3zwe.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+</head>

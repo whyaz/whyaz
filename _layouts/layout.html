@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <nav class="site-nav">
+      <div class="container clearfix">
+        <a href="/" class="nav-link logo">WhyAz</a>
+        <a href="/contribute" class="nav-link">Contribute</a>
+        <a href="/community" class="nav-link">Community</a>
+        <div class="flag">
+          <div class="flag-stripes--left"></div>
+          <div class="flag-stripes--right"></div>
+          <div class="flag-star"></div>
+        </div>
+      </div>
+    </nav>
+    <div class="ribbon">
+      <a href="https://github.com/meltmedia/whyaz" class="fork-me">Fork me on GitHub</a>
+    </div>
+    {{ content }}
+    {% include ga.html %}
+  </body>
+</html>
+

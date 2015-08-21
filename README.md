@@ -1,3 +1,8 @@
+WhyAZ
+===============
+
+A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
+
 # WhyAZ
 
 A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
@@ -46,39 +51,16 @@ Please use the following loose declaration order:
 
 ## Working Locally
 
-Requires the [LiveReload browser plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei).
+Read about installing [jekyll](http://jekyllrb.com/)
 
 ```
-npm install
-npm install -g gulp
-gulp
+cd whyaz
+bundle install
+bundle exec jekyll serve --watch
 ```
 
-Navigate to [localhost:8080](http://localhost:8080).
-
-### Working locally on the contributor form
-We make use of Trello's API to submit the form results to a newly generated card on our internal board. If you want to work on that feature of the site, there are a few more steps you'll need to follow to get going.
-
-1. [Get your Trello API key](https://trello.com/1/appKey/generate)
-2. Generate your Trello token by copying and pasting the link below. Make sure to replace the <yourkey> portion with your own key.
-
-        https://trello.com/1/connect?key=<YOUR_KEY>&name=WhyAZ&response_type=token&scope=read,write&expiration=never
-
-3. Once you have your key and token you will need to add a config.json file to the root of the project. This is where the server looks for any configuration information it needs. Here is a sample:
-
-```
-{
-  "trello": {
-    "key": "<YOUR_KEY>",
-    "token": "<YOUR_TOKEN>",
-    "list": "<LIST_ID_FOR_CARDS>"
-  }
-}
-```
+Then open your browser to [http://localhost:4000/](http://localhost:4000/)
 
 ## Deployment
-WhyAZ uses [meltmedia's](https://github.com/meltmedia) deployment platform, Totem, to continuously deploy to various environments.
-When commits are pushed to master, develop or feature branches beginning with feature_, Totem will use githooks to build and deploy a [Docker](https://www.docker.com) container. You can view the builds at the following urls:
-* master              -> why.az
-* develop             -> whyaz.cu.melt.sh
-* feature_[New-Thing] -> whyaz-[New-Thing].cu.melt.sh
+
+merge updates with `gh-pages`
