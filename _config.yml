@@ -5,6 +5,9 @@ description: "Why it's awesome to live and work in Arizona."
 baseurl: "/whyaz"
 url: "http://why.az/"
 
+gems:
+- stylus
+
 # Build settings
 markdown: kramdown
 permalink: pretty
@@ -12,3 +15,4 @@ permalink: pretty
 stylus:
   compress: true
   path: ./styl
+
