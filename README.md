@@ -3,10 +3,6 @@ WhyAZ
 
 A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
 
-# WhyAZ
-
-A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
-
 ## Contributing
 
 Help make WhyAZ even better.
