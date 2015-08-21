@@ -4,7 +4,7 @@
   <body>
     <nav class="site-nav">
       <div class="container clearfix">
-        <a href="/" class="nav-link logo">WhyAz</a>
+        <a href="{{ site.baseurl | append: '/' }}" class="nav-link logo">WhyAz</a>
         {% for page in site.pages %}
           {% if page.title and page.title != "Reasons to love Arizona" %}
             <a href="{{ page.url | prepend: site.baseurl }}" class="nav-link">{{ page.short_name }}</a>
