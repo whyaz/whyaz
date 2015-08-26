@@ -19,7 +19,7 @@ var url         = require('url');
 
 function copy() {
 
-  return gulp.src(['src/**/*.*', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
+  return gulp.src(['src/**/*.*', 'src/**/CNAME', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
     .pipe(gulp.dest('dist/'));
 
 }
@@ -117,7 +117,9 @@ gulp.task('default', ['clean'], function() {
 
 });
 
-gulp.task('build', ['clean', 'contributors', 'bower', 'copy', 'jade', 'stylus']);
+gulp.task('build', ['clean'], function() {
+  gulp.start('contributors', 'bower', 'copy', 'jade', 'stylus');
+});
 
 gulp.task('deploy', ['build'], function() {
   return gulp.src('./dist/**/*')
