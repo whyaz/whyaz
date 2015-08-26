@@ -8,6 +8,7 @@ lib-cov
 *.gz
 .cache
 .DS_Store
+.publish
 
 node_modules/
 bower_components/

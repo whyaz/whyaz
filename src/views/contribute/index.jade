@@ -12,20 +12,26 @@ block content
       p We’re sure there’s awesome stuff we’ve missed (or haven’t even heard of yet). Contribute and help us make WhyAZ even better.
       h3 Submit an idea
 
-      form
-        .alert.error.hidden Whoops! An email or Twitter handle is required.
-        .alert.success.hidden We received your message. Thank you! Submit another?
-        fieldset
-          label Name
-          input(type="text", placeholder="Sam Alexander", name="name")
-          label Email
-          input(type="email", placeholder="sam@why.az", name="email")
-          label Twitter
-          input(type="text", placeholder="@nova_prime_az", name="twitter")
-          label Message
-          textarea(placeholder="You won't believe this...", name="message")
-          input(type="hidden", name="email2")
-          button.button(type="submit") Send
+      form.wufoo.topLabel.page(id="form5", name="form5", accept-charset="UTF-8", autocomplete="off", enctype="multipart/form-data", method="post", novalidate, action="https://lynnandtonic.wufoo.com/forms/s81cd9c0b31kew/#public")
+        ul
+          li.notranslate(id="foli3")
+            label.desc(id="title3", for="Field3") Name
+            input.field.text(id="Field3", name="Field3", type="text", tabindex="1", onkeyup="", placeholder="Sam Alexander")
+          li.notranslate(id="foli5")
+            label.desc(id="title5", for="Field5") Email
+            input.field.text(id="Field3", name="Field5", type="email", tabindex="2", onkeyup="", placeholder="sam@why.az")
+          li.notranslate(id="foli6")
+            label.desc(id="title6", for="Field6") Twitter
+            input.field.text(id="Field6", name="Field6", type="text", tabindex="3", onkeyup="", placeholder="@nova_prime_az")
+          li.notranslate(id="foli7")
+            label.desc(id="title7", for="Field7") Message
+            textarea.field.textarea(id="Field7", name="Field7", type="textarea", tabindex="4", onkeyup="", rows="3", placeholder="You won’t believe this...")
+          li.buttons
+            input.button.btTxt.submit(id="saveForm", name="saveForm", type="submit", value="Send")
+          li.hide
+            label(for="comment") Do not fill this out
+            textarea(name="comment", id="comment", rows="1", cols="1")
+            input(type="hidden", id="idstamp", name="idstamp", value="GI3BaAMvV9hAQVRXKYC9UjxE9e3NcvrK96Mip/ScAQw=")
 
       h3 Or contribute on GitHub
       p Submit an 
