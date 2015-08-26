@@ -117,7 +117,9 @@ gulp.task('default', ['clean'], function() {
 
 });
 
-gulp.task('build', ['clean', 'contributors', 'bower', 'copy', 'jade', 'stylus']);
+gulp.task('build', ['clean'], function() {
+  gulp.start('contributors', 'bower', 'copy', 'jade', 'stylus');
+});
 
 gulp.task('deploy', ['build'], function() {
   return gulp.src('./dist/**/*')

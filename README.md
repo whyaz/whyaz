@@ -50,8 +50,7 @@ Requires the [LiveReload browser plugin](https://chrome.google.com/webstore/deta
 
 ```
 npm install
-npm install -g gulp
-gulp
+npm run dev
 ```
 
 Navigate to [localhost:8080](http://localhost:8080).

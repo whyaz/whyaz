@@ -19,6 +19,9 @@
     "tiny-lr": "~0.1.4"
   },
   "scripts": {
+    "dev": "gulp",
+    "build": "gulp build",
+    "deploy": "gulp deploy",
     "postinstall": "./node_modules/bower/bin/bower install"
   }
 }
