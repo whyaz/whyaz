@@ -121,7 +121,7 @@ gulp.task('build', ['clean'], function() {
   gulp.start('contributors', 'bower', 'copy', 'jade', 'stylus');
 });
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
