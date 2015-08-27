@@ -6,6 +6,7 @@ var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 var jade        = require('gulp-jade');
 var stylus      = require('gulp-stylus');
+var minifyCSS   = require('gulp-minify-css');
 var livereload  = require('gulp-livereload');
 var ghPages     = require('gulp-gh-pages');
 var remoteSrc   = require("gulp-remote-src");
@@ -38,6 +39,7 @@ function stylusBuild() {
 
   return gulp.src('src/styl/main.styl')
     .pipe(stylus())
+    .pipe(minifyCSS())
     .pipe(gulp.dest('dist/public/css'));
 
 }
