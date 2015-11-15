@@ -20,7 +20,7 @@ block content
           li.notranslate(id="foli5")
             label.desc(id="title5", for="Field5") Email
             input.field.text(id="Field3", name="Field5", type="email", tabindex="2", onkeyup="", placeholder="sam@why.az")
-          li.notranslate(id="foli6")
+          li.notranslate(id="foli6V")
             label.desc(id="title6", for="Field6") Twitter
             input.field.text(id="Field6", name="Field6", type="text", tabindex="3", onkeyup="", placeholder="@nova_prime_az")
           li.notranslate(id="foli7")
@@ -36,7 +36,7 @@ block content
       h3 Or contribute on GitHub
       p Submit an 
         a(href="https://github.com/whyaz/whyaz/issues") issue 
-        | or a pull request. Please see the 
+        | or a pull request. Please see the
         a(href="https://github.com/whyaz/whyaz/#contributing") contribution guidelines
         | .
 
@@ -45,6 +45,7 @@ block content
         li.contributor
           a(href="https://twitter.com/andyfrey")
             img.avatar(src="https://pbs.twimg.com/profile_images/1363598990/Team_Exit_400x400.jpg")
-
-  script(src="/lib/jquery/dist/jquery.min.js")
-  script(src="/public/js/site.js")
+        each contributor in contributors
+          li.contributor
+            a(href="#{contributor.html_url}")
+              img.avatar(src="#{contributor.avatar_url}")
