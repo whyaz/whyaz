@@ -3,6 +3,7 @@
  */
 
 var gulp        = require('gulp');
+var dest        = require('gulp-dest');
 var gutil       = require('gulp-util');
 var jade        = require('gulp-jade');
 var stylus      = require('gulp-stylus');
@@ -15,7 +16,6 @@ var express     = require('express');
 var app         = express();
 var path        = require('path');
 var del         = require('del');
-var bower       = require('main-bower-files');
 var url         = require('url');
 
 function copy() {
@@ -29,7 +29,10 @@ function jadeBuild() {
 
   return gulp.src(['src/views/**/*.jade'])
     .pipe(jade({
-      pretty: true
+      pretty: true,
+      data: {
+        contributors: require('././dist/contributors.json')
+      }
     }))
     .pipe(gulp.dest('dist/'));
 
@@ -44,7 +47,7 @@ function stylusBuild() {
 
 }
 
-gulp.task('contributors', function() {
+gulp.task('contributors', function(cb) {
   remoteSrc(['contributors'], {
     base: 'https://api.github.com/repos/meltmedia/whyaz/',
     requestOptions: {
@@ -52,7 +55,8 @@ gulp.task('contributors', function() {
         'User-Agent': 'why.az'
       }
     }
-  }).pipe(gulp.dest('./dist/public'))
+  }).pipe(dest('./dist', {ext: '.json'}))
+    .pipe(gulp.dest('.')).on('end', cb)
 });
 
 gulp.task('jade', function() {
@@ -77,11 +81,6 @@ gulp.task('build', function() {
   jadeBuild();
   stylusBuild();
 
-});
-
-gulp.task("bower", function(){
-  return gulp.src(bower(), { base: './bower_components' })
-    .pipe(gulp.dest('dist/lib'))
 });
 
 gulp.task('stylus', function() {
@@ -112,15 +111,15 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean', 'contributors'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
-  gulp.start('contributors', 'bower', 'copy', 'jade', 'stylus', 'express', 'watch');
+  gulp.start('copy', 'jade', 'stylus', 'express', 'watch');
 
 });
 
-gulp.task('build', ['clean'], function() {
-  gulp.start('contributors', 'bower', 'copy', 'jade', 'stylus');
+gulp.task('build', ['clean', 'contributors'], function() {
+  gulp.start('copy', 'jade', 'stylus');
 });
 
 gulp.task('deploy', function() {
