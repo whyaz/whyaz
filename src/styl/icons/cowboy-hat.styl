@@ -1,0 +1,27 @@
+//- COWBOY HAT ----------------------------------------------- //
+
+.cowboy-hat
+  width: 35px
+  height: 100px
+  margin-left: -@width
+  background: linear-gradient(to top, $navy-blue 20px, $orange 20px)
+  border-radius: 30px 30px 0 0
+
+  &:before
+    width: 35px
+    height: 100px
+    margin-left: 17px
+    background: linear-gradient(to top, $navy-blue 20px, $orange-shadow 20px)
+    border-radius: 30px 30px 0 0
+    box-shadow: $shadow-short
+
+  //- brim
+  &:after
+    width: 150px
+    height: 20px
+    margin-left: -57px
+    bottom: -10px
+    border-radius: 0 0 20px 20px
+    border: 10px solid $orange
+    border-top: none
+    box-shadow: $shadow-short

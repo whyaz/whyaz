@@ -1,0 +1,30 @@
+//- BASKETBALL ----------------------------------------------- //
+
+.basketball
+  width: 120px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies($orange,$orange-drk)
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- top and bottom seams
+  &:before
+    width: 130px
+    height: 90px
+    margin-left: -(@width/2)
+    top: 15px
+    border-radius: 50%
+    border-top: 3px solid $grey-5
+    border-bottom: 3px solid $grey-5
+    clip: rect(0,120px,120px,11px)
+
+  //- middle seam
+  &:after
+    width: 130px
+    height: 20px
+    margin-left: -(@width/2)
+    top: 55px
+    border-radius: 50%
+    border-top: 3px solid $grey-5
+    clip: rect(0,125px,125px,6px)

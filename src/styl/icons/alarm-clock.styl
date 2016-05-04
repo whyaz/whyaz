@@ -1,0 +1,46 @@
+//- ALARM CLOCK ----------------------------------------------- //
+
+.alarm-clock
+  width: 130px
+  height: 70px
+  margin-left: -(@width/2)
+  top: 80px
+  background: $grey-3
+  background-image: radial-gradient(circle at 56px 20px, $red 3px, transparent 3px),
+                    radial-gradient(circle at 56px 40px, $red 3px, transparent 3px)  //- colon dots
+  border: 5px solid $grey-6
+  border-radius: 3px
+  box-shadow: $shadow-short
+
+  //- Horizontal bars
+  &:before
+    width: 19px
+    height: 4px
+    margin-left: -35px
+    top: 10px
+    background: $red
+    box-shadow: 42px  0   $red,
+                68px  0   $red,
+                 0   19px $red,
+                42px 19px $red,
+                68px 19px $red,
+                 0   38px $red,
+                42px 38px $red,
+                68px 38px $red,
+                26px -22px 0 3px $grey-3,
+                33px -22px 0 $shadow,
+                33px -18px 0 $shadow
+
+  //- Vertical bars
+  &:after
+    width: 4px
+    height: 9px
+    margin-left: -35px
+    top: 17px
+    background: $red
+    box-shadow: 57px  0   $red,
+                68px  0   $red,
+                 0   19px $red,
+                15px 19px $red,
+                57px 19px $red,
+                83px 19px $red

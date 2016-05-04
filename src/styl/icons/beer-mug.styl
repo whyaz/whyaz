@@ -1,0 +1,38 @@
+//- BEER MUG ----------------------------------------------- //
+
+//- Handle
+.beer-mug
+  width: 28px
+  height: 48px
+  margin-left: -55px
+  top: 85px
+  border-radius: 8px 0 0 8px
+  border: 6px solid white
+  border-right: none
+  box-shadow: $shadow-short
+
+  //- Mug body
+  &:before
+    width: 66px
+    height: 100px
+    left: 15px
+    top: -30px
+    background: $half-shadow,
+                linear-gradient(to bottom, white 5px, white(0) 5px),
+                linear-gradient(to right, white 5px, white(0) 5px),
+                linear-gradient(to left, white 5px, white(0) 5px),
+                linear-gradient(to top, white 15px, white(0) 15px),
+                linear-gradient(to bottom, $yellow-light 30%, $yellow 30%)
+    border-radius: 3px 3px 0 0
+    box-shadow: $shadow-short
+    z-index: 2
+
+  &:after
+    width: 20px
+    height: 20px
+    margin-left: 7px
+    top: -40px
+    background: lighten($yellow,15%)
+    border-radius: 50%
+    box-shadow: 20px  0  0 3px $yellow-light,
+                40px 5px 0 1px $yellow-light

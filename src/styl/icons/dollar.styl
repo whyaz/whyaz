@@ -1,0 +1,32 @@
+//- DOLLAR ----------------------------------------------- //
+
+.dollar
+  width: 150px
+  height: 80px
+  margin-left: -(@width/2)
+  top: 70px
+  $halfsies($yellow-green,$yellow-green-drk)
+  border-radius: 3px
+  border: 4px solid white(.2)
+  box-shadow: inset 0 0 0 5px $shadow,
+              $shadow-short
+
+  //- circles
+  &:before,
+  &:after
+    left: 8px
+    background: $shadow
+    border-radius: 50%
+
+  &:before
+    width: 15px
+    height: 20px
+    top: 8px
+    box-shadow: 111px 0 0 $shadow,
+                56px 20px 0 10px $shadow
+
+  &:after
+    width: 12px
+    height: 15px
+    bottom: 8px
+    box-shadow: 114px 0 0 $shadow

@@ -1,0 +1,32 @@
+//- TELESCOPE ----------------------------------------------- //
+
+//- farthest left piece
+.telescope
+  width: 10px
+  height: 30px
+  margin-left: -80px
+  top: 100px
+  background: $orange-shadow
+  box-shadow: $shadow-short
+
+  //- middle pieces
+  &:before
+    width: 36px
+    height: 22px
+    left: 10px
+    top: 4px
+    background: $grey-c
+    box-shadow: 92px 0 0 10px $brown-drk,
+                41px 0 0 5px $brown-light,
+                $shadow-short,
+                45px 4px 0 5px $shadow,
+                96px 4px 0 10px $shadow
+
+  //- farthest right piece
+  &:after
+    width: 10px
+    height: 52px
+    left: 148px
+    top: -11px
+    background: $grey-a
+    box-shadow: $shadow-short

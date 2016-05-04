@@ -1,0 +1,50 @@
+//- LIGHTSABER ----------------------------------------------- //
+
+.lightsaber
+  width: 20px
+  height: 125px
+  margin-left: -(@width/2)
+  top: 35px
+  background-color: $grey-c
+  background-image: linear-gradient(to right, black(0) 50%, black(.15) 50%),
+                    radial-gradient(circle at 14px 39px, $grey-4 3px, transparent 3px),
+                    radial-gradient(circle at 14px 31px, $grey-4 3px, transparent 3px),
+                    linear-gradient(to bottom, $grey-4 20%,
+                                               transparent 20%),
+                    linear-gradient(to bottom, transparent 37%,
+                                               $grey-4 37%,
+                                               $grey-4 50%,
+                                               transparent 50%),
+                    linear-gradient(to bottom, $grey-c 50%,
+                                               transparent 50%,
+                                               transparent 98%,
+                                               #ddd 98%),
+                    linear-gradient(to right, $grey-4 20%,
+                                              transparent 20%,
+                                              transparent 35%,
+                                              $grey-4 35%,
+                                              $grey-4 65%,
+                                              transparent 65%,
+                                              transparent 80%,
+                                              $grey-4 80%)
+  border-top-right-radius: 40px 30px
+  border-bottom-right-radius: 10px 5px
+  border-bottom-left-radius: 10px 5px
+  box-shadow: $shadow-short
+
+  &:before
+    width: 4px
+    height: 27px
+    background: $grey-4
+    left: -4px
+    top 10px
+    border-top-left-radius: 5px 10px
+
+  &:after
+    width: 6px
+    height: 17px
+    margin-left: 10px
+    top: 45px
+    background: $grey-4
+    background-image: radial-gradient(circle at center center, #888 2px, transparent 2px)
+    box-shadow: $shadow-short

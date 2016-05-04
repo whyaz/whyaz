@@ -1,0 +1,30 @@
+//- PAINTING ----------------------------------------------- //
+
+.painting
+  width: 140px
+  height: 100px
+  top: 55px
+  margin-left: -(@width/2)
+  background: linear-gradient(to bottom, $sky-blue 35%,
+                                         $yellow 35%,
+                                         $yellow 55%,
+                                         $green-light 55%)
+  border-radius: 3px
+  box-shadow: inset 0 0 0 12px $tan,
+              $shadow-short
+
+  //- haystacks
+  &:before
+    width: 20px
+    height: 25px
+    margin-left: 15px
+    top: 25px
+    background: $gold-light
+    border-radius: 20px 20px 0 0
+    box-shadow: -50px 12px 0 6px $gold-light
+
+  //- shadow
+  &:after
+    width: 70px
+    height: 100px
+    background: $shadow

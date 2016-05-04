@@ -1,0 +1,27 @@
+//- VENN DIAGRAM ----------------------------------------------- //
+
+.venn-diagram,
+.venn-diagram:before,
+.venn-diagram:after
+  width: 80px
+  height: @width
+  border-radius: 50%
+  opacity: .6
+
+//- bottom left
+.venn-diagram
+  margin-left: -70px
+  top: 85px
+  background: $yellow-green
+
+  //- top middle
+  &:before
+    margin-left: -10px
+    top: -45px
+    background: $orange
+
+  //- bottom right
+  &:after
+    margin-left: 20px
+    top: 0
+    background: $yellow

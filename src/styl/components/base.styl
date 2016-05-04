@@ -2,86 +2,60 @@
 
 html
   -webkit-text-size-adjust: none
+  box-sizing: border-box
+  padding: 2px
+
+*, *:before, *:after
+  box-sizing: inherit
 
 body
+  padding: 20px
   position: relative
-  background: $pale-blue
-  font-family: $font-family-tisa
+  font-size: 18px
+  font-family: $font-tisa-serif
   font-weight: $font-weight-normal
   text-align: center
+  line-height: 1.5
   color: $grey-3
 
-h1, h2, h3
-  font-family: $font-family-brandon
-  font-weight: $font-weight-bold
-  text-transform: uppercase
-
-h2, h3
-  text-shadow: $shadow-short
-
-h1
-  margin-bottom: 60px
-  font-size: 60px
-  letter-spacing: 5px
-  text-shadow: $shadow-tall
-
-  @media $screen-medium
-    margin-bottom: 100px
-    font-size: 100px
-    letter-spacing: 10px
-
-  @media $screen-large
-    font-size: 150px
-    letter-spacing: 20px
-
 h2
-  margin-bottom: 60px
-  font-size: 30px
-
-  @media $screen-medium
-    margin-bottom: 100px
-
-  @media $screen-large
-    font-size: 40px
-    letter-spacing: 1px
+  margin-bottom: 25px
+  font-size: 24px
+  font-style: italic
 
 h3
-  margin: 60px 0 0
-
-ul
-  list-style: none
-
-.inline-list
-  .list-item
-    display: inline-block
-    padding: 10px 5px 0
-
-    @media $screen-medium
-      padding: 20px 10px 0
-    @media $screen-large
-      padding: 30px 15px 0
-
-em
+  margin-bottom: 20px
   font-style: italic
+
+p
+  margin-bottom: 20px
 
 a
   text-decoration: none
 
   &:hover
-    border-bottom: 1px dotted
+    opacity: .7
 
-.hide
-  display: none
+em
+  font-style: italic
 
-//- Clearfix
-.clearfix:after,
-.siteContent:after
-  visibility: hidden
-  display: block
-  font-size: 0
-  content: " "
-  clear: both
-  height: 0
+.text-drk
+  a:not(.button)
+    background: linear-gradient(to top, black(.2) 2px, black(0) 2px)
+    color: $grey-3
 
-.hidden
-  display: none
+.text-light
+  color: white
+  a:not(.button)
+    background: linear-gradient(to top, white(.3) 2px, white(0) 2px)
+    color: white
+
+// Clearfix
+.cf
+  &:before,
+  &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both

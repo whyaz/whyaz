@@ -1,0 +1,31 @@
+//- VALENTINE ----------------------------------------------- //
+
+.valentine
+  width: 100px
+  height: 110px
+  margin-left: -(@width/2)
+  $halfsies($pink-lighter, $pink-light)
+  border-radius: 5px
+  box-shadow: inset 0 0 0 5px $pink-lighter,
+              inset 0 0 0 8px white(.8),
+              $shadow-short
+
+  //- left portion of heart
+  &:before
+    width: 20px
+    height: 36px
+    left: 35px
+    top: 35px
+    background: $red-light
+    border-radius: 40px 40px 0 0
+    transform: rotate(-45deg)
+
+  //- right portion of heart
+  &:after
+    width: 20px
+    height: 36px
+    left: 46px
+    top: 35px
+    background: linear-gradient(45deg, $red-light 36%, $red 36%)
+    border-radius: 40px 40px 0 0
+    transform: rotate(45deg)

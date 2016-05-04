@@ -1,0 +1,27 @@
+//- HOMEPLATE ----------------------------------------------- //
+
+.homeplate
+  width: 120px
+  height: 68px
+  margin-left: -(@width/2 + 4px)
+  top: 100px
+  background: $shadow
+  border-radius: 20px 20px 6px 6px
+
+  &:before
+    width: 88px
+    height: @width
+    left: 12px
+    top: -38px
+    background: white
+    border-radius: 6px
+    border-bottom-right-radius: 50%
+    transform: rotate(45deg)
+
+  &:after
+    width: 120px
+    height: 60px
+    left: -4px
+    top: 3px
+    background: white
+    border-radius: 6px

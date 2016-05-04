@@ -1,0 +1,41 @@
+//- POCKET PROTECTOR ----------------------------------------------- //
+
+.pocket-protector
+  width: 70px
+  height: 110px
+  margin-left: -(@width/2)
+  $halfsies($yellow-light,$yellow)
+  border-radius: 3px 3px 5px 5px
+  box-shadow: $shadow-short
+
+  //- Flap
+  &:before
+    width: 56px
+    height: 40px
+    margin-left: -(@width/2)
+    top: 36px
+    background: linear-gradient(to right, $yellow-light 60%, $yellow 60%)
+    box-shadow: 2px 2px 0 $shadow
+
+  //- Pens
+  &:after
+    width: 6px
+    height: 28px
+    left: 12px
+    top: 10px
+    background: $red
+    box-shadow: -3px 10px 0 -2px $red-light,
+                3px 28px 0 $yellow-light,
+                3px 3px 0 $shadow,            //- red pen
+                18px 10px 0 -2px $grey-4,
+                17px 32px 0 4px $yellow-light,
+                15px 10px 0 1px $grey-4,
+                18px 13px 0 1px $shadow,      //- black marker
+                32px 10px 0 -2px $navy-blue,
+                28px 0 0 $navy-blue,
+                31px 28px 0 $yellow,
+                31px 3px 0 $shadow,           //- first blue pen
+                44px 10px 0 -2px $navy-blue,
+                40px 0 0 $navy-blue,
+                43px 28px 0 $yellow,
+                43px 3px 0 $shadow            //- first blue pen

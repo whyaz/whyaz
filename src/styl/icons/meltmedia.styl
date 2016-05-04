@@ -1,0 +1,37 @@
+//- MELTMEDIA LOGO ----------------------------------------------- //
+
+.meltmedia
+  width: 60px
+  height: @width
+  margin-left: -(@width/2)
+  top: 0
+  background: $blue-grey
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- letter M blob thing
+  &:before
+    width: 13px
+    height: @width
+    left: 40px
+    top: 29px
+    background: white
+    border-radius: 50%
+    box-shadow:  -8px -14px 0 white,
+                  8px -14px 0 white,
+                -16px -28px 0 white,
+                  0   -28px 0 white,
+                  0    -8px 0 -3px $blue-grey,
+                  0   -20px 0 -3px $blue-grey,
+                 -8px -22px 0 -3px $blue-grey,
+                 -8px -34px 0 -3px $blue-grey,
+                  0    -14px 0 -2px white,
+                 -8px  -28px 0 -2px white
+    transform: rotate(-60deg)
+
+  //- half shadow
+  &:after
+    width: 30px
+    height: 60px
+    border-radius: 0 30px 30px 0
+    background: $shadow

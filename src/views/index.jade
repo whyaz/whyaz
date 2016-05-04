@@ -6,489 +6,448 @@ extends ../templates/layout
 
 block content
 
-  //- Site intro section
-  header.intro.siteSection
-    h1 WhyAZ
-    .featured
-      header
-        span Reason No. 453
-      h2 Tattoos for the fickle
-      p Did you know Tucson, Arizona is the temporary tattoo capital of the world?
-      a.button(href="http://www.azcentral.com/story/money/business/contributor/2016/02/23/did-you-know-arizonas-temporary-tattoo-capital-world/80775278/") Read More
+  .flex-container
 
-  //- Desert section
-  section.desert.siteSection.links-drk
-    h2 There’s more than desert.
-    .siteContent.col-two
-      p.icon.meter
-        span.icon-img
-        | Arizona has an elevation range of over 12,500 feet.
-      p.icon.trees
-        span.icon-img
-        | Plus the 
-        a(href="http://www.fs.usda.gov/coconino") largest contiguous stand of ponderosa pines 
-        | in the world.
-      p.icon.snow
-        span.icon-img
-        a(href="http://www.flagstaff.az.gov/") Flagstaff 
-        | averages 100.3 inches of snowfall annually.
-      p.icon.tube
-        span.icon-img
-        | Arizona has 128 lakes, including 
-        a(href="http://www.nps.gov/lake/index.htm") Lakes Mead
-        | , 
-        a(href="http://azstateparks.com/Parks/LAHA/") Havasu
-        | , and 
-        a(href="http://www.lakepowell.com/") Powell
-        | .
+    //- AZ state flag
+    .flex-1of2
+      .why.pale-blue.text-drk
+        .icon.flag-one
+        p The Arizona state flag is by far one of the coolest <a href="https://en.wikipedia.org/wiki/Flags_of_the_U.S._states#Current_state_flags">in the country</a>.
 
-  //- Weather section
-  section.weather.siteSection.links-drk
-    h2 We gots the weather.
-    .siteContent.col-two
-      p.icon.sun
-        span.icon-img
-        | Phoenix boasts 296 days of sunshine each year.
-      p.icon.temp
-        span.icon-img
-        | The average winter temperature in Phoenix is 60 degrees.
+    //- Bisbee
+    .flex-1of2
+      .why.beige.text-drk
+        .icon.town
+        p Bisbee named <a href="http://www.azcentral.com/story/travel/arizona/2016/05/02/bisbee-best-small-town/83837652/">Best Historic Small Town</a> in the country.
 
-  //- Living section
-  section.living.siteSection.links-light
-    h2 Affordable living.
-    .siteContent.col-one
-      p.icon.barchart
-        span.icon-img
-        | Living in Phoenix costs 35% less than San Francisco.
-        br
-        | And 45% less than New York City.
+    //- Elevation
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.meter
+        p Arizona has an elevation range of over 12,500 feet.
 
-  //- Food section
-  section.food.siteSection.links-light
-    h2 Delicious food and brews.
-    .siteContent.col-two
-      p.icon.pizza
-        span.icon-img
-        | Andrew Zimmern called 
-        a(href="http://pizzeriabianco.com/") Pizzeria Bianco 
-        | “the best pizza ever.”
-      p.icon.beer-mug
-        span.icon-img
-        a(href="http://www.fourpeaks.com/") Four Peaks Brewery 
-        | produces 38,000 barrels of craft beer each year.
-      p.icon.beer-glass
-        span.icon-img
-        a(href="http://www.santanbrewing.com/") San Tan Brewing Co. 
-        | is one of OpenTable’s Top 100 Restaurant Bars.
-      p.icon.taco
-        span.icon-img
-        | Arizona boasts some of the best Mexican food in the U.S.
-      p.icon.wine
-        span.icon-img
-        | Arizona has 
-        a(href="http://www.arizonaguide.com/things-to-do/dining-nightlife/vineyards") over 60 wineries and vineyards 
-        | throughout the state.
-      p.icon.foodtruck
-        span.icon-img
-        | Nearly 
-        a(href="http://phxstreetfood.org/") 50 unique food trucks 
-        | serve the Phoenix area, including favorites 
-        a(href="http://shortleashhotdogs.com/") Short Leash Hotdogs 
-        | and 
-        a(href="http://www.pizzapeopleaz.com/") Pizza People
-        | .
+    //- Sunshine
+    .flex-1of2
+      .why.sky-blue.text-drk
+        .icon.sun-cloud
+        p Phoenix boasts 296 days of sunshine each year.
 
-  //- Films section
-  section.films.siteSection.links-drk
-    h2 Your fave films were shot here.
-    .siteContent.col-three
-      p.icon.starwars
-        span.icon-img
-        | Star Wars
-      p.icon.phonebooth
-        span.icon-img
-        | Bill and Ted’s Excellent Adventure
-      p.icon.tombstone
-        span.icon-img
-        | Tombstone
-      p.icon.shawshank
-        span.icon-img
-        | The Shawshank Redemption
-      p.icon.diaper
-        span.icon-img
-        | Raising Arizona
-      p.icon.wally
-        span.icon-img
-        | National Lampoon’s Vacation
-      p.icon.tshirt
-        span.icon-img
-        | Wayne’s World
-      p.icon.wheel
-        span.icon-img
-        | Back to the Future III
-      p.icon.nerd
-        span.icon-img
-        | Revenge of the Nerds
+    //- Cost of living
+    .flex-1of1
+      .why.red.text-light
+        .icon.dollar
+        p Living in Phoenix costs 84% less than San Francisco.
 
-  //- Biz section
-  section.biz.siteSection.links-light
-    h2 Where companies headquarter.
-    .siteContent.col-one
-      ul.icon.inline-list.headquarters
-        li.icon-img
-        li.list-item
-          a(href="http://www.godaddy.com/") Go Daddy
-        li.list-item
-          a(href="http://www.firstsolar.com/") First Solar
-        li.list-item
-          a(href="http://www.coldstonecreamery.com/") Cold Stone Creamery
-        li.list-item
-          a(href="http://www.henkel.com/index.htm") Henkel
-        li.list-item
-          a(href="http://www.apollo.edu/") Apollo Group
-        li.list-item
-          a(href="http://www.bannerhealth.com/") Banner Health
-        li.list-item
-          a(href="http://en.wikipedia.org/wiki/Fox_Animation_Studios") Fox Animation Studios
-        li.list-item
-          a(href="http://www.petsmart.com/") PetSmart
-        li.list-item
-          a(href="http://www.ping.com/") Ping Golf
-        li.list-item
-          a(href="http://www.skymall.com/") SkyMall
-        li.list-item
-          a(href="http://sprouts.com/") Sprouts Farmers Market
-        li.list-item
-          a(href="http://www.uhaul.com/") U-Haul
-        li.list-item
-          a(href="https://www.insight.com/") Insight Enterprises
-        li.list-item
-          a(href="http://www.jobing.com/") Jobing.com
-        li.list-item
-          a(href="http://www.fender.com/") Fender
-        li.list-item
-          a(href="http://www.pfchangs.com/index.aspx") P.F. Chang’s
-        li.list-item
-          a(href="http://www.microchip.com/") Microchip Technology
-        li.list-item
-          a(href="http://www.avnet.com/en-us/Pages/default.aspx") Avnet, Inc.
-        li.list-item
-          a(href="http://www.inventurefoods.com/our-brands/poore-brothers") Poore Brothers
-        li.list-item
-          a(href="http://www.taser.com/") TASER
-        li.list-item
-          a(href="http://wish.org/") Make-A-Wish
-        li.list-item
-          a(href="http://www.jda.com/") JDA Software
-        li.list-item
-          a(href="http://www.childhelp-usa.com/") Childhelp USA
-        li.list-item
-          a(href="http://www.usairways.com/") US Airways
-        h3 And run significant operations.
-        li.list-item
-          a(href="https://www.americanexpress.com/") American Express
-        li.list-item
-          a(href="http://honeywell.com/Pages/Home.aspx") Honeywell
-        li.list-item
-          a(href="http://www.intel.com/content/www/us/en/homepage.html") Intel
-        li.list-item
-          a(href="https://www.paypal.com/home") PayPal
+    //- Mexican food
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.taco
+        p Arizona has distinct Sonoran-style Mexican food that can’t be beat.
 
-  //- Natural Wonders
-  section.natural-wonders.siteSection.links-drk
-    h2 Natural Wonders.
-    .siteContent.col-two
-      p.icon.badge.canyon
-        span.icon-img
-        | Arizona has the 
-        a(href="http://bit.ly/1diOW9o") grandest canyon 
-        | of them all.
-      p.icon.badge.cavern
-        span.icon-img
-        a(href="http://azstateparks.com/parks/kaca/index.html") Kartchner Caverns 
-        | features 2.5 miles of 
-        a(href="http://bit.ly/18Se9T0") pristine cave formations
-        | .
-      p.icon.badge.crater
-        span.icon-img
-        a(href="http://www.barringercrater.com/") Barringer Crater 
-        | is “the best preserved meteorite crater on Earth.”
-      p.icon.badge.fossil
-        span.icon-img
-        a(href="http://www.nps.gov/pefo/index.htm") The Petrified Forest 
-        | has plant and animal fossils dating over 200 million years ago.
+    //- ASU
+    .flex-1of2
+      .why.teal.text-light
+        .icon.tshirt.asu
+        p <a href="http://asu.edu">Arizona State University</a> ranked #1 <a href="https://asunow.asu.edu/content/asu-tops-us-news-world-report-list-most-innovative-schools">Most Innovative School</a> in 2016.
 
-  //- Education section
-  section.education.siteSection.links-light
-    h2 Top notch universities.
-    .siteContent.col-two
-      p.icon.godevils
-        span.icon-img 
-        a(href="http://barretthonors.asu.edu/") Barrett Honors College 
-        | at 
-        a(href="http://asu.edu") Arizona State University 
-        | ranked #1 nationally in 2012.
-      p.icon.beardown
-        span.icon-img
-        a(href="http://arizona.edu") University of Arizona
-        | ’s 
-        a(href="http://entrepreneurship.eller.arizona.edu/") Entrepreneurship program 
-        | ranked #3 nationally in 2011.
-      p.icon.thunderbird
-        span.icon-img
-        a(href="http://www.thunderbird.edu/") Thunderbird School of Global Management 
-        | ranked #1 International Full-time MBA in 2013.
-      p.icon.nau
-        span.icon-img
-        a(href="http://nau.edu/") Northern Arizona University
-        | ’s 
-        a(href="http://www.physics.nau.edu/", title="Department of Astronomy") Department of Astronomy 
-        | ranked #2 nationally in 2011.
+    //- Temperature
+    .flex-1of2
+      .why.sky-blue.text-drk
+        .icon.temp
+        p The average winter temperature in Phoenix is 60° F.
 
-  //- Inspiration section
-  section.inspire.siteSection.links-light
-    h2 Inspiration and conversation.
-    .siteContent.col-two
-      p.icon.painting
-        span.icon-img
-        a(href="http://www.phxart.org/") Phoenix Art Museum 
-        | holds a collection of more than 17,000 pieces.
-      p.icon.path
-        span.icon-img
-        a(href="http://phxdw.com/") Phoenix Design Week 
-        | connects and enlightens the design community.
-      p.icon.code
-        span.icon-img
-        | Developers meet for 
-        a(href="http://www.meetup.com/nodeaz/") NodeAZ
-        | , 
-        a(href="http://tagsoup.github.io/") Tag Soup
-        | , 
-        a(href="http://phoenixios.wordpress.com/") PHX iOS Dev
-        | , and 
-        a(href="http://www.meetup.com/phxmobi/") PHX Mobile Meetup
-        | .
-      p.icon.match
-        span.icon-img 
-        a(href="http://www.ignitephoenix.com/") Ignite Phoenix 
-        | inspires and entertains with 5-minute talks.
+    //- Snow
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.snowballs
+        p <a href=href="http://www.flagstaff.az.gov/"> Flagstaff</a> averages 100.3 inches of snowfall annually.
+
+    //- Phoenix Art Museum
+    .flex-1of2
+      .why.umber.text-light
+        .icon.painting
+        p <a href="http://www.phxart.org/">Phoenix Art Museum</a> has a collection of more than 17,000 pieces.
+
+    //- London Bridge
+    .flex-1of2
+      .why.brown.text-light
+        .icon.bridge
+        p The original <a href="http://www.golakehavasu.com/about-us/about-havasu/london_bridge1.aspx">London Bridge</a> has been reconstructed in Lake Havasu City.
+
+    //- Grand Canyon
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.grand-canyon
+        p Arizona has the <a href="http://bit.ly/1diOW9o">grandest canyon</a> of them all.
+
+    //- Wine
+    .flex-1of2
+      .why.yellow.text-drk
+        .icon.wine
+        p Arizona has <a href="http://www.arizonaguide.com/things-to-do/dining-nightlife/vineyards">over 60 wineries and vineyards</a> throughout the state.
+
+    //- Startups
+    .flex-1of2
+      .why.red.text-light
+        .icon.lightbulb
+        p Phoenix has promising startups like <a href="https://www.localmotors.com/">Local Motors</a>, <a href="http://www.webpt.com/">WebPT</a>, <a href="http://www.infusionsoft.com/">Infusionsoft</a>, <a href="http://www.parchment.com/">Parchment</a>, <a href="http://www.axosoft.com/">Axosoft</a>, <a href="https://www.purechat.com/">Pure Chat</a>, and <a href="http://www.appointment-plus.com/">Appointment-Plus</a>.
+
+    //- Mars
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.mars
+        p U of A’s <a href="http://www.lpl.arizona.edu/">Lunar and Planetary Lab</a> launched <a href="http://phoenix.lpl.arizona.edu/index.php">the Phoenix</a>, the first mission under <a href="http://www.nasa.gov/centers/ames/missions/2007/phoenix.html">NASA’s Mars Scout Program</a>.
+
+    //- FILMS SECTION -- these should stay together
+    //- Bill and Ted
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.phone-booth
+        p <em>Bill and Ted’s Excellent Adventure</em> was shot in Arizona.
+    //- Wayne's World
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.tshirt.wayne
+        p In fact, many of your fave movies were shot in AZ, like <em>Wayne’s World</em>.
+    //- Revenge of the Nerds
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.pocket-protector
+        p <em>Revenge of the Nerds</em> was filmed in Tucson.
+    //- Back to the Future
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.wagon-wheel
+        p Parts of <em>Back to the Future I</em> and <em>III</em> were too.
+    //- Raising Arizona
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.diaper
+        p Of course, so was the Coen Brothers’ <em>Raising Arizona</em>.
+    //- Return of the Jedi
+    .flex-1of3
+      .why.blue-grey.text-drk
+        .icon.lightsaber
+        p And don’t miss the desert of Yuma in <em>The Return of the Jedi</em>.
+
+    //- Daylight Savings
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.alarm-clock
+        p Arizona does not observe Daylight Saving Time.
 
 
-  //- Science section
-  section.science.siteSection.links-light
-    h2 Science!
-    .siteContent.col-two
-      p.icon.pluto
-        span.icon-img
-        | Dwarf planet Pluto was discovered at 
-        a(href="http://www.lowell.edu/") Lowell Observatory 
-        | near Flagstaff.
-      p.icon.mars
-        span.icon-img
-        | UofA’s 
-        a(href="http://www.lpl.arizona.edu/") Lunar and Planetary Lab 
-        | launched 
-        a(href="http://phoenix.lpl.arizona.edu/index.php") the Phoenix
-        | , the first mission under 
-        a(href="http://www.nasa.gov/centers/ames/missions/2007/phoenix.html") NASA’s Mars Scout Program
-        | .
-      p.icon.telescope
-        span.icon-img
-        a(href="http://www.noao.edu/outreach/kptour/mcmath.html") McMath-Pierce solar telescope 
-        | near Tucson is the largest in the world.
-      p.icon.biosphere
-        span.icon-img
-        a(href="http://www.b2science.org/") Biosphere 2 
-        | remains the largest closed ecosystem ever created.
+    //- Pizzeria Bianco
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.pizza
+        p Andrew Zimmern called Phoenix’s <a href="http://pizzeriabianco.com/">Pizzeria Bianco</a> <em>“The best pizza ever.”</em>
 
-  //- Sports section
-  section.sports.siteSection.links-drk
-    h2 We love the game.
-    .siteContent.col-two
-      p.icon.basketball
-        span.icon-img
-        | The 
-        a(href="http://www.nba.com/suns/") Phoenix Suns 
-        | have been playing in the valley for 45 years.
-      p.icon.football
-        span.icon-img
-        | The 
-        a(href="http://www.azcardinals.com/") Arizona Cardinals 
-        | are the oldest continuously run franchise in the NFL.
-      p.icon.diamond
-        span.icon-img
-        | The 
-        a(href="http://arizona.diamondbacks.mlb.com/") Arizona Diamondbacks 
-        | won the 2001 World Series in their fourth season as a team.
-      p.icon.hockey
-        span.icon-img
-        | The 
-        a(href="http://coyotes.nhl.com/") Arizona Coyotes 
-        | melt both the ice and our hearts.
+    //- Ponderosa pines
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.pine-tree
+        p Arizona has the <a href="http://www.fs.usda.gov/coconino">largest contiguous stand of ponderosa pines</a> in the world.
 
-  //- History section
-  section.history.siteSection.links-light
-    h2 Historical Potpourri.
-    .siteContent.col-two
-      p.icon.heart
-        span.icon-img
-        | Arizona was founded on Valentine’s Day and is called the “Nation’s Valentine.”
-      p.icon.cowboy
-        span.icon-img
-        | Payson is home to the 
-        a(href="http://www.paysonrimcountry.com/Activities/Rodeos/AugustDoinsRodeo.aspx") world’s oldest continuous rodeo
-        | , started in the 1880s.
-      p.icon.bridge
-        span.icon-img
-        | The original 
-        a(href="http://www.golakehavasu.com/about-us/about-havasu/london_bridge1.aspx") London Bridge 
-        | has been reconstructed in Lake Havasu City.
-      p.icon.sign
-        span.icon-img
-        | Arizona has the longest remaining section of 
-        a(href="http://www.historic66.com/") Route 66
-        | , a total of 157 miles.
+    //- Valentine
+    .flex-1of2
+      .why.brown.text-light
+        .icon.valentine
+        p Arizona was founded on Valentine’s Day and is called the “Nation’s Valentine.”
 
-  //- Technology section
-  section.tech.siteSection.links-light
-    h2 Where tech incubates.
-    .siteContent.col-two
-      p.icon.bulb
-        span.icon-img
-        | Phoenix has promising startups like 
-        a(href="https://www.localmotors.com/") Local Motors
-        | , 
-        a(href="http://www.webpt.com/") WebPT
-        | , 
-        a(href="http://www.infusionsoft.com/") Infusionsoft
-        | , 
-        a(href="http://www.parchment.com/") Parchment
-        | , 
-        a(href="http://www.axosoft.com/") Axosoft
-        | , 
-        a(href="https://www.purechat.com/") Pure Chat
-        | , and 
-        a(href="http://www.appointment-plus.com/") Appointment-Plus
-        | .
-      p.icon.venn
-        span.icon-img
-        | And growing communities and resources like 
-        a(href="http://seedspot.org/") SeedSpot
-        | , 
-        a(href="http://gangplankhq.com/") Gangplank
-        | , 
-        a(href="http://www.cohoots.com/") CoHoots
-        | , 
-        a(href="http://www.heatsynclabs.org/") HeatSync Labs
-        | , 
-        a(href="http://aztechbeat.com/") AZ Tech Beat
-        | , and 
-        a(href="http://www.aztechcouncil.org/") AZ Tech Council
-        | .
+    //- U of A
+    .flex-1of2
+      .why.teal.text-light
+        .icon.tshirt.uofa
+        p <a href="http://arizona.edu">University of Arizona</a>’s <a href="http://entrepreneurship.eller.arizona.edu/">Entrepreneurship program</a> ranked #3 nationally in 2011.
 
-  //- Alumni section
-  section.alumni.siteSection
-    h2 Awesome AZ Alumni.
-    .siteContent.col-one
-      ul.icon.inline-list.yearbook
-        li.icon-img
-        li.list-item
-          a(href="http://www.franklloydwright.org/about/TaliesinWestTours.html") Frank Lloyd Wright
-        li.list-item
-          a(href="http://www.jbfilms.com/") Jerry Bruckheimer
-        li.list-item
-          a(href="http://rockalittle.com/") Stevie Nicks
-        li.list-item
-          a(href="http://en.wikipedia.org/wiki/Sandra_Day_O'Connor") Sandra Day O’Connor
-        li.list-item
-          a(href="http://www.casadecalexico.com/") Calexico
-        li.list-item
-          a(href="http://www.nba.com/playerfile/james_harden/") James Harden
-        li.list-item
-          a(href="http://en.wikipedia.org/wiki/Barry_Goldwater") Barry Goldwater
-        li.list-item
-          a(href="http://www.davidspade.com/") David Spade
-        li.list-item
-          a(href="https://www.reggiejackson.com/44store/") Reggie Jackson
-        li.list-item
-          a(href="http://en.wikipedia.org/wiki/Emma_Stone") Emma Stone
-        li.list-item
-          a(href="http://jimmyeatworld.com/") Jimmy Eat World
-        li.list-item
-          a(href="http://www.pattillmanfoundation.org/") Pat Tillman
-        li.list-item
-          a(href="http://www.eller.arizona.edu/invest/recognition/eller.asp") Karl Eller
-        li.list-item
-          a(href="http://alicecooper.com/") Alice Cooper
-        li.list-item
-          a(href="http://en.wikipedia.org/wiki/Ted_Danson") Ted Danson
-        li.list-item
-          a(href="http://glencampbellmusic.com/") Glenn Campbell
-        li.list-item
-          a(href="http://philmickelson.com/") Phil Mickelson
-        li.list-item
-          a(href="http://www.ginblossoms.net/") The Gin Blossoms
+    //- Phoenix Design Week
+    .flex-1of2
+      .why.umber.text-light
+        .icon.vector
+        p <a href="http://phxdw.com/">Phoenix Design Week</a> connects and enlightens the design community.
 
-  //- Perks section
-  section.perks.siteSection.links-drk
-    h2 Tons of sweet perks.
-    .siteContent.col-two
-      p.icon.alarm
-        span.icon-img
-        | Arizona does not observe Daylight Saving Time.
-      p.icon.disney
-        span.icon-img
-        a(href="https://disneyland.disney.go.com/") Disneyland 
-        | is only a 6-hour drive from Phoenix. 
-        a(href="http://www.lasvegas.com/", title="Las Vegas") Las Vegas
-        | , 5 hours.
-      p.icon.baseball
-        span.icon-img
-        | Arizona hosts 
-        a(href="http://www.cactusleague.com/") 15 Major League Baseball teams 
-        | for spring training.
-      p.icon.mountain
-        span.icon-img
-        a(href="http://www.scottsdaleaz.gov/") Scottsdale 
-        | offers over 200 miles of 
-        a(href="http://www.scottsdaleaz.gov/preserve", title="Sonoran hiking trails") Sonoran hiking trails
-        | .
-      p.icon.sunset
-        span.icon-img
-        | You haven’t seen a sunset until you’ve seen an 
-        a(href="http://bit.ly/114BcbH") Arizona sunset
-        | .
-      p.icon.golf
-        span.icon-img
-        | Arizona has 322 
-        a(href="http://www.worldgolf.com/courses/usa/arizona/") golf courses 
-        | and the weather to use them year-round.
+    //- Community
+    .flex-1of2
+      .why.red.text-light
+        .icon.venn-diagram
+        p Phoenix has growing communities like <a href="http://seedspot.org/">SeedSpot</a>, <a href="http://gangplankhq.com/">Gangplank</a>, <a href="http://www.cohoots.com/">CoHoots</a>, <a href="http://www.heatsynclabs.org/">HeatSync Labs</a>, and <a href="http://www.aztechcouncil.org/">AZ Tech Council</a>.
 
-  //- Whyaz section
-  section.whyaz.siteSection
-    .flag
-      .flag-stripes--left
-      .flag-stripes--right
-      .flag-star
-    h2 Why Arizona?
-    .siteContent.col-one
-      p.copy Perks aside, the best thing about Arizona is the available room to grow. We’re a young state (the third youngest in our nation) and not until the 1950s did Phoenix truly begin to blossom.
-      p.copy We are establishing ourselves as a place not only for great weather, but for diverse culture, exceptional education, and competitive careers. There’s never been a better time for young people to make an impact.
-      p.copy And really, a place is only as good as the people who live there. So come to Arizona for any of the awesome reasons we listed above, but stay for the community.
-      p.copy Join us and share what you love about Arizona with 
-        a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz
-        | .
-      p.social
-        a.share.facebook(href="http://www.facebook.com/sharer/sharer.php?u=http://why.az") Share on Facebook
-        a.share.twitter(href="http://clicktotweet.com/tU5M5") Share on Twitter
-      .meltmedia
-        p.icon.copy.melt-logo
-          span.icon-img
-          | WhyAZ is brought to you by 
-          a(href="http://meltmedia.com") meltmedia
-          | , with the help of our 
-          a(href="/contribute") contributors
-          | .
+    //- Telescope
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.telescope
+        p <a href="http://www.noao.edu/outreach/kptour/mcmath.html">McMath-Pierce solar telescope</a> near Tucson is the largest in the world.
+
+    //- Company HQ's
+    .flex-1of1
+      .why.grey-drk.text-light
+        .icon.building
+        p Many great companies are headquartered in Arizona, including:
+        ul.inline-list
+          li.list-item
+            a(href="http://www.godaddy.com/") Go Daddy
+          li.list-item
+            a(href="http://www.firstsolar.com/") First Solar
+          li.list-item
+            a(href="http://www.coldstonecreamery.com/") Cold Stone Creamery
+          li.list-item
+            a(href="http://www.henkel.com/index.htm") Henkel
+          li.list-item
+            a(href="http://www.apollo.edu/") Apollo Group
+          li.list-item
+            a(href="http://www.bannerhealth.com/") Banner Health
+          li.list-item
+            a(href="http://en.wikipedia.org/wiki/Fox_Animation_Studios") Fox Animation Studios
+          li.list-item
+            a(href="http://www.petsmart.com/") PetSmart
+          li.list-item
+            a(href="http://www.ping.com/") Ping Golf
+          li.list-item
+            a(href="http://www.skymall.com/") SkyMall
+          li.list-item
+            a(href="http://sprouts.com/") Sprouts Farmers Market
+          li.list-item
+            a(href="http://www.uhaul.com/") U-Haul
+          li.list-item
+            a(href="https://www.insight.com/") Insight Enterprises
+          li.list-item
+            a(href="http://www.jobing.com/") Jobing.com
+          li.list-item
+            a(href="http://www.fender.com/") Fender
+          li.list-item
+            a(href="http://www.pfchangs.com/index.aspx") P.F. Chang’s
+          li.list-item
+            a(href="http://www.microchip.com/") Microchip Technology
+          li.list-item
+            a(href="http://www.avnet.com/en-us/Pages/default.aspx") Avnet, Inc.
+          li.list-item
+            a(href="http://www.inventurefoods.com/our-brands/poore-brothers") Poore Brothers
+          li.list-item
+            a(href="http://www.taser.com/") TASER
+          li.list-item
+            a(href="http://wish.org/") Make-A-Wish
+          li.list-item
+            a(href="http://www.jda.com/") JDA Software
+          li.list-item
+            a(href="http://www.childhelp-usa.com/") Childhelp USA
+          li.list-item
+            a(href="http://www.usairways.com/") US Airways
+          p And run significant operations:
+          li.list-item
+            a(href="https://www.americanexpress.com/") American Express
+          li.list-item
+            a(href="http://honeywell.com/Pages/Home.aspx") Honeywell
+          li.list-item
+            a(href="http://www.intel.com/content/www/us/en/homepage.html") Intel
+          li.list-item
+            a(href="https://www.paypal.com/home") PayPal
+
+    //- Phoenix Suns
+    .flex-1of2
+      .why.sky-blue.text-drk
+        .icon.basketball
+        p The <a href="http://www.nba.com/suns/">Phoenix Suns</a> have been playing in the valley since 1968.
+
+    //- Disneyland
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.disneyland
+        p <a href="https://disneyland.disney.go.com/">Disneyland</a> is only a 6-hour drive from Phoenix. <a href="http://www.lasvegas.com/">Las Vegas</a>, 5 hours.
+
+    //- Route 66
+    .flex-1of2
+      .why.brown.text-light
+        .icon.route66
+        p Arizona has the longest remaining section of <a href="http://www.historic66.com/">Route 66</a>, a total of 157 miles.
+
+    //- Lakes
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.tube
+        p Arizona has 128 lakes, including <a href="http://www.nps.gov/lake/index.htm">Lakes Mead</a>, <a href="http://azstateparks.com/Parks/LAHA/">Havasu</a>, and <a href="http://www.lakepowell.com/">Powell</a>.
+
+    //- Beer
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.beer-mug
+        p AZ has 60+ craft breweries, including the <a href="http://www.esquire.com/food-drink/drinks/a23543/arizona-wilderness-brewing-co-interview/">World’s Best New Brewery</a>.
+
+    //- Thunderbird
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.tshirt.thunderbird
+        p <a href="http://www.thunderbird.edu/">Thunderbird School of Global Management</a> ranked #1 International Full-time MBA in 2013.
+
+    //- Memes
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.llamas
+        p The memes you love come from Arizona, including <a hre="http://www.abc15.com/news/region-west-valley/sun-city/llama-chase-in-arizona-video-watch-full-video-from-viral-sun-city-pursuit">Llama Drama</a> and <a href="http://www.grumpycats.com/">Grumpy Cat</a>.
+
+    //- Dev Meetups
+    .flex-1of2
+      .why.umber.text-light
+        .icon.terminal
+        p Phoenix has awesome developer meetups like <a href="http://www.meetup.com/nodeaz/">NodeAZ</a>, <a href="http://www.meetup.com/Girl-Develop-It-Phoenix/">Girl Develop It</a>, <a href="http://www.meetup.com/Phoenix-JavaScript/">Phoenix JavaScript</a>, and <a href="http://phoenixios.wordpress.com/">PHX iOS Dev</a>.
+
+    //- Food trucks
+    .flex-1of2
+      .why.red.text-light
+        .icon.food-truck
+        p Nearly <a href="http://phxstreetfood.org/">70 unique food trucks</a> serve Phoenix, including faves <a href="http://shortleashhotdogs.com/">Short Leash Hotdogs</a> and <a href="http://www.pizzapeopleaz.com/">Pizza People</a>.
+
+    //- Pluto
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.pluto
+        p Dwarf planet Pluto was discovered at <a href="http://www.lowell.edu/">Lowell Observatory</a> near Flagstaff.
+
+    //- Alumni
+    .flex-1of1
+      .why.yellow.text-drk
+        .icon.grad-cap
+        p Some of your fave leaders, athletes, and entertainers are Arizona alumni:
+        ul.inline-list
+          li.list-item
+            a(href="http://www.franklloydwright.org/about/TaliesinWestTours.html") Frank Lloyd Wright
+          li.list-item
+            a(href="http://www.jbfilms.com/") Jerry Bruckheimer
+          li.list-item
+            a(href="http://rockalittle.com/") Stevie Nicks
+          li.list-item
+            a(href="http://en.wikipedia.org/wiki/Sandra_Day_O'Connor") Sandra Day O’Connor
+          li.list-item
+            a(href="http://www.casadecalexico.com/") Calexico
+          li.list-item
+            a(href="http://www.nba.com/playerfile/james_harden/") James Harden
+          li.list-item
+            a(href="http://en.wikipedia.org/wiki/Barry_Goldwater") Barry Goldwater
+          li.list-item
+            a(href="http://www.davidspade.com/") David Spade
+          li.list-item
+            a(href="https://www.reggiejackson.com/44store/") Reggie Jackson
+          li.list-item
+            a(href="http://en.wikipedia.org/wiki/Emma_Stone") Emma Stone
+          li.list-item
+            a(href="http://jimmyeatworld.com/") Jimmy Eat World
+          li.list-item
+            a(href="http://www.pattillmanfoundation.org/") Pat Tillman
+          li.list-item
+            a(href="http://www.eller.arizona.edu/invest/recognition/eller.asp") Karl Eller
+          li.list-item
+            a(href="http://alicecooper.com/") Alice Cooper
+          li.list-item
+            a(href="http://en.wikipedia.org/wiki/Ted_Danson") Ted Danson
+          li.list-item
+            a(href="http://glencampbellmusic.com/") Glenn Campbell
+          li.list-item
+            a(href="http://philmickelson.com/") Phil Mickelson
+          li.list-item
+            a(href="http://www.ginblossoms.net/") The Gin Blossoms
+
+    //- Coyotes
+    .flex-1of2
+      .why.sky-blue.text-drk
+        .icon.hockey-mask
+        p The <a href="http://coyotes.nhl.com/">Arizona Coyotes</a> melt both the ice and our hearts.
+
+    //- Meteor Crater
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.crater
+        p <a href="http://www.barringercrater.com/">Barringer Crater</a> is “the best preserved meteorite crater on Earth.”
+
+    //- Sunsets
+    .flex-1of2
+      .why.red.text-light
+        .icon.sunset
+        p You haven’t seen a sunset until you’ve seen an <a href="http://bit.ly/114BcbH">Arizona sunset</a>.
+
+    //- Spring Training
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.baseball
+        p Arizona hosts <a href="http://www.cactusleague.com/">15 Major League Baseball teams</a> for spring training.
+
+    //- Biosphere
+    .flex-1of2
+      .why.navy-blue.text-light
+        .icon.biosphere
+        p <a href="http://www.b2science.org/">Biosphere 2</a> remains the largest closed ecosystem ever created.
+
+    //- Ignite Phoenix
+    .flex-1of2
+      .why.umber.text-light
+        .icon.match
+        p <a href="http://www.ignitephoenix.com/">Ignite Phoenix</a> inspires and entertains with 5-minute talks.
+
+    //- NAU
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.tshirt.nau
+        p <a href="http://nau.edu/">Northern Arizona University’s <a href="http://www.physics.nau.edu/">Department of Astronomy</a> ranked #2 nationally in 2011.
+
+    //- Kartchner Caverns
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.kartchner-caverns
+        p <a href="http://azstateparks.com/parks/kaca/index.html">Kartchner Caverns</a> features 2.5 miles of <a href="http://bit.ly/18Se9T0">pristine cave formations</a>.
+
+    //- Arizona Cardinals
+    .flex-1of2
+      .why.sky-blue.text-drk
+        .icon.football
+        p The <a href="http://www.azcardinals.com/">Arizona Cardinals</a> are the oldest continuously run franchise in the NFL.
+
+    //- Rodeo
+    .flex-1of2
+      .why.brown.text-light
+        .icon.cowboy-hat
+        p Payson is home to the <a href="http://www.paysonrimcountry.com/Activities/Rodeos/AugustDoinsRodeo.aspx">world’s oldest continuous rodeo</a>, started in the 1880s.
+
+    //- Bone
+    .flex-1of2
+      .why.tan.text-drk
+        .icon.fossil
+        p <a href="http://www.nps.gov/pefo/index.htm">The Petrified Forest</a> has plant and animal fossils dating over 200 million years ago.
+
+    //- Diamondbacks
+    .flex-1of2
+      .why.red.text-light
+        .icon.homeplate
+        p The <a href="http://arizona.diamondbacks.mlb.com/">Arizona Diamondbacks</a> won the 2001 World Series in their fourth season as a team.
+
+    //- Golf
+    .flex-1of2
+      .why.teal.text-light
+        .icon.golfball
+        p Arizona has over 300 <a href="http://www.worldgolf.com/courses/usa/arizona/">golf courses</a> and the weather to use them year-round.
+
+    //- Hiking
+    .flex-1of2
+      .why.grey-light.text-drk
+        .icon.mountain 
+        p <a href="http://www.scottsdaleaz.gov/">Scottsdale</a> offers over 200 miles of <a href="http://www.scottsdaleaz.gov/preserve">Sonoran hiking trails</a>.
+
+    //- Footers
+    .flex-1of2
+      footer.footer-desc.sky-blue.text-drk
+        h2 Why Arizona?
+        .text-left
+          p Perks aside, the best thing about Arizona is the available room to grow. We’re a young state (the third youngest in our nation) and not until the 1950s did Phoenix truly begin to blossom.
+          p We are establishing ourselves as a place not only for great weather, but for diverse culture, exceptional education, and competitive careers. There’s never been a better time for people to make an impact.
+          p And really, a place is only as good as the people who live there. So come to Arizona for any of the awesome reasons we listed above, but stay for the community.
+          p Join us and share what you love about Arizona with 
+            <a href="https://twitter.com/search?q=%23whyaz&amp;src=typd">#whyaz</a>.
+        p.mt2
+          a.button(href="http://www.facebook.com/sharer/sharer.php?u=http://why.az") Share on Facebook
+          a.button(href="http://clicktotweet.com/tU5M5") Share on Twitter
+
+    .flex-1of2
+      footer.footer-credits.grey-drk.text-light
+        .icon.meltmedia
+        p WhyAZ is brought to you by <a href="http://meltmedia.com">meltmedia</a> + many generous <a href="/contribute">contributors</a>.
         #manifesto
           h3 Manifesto
           p WhyAZ’s mission is to share why it’s awesome to live and work in Arizona. We showcase the natural beauty, diverse climate, and vibrant lifestyle we love. Our ultimate goal is to encourage excited, positive people to choose Arizona as a place to grow roots and to contribute to our community.
@@ -501,33 +460,32 @@ block content
           p Just bring the 
             a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz 
             | love.
-   
-      .references
-        p.references-list References:
-          a(href="http://www.wikipedia.org/") wikipedia.org
-          | , 
-          a(href="http://currentresults.com") currentresults.com
-          | , 
-          a(href="http://climate-zone.com") climate-zone.com
-          | , 
-          a(href="http://expatistan.com") expatistan.com
-          | , 
-          a(href="http://publicuniversityhonors.com") publicuniversityhonors.com
-          | , 
-          a(href="http://arizona.edu") arizona.edu
-          | , 
-          a(href="http://gctours.net") gctours.net
-          | , 
-          a(href="http://az100years.org") az100years.org
-          | , 
-          a(href="http://phxart.org") phxart.org
-          | , 
-          a(href="http://asu.edu") asu.edu
-          | , 
-          a(href="http://aarp.org") aarp.org
-          | , 
-          a(href="http://maps.google.com") maps.google.com
-          | , 
-          a(href="http://nps.gov") nps.gov
-          | , 
-          a(href="http://arizonaguide.com") arizonaguide.com
+        .references
+          p.references-list References:
+            a(href="http://www.wikipedia.org/") wikipedia.org
+            | , 
+            a(href="http://currentresults.com") currentresults.com
+            | , 
+            a(href="http://climate-zone.com") climate-zone.com
+            | , 
+            a(href="http://expatistan.com") expatistan.com
+            | , 
+            a(href="http://publicuniversityhonors.com") publicuniversityhonors.com
+            | , 
+            a(href="http://arizona.edu") arizona.edu
+            | , 
+            a(href="http://gctours.net") gctours.net
+            | , 
+            a(href="http://az100years.org") az100years.org
+            | , 
+            a(href="http://phxart.org") phxart.org
+            | , 
+            a(href="http://asu.edu") asu.edu
+            | , 
+            a(href="http://aarp.org") aarp.org
+            | , 
+            a(href="http://maps.google.com") maps.google.com
+            | , 
+            a(href="http://nps.gov") nps.gov
+            | , 
+            a(href="http://arizonaguide.com") arizonaguide.com

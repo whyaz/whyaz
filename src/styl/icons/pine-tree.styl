@@ -1,0 +1,25 @@
+//- PINE TREE ----------------------------------------------- //
+
+$tree-width = 50px
+$tree-height = 120px
+
+//- tree shadow
+.pine-tree
+  margin-left: -40px
+  top: 50px
+  $triangle($tree-width)
+  border-bottom: $tree-height solid $shadow
+
+  //- tree
+  &:before
+    margin-left: -54px
+    top: -4px
+    $triangle($tree-width)
+    border-bottom: $tree-height solid $green
+
+  //- tree half color
+  &:after
+    margin-left: -54px
+    top: -4px
+    border-bottom: $tree-height solid $green-light
+    border-left: $tree-width solid transparent

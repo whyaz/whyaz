@@ -1,0 +1,29 @@
+//- PHONE BOOTH ----------------------------------------------- //
+
+.phone-booth
+  width: 59px
+  height: 110px
+  margin-left: -(@width/2)
+  $halfsies($grey-d,$grey-c)
+  box-shadow: $shadow-short
+
+  //- Panels
+  &:before
+    width: 15px
+    height: 40px
+    margin-left: -25px
+    top: 24px
+    background: $red
+    box-shadow:  0   42px $red,
+                34px  0   $red,
+                34px 42px $red,
+                17px  0   $grey-e,
+                17px 42px $grey-e
+
+  //- Top signage
+  &:after
+    width: 39px
+    height: 10px
+    margin-left: -20px
+    top: 7px
+    background: white

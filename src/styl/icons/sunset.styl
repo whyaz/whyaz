@@ -1,0 +1,38 @@
+//- SUNSET ----------------------------------------------- //
+
+.sunset
+  width: 50px
+  height: @width
+  margin-left: -(@width/2)
+  top: 80px
+  background: $yellow-light
+  border-radius: 50%
+  box-shadow: 0 0 0  5px $yellow,
+              0 0 0 10px $orange-light,
+              0 0 0 15px $orange,
+              0 0 0 20px $orange-drk,
+              0 0 0 25px $pink-light,
+              0 0 0 30px $pink,
+              0 0 0 40px $sky-blue
+
+  //- Bottom cloud piece
+  &:before
+    width: 143px
+    height: 30px
+    margin-left: -25px
+    top: 66px
+    background: $pink-light
+    border-radius: 100px
+    box-shadow: $shadow-short
+    z-index: 2
+
+  //- Top cloud circles
+  &:after
+    width: 50px
+    height: 50px
+    margin-left: -5px
+    top: 35px
+    background: $pink-light
+    border-radius: 50%
+    box-shadow: 50px -2px 0 12px $pink-light,
+                56px  0   0 10px $shadow

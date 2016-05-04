@@ -1,0 +1,29 @@
+//- MATCH ----------------------------------------------- //
+
+.match
+  width: 14px
+  height: 85px
+  margin-left: -(@width/2)
+  top: 80px
+  $halfsies($tan-light,$tan)
+  border-radius: 3px
+  box-shadow: $shadow-short
+
+  //- flame
+  &:before
+    width: 50px
+    height: @width
+    margin-left: -(@width/2)
+    top: -35px
+    background: linear-gradient(-45deg, $orange 50%, $yellow 50%)
+    border-radius: 50% 0 50% 50%
+    transform: rotate(-45deg)
+
+  //- wick
+  &:after
+    width: 26px
+    height: 30px
+    margin-left: -(@width/2)
+    top: -13px
+    $halfsies($red,$red-drk)
+    border-radius: 50%

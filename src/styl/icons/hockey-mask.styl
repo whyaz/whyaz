@@ -1,0 +1,38 @@
+//- HOCKEY MASK ----------------------------------------------- //
+
+.hockey-mask
+  width: 110px
+  height: 130px
+  margin-left: -(@width/2)
+  top: 40px
+  $halfsies(white,$grey-e)
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%
+  box-shadow: $shadow-short
+
+  //- air holes and nose
+  &:before
+    width: 8px
+    height: @width
+    margin-left: -15px
+    top: 25px
+    background: $grey-c
+    border-radius: 50%
+    box-shadow: 23px  0   $grey-a,
+                 0   59px $grey-5,
+                23px 59px $grey-3,
+                 0   72px $grey-5,
+                23px 72px $grey-3,
+                 0   85px $grey-5,
+                23px 85px $grey-3,
+                5px 42px 0 -2px $grey-5,
+                15px 42px 0 -2px $grey-3
+
+  //- eye holes
+  &:after
+    width: 30px
+    height: 25px
+    margin-left: -40px
+    top: 40px
+    background: $grey-5
+    border-radius: 50%
+    box-shadow: 50px 0 $grey-3

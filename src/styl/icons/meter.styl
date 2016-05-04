@@ -1,0 +1,48 @@
+//- METER ----------------------------------------------- //
+
+.meter
+  width: 120px
+  height: 120px
+  margin-left: -(@width/2)
+  background: $grey-e
+  background-image: radial-gradient(circle,   $grey-e 35px,
+                                              transparent 35px,
+                                              transparent 45px,
+                                              $grey-e 45px),     //- Grey circle coverup
+                    linear-gradient(to right, transparent 49%,
+                                              $grey-c 49%,
+                                              $grey-c 51%,
+                                              transparent 51%),  //- Tick marks
+                    linear-gradient(to bottom, transparent 49%,
+                                              $grey-c 49%,
+                                              $grey-c 51%,
+                                              transparent 51%),  //- Tick marks
+                    linear-gradient(45deg, transparent 50%,
+                                              $grey-c 50%,
+                                              $grey-c 51%,
+                                              transparent 51%),  //- Tick marks
+                    linear-gradient(-45deg, transparent 50%,
+                                              $grey-c 50%,
+                                              $grey-c 51%,
+                                              transparent 51%)   //- Tick marks
+  border-radius: 50%
+  border: 6px solid $grey-6
+  box-shadow: $shadow-short,
+              inset 5px 5px 0 black(.1)
+
+  //- Meter hands
+  &:before,
+  &:after
+    width: 32px
+    height: 5px
+    background: $grey-6
+
+  &:before
+    top: 48%
+    box-shadow: -16px -18px 0 white,
+                -16px -13px 0 white  //- Meter label
+
+  &:after
+    top: 40px
+    left: 29px
+    transform: rotate(50deg)

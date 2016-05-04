@@ -1,0 +1,76 @@
+//- TSHIRT AND VARIETIES OF TSHIRT ----------------------------------------------- //
+
+//- for variable color shirts
+$shirt-color($base,$graphic,$border)
+  background: $base
+  background-image: linear-gradient(to right, transparent 50%, black(.1) 50%),
+                    linear-gradient(to bottom, $base 24px, transparent 24px),
+                    linear-gradient(to right, transparent 17px,
+                                              $shadow 17px,
+                                              $shadow 20px,
+                                              transparent 20px,
+                                              transparent 90px,
+                                              $shadow 90px,
+                                              $shadow 93px,
+                                              transparent 93px),
+                    linear-gradient(to right, $base 30px,
+                                              transparent 30px,
+                                              transparent 80px,
+                                              $base 80px),
+                    linear-gradient(to top, $border 1px,
+                                            $graphic 1px,
+                                            $graphic 19px,
+                                            $border 19px,
+                                            $border 20px,
+                                            transparent 20px)
+
+  &:before
+    background-color: $base
+    border-bottom: 3px solid $graphic
+
+//- top of shirt with sleeves
+.tshirt
+  width: 110px
+  height: 54px
+  margin-left: -(@width/2)
+  border-radius: 40px 40px 2px 2px
+  box-shadow: $shadow-short
+
+  //- bottom of shirt
+  &:before
+    width: 70px
+    height: 55px
+    margin-left: -(@width/2)
+    top: 54px
+    background-image: linear-gradient(to right, transparent 50%, black(.1) 50%)
+    border-radius: 2px
+    box-shadow: $shadow-short
+
+  //- neck hole
+  &:after
+    width: 30px
+    height: 12px
+    margin-left: -(@width/2)
+    top: 3px
+    $halfsies(black(.2),black(.3))
+    border-radius: 2px 2px 15px 15px
+
+  //- NAU tshirt
+  &.nau
+    $shirt-color($teal,$navy-blue,$yellow)
+
+  //- U of A tshirt
+  &.uofa
+    $shirt-color($navy-blue,$red,white)
+
+  //- ASU tshirt
+  &.asu
+    $shirt-color($yellow,$red-drk,white)
+
+  //- Thunderbird tshirt
+  &.thunderbird
+    $shirt-color($navy-blue,white,$yellow)
+
+  //- Wayne's World
+  &.wayne
+    $shirt-color($grey-5,$grey-5,$grey-5)

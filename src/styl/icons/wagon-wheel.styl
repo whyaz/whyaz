@@ -1,0 +1,49 @@
+//- WAGON WHEEL ----------------------------------------------- //
+
+//- wheel shadow
+.wagon-wheel
+  width: 110px
+  height: @width
+  margin-left: -(@width/2)
+  border-radius: 50%
+  border: 10px solid transparent
+  box-shadow: $shadow-short,
+              inset 4px 4px $shadow
+
+  //- wheel and spokes
+  &:before
+    width: 110px
+    height: @width
+    margin-left: -(@width/2)
+    top: -10px
+    background: linear-gradient(35deg, transparent 46%,
+                                       $brown 46%,
+                                       $brown 54%,
+                                       $shadow 54%,
+                                       $shadow 56%,
+                                       transparent 56%),
+                linear-gradient(-35deg, transparent 43%,
+                                       $shadow 43%,
+                                       $shadow 46%,
+                                       $brown 46%,
+                                       $brown 54%,
+                                       transparent 54%),
+                linear-gradient(to right, transparent 46%,
+                                       $brown 46%,
+                                       $brown 54%,
+                                       $shadow 54%,
+                                       $shadow 60%,
+                                       transparent 60%)
+    border: 10px solid $brown
+    border-radius: 50%
+
+  //- inner wheel
+  &:after
+    width: 38px
+    height: @width
+    margin-left: -(@width/2)
+    top: 26px
+    background: $brown-drk
+    border: 8px solid $brown
+    border-radius: 50%
+    box-shadow: $shadow-short

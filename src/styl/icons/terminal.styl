@@ -1,0 +1,32 @@
+//- TERMINAL ----------------------------------------------- //
+
+.terminal
+  width: 140px
+  height: 100px
+  margin-left: -(@width/2)
+  background: $grey-3
+  background-image: $half-shadow,
+                    linear-gradient(to bottom, $grey-b 5px, transparent 5px)
+  border-radius: 4px
+  box-shadow: $shadow-short
+
+  //- code
+  &:before,
+  &:after
+    height: 10px
+    top: 15px
+    border: 2px dotted
+    border-left: none
+    border-right: none
+
+  //- green code
+  &:before
+    width: 15px
+    left: 8px
+    border-color: $yellow-green-drk
+
+  //- white code
+  &:after
+    width: 35px
+    left: 28px
+    border-color: white
