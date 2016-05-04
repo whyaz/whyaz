@@ -1,0 +1,31 @@
+//- LIGHTBULB ----------------------------------------------- //
+
+.lightbulb
+  width: 80px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies($yellow-light,$yellow)
+  border-radius: 50%
+  box-shadow: 0 0 15px $yellow
+
+  &:before
+    width: 38px
+    height: 36px
+    margin-left: -(@width/2)
+    top: 77px
+    background: $grey-c
+    background-image: repeating-linear-gradient(to top, $grey-c,
+                                                  $grey-c 6px,
+                                                  black(.2) 6px,
+                                                  black(.2) 9px)
+    border-radius: 0 0 3px 3px
+    box-shadow: $shadow-short
+
+  &:after
+    width: 30px
+    height: 10px
+    margin-left: -(@width/2)
+    top: 113px
+    background: $grey-a
+    border-radius: 0 0 30px 30px
+    box-shadow: $shadow-short

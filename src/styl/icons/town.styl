@@ -1,0 +1,57 @@
+//- TOWN ----------------------------------------------- //
+
+.town
+  width: 180px
+  height: 100px
+  margin-left: -(@width/2)
+  top: 60px
+  background: linear-gradient(to right, $brown-light 69px,
+                                        transparent 69px,
+                                        transparent 130px,
+                                        $tan-drk 130px),
+              linear-gradient(to top, $red-shadow 80px, transparent 80px)
+  box-shadow: $shadow-short
+
+  //- arched windows + door
+  &:before
+    width: 15px
+    height: 22px
+    left: 7px
+    top: 10px
+    border-radius: 8px 8px 0 0
+    background: $brown-shadow
+    box-shadow: 20px  0   0 $brown-shadow,
+                40px  0   0 $brown-shadow,
+                 0   28px 0 $brown-shadow,
+                20px 28px 0 $brown-shadow,
+                40px 28px 0 $brown-shadow, //- grey arched windows
+                85px 69px 0 -1px $teal-shadow, //- teal door
+                140px 64px 0 4px $tan-shadow
+
+  //- square door + windows
+  &:after
+    width: 30px
+    height: @width
+    left: 19px
+    bottom: 0
+    background: $brown-drk
+    box-shadow: 52px -46px 0 -9px $navy-blue,
+                52px -46px 0 -6px $red,
+                79px -46px 0 -9px $navy-blue,
+                79px -46px 0 -6px $red,
+                52px -20px 0 -9px $navy-blue,
+                52px -20px 0 -6px $red,
+                79px -20px 0 -9px $navy-blue,
+                79px -20px 0 -6px $red,     //- red building windows
+                108px -72px 0 -11px $brown-drk,
+                121px -72px 0 -11px $brown-drk,
+                134px -72px 0 -11px $brown-drk,
+                108px -58px 0 -11px $brown-drk,
+                121px -58px 0 -11px $brown-drk,
+                134px -58px 0 -11px $brown-drk,
+                108px -44px 0 -11px $brown-drk,
+                121px -44px 0 -11px $brown-drk,
+                134px -44px 0 -11px $brown-drk,
+                108px -30px 0 -11px $brown-drk,
+                121px -30px 0 -11px $brown-drk,
+                134px -30px 0 -11px $brown-drk   //- brown windows

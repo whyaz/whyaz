@@ -19,23 +19,20 @@ html(lang="en")
     meta(property="og:app_id", content="213627328831811")
     meta(property="og:type", content="website")
 
-    script(src="//use.typekit.net/ivx3zwe.js")
-    script try{Typekit.load();}catch(e){}
+    script(src="//use.typekit.net/lxz5yej.js")
+    script try{Typekit.load({ async: true });}catch(e){}
 
   body
 
-    nav.site-nav
-      .container.clearfix
-        a.nav-link.logo(href="/") WhyAZ
-        a.nav-link(href="/contribute") Contribute
+    nav.nav-main
+      .nav-link-group
+        h1
+          a.nav-link(href="/") WhyAZ
+          span.description Reasons to live and work in Arizona.
+      .nav-link-group
         a.nav-link(href="/community") Community
-        .flag
-          .flag-stripes--left
-          .flag-stripes--right
-          .flag-star
-
-    .ribbon
-      a.fork-me(href="https://github.com/whyaz/whyaz") Fork me on GitHub
+        a.nav-link(href="/contribute") Contribute
+        a.nav-link(href="https://github.com/whyaz/whyaz") Fork on GitHub
 
     block content
 

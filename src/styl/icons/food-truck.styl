@@ -1,0 +1,45 @@
+//- FOOD TRUCK ----------------------------------------------- //
+
+//- truck hood
+.food-truck
+  width: 0
+  height: 65px
+  margin-left: -80px
+  top: 75px
+  $arrow(20px)
+  border-bottom: none
+  border-right: 26px solid $grey-b
+  box-shadow: $shadow-short
+
+  //- truck body
+  &:before
+    width: 120px
+    height: 85px
+    margin-left: 24px
+    top: -40px
+    background: $yellow
+    background-image: $half-shadow,
+                      linear-gradient(to right, $grey-b 20%,
+                                                 transparent 20%,
+                                                 transparent 80%,
+                                                 $grey-b 80%),
+                      linear-gradient(to bottom, $grey-b 35%,
+                                                 transparent 35%,
+                                                 transparent 65%,
+                                                 $grey-b 65%)
+    border-radius: 2px 4px 4px 0
+    box-shadow: $shadow-short
+
+  //- wheels
+  &:after
+    width: 15px
+    height: 15px
+    left: 30px
+    top: 40px
+    background: $grey-a
+    border-radius: 50%
+    box-shadow: 0 0 0 13px $grey-3,      //- front wheel tire
+                3px 3px 0 13px $shadow,  //- front wheel shadow
+                83px 0 0 $grey-a,        //- back wheel hub
+                83px 0 0 13px $grey-3,   //- back wheel tire
+                83px 3px 0 13px $shadow  //- back wheel shadow

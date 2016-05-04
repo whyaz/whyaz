@@ -1,0 +1,44 @@
+//- FOSSIL ----------------------------------------------- //
+
+.fossil
+  width: 120px
+  height: @width
+  margin-left: -(@width/2)
+  background: $grey-c
+  background-image: $half-shadow
+  border-radius: 60px 65px 70px 70px / 80px 100px 70px 70px
+  box-shadow: $shadow-short
+
+  &:before
+    width: 70px
+    height: 90px
+    margin-left: -(@width/2)
+    top: 15px
+    background: $grey-b
+    background-image: $half-shadow,
+                      linear-gradient(to bottom, $grey-b 35px,
+                                                 transparent 35px),
+                      linear-gradient(82deg, transparent 27px,
+                                             black(.1) 27px,
+                                             black(.1) 29px,
+                                             transparent 29px),
+                      linear-gradient(98deg, transparent 52px,
+                                             black(.1) 52px,
+                                             black(.1) 54px,
+                                             transparent 54px),
+                      repeating-linear-gradient(to top, $grey-b,
+                                                           $grey-b 4px,
+                                                           black(.2) 4px,
+                                                           black(.2) 6px)
+    border-radius: 85px 85px 90px 90px / 80px 80px 140px 140px
+    box-shadow: -2px -2px 0 black(.2),
+                2px 2px 0 white(.2)
+
+  &:after
+    width: 30px
+    height: 25px
+    margin-left: -(@width/2)
+    top: 25px
+    border-radius: 15px 15px 0 0
+    border: 2px solid black(.1)
+    border-bottom: none

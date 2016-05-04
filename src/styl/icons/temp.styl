@@ -1,0 +1,62 @@
+//- TEMPERATURE ----------------------------------------------- //
+
+.temp
+  width: 70px
+  height: 130px
+  margin-left: -(@width/2)
+  top: 40px
+  background: $grey-d
+  background-image: linear-gradient(to right,  $grey-d 10px,
+                                               transparent 10px,
+                                               transparent 19px,
+                                               $grey-d 19px,
+                                               $grey-d 35px,
+                                               transparent 35px,
+                                               $grey-b 35px),
+                    linear-gradient(to bottom, transparent 20px,
+                                               $blue-grey 20px,
+                                               $blue-grey 23px,
+                                               transparent 23px,
+                                               transparent 38px,
+                                               $blue-grey 38px,
+                                               $blue-grey 41px,
+                                               transparent 41px,
+                                               transparent 56px,
+                                               $blue-grey 56px,
+                                               $blue-grey 59px,
+                                               transparent 59px,
+                                               transparent 74px,
+                                               $blue-grey 74px,
+                                               $blue-grey 77px,
+                                               transparent 77px,
+                                               transparent 92px,
+                                               $blue-grey 92px,
+                                               $blue-grey 95px,
+                                               transparent 95px)
+  border-radius: 5px
+  box-shadow: $shadow-short
+
+  &:before,
+  &:after
+    border: 5px solid white
+
+  //- Thermometer stick
+  &:before
+    width: 20px
+    height: 86px
+    left: 50%
+    margin-left: -(@width/2)
+    top: 10px
+    background: linear-gradient(to bottom, $grey-d 50%, $red 50%)
+    border-radius: 10px 10px 0 0
+    border-bottom: none
+    z-index: 2
+
+  //- Thermometer circle
+  &:after
+    width: 30px
+    height: 30px
+    margin-left: -(@width/2)
+    bottom: 10px
+    background: $red
+    border-radius: 50%

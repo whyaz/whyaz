@@ -1,0 +1,35 @@
+//- PLUTO ----------------------------------------------- //
+
+.pluto
+  width: 100px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies($grey-d,$grey-c)
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- planet ring
+  &:before
+    width: 160px
+    height: 25px
+    margin-left: -(@width/2)
+    top: 40px
+    border: 1px solid white(.15)
+    border-radius: 50%
+
+  //- sign
+  &:after
+    width: 120px
+    height: auto
+    margin-left: -50px
+    padding: 5px
+    bottom: -10px
+    content: "Don't forget me!" !important
+    background: $yellow
+    box-shadow: $shadow-short
+    font-family: $font-tisa-sans
+    font-size: 11px
+    text-transform: uppercase
+    line-height: 13px
+    color: $grey-3
+    transform: rotate(-5deg)

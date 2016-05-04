@@ -1,0 +1,24 @@
+//- INNER TUBE ----------------------------------------------- //
+
+.tube
+  width: 120px
+  height: 120px
+  margin-left: -(@width/2)
+  border: 38px solid
+  border-bottom-color: white
+  border-top-color:    $yellow
+  border-left-color:   $red
+  border-right-color:  $blue-grey-drk
+  border-radius: 50%
+  box-shadow: $shadow-short,
+              inset $shadow-short
+
+  //- Highlight
+  &:after
+    width: 110px
+    height: 110px
+    margin-left: -52px
+    top: -30px
+    border-radius: 50%
+    border: 5px solid white(.6)
+    clip: rect(0px,60px,60px,0px)

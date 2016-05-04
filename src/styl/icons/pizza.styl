@@ -1,0 +1,51 @@
+//- PIZZA ----------------------------------------------- //
+
+.pizza
+  width: 120px
+  height: 120px
+  margin-left: -(@width/2)
+  background: $tan
+  background-image: radial-gradient(circle, $red-drk 63%,
+                                            transparent 65%)
+
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- mozzarella, pepper
+  &:before
+    width: 18px
+    height: 18px
+    left: 26px
+    top: 30px
+
+    background: white
+    border-radius: 50%
+    box-shadow: 30px -12px 0 white,
+                55px 8px 0 white,
+                23px 20px 0 white,
+                -6px 35px 0 white,
+                23px 55px 0 white,
+                53px 36px 0 white,
+                14px -19px 0 -8px black(.6),
+                58px -8px  0 -8px black(.6),
+                -15px 13px 0 -8px black(.6),
+                20px 3px   0 -8px black(.6),
+                43px 23px  0 -8px black(.6),
+                69px 25px  0 -8px black(.6),
+                14px 39px  0 -8px black(.6),
+                5px 55px   0 -8px black(.6),
+                50px 55px  0 -8px black(.6)
+
+  //- basil
+  &:after
+    width: 12px
+    height: 12px
+    left: 34px
+    top: 28px
+
+    background: $green-light
+    border-radius: 35px 5px
+    box-shadow: 44px -5px 0 -1px $green-light,
+                29px 32px 0 $green-light,
+                -5px 45px 0 -1px $green-light,
+                36px 60px 0 -1px $green-light

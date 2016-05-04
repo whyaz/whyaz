@@ -1,0 +1,31 @@
+//- SUN ----------------------------------------------- //
+
+.sun-cloud
+  width: 85px
+  height: 85px
+  margin-left: -80px
+  $halfsies($yellow,$yellow-drk)
+  box-shadow: $shadow-short
+  border-radius: 50%
+
+  //- Bottom cloud piece
+  &:before
+    width: 143px
+    height: 30px
+    margin-left: -25px
+    top: 71px
+    background: white
+    border-radius: 100px
+    box-shadow: $shadow-short
+    z-index: 2
+
+  //- Top cloud circles
+  &:after
+    width: 50px
+    height: 50px
+    margin-left: -5px
+    top: 40px
+    background: white
+    border-radius: 50%
+    box-shadow: 50px -2px 0 12px white,
+                56px  0   0 10px $shadow

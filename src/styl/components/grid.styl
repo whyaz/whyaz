@@ -1,0 +1,35 @@
+//- FLEX GRID ----------------------------------------------- //
+
+.flex-container
+  display: flex
+  align-items: stretch
+  flex-wrap: wrap
+  margin: -10px 0 0 -10px
+
+  [class^=flex]
+    display: flex
+    padding: 10px 0 0 10px
+
+    & > div
+      flex: 1
+
+  @media $screen-small
+
+    [class^=flex]
+      width: 100%
+
+  @media $screen-large
+
+    .flex-1of1
+      width: 100%
+
+    .flex-1of2
+      width: 50%
+
+    .flex-1of3
+      width: 33.3333%
+
+    .flex-1of4
+      width: 25%
+
+

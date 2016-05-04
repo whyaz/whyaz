@@ -2,21 +2,22 @@
  * gulp            - Run a local server that handles live reloading of project files
  */
 
-var gulp        = require('gulp');
-var dest        = require('gulp-dest');
-var gutil       = require('gulp-util');
-var jade        = require('gulp-jade');
-var stylus      = require('gulp-stylus');
-var minifyCSS   = require('gulp-minify-css');
-var livereload  = require('gulp-livereload');
-var ghPages     = require('gulp-gh-pages');
-var remoteSrc   = require("gulp-remote-src");
-var tinylr      = require('tiny-lr');
-var express     = require('express');
-var app         = express();
-var path        = require('path');
-var del         = require('del');
-var url         = require('url');
+var gulp         = require('gulp');
+var dest         = require('gulp-dest');
+var gutil        = require('gulp-util');
+var jade         = require('gulp-jade');
+var stylus       = require('gulp-stylus');
+var autoprefixer = require('gulp-autoprefixer');
+var minifyCSS    = require('gulp-minify-css');
+var livereload   = require('gulp-livereload');
+var ghPages      = require('gulp-gh-pages');
+var remoteSrc    = require("gulp-remote-src");
+var tinylr       = require('tiny-lr');
+var express      = require('express');
+var app          = express();
+var path         = require('path');
+var del          = require('del');
+var url          = require('url');
 
 function copy() {
 
@@ -42,6 +43,7 @@ function stylusBuild() {
 
   return gulp.src('src/styl/main.styl')
     .pipe(stylus())
+    .pipe(autoprefixer({browsers: ['last 2 versions', 'ie 8'],flexbox:true,cascade: false}))
     .pipe(minifyCSS())
     .pipe(gulp.dest('dist/public/css'));
 

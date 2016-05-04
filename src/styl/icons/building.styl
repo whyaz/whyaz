@@ -1,0 +1,56 @@
+//- BUILDING ----------------------------------------------- //
+
+.building
+  width: 85px
+  height: 110px
+  top: 65px
+  margin-left: -(@width/2)
+  background: $blue-grey-drk
+  background-image: $half-shadow,
+                    linear-gradient(to right,  $grey-d 10px,
+                                               transparent 10px,
+                                               transparent 25px,
+                                               $grey-d 25px,
+                                               $grey-d 35px,
+                                               transparent 35px,
+                                               transparent 50px,
+                                               $grey-d 50px,
+                                               $grey-d 60px,
+                                               transparent 60px,
+                                               transparent 75px,
+                                               $grey-d 75px),
+                    linear-gradient(to bottom, $grey-d 10px,
+                                               transparent 10px,
+                                               transparent 25px,
+                                               $grey-d 25px,
+                                               $grey-d 35px,
+                                               transparent 35px,
+                                               transparent 50px,
+                                               $grey-d 50px,
+                                               $grey-d 60px,
+                                               transparent 60px,
+                                               transparent 75px,
+                                               $grey-d 75px)
+  border-radius: 3px 3px 0 0
+  box-shadow: $shadow-short
+
+  //- flag pole
+  &:before
+    width: 2px
+    height: 25px
+    top: -25px
+    background: white
+    box-shadow: 2px 0 $shadow
+
+  //- flag and door
+  &:after
+    width: 12px
+    height: 10px
+    margin-left: 2px
+    top: -25px
+    background: $red
+    box-shadow: $shadow-short,
+                -14px 115px 0 $grey-a,
+                -14px 125px 0 $grey-a,
+                -2px 115px 0 darken($grey-a,10),
+                -2px 125px 0 darken($grey-a,10)

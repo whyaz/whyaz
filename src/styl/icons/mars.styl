@@ -1,0 +1,18 @@
+//- MARS ----------------------------------------------- //
+
+.mars
+  width: 100px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies($red,$red-drk)
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- planet ring
+  &:before
+    width: 160px
+    height: 25px
+    margin-left: -(@width/2)
+    top: 40px
+    border: 1px solid white(.15)
+    border-radius: 50%

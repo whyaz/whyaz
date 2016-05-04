@@ -1,0 +1,33 @@
+//- FOOTBALL ----------------------------------------------- //
+
+.football
+  width: 120px
+  height: @width
+  margin-left: -70px
+  background: linear-gradient(45deg,$brown-light 50%,$brown 50%)
+  border-radius: 85px 20px
+  box-shadow: 6px 0 $shadow
+  transform: rotate(45deg)
+
+  //- Horizontal Lace
+  &:before
+    width: 62px
+    height: 6px
+    margin-left: -30px
+    top: 58px
+    $halfsies(white,$grey-d)
+    border-radius: 3px
+    transform: rotate(-45deg)
+
+  //- Vertical laces
+  &:after
+    width: 6px
+    height: 20px
+    margin-left: -18px
+    top: 67px
+    background: white
+    border-radius: 3px
+    box-shadow: 15px 0 white,
+                30px 0 $grey-d,
+                45px 0 $grey-d
+    transform: rotate(-45deg)

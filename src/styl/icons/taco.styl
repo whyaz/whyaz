@@ -1,0 +1,26 @@
+//- TACO ----------------------------------------------- //
+
+//- filling
+.taco
+  width: 20px
+  height: 20px
+  margin-left: -65px
+  top: 90px
+  background: $yellow-green
+  border-radius: 50%
+  box-shadow: 10px -10px $yellow-green,
+              24px -15px $yellow-green,
+              96px -10px $yellow-green,
+             106px   0   $yellow-green,
+              -5px  15px $brown,
+              -8px  30px $brown
+
+  //- taco shell
+  &:before
+    width: 140px
+    height: 75px
+    margin-left: -14px
+    top: -20px
+    $halfsies($orange,$orange-drk)
+    border-radius: 70px 70px 4px 4px
+    box-shadow: $shadow-short

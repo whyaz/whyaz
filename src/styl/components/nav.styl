@@ -1,58 +1,54 @@
 //- NAV STYLES ----------------------------------------------- //
 
-.site-nav
-  position: relative
-  z-index: 2
-  background: $grey-4
-  font-family: $font-family-brandon
-  font-weight: $font-weight-bold
-  text-transform: uppercase
-  color: $white
+.nav-main
+  padding-bottom: 20px
+  font-size: 14px
+  font-style: italic
+  line-height: 1
+  text-align: left
 
-  .container
-    max-width: 920px
-    margin: 0 auto
-    padding: 12px 15px 9px
-    position: relative
-
-  a.nav-link
+  .nav-link
+    padding-bottom: 3px
     display: inline-block
-    position: relative
-    z-index: 1
-    line-height: 1
-    color: $grey-e
-    transition: all .2s ease-in 
-    -webkit-transition: all .2s ease-in
+    border-bottom: 3px solid transparent
+    color: $grey-3
 
     &:hover
-      border: none
-      opacity: .7
+      border-color: $blue-grey
 
-    &.logo
-      margin-left: 105px
-      float: left
-      font-size: 20px
-      letter-spacing: 3px
+    &:not(:first-child)
+      margin-left: 20px
 
-      @media $screen-small
-        margin-left: 0
+@media $screen-small
 
-    &:not(.logo)
-      margin-left: 15px
-      margin-top: 3px
-      float: right
-      font-size: 14px
+  .nav-main
 
-  .flag
-    $place(-85px,-70px)
-    position: absolute
-    left: 0
-    z-index: 5
-    box-shadow: 15px 15px $shadow
-    transition: all .1s ease-out 
-    -webkit-transition: all .1s ease-out
-    $scale(.3)
+    .nav-link-group
+      &:nth-child(1)
+        margin-bottom: 15px
 
-    @media $screen-small
-      opacity: 0
-      z-index: 0
+    .description
+      margin-left: 10px
+
+      &:before
+        margin-right: 10px
+        content: '/'
+        display: inline-block
+
+
+@media $screen-large
+
+  .nav-main
+    display: flex
+
+    .nav-link-group
+      flex: 1
+      &:nth-child(1)
+        align-self: flex-start
+        text-align: left
+      &:nth-child(2)
+        align-self: flex-end
+        text-align: right
+
+    .description
+      margin-left: 70px

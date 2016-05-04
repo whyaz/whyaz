@@ -1,0 +1,34 @@
+//- ROUTE66 ----------------------------------------------- //
+
+.route66
+  width: 136px
+  height: 100px
+  top: 60px
+  margin-left: -(@width/2)
+  background: $grey-4
+  background-image: linear-gradient(to bottom, $sky-blue 40px, transparent 40px),
+                    linear-gradient(130deg, $tan 65px, transparent 65px),
+                    linear-gradient(-130deg, $tan 65px, transparent 65px)
+  border: 5px solid white
+  border-radius: 3px
+  box-shadow: $shadow-short
+  transform: rotate(-2deg)
+
+  //- road lines, sign post
+  &:before
+    width: 4px
+    height: 18px
+    margin-left: -(@width/2)
+    background: $yellow
+    bottom: 0
+    box-shadow: 0 -30px 0 -1px $yellow-drk,
+                30px -40px 0 -1px $brown,
+                30px -50px 0 -1px $brown
+
+  //- sign
+  &:after
+    width: 14px
+    height: 6px
+    margin-left: 23px
+    background: $brown-light
+    top: 27px

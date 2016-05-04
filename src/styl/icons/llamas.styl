@@ -1,0 +1,47 @@
+//- LLAMAS ----------------------------------------------- //
+
+.llamas
+  width: 50px
+  height: 100px
+  margin-left: -80px
+  top: 60px
+  background: $grey-d
+  border-radius: 25px 25px 25px 5px
+  box-shadow: $shadow-short,
+              -17px -40px 0 -17px $grey-d, //- white llama ear
+              -13px -36px 0 -17px $shadow,
+              6px -34px 0 -18px $grey-d,   //- white llama ear 2
+              10px -30px 0 -18px $shadow,
+              100px 0 0 $grey-5,           //- black llama
+              104px 4px 0 $shadow,
+              83px -40px 0 -17px $grey-5,  //- black llama ear
+              87px -36px 0 -17px $shadow,
+              106px -34px 0 -18px $grey-5, //- black llama ear 2
+              110px -30px 0 -18px $shadow
+
+  //- face
+  &:before
+    width: 70px
+    height: 40px
+    left: 10px
+    top: 2px
+    border-top-right-radius: 60px 20px
+    border-bottom-right-radius: 10px 20px
+    border-bottom-left-radius: 10px
+    background: $grey-d
+    box-shadow: $shadow-short,
+                100px 0 0 $grey-5,
+                104px 4px 0 $shadow
+
+  //- eyes and nostrils
+  &:after
+    width: 5px
+    height: @width
+    top: 16px
+    background: $grey-4
+    border-radius: 50%
+    box-shadow: 0 0 0 8px white,          //- white llama eye
+                45px 10px 0 -1px $grey-6, //- white llama nostril
+                100px 0 0 $grey-4,        //- black llama eye
+                100px 0 0 8px white,
+                145px 10px 0 -1px $grey-1

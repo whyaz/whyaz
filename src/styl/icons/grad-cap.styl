@@ -1,0 +1,33 @@
+//- GRADUATION CAP ----------------------------------------------- //
+
+.grad-cap
+  width: 120px
+  height: (@width/2)
+  margin-left: -(@width/2)
+  top: 90px
+  $halfsies($grey-4,$grey-3)
+  border-radius: 60px 60px 0 0
+  box-shadow: $shadow-short
+
+  //- mortar board
+  &:before
+    width: 168px
+    height: 10px
+    margin-left: -(@width/2)
+    top: -4px
+    $halfsies($grey-4,$grey-3)
+    border-radius: 2px
+    box-shadow: $shadow-short
+
+  //- tassel
+  &:after
+    width: 12px
+    height: 80px
+    margin-left: 40px
+    top: -7px
+    background: $red
+    background-image: repeating-linear-gradient(to right, transparent,
+                                                  transparent 1px,
+                                                  black(.2) 1px,
+                                                  black(.2) 2px)
+    border-radius: 5px 5px 0 0

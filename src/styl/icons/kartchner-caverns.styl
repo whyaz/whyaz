@@ -1,0 +1,59 @@
+//- KARTCHNER CAVERNS ----------------------------------------------- //
+
+.kartchner-caverns
+  width: 136px
+  height: 100px
+  top: 60px
+  margin-left: -(@width/2)
+  background-image: linear-gradient(to bottom, $orange-drk 20px,
+                                               $brown-drk 20px,
+                                               $brown-drk 35px,
+                                               darken($brown, 40%) 35px,
+                                               darken($brown, 40%) 60px,
+                                               $brown-drk 60px,
+                                               $brown-drk 75px,
+                                               $orange-drk 75px)
+  border: 5px solid white
+  border-radius: 3px
+  box-shadow: $shadow-short
+
+  //- stalagtites
+  &:before
+    width: 5px
+    height: 35px
+    left: 3px
+    top: 5px
+    background: $orange-drk
+    border-radius: 0 0 10px 10px
+    box-shadow: 12px 10px 0 $orange-drk,
+                20px 0 0 $orange-drk,
+                32px -4px 0 -1px $orange-drk,
+                50px 10px 0 3px $orange-drk,
+                66px 0 0 $orange-drk,
+                76px 12px 0 -1px $orange-drk,
+                82px -5px 0 -1px $orange-drk,
+                88px 0px 0 -1px $orange-drk,
+                98px 8px 0 $orange-drk,
+                107px 3px 0 -1px $orange-drk,
+                115px 0 0 $orange-drk
+
+  //- stalagmites
+  &:after
+    width: 5px
+    height: 20px
+    left: 4px
+    bottom: 10px
+    background: $orange-drk
+    border-radius: 10px 10px 0 0
+    box-shadow: 10px 4px 0 $orange-drk,
+                16px 7px 0 -1px $orange-drk,
+                25px 5px 0 $orange-drk,
+                34px -5px 0 $orange-drk,
+                49px -8px 0 3px $orange-drk,
+                60px 0 0 $orange-drk,
+                69px 4px 0 $orange-drk,
+                80px -4px 0 -1px $orange-drk,
+                90px 2px 0 $orange-drk,
+                98px 5px 0 $orange-drk,
+                109px -4px 0 -1px $orange-drk,
+                115px 0 0 $orange-drk

@@ -1,0 +1,28 @@
+//- GOLFBALL ----------------------------------------------- //
+
+.golfball
+  width: 100px
+  height: @width
+  margin-left: -(@width/2)
+  background: white
+  background-image: linear-gradient(to right, black(0) 50%, black(.05) 50%),
+                    radial-gradient(black(.08) 55%, transparent 45%)
+  background-size: auto, 15px 15px
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- triangle shadow
+  &:before
+    width: 60px
+    margin-left: -24px
+    top: 104px
+    $triangle(25px)
+    border-top: 22px solid $shadow
+
+  //- triangle
+  &:after
+    width: 60px
+    margin-left: -28px
+    top: 100px
+    $triangle(25px)
+    border-top: 22px solid $red

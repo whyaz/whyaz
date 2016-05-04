@@ -1,0 +1,42 @@
+//- BIOSPHERE ----------------------------------------------- //
+
+//- tree trunks
+.biosphere
+  width: 4px
+  height: 16px
+  margin-left: -48px
+  top: 130px
+  background: $brown
+  box-shadow: 30px 0 $brown,
+              60px 0 $brown,
+              90px 0 $brown,
+              15px 0 $brown-drk,
+              45px 0 $brown-drk,
+              75px 0 $brown-drk
+
+  //- Tree tops
+  &:before
+    width: 20px
+    height: @width
+    margin-left: -10px
+    top: -15px
+    background: $green
+    border-radius: 50%
+    box-shadow: 30px 0 $green,
+                60px 0 $green,
+                90px 0 $green,
+                15px 0 $green-drk,
+                45px 0 $green-drk,
+                75px 0 $green-drk
+
+  //- dome
+  &:after
+    width: 140px
+    height: 70px
+    margin-left: -25px
+    top: -55px
+    $halfsies(white(.08),white(.12))
+    border: 5px solid white
+    border-bottom: none
+    border-radius: 80px 80px 0 0
+    box-shadow: $shadow-short

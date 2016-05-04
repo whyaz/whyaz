@@ -1,0 +1,32 @@
+//- VECTOR ----------------------------------------------- //
+
+.vector
+  width: 120px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies(transparent,darken($tan,17%))
+  border: 1px solid $tan
+  border-radius: 50%
+
+  //- tangent lines
+  &:before
+    width: 90px
+    height: 1px
+    margin-left: -(@width/2)
+    top: -1px
+    background: $tan
+    box-shadow: 0 120px 0 $tan
+
+  //- anchors
+  &:after
+    width: 6px
+    height: @width
+    margin-left: -(@width/2)
+    margin-top: -(@width/2)
+    top: 50%
+    background: $tan
+    border-radius: 50%
+    box-shadow: -45px -60px 0 $tan,
+                 45px -60px 0 $tan,
+                -45px  60px 0 $tan,
+                 45px  60px 0 $tan

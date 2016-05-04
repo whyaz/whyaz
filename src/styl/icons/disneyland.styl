@@ -1,0 +1,32 @@
+//- DISNEYLAND ----------------------------------------------- //
+
+//- Ears
+.disneyland
+  width: 65px
+  height: @width
+  margin-left: -85px
+  background: $grey-4
+  border-radius: 50%
+  box-shadow:          $shadow-short,
+              105px 0   $grey-3,
+              109px 4px $shadow
+
+  //- Hat body
+  &:before
+    width: 140px
+    height: (@width/2)
+    left: 15px
+    top: 40px
+    $halfsies($grey-4,$grey-3)
+    border-radius: 70px 70px 0 0
+    box-shadow: $shadow-short
+
+  //- circle
+  &:after
+    width: 36px
+    height: @width
+    left: 67px
+    top: 59px
+    background: radial-gradient(circle, white(.8) 9px, white(0) 10px),
+                linear-gradient(to right, $red-light 50%, $red 50%)
+    border-radius: 50%

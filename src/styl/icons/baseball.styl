@@ -1,0 +1,28 @@
+//- BASEBALL ----------------------------------------------- //
+
+.baseball
+  width: 120px
+  height: @width
+  margin-left: -(@width/2)
+  $halfsies(white,$grey-e)
+  border-radius: 50%
+  box-shadow: $shadow-short
+
+  //- left seam
+  &:before
+    width: 120px
+    height: 120px
+    left: -80px
+    border-radius: 50%
+    border: 5px dotted $red
+    clip: rect(17px,120px,120px,98px)
+
+  //- right seam
+  &:after
+    width: 120px
+    height: 120px
+    margin-left: 20px
+    top: 4px
+    border-radius: 50%
+    border: 5px dotted $red
+    clip: rect(0,25px,100px,0)

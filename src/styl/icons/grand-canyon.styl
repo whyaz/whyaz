@@ -1,0 +1,45 @@
+//- GRAND CANYON ----------------------------------------------- //
+
+.grand-canyon
+  width: 136px
+  height: 100px
+  top: 60px
+  margin-left: -(@width/2)
+  background: $sky-blue
+  background-image: linear-gradient(to top, $brown-drk 10px,
+                                            $brown 10px,
+                                            $brown 20px,
+                                            $tan-drk 20px,
+                                            $tan-drk 25px,
+                                            $brown 25px,
+                                            $brown 30px,
+                                            $brown-light 30px,
+                                            $brown-light 40px,
+                                            $tan-drk 40px,
+                                            $tan-drk 45px,
+                                            $tan 45px,
+                                            $tan 50px,
+                                            $tan-light 50px,
+                                            $tan-light 55px,
+                                            transparent 55px)
+  border: 5px solid white
+  border-radius: 3px
+  box-shadow: $shadow-short
+  transform: rotate(-2deg)
+
+  //- trench
+  &:before
+    width: 40px
+    border-top: 56px solid $sky-blue
+    top: 34px
+    margin-left: -10px
+    $triangle(15px)
+
+  //- sun
+  &:after
+    width: 20px
+    height: 20px
+    margin-left: -45px
+    top: 8px
+    background: $orange
+    border-radius: 50%

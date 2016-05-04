@@ -6,16 +6,17 @@ extends ../../templates/layout
 
 block content
 
-  section.siteSection.secondary-page
-    .siteContent
-      h2 Arizona Love
-      p See the reasons others love Arizona.
-        br
-        | Share yours with 
-        a(href="https://twitter.com/search?q=%23whyaz&amp;src=typd") #whyaz
-        | .
+  .flex-container
+    .flex-1of2
+      .content.pale-blue.text-drk
+        h2 Arizona Love
+        p See the reasons others love Arizona.
+    .flex-1of2
+      .content.red.text-light.center-vert
+        h3 Share yours with <a href="https://twitter.com/search?q=%23whyaz&amp;src=typd">#whyaz</a>.
 
-  section#tagboard-embed
+    .flex-1of1
+      #tagboard-embed
 
   script var tagboardOptions = {tagboard:"whyaz/194612", darkMode: true};
   script(src="https://tagboard.com/public/js/embed.js")

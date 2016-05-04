@@ -1,0 +1,25 @@
+//- MOUNTAIN ----------------------------------------------- //
+
+$mtn-width = 50px
+$mtn-height = 120px
+
+//- mountain shadow
+.mountain
+  margin-left: -40px
+  top: 50px
+  $triangle($mtn-width)
+  border-bottom: $mtn-height solid $shadow
+
+  //- mountain
+  &:before
+    margin-left: -54px
+    top: -4px
+    $triangle($mtn-width)
+    border-bottom: $mtn-height solid $brown
+
+  //- mountain half color
+  &:after
+    margin-left: -54px
+    top: -4px
+    border-bottom: $mtn-height solid $brown-light
+    border-left: $mtn-width solid transparent

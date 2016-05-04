@@ -1,29 +1,43 @@
 //- FORM STYLES ----------------------------------------------- //
 
 form
+  margin: 30px auto
   text-align: left
 
   label
+    margin-bottom: 8px
     padding-left: 5px
     display: block
-    font-family: $font-family-brandon
-    font-weight: $font-weight-bold
     font-size: 13px
-    text-transform: uppercase
+
+    &.required
+      position: relative
+      padding-right: 55px
+
+      &:after
+        content: 'required'
+        position: absolute
+        right: 5px
+        bottom: 0
+        font-size: 12px
+        font-style: italic
 
   input, textarea
     box-sizing: border-box
     width: 100%
     margin-bottom: 20px
     padding: 10px
-    border: 1px solid $shadow
+    border: 1px solid $blue-grey
     border-radius: 3px
-    font-family: $font-family-tisa
-    font-size: 16px
+    font-family: $font-tisa-serif
+    font-size: 14px
+
+  textarea
+    resize: vertical
 
   .button
     width: 100%
-    margin-top: 10px
+    margin: 10px 0 0
 
   .alert
     margin-bottom: 20px
