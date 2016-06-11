@@ -1,0 +1,77 @@
+//- TALIESIN WEST ----------------------------------------------- //
+
+//- square
+.taliesin
+  width: 94px
+  height: 94px
+  margin-left: -(@width/2)
+  top: 60px
+  background-image: repeating-linear-gradient(180deg, transparent,
+                                                      transparent 10px,
+                                                      $brown-drk 10px,
+                                                      $brown-drk 13px),
+                    repeating-linear-gradient(90deg, $red-light,
+                                                     $red-light 10px,
+                                                     $brown-drk 10px,
+                                                     $brown-drk 13px)
+  border: 3px solid $brown-drk
+
+  //- line cover up, vertical lines
+  &:before
+    width: 10px
+    height: 10px
+    margin-left: -25px
+    background: $red-light
+    box-shadow:  13px 0 0 $red-light,
+                 26px 0 0 $red-light,
+                 39px 0 0 $red-light,
+                 52px 0 0 $red-light,
+                -13px 13px 0 $red-light,
+                  0px 13px 0 $red-light,
+                 13px 13px 0 $red-light,
+                 26px 13px 0 $red-light,
+                 39px 13px 0 $red-light,
+                  0px 26px 0 $red-light,
+                 13px 26px 0 $red-light,
+                 26px 26px 0 $red-light,
+                 13px 39px 0 $red-light,
+                 26px 39px 0 $red-light,
+                 13px 52px 0 $red-light,
+                 26px 52px 0 $red-light,
+                 39px 52px 0 $red-light,
+                  0   65px 0 $red-light,
+                 13px 65px 0 $red-light,
+                 26px 65px 0 $red-light,
+                 39px 65px 0 $red-light,
+                 52px 65px 0 $red-light,
+                -13px 78px 0 $red-light,
+                  0px 78px 0 $red-light,
+                 13px 78px 0 $red-light,
+                 26px 78px 0 $red-light,
+                 39px 78px 0 $red-light
+
+  //- line cover up, horiz lines
+  &:after
+    width: 10px
+    height: 10px
+    margin-left: -44px
+    top: 6px
+    background: transparent
+    box-shadow: 78px  0   0 $red-light,
+                 0   13px 0 $red-light,
+                65px 13px 0 $red-light,
+                78px 13px 0 $red-light,
+                 0   26px 0 $red-light,
+                13px 26px 0 $red-light,
+                52px 26px 0 $red-light,
+                65px 26px 0 $red-light,
+                78px 26px 0 $red-light,
+                 0   39px 0 $red-light,
+                13px 39px 0 $red-light,
+                26px 39px 0 $red-light,
+                65px 39px 0 $red-light,
+                78px 39px 0 $red-light,
+                 0   52px 0 $red-light,
+                13px 52px 0 $red-light,
+                78px 52px 0 $red-light,
+                 0   65px 0 $red-light
