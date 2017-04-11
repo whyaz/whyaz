@@ -16,7 +16,8 @@ block content
         h3 Share yours with <a href="https://twitter.com/search?q=%23whyaz&amp;src=typd">#whyaz</a>.
 
     .flex-1of1
-      #tagboard-embed
+      #juicer-embed
 
-  script var tagboardOptions = {tagboard:"whyaz/194612", darkMode: true};
-  script(src="https://tagboard.com/public/js/embed.js")
+        script(src="//assets.juicer.io/embed.js" type="text/javascript")
+        link(href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css")
+        ul(class="juicer-feed" data-feed-id="whyaz")
