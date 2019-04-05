@@ -77,7 +77,7 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('build', function() {
+gulp.task('build', ['clean', 'contributors'], function() {
 
   copy();
   jadeBuild();
