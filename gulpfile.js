@@ -77,13 +77,13 @@ gulp.task('copy', function() {
 
 });
 
-// gulp.task('build', function() {
+gulp.task('build', ['clean', 'contributors'], function() {
 
-//   copy();
-//   jadeBuild();
-//   stylusBuild();
+  copy();
+  jadeBuild();
+  stylusBuild();
 
-// });
+});
 
 gulp.task('stylus', function() {
 
@@ -118,10 +118,6 @@ gulp.task('default', ['clean', 'contributors'], function() {
   // This will ensure clean is finished prior to starting subsequent tasks
   gulp.start('copy', 'jade', 'stylus', 'express', 'watch');
 
-});
-
-gulp.task('build', ['clean', 'contributors'], function() {
-  gulp.start('copy', 'jade', 'stylus');
 });
 
 gulp.task('deploy', function() {
