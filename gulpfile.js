@@ -120,10 +120,6 @@ gulp.task('default', ['clean', 'contributors'], function() {
 
 });
 
-gulp.task('build', ['clean', 'contributors'], function() {
-  gulp.start('copy', 'jade', 'stylus');
-});
-
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
