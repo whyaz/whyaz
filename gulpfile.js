@@ -77,13 +77,13 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('build', function() {
+// gulp.task('build', function() {
 
-  copy();
-  jadeBuild();
-  stylusBuild();
+//   copy();
+//   jadeBuild();
+//   stylusBuild();
 
-});
+// });
 
 gulp.task('stylus', function() {
 
