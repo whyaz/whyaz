@@ -1,6 +1,8 @@
 # WhyAZ
 
-A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on meltmedia's blog: [Why WhyAZ?](http://blog.meltmedia.com/2013/08/why-whyaz/)
+A website about why we love living and working in Arizona: [why.az](http://why.az/). The illustrations on this site are drawn with HTML and CSS. Read more about it on Lynn Fisher's blog: [Why WhyAZ?](https://lynnandtonic.com/thoughts/entries/why-whyaz/)
+
+The site is maintained by [Lynn Fisher](https://github.com/lynnandtonic). Reach out with questions: [@lynnandtonic](https://twitter.com/lynnandtonic) on Twitter.
 
 ## Contributing
 
