@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://quirky-wiles-84ce8e.netlify.com/* https://why.az/:splat 301!
