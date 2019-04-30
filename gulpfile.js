@@ -21,7 +21,7 @@ var url          = require('url');
 
 function copy() {
 
-  return gulp.src(['src/**/*.*', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
+  return gulp.src(['src/**/*.*', '_redirects', '!src/templates/**/*.*', '!src/views/**/*.*', '!src/styl/**/*.*'])
     .pipe(gulp.dest('dist/'));
 
 }
