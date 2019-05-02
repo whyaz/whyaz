@@ -20,11 +20,11 @@ WhyAZ will not feature advertisements, political support, or discriminatory cont
 
 ## Editing Content
 
-Most site content is written in Pug templates which produce the site HTML.
+Most site content is written in Jade templates which produce the site HTML.
 
-The Pug files are located in `/src/templates`.
+The Jade files are located in `/src/templates`.
 
-Note that these aren't markdown files and the syntax and whitespace you use does matter quite a bit. See the [Pug documentation](https://pugjs.org/api/getting-started.html) to see how to use Pug.
+Note that these aren't markdown files and the syntax and whitespace you use does matter quite a bit. See the [Jade documentation](http://jade-lang.com) to see how to use Jade.
 
 ## Editing CSS
 
