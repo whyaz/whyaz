@@ -1,8 +1,8 @@
+extends ../../templates/layout
+
 block vars
   - var title = "Contribute to WhyAZ"
   - var description = "How to contribute ideas and content to why.az"
-
-extends ../../templates/layout
 
 block content
 
@@ -43,8 +43,8 @@ block content
         ul.contributors-list.clearfix
           each contributor in contributors
             li.contributor
-              a(href="#{contributor.html_url}")
-                img.avatar(src="#{contributor.avatar_url}")
+              a(href=contributor.html_url)
+                img.avatar(src=contributor.avatar_url)
           li.contributor
             a(href="https://twitter.com/andyfrey")
               img.avatar(src="https://pbs.twimg.com/profile_images/1363598990/Team_Exit_400x400.jpg")
