@@ -5,12 +5,11 @@
 var gulp         = require('gulp');
 var dest         = require('gulp-dest');
 var gutil        = require('gulp-util');
-var jade         = require('gulp-jade');
+var pug          = require('gulp-pug');
 var stylus       = require('gulp-stylus');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS    = require('gulp-minify-css');
 var livereload   = require('gulp-livereload');
-var ghPages      = require('gulp-gh-pages');
 var remoteSrc    = require("gulp-remote-src");
 var tinylr       = require('tiny-lr');
 var express      = require('express');
@@ -26,10 +25,10 @@ function copy() {
 
 }
 
-function jadeBuild() {
+function pugBuild() {
 
-  return gulp.src(['src/views/**/*.jade'])
-    .pipe(jade({
+  return gulp.src(['src/views/**/*.pug'])
+    .pipe(pug({
       pretty: true,
       data: {
         contributors: require('././dist/contributors.json')
@@ -51,7 +50,7 @@ function stylusBuild() {
 
 gulp.task('contributors', function(cb) {
   remoteSrc(['contributors'], {
-    base: 'https://api.github.com/repos/meltmedia/whyaz/',
+    base: 'https://api.github.com/repos/whyaz/whyaz/',
     requestOptions: {
       headers: {
         'User-Agent': 'why.az'
@@ -61,9 +60,9 @@ gulp.task('contributors', function(cb) {
     .pipe(gulp.dest('.')).on('end', cb)
 });
 
-gulp.task('jade', function() {
+gulp.task('pug', function() {
 
-  jadeBuild().pipe(livereload());
+  pugBuild().pipe(livereload());
 
 });
 
@@ -80,7 +79,7 @@ gulp.task('copy', function() {
 gulp.task('build', ['clean', 'contributors'], function() {
 
   copy();
-  jadeBuild();
+  pugBuild();
   stylusBuild();
 
 });
@@ -103,9 +102,9 @@ gulp.task('watch', function () {
 
   livereload.listen();
 
-  gulp.watch(['src/**/*.*', '!src/**/*.styl', '!src/**/*.jade'], ['copy']);
+  gulp.watch(['src/**/*.*', '!src/**/*.styl', '!src/**/*.pug'], ['copy']);
   gulp.watch('src/**/*.styl',['stylus']);
-  gulp.watch('src/**/*.jade',['jade']);
+  gulp.watch('src/**/*.pug',['pug']);
 
   // Reload the server when our dist directory changes
   gulp.watch('dist/**').on('change', livereload.changed);
@@ -116,11 +115,6 @@ gulp.task('watch', function () {
 gulp.task('default', ['clean', 'contributors'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
-  gulp.start('copy', 'jade', 'stylus', 'express', 'watch');
+  gulp.start('copy', 'pug', 'stylus', 'express', 'watch');
 
-});
-
-gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
 });
