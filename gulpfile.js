@@ -10,7 +10,6 @@ var stylus       = require('gulp-stylus');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS    = require('gulp-minify-css');
 var livereload   = require('gulp-livereload');
-var ghPages      = require('gulp-gh-pages');
 var remoteSrc    = require("gulp-remote-src");
 var tinylr       = require('tiny-lr');
 var express      = require('express');
@@ -118,9 +117,4 @@ gulp.task('default', ['clean', 'contributors'], function() {
   // This will ensure clean is finished prior to starting subsequent tasks
   gulp.start('copy', 'pug', 'stylus', 'express', 'watch');
 
-});
-
-gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
 });
