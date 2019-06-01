@@ -1,0 +1,15 @@
+extends ../templates/layout
+
+block vars
+  - var title = "404"
+  - var description = "Why it’s awesome to live and work in Arizona."
+  - var bodyClass = "fourohfour"
+
+block content
+
+  .flex-container
+    .flex-1of1.pale-blue
+      .why.text-drk
+        .icon.flag-one
+        p Sorry, this page doesn’t exist!
+        p Please #[a(href="/") visit the WhyAZ homepage].
