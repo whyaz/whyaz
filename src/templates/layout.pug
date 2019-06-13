@@ -22,17 +22,23 @@ html(lang="en")
     script(src="//use.typekit.net/lxz5yej.js")
     script try{Typekit.load({ async: true });}catch(e){}
 
+    if bodyClass == 'home'
+      link(rel='stylesheet', href='/public/css/home.css')
+    else
+      link(rel='stylesheet', href='/public/css/main.css')
+
   body(class=bodyClass)
 
-    nav.nav-main
-      .nav-link-group
-        h1
-          a.nav-link(href="/") WhyAZ
-          span.description Reasons to live and work in Arizona.
-      .nav-link-group
-        a.nav-link(href="/community/") Community
-        a.nav-link(href="/contribute/") Contribute
-        a.nav-link(href="https://github.com/whyaz/whyaz") Fork on GitHub
+    if bodyClass !== 'weather'
+      nav.nav-main
+        .nav-link-group
+          h1
+            a.nav-link(href="/") WhyAZ
+            span.description Reasons to live and work in Arizona.
+        .nav-link-group
+          a.nav-link(href="/community/") Community
+          a.nav-link(href="/contribute/") Contribute
+          a.nav-link(href="https://github.com/whyaz/whyaz") Fork on GitHub
 
     block content
 

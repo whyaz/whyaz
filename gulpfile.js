@@ -40,7 +40,7 @@ function pugBuild() {
 
 function stylusBuild() {
 
-  return gulp.src('src/styl/main.styl')
+  return gulp.src('src/styl/*.styl')
     .pipe(stylus())
     .pipe(autoprefixer({browsers: ['last 2 versions', 'ie 8'],flexbox:true,cascade: false}))
     .pipe(minifyCSS())

@@ -2,7 +2,7 @@
   "name": "whyaz",
   "description": "A website about why we love living and working in Arizona. The illustrations on this site are drawn with HTML and CSS.",
   "repository": "https://github.com/whyaz/whyaz",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "devDependencies": {
     "del": "~0.1.3",
     "express": "~4.9.7",
