@@ -9,7 +9,7 @@ block content
 
   .container
     .city.navy-blue.phoenix
-      fetching-weather(latitude="33.4484", longitude="-112.074")
+      fetching-weather(latitude="33.4373", longitude="-112.0078")
       h2 Phoenix
     .city.red.tucson
       fetching-weather(latitude="32.2226", longitude="-110.9747")
@@ -44,7 +44,7 @@ block content
           `https://api.weather.gov/points/${this.latitude},${this.longitude}`
         )
           .then(r => r.json())
-          .then(r => r.properties.forecast)
+          .then(r => r.properties.forecastHourly)
           .then(forcastUrl => fetch(forcastUrl))
           .then(r => r.json())
           .then(r => {
@@ -55,7 +55,7 @@ block content
       render() {
         const { properties } = this.response;
         if (properties) {
-          const { temperature, shortForecast } = properties.periods[0];
+          const { temperature, shortForecast, isDaytime } = properties.periods[0];
           return html`
             <style>
               .temperature {
@@ -73,6 +73,9 @@ block content
               [class*="clear"] {
                 background-image: url('/images/weather-icon-sun.svg');
               }
+              [class*="clear"].false {
+                background-image: url('/images/weather-icon-moon.svg');
+              }
               [class*="cloudy"] {
                 background-image: url('/images/weather-icon-cloud.svg');
               }
@@ -81,7 +84,8 @@ block content
               }
               [class*="rain"],
               [class*="rainy"],
-              [class*="hail"] {
+              [class*="hail"],
+              [class*="showers"] {
                 background-image: url('/images/weather-icon-rain.svg');
               }
               [class*="snow"],
@@ -92,7 +96,7 @@ block content
             <h3 class="temperature">
               ${temperature}°
             </h3>
-            <p class="${shortForecast.replace(/\s+/g, '-').toLowerCase()}">
+            <p class="${shortForecast.replace(/\s+/g, '-').toLowerCase()} ${isDaytime}">
               ${shortForecast}
             </p>
           `;
