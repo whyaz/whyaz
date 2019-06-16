@@ -39,6 +39,11 @@ html(lang="en")
       link(rel='stylesheet', href='/public/css/home.css')
     else
       link(rel='stylesheet', href='/public/css/main.css')
+
+    block scripts
+    
     script(src="//use.typekit.net/lxz5yej.js")
     script try{Typekit.load({ async: true });}catch(e){}
+
+
     include includes/ga.html
