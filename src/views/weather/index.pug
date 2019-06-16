@@ -1,0 +1,109 @@
+extends ../../templates/layout
+
+block vars
+  - var title = "Weather in Arizona"
+  - var description = ""
+  - var bodyClass = "weather"
+
+block content
+
+  .container
+    .city.navy-blue.phoenix
+      fetching-weather(latitude="33.4373", longitude="-112.0078")
+      h2 Phoenix
+    .city.red.tucson
+      fetching-weather(latitude="32.2226", longitude="-110.9747")
+      h2 Tucson
+    .city.grey-drk.flagstaff
+      fetching-weather(latitude="35.198284", longitude="-111.651299")
+      h2 Flagstaff
+
+  script(type="module").
+    import {
+      html,
+      render
+    } from 'https://unpkg.com/lit-html@1.1.0/lit-html.js?module';
+    import { LitElement } from 'https://unpkg.com/lit-element@2.2.0/lit-element.js?module';
+
+    class FetchingWeather extends LitElement {
+      static get properties() {
+        return {
+          longitude: { type: String },
+          latitude: { type: String },
+          response: { type: Object }
+        };
+      }
+
+      constructor() {
+        super();
+        this.response = {};
+      }
+
+      firstUpdated() {
+        fetch(
+          `https://api.weather.gov/points/${this.latitude},${this.longitude}`
+        )
+          .then(r => r.json())
+          .then(r => r.properties.forecastHourly)
+          .then(forcastUrl => fetch(forcastUrl))
+          .then(r => r.json())
+          .then(r => {
+            this.response = r;
+          })
+          .catch(e => console.log(e));
+      }
+      render() {
+        const { properties } = this.response;
+        if (properties) {
+          const { temperature, shortForecast, isDaytime } = properties.periods[0];
+          return html`
+            <style>
+              .temperature {
+                margin: 0 -15px 0 0;
+                font-size: 60px;
+                font-family: Helvetica;
+                font-weight: 100;
+              }
+              p {
+                background: no-repeat center top;
+                background-size: 50px 50px;
+                padding-top: 60px;
+              }
+              [class*="sunny"],
+              [class*="clear"] {
+                background-image: url('/images/weather-icon-sun.svg');
+              }
+              [class*="clear"].false {
+                background-image: url('/images/weather-icon-moon.svg');
+              }
+              [class*="cloudy"] {
+                background-image: url('/images/weather-icon-cloud.svg');
+              }
+              .partly-cloudy {
+                background-image: url('/images/weather-icon-partly-cloudy.svg');
+              }
+              [class*="rain"],
+              [class*="rainy"],
+              [class*="hail"],
+              [class*="showers"] {
+                background-image: url('/images/weather-icon-rain.svg');
+              }
+              [class*="snow"],
+              [class*="snowy"] {
+                background-image: url('/images/weather-icon-snow.svg');
+              }
+            </style>
+            <h3 class="temperature">
+              ${temperature}°
+            </h3>
+            <p class="${shortForecast.replace(/\s+/g, '-').toLowerCase()} ${isDaytime}">
+              ${shortForecast}
+            </p>
+          `;
+        }
+        return html`
+          <p>Finding...</p>
+        `;
+      }
+    }
+    customElements.define('fetching-weather', FetchingWeather);

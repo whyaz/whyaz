@@ -1,0 +1,45 @@
+//- WEATHER PAGE ----------------------------------------------- //
+
+.weather
+  padding: 0
+
+  .container
+    margin: 0
+
+    .city
+      padding: 30px
+      padding-bottom: 40px
+      color: white
+
+      h2
+        margin: 50px 0 0
+        padding-top: 120px
+        font-size: 30px
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100px 116px
+
+      &.phoenix h2
+        background-image: url('/images/weather-phoenix.svg')
+      &.tucson h2
+        background-image: url('/images/weather-tucson.svg')
+      &.flagstaff h2
+        background-image: url('/images/weather-flagstaff.svg')
+
+@media screen and (min-width: 600px)
+
+  .weather
+    height: 100vh
+
+    .container
+      height: 100%
+      min-height: 400px
+      display: flex
+      align-items: stretch
+
+      .city
+        width: 33.33%
+        padding-top: 50px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
