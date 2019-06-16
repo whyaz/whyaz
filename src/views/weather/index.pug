@@ -19,11 +19,8 @@ block content
       h2 Flagstaff
 
   script(type="module").
-    import {
-      html,
-      render
-    } from 'https://unpkg.com/lit-html@1.1.0/lit-html.js?module';
-    import { LitElement } from 'https://unpkg.com/lit-element@2.2.0/lit-element.js?module';
+    import { html } from '/public/js/lit-html.js';
+    import { LitElement } from '/public/js/lit-element.js';
 
     class FetchingWeather extends LitElement {
       static get properties() {

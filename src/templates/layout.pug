@@ -10,7 +10,6 @@ html(lang="en")
 
     title WhyAZ - #{title}
     meta(name="description", content="#{description}")
-    link(rel="stylesheet", href="/public/css/main.css")
 
     meta(property="og:site_name", content="WhyAZ")
     meta(property="og:url", content="https://why.az")
@@ -19,13 +18,6 @@ html(lang="en")
     meta(property="og:app_id", content="213627328831811")
     meta(property="og:type", content="website")
 
-    script(src="//use.typekit.net/lxz5yej.js")
-    script try{Typekit.load({ async: true });}catch(e){}
-
-    if bodyClass == 'home'
-      link(rel='stylesheet', href='/public/css/home.css')
-    else
-      link(rel='stylesheet', href='/public/css/main.css')
 
   body(class=bodyClass)
 
@@ -42,4 +34,11 @@ html(lang="en")
 
     block content
 
+    link(rel="stylesheet", href="/public/css/main.css")
+    if bodyClass == 'home'
+      link(rel='stylesheet', href='/public/css/home.css')
+    else
+      link(rel='stylesheet', href='/public/css/main.css')
+    script(src="//use.typekit.net/lxz5yej.js")
+    script try{Typekit.load({ async: true });}catch(e){}
     include includes/ga.html
