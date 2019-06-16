@@ -57,6 +57,9 @@ block scripts
           const { temperature, shortForecast, isDaytime } = properties.periods[0];
           return html`
             <style>
+              :host {
+                 animation: fadein 1s;
+              }
               .temperature {
                 margin: 0 -15px 0 0;
                 font-size: 60px;
@@ -91,6 +94,10 @@ block scripts
               [class*="snowy"] {
                 background-image: url('/images/weather-icon-snow.svg');
               }
+              @keyframes fadein {
+               from { opacity: 0; }
+               to { opacity: 1; }
+              }
             </style>
             <h3 class="temperature">
               ${temperature}°
@@ -100,9 +107,6 @@ block scripts
             </p>
           `;
         }
-        return html`
-          <p>Finding...</p>
-        `;
       }
     }
     customElements.define('fetching-weather', FetchingWeather);
