@@ -17,7 +17,15 @@ html(lang="en")
     meta(property="og:image", content="https://why.az/images/facebook-whyaz.png")
     meta(property="og:app_id", content="213627328831811")
     meta(property="og:type", content="website")
-
+    
+    link(rel="stylesheet", href="/public/css/main.css")
+    if bodyClass == 'home'
+      link(rel='stylesheet', href='/public/css/home.css')
+    else
+      link(rel='stylesheet', href='/public/css/main.css')
+      
+    script(src="//use.typekit.net/lxz5yej.js")
+    script try{Typekit.load({ async: true });}catch(e){}
 
   body(class=bodyClass)
 
@@ -34,16 +42,6 @@ html(lang="en")
 
     block content
 
-    link(rel="stylesheet", href="/public/css/main.css")
-    if bodyClass == 'home'
-      link(rel='stylesheet', href='/public/css/home.css')
-    else
-      link(rel='stylesheet', href='/public/css/main.css')
-
     block scripts
-    
-    script(src="//use.typekit.net/lxz5yej.js")
-    script try{Typekit.load({ async: true });}catch(e){}
-
 
     include includes/ga.html
