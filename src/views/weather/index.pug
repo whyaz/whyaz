@@ -18,12 +18,11 @@ block content
       fetching-weather(latitude="35.198284", longitude="-111.651299")
       h2 Flagstaff
 
+block scripts
+
   script(type="module").
-    import {
-      html,
-      render
-    } from 'https://unpkg.com/lit-html@1.1.0/lit-html.js?module';
-    import { LitElement } from 'https://unpkg.com/lit-element@2.2.0/lit-element.js?module';
+    import { html } from '/public/js/lit-html.js';
+    import { LitElement } from '/public/js/lit-element.js';
 
     class FetchingWeather extends LitElement {
       static get properties() {
@@ -58,6 +57,9 @@ block content
           const { temperature, shortForecast, isDaytime } = properties.periods[0];
           return html`
             <style>
+              :host {
+                 animation: fadein 1s;
+              }
               .temperature {
                 margin: 0 -15px 0 0;
                 font-size: 60px;
@@ -92,6 +94,10 @@ block content
               [class*="snowy"] {
                 background-image: url('/images/weather-icon-snow.svg');
               }
+              @keyframes fadein {
+               from { opacity: 0; }
+               to { opacity: 1; }
+              }
             </style>
             <h3 class="temperature">
               ${temperature}°
@@ -101,9 +107,6 @@ block content
             </p>
           `;
         }
-        return html`
-          <p>Finding...</p>
-        `;
       }
     }
     customElements.define('fetching-weather', FetchingWeather);

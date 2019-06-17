@@ -17,6 +17,8 @@ var app          = express();
 var path         = require('path');
 var del          = require('del');
 var url          = require('url');
+var exec         = require('child_process').exec;
+
 
 function copy() {
 
@@ -60,6 +62,14 @@ gulp.task('contributors', function(cb) {
     .pipe(gulp.dest('.')).on('end', cb)
 });
 
+gulp.task('pika', function (cb) {
+  exec('npm run pika', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+})
+
 gulp.task('pug', function() {
 
   pugBuild().pipe(livereload());
@@ -76,7 +86,7 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('build', ['clean', 'contributors'], function() {
+gulp.task('build', ['clean', 'contributors', 'pika'], function() {
 
   copy();
   pugBuild();
@@ -112,7 +122,7 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['clean', 'contributors'], function() {
+gulp.task('default', ['clean', 'contributors', 'pika'], function() {
 
   // This will ensure clean is finished prior to starting subsequent tasks
   gulp.start('copy', 'pug', 'stylus', 'express', 'watch');
