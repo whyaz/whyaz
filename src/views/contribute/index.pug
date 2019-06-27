@@ -14,26 +14,25 @@ block content
         p We’re sure there’s awesome stuff we’ve missed (or haven’t even heard of yet). Contribute and help us make WhyAZ even better.
         h3 Submit an idea
 
-        form.wufoo.topLabel.page(id="form5", name="form5", accept-charset="UTF-8", autocomplete="off", enctype="multipart/form-data", method="post", novalidate, action="https://lynnandtonic.wufoo.com/forms/s81cd9c0b31kew/#public")
+        form(name="contribute", method="POST", data-netlify="true", netlify-honeypot="bot-field", action="/thanks")
           ul
-            li.notranslate(id="foli3")
-              label.desc(id="title3", for="Field3") Name
-              input.field.text(id="Field3", name="Field3", type="text", tabindex="1", onkeyup="", placeholder="Sam Alexander")
-            li.notranslate(id="foli5")
-              label.desc(id="title5", for="Field5") Email
-              input.field.text(id="Field5", name="Field5", type="email", tabindex="2", onkeyup="", placeholder="sam@why.az")
-            li.notranslate(id="foli6")
-              label.desc(id="title6", for="Field6") Twitter
-              input.field.text(id="Field6", name="Field6", type="text", tabindex="3", onkeyup="", placeholder="@nova_prime_az")
-            li.notranslate(id="foli7")
-              label.desc.required(id="title7", for="Field7") Message
-              textarea.field.textarea(id="Field7", name="Field7", type="textarea", tabindex="4", onkeyup="", rows="3", placeholder="You won’t believe this...", required)
+            li
+              label.desc(for="name") Name
+              input.field.text(id="name", type="text", placeholder="Sam Alexander")
+            li
+              label.desc(for="email") Email
+              input.field.text(id="email", type="email", placeholder="sam@why.az")
+            li
+              label.desc(for="twitter") Twitter
+              input.field.text(id="twitter", type="text", placeholder="@nova_prime_az")
+            li
+              label.desc.required(for="message") Message
+              textarea.field.textarea(id="message", type="textarea", rows="3", placeholder="You won’t believe this...", required)
             li.buttons
-              input.button.btTxt.submit(id="saveForm", name="saveForm", type="submit", value="Send")
+              input.button.btTxt.submit(id="submit", type="submit", value="Send")
             li.hide
-              label(for="comment") Do not fill this out
-              textarea(name="comment", id="comment", rows="1", cols="1")
-              input(type="hidden", id="idstamp", name="idstamp", value="GI3BaAMvV9hAQVRXKYC9UjxE9e3NcvrK96Mip/ScAQw=")
+              label(for="bot-field") Do not fill this out
+              input.field.text(id="bot-field", name="bot-field", type="text")
 
     .flex-1of2
       .content.navy-blue.text-light

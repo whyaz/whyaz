@@ -1,0 +1,15 @@
+extends ../../templates/layout
+
+block vars
+  - var title = "Thanks"
+  - var description = "Why it’s awesome to live and work in Arizona."
+  - var bodyClass = "thanks"
+
+block content
+
+  .flex-container
+    .flex-1of1.red
+      .why.text-light
+        .icon.sunset
+        p Thank you for your message!
+        p #[a(href="/") Go back home.]
