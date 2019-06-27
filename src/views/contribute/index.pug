@@ -18,16 +18,16 @@ block content
           ul
             li
               label.desc(for="name") Name
-              input.field.text(id="name", type="text", placeholder="Sam Alexander")
+              input.field.text(id="name", name="name", type="text", placeholder="Sam Alexander")
             li
               label.desc(for="email") Email
-              input.field.text(id="email", type="email", placeholder="sam@why.az")
+              input.field.text(id="email", name="email" type="email", placeholder="sam@why.az")
             li
               label.desc(for="twitter") Twitter
-              input.field.text(id="twitter", type="text", placeholder="@nova_prime_az")
+              input.field.text(id="twitter", name="twitter", type="text", placeholder="@nova_prime_az")
             li
               label.desc.required(for="message") Message
-              textarea.field.textarea(id="message", type="textarea", rows="3", placeholder="You won’t believe this...", required)
+              textarea.field.textarea(id="message", name="mesasge", type="textarea", rows="3", placeholder="You won’t believe this...", required)
             li.buttons
               input.button.btTxt.submit(id="submit", type="submit", value="Send")
             li.hide
