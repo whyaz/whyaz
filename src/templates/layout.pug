@@ -12,17 +12,21 @@ html(lang="en")
     meta(name="description", content=description)
 
     if bodyClass !== 'utility'
-      meta(property="og:app_id", content="213627328831811")
-      meta(property='og:type',  content='website')
       meta(name='twitter:card', content='summary')
-      meta(content='@lynnandtonic', name='twitter:site')
-      meta(content='@lynnandtonic', name='twitter:creator')
-      meta(content=title + ' — why.az', name='twitter:title', property='og:title')
-      meta(content=description, name='twitter:description', property='og:description')
-      meta(content='https://why.az/images/whyaz-thumb.png', property='og:image')
-      meta(content='https://why.az/images/whyaz-thumb.png', name='twitter:image')
+      meta(name='twitter:site', content='@lynnandtonic')
+      meta(name='twitter:creator', content='@lynnandtonic')
+      meta(property='og:type',  content='website')
+      meta(property="og:app_id", content="213627328831811")
+
       meta(content='https://why.az/' + pagePath, property='og:url')
       meta(content='https://why.az/' + pagePath, property='twitter:url')
+
+      meta(content=title + ' — why.az', property='twitter:title')
+      meta(content=title + ' — why.az', property='og:site_name')
+      meta(content=description, property='twitter:description')
+      meta(content=description, property='og:description')
+      meta(content='https://why.az/images/whyaz-thumb.png', property='og:image')
+      meta(content='https://why.az/images/whyaz-thumb.png', property='twitter:image')
 
     if bodyClass == 'home'
       link(rel='stylesheet', href='/public/css/home.css')
@@ -39,7 +43,7 @@ html(lang="en")
         .nav-link-group
           h1
             a.nav-link(href="/") WhyAZ
-            span.description Reasons to live and work in Arizona.
+            span.desc Reasons to live and work in Arizona.
         .nav-link-group
           a.nav-link(href="/community/") Community
           a.nav-link(href="/contribute/") Contribute
