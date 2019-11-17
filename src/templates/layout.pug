@@ -12,23 +12,20 @@ html(lang="en")
     meta(name="description", content=description)
 
     if bodyClass !== 'utility'
-      meta(name='twitter:card', content='summary')
-      meta(name='twitter:site', content='@lynnandtonic')
       meta(property='og:type',  content='website')
-
+      meta(name='twitter:card', content='summary')
+      meta(content='@lynnandtonic', name='twitter:site')
+      meta(content='@lynnandtonic', name='twitter:creator')
+      meta(content=title + ' — why.az', name='twitter:title', property='og:title')
+      meta(content=description, name='twitter:description', property='og:description')
+      meta(content='https://why.az/images/whyaz-thumb.png', property='og:image')
+      meta(content='https://why.az/images/whyaz-thumb.png', name='twitter:image')
       if bodyClass !== 'home'
         meta(content='https://why.az/' + pagePath, property='og:url')
         meta(content='https://why.az/' + pagePath, property='twitter:url')
       else
         meta(content='https://why.az', property='og:url')
         meta(content='https://why.az', property='twitter:url')
-
-      meta(content=title + ' — why.az', property='twitter:title')
-      meta(content=title + ' — why.az', property='og:site_name')
-      meta(content=description, property='twitter:description')
-      meta(content=description, property='og:description')
-      meta(content='https://why.az/images/whyaz-thumb.png', property='og:image')
-      meta(content='https://why.az/images/whyaz-thumb.png', property='twitter:image')
 
     if bodyClass == 'home'
       link(rel='stylesheet', href='/public/css/home.css')
