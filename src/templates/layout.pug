@@ -8,16 +8,22 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1")
 
-    title WhyAZ - #{title}
+    title #{title} - why.az
     meta(name="description", content="#{description}")
 
-    meta(property="og:site_name", content="WhyAZ")
-    meta(property="og:url", content="https://why.az")
-    meta(property="og:description", content="WhyAZ is community-built and explores the things that make Arizona an awesome place to live and work. Join us and share what you love with #whyaz.")
-    meta(property="og:image", content="https://why.az/images/facebook-whyaz.png")
-    meta(property="og:app_id", content="213627328831811")
-    meta(property="og:type", content="website")
-    
+    if bodyClass !== 'utility'
+      meta(property="og:app_id", content="213627328831811")
+      meta(property='og:type',  content='website')
+      meta(name='twitter:card', content='summary')
+      meta(content='@lynnandtonic', name='twitter:site')
+      meta(content='@lynnandtonic', name='twitter:creator')
+      meta(content=title + ' — why.az', name='twitter:title', property='og:title')
+      meta(content=description, name='twitter:description', property='og:description')
+      meta(content='https://why.az/images/whyaz-thumb.png', property='og:image')
+      meta(content='https://why.az/images/whyaz-thumb.png', name='twitter:image')
+      meta(content='https://why.az/' + pagePath, property='og:url')
+      meta(content='https://why.az/' + pagePath, property='twitter:url')
+
     if bodyClass == 'home'
       link(rel='stylesheet', href='/public/css/home.css')
     else
