@@ -1,0 +1,59 @@
+//- MODERN ----------------------------------------------- //
+
+.modern
+  width: 150px
+  height: 95px
+  margin-left: -(@width/2)
+  top: 65px
+  background-repeat: no-repeat
+  background-image: repeating-linear-gradient(to right, transparent, transparent 5px,
+                                                        $brown-light 5px, $brown-light 6px),
+                    repeating-linear-gradient(to right, transparent, transparent 5px,
+                                                        $brown-light 5px, $brown-light 6px),
+                    linear-gradient(165deg, transparent 25%, $orange 25%),
+                    radial-gradient(circle, $grey-d 40%, transparent 40.1%),
+                    linear-gradient($grey-4, $grey-4),
+                    linear-gradient(165deg, transparent 35%, white 35%)
+  background-size: 20% 86%,
+                   18% 80%,
+                   40% 100%,
+                   8px 8px,
+                   15% 30%,
+                   80% 100%
+  background-position: right 25px bottom 0,
+                       right 53px bottom 0,
+                       right 20px bottom 0,
+                       28% 90%,
+                       22% 100%,
+                       right 20px bottom 0
+
+  &:before
+    width: 100%
+    height: 10px
+    left: -5px
+    top: 20px
+    background-color: $brown
+    border-radius: 3px
+    transform: rotate(-15deg)
+
+  &:after
+    width: 180px
+    height: 100%
+    left: -20px
+    background-repeat: no-repeat
+    background-image: repeating-linear-gradient(to right, $grey-9, $grey-9 4px,
+                                                          transparent 4px,
+                                                          transparent 8px),
+                      repeating-linear-gradient(to bottom, $grey-9, $grey-9 4px,
+                                                           transparent 4px,
+                                                           transparent 8px),
+                      radial-gradient(circle, $green-light 40%, transparent 40.1%),
+                      linear-gradient(to right, $brown, $brown)
+    background-size: 36px 28px,
+                     36px 28px,
+                     40px 40px,
+                     2px 30px
+    background-position: 5px 100%,
+                         5px 100%,
+                         right 2px bottom 10px,
+                         right 21px bottom 0
